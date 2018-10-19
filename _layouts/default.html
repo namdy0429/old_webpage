@@ -28,17 +28,22 @@
       </div>
 
       <main>
-        <h2>Latest Work</h2>
+        <h2>Publications</h2>
         {% for post in site.posts %}
           <div class="project-post">
             <h3><a href="{{ post.site }}">{{ post.title }}</a></h3>
+            <h5>{{ post.authors }}</h4>
 
             {{ post.content }}
 
             <ul>
+              <li><a href="{{ post.paper }}"><i class="fa fa-file-alt"></i></a>
+              {% if post.git %}
               <li><a href="{{ post.git }}"><i class="fa fa-github"></i></a></li>
               {% if post.site %}
               <li><a href="{{ post.site }}"><i class="fa fa-link"></i></a></li>
+              {% if post.video %}
+              <li><a href="{{ post.video }}"><i class="fa fa-video"></i></a></li>
               {% endif %}
             </ul>
 
@@ -52,16 +57,14 @@
 
         <p>
           Send me an
-          <a href="mailto:dayen@andrew.cmu.edu">email</a> or ping me on
-          <a href="https://twitter.com/JamiGibbs">Twitter</a>. I’m also on
+          <a href="mailto:dayen@andrew.cmu.edu">email</a>. I’m also on
           <a href="https://github.com/namdy0429">Github</a>, and
           <a href="https://www.linkedin.com/in/daye-nam">Linkedin</a>.
         </p>
 
         <p class="copyright">
-          <!-- &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. -->
-          This site is a Jekyll template I developed and it's licensed MIT. You're welcome to
-          <a href="https://github.com/jamigibbs/portfolio">use it too</a>!
+          &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>
+          <a href="https://github.com/jamigibbs/portfolio">Jami Gibbs</a>
         </p>
       </footer>
 
