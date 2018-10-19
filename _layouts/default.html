@@ -32,7 +32,7 @@
         {% for post in site.posts %}
           <div class="project-post">
             <h3><a href="{{ post.site }}">{{ post.title }}</a></h3>
-            <!-- <h5>{{ post.authors }}</h5> -->
+            <h5>{{ post.authors }}</h5>
 
             {{ post.content }}
 
@@ -40,8 +40,10 @@
               <li><a href="{{ post.paper }}"><i class="fa fa-file-alt"></i></a>
               {% if post.git %}
               <li><a href="{{ post.git }}"><i class="fa fa-github"></i></a></li>
+              {% endif %}
               {% if post.site %}
               <li><a href="{{ post.site }}"><i class="fa fa-link"></i></a></li>
+              {% endif %}
               {% if post.video %}
               <li><a href="{{ post.video }}"><i class="fa fa-video"></i></a></li>
               {% endif %}
