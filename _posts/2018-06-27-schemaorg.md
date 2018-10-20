@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How Do Organizations Publish Semantic Markup? Three Case Studies Using Public Schema.org Crawls
-authors: Daye Nam and Mayank Kejriwal
+authors: <b>Daye Nam</b> and Mayank Kejriwal
 paper: https://namdy0429.github.io/paper/computer18_SchemaOrg.pdf
 ---
 

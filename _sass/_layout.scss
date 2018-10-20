@@ -27,6 +27,15 @@
   }
 }
 
+.circle { 
+   width: 25px;
+   height: 25px;
+   background: #6c6666; 
+   -moz-border-radius: 70px; 
+   -webkit-border-radius: 70px; 
+   border-radius: 70px;
+}
+
 footer {
   margin: 2em 0;
   h2 {
