@@ -17,7 +17,7 @@
 
   <div class="row">
 
-    <div class="large-6 large-offset-3 columns">
+    <div class="large-8 large-offset-2 columns">
 
       <div class="content-section">
 
@@ -36,19 +36,20 @@
           <div class="project-post">
             <h3>{{ post.title }}</a></h3>
             <h6>{{ post.authors }}</h6>
+            <h6>{{ post.venue}}</h6>
 
             {{ post.content }}
 
             <ul>
               <li><a href="{{ post.paper }}"><i class="fa fa-file-text"></i></a>
-              {% if post.git %}
-              <li><a href="{{ post.git }}"><i class="fa fa-github"></i></a></li>
-              {% endif %}
               {% if post.site %}
               <li><a href="{{ post.site }}"><i class="fa fa-link"></i></a></li>
               {% endif %}
               {% if post.video %}
-              <li><a href="{{ post.video }}"><i class="fa fa-video"></i></a></li>
+              <li><a href="{{ post.video }}"><i class="fa fa-video-camera"></i></a></li>
+              {% endif %}
+              {% if post.git %}
+              <li><a href="{{ post.git }}"><i class="fa fa-github-alt"></i></a></li>
               {% endif %}
             </ul>
 
@@ -75,7 +76,7 @@
 
     </div>
 
-    <div class="large-2 large-offset-1 columns social">
+    <div class="large-1 large-offset-1 columns social">
       <ul>
         <li>
           <a href="https://namdy0429.github.io/data/CV.pdf">
@@ -87,11 +88,11 @@
             <i class="fa fa-github"></i>
           </a>
         </li>
-        <li>
+<!--         <li>
           <a href="https://twitter.com/{{ site.twitter }}">
             <i class="fa fa-twitter"></i>
           </a>
-        </li>
+        </li> -->
         <li>
           <a href="https://www.linkedin.com/in/{{ site.linkedin }}">
             <i class="fa fa-linkedin-square"></i>
