@@ -19,7 +19,7 @@ sass:
 author:
   name:              Daye Nam
   url:               https://twitter.com/namdy0429
-  email:             jami0821@gmail.com
+  email:             dayen@andrew.cmu.edu
 
 # Custom vars
 version:             2.0.1
@@ -28,6 +28,7 @@ github:
 google_analytics:    
 twitter:             namdy0429
 github:              namdy0429
+linkedin:            daye-nam
 
 # Gems
 plugins:
