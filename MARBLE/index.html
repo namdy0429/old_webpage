@@ -45,9 +45,11 @@
       <div class="content-section">
 
         <p>
-          Designing usable APIs is critical to developers’ productivity and software quality, but is quite difficult. Understanding how the API is used by analyzing client code at scale to discover usability issues with the APIs is even harder. <br><br>
+          Designing usable APIs is critical to developers’ productivity and software quality, but is quite difficult. Understanding how the API is used by analyzing client code at scale to discover usability issues with the APIs is even harder. Current literature has explored several methods such as lab studies and API design reviews to understand API usability issues, but API designers still face difficulty in anticipating how programmers will use their APIs. <br><br>
 
-          Here, we focus on “boilerplate” code, which a number of experts in API design have said can be an indicator of an API usability problem. This is because the need for boilerplate code often indicates that the API does not directly provide the methods that programmers need, or the API designers assume users will need the flexibility to put things together in multiple ways, but most users do not, so everyone uses the same methods in the same way
+          Therefore, we focus on boilerplate code, which can show the gap between the API designers’ intention and real usages by clients, based on the hypothesis that the need for boilerplate code often indicates that the API does not directly provide the methods that programmers need, or the API designers assume users will need the flexibility to put things together in multiple ways, but most users do not, so everyone uses the same methods in the same way.
+
+          <!-- Here, we focus on “boilerplate” code, which a number of experts in API design have said can be an indicator of an API usability problem. This is because the need for boilerplate code often indicates that the API does not directly provide the methods that programmers need, or the API designers assume users will need the flexibility to put things together in multiple ways, but most users do not, so everyone uses the same methods in the same way -->
 
         </p>
 
@@ -87,7 +89,7 @@ static final void writeDoc(Document doc, OutputStream out) throws IOException{
       <h2>Boilerplate Mining</h2>
       <div class="content-section">
         <p>
-           We explore the feasibility of adapting existing API usage pattern mining approaches, which have the benefit of being automated and could be run at scale, to identifying instances of boilerplate API client code for API designers. We use common properties that we investigate from the boilerplate code examples, and find patterns from the client codes that satisfy the properties. Once we finish developing our mining algorithm, we will share the tool and the mined boilerplate code candidates of various APIs publicly for further study.
+           We explore the feasibility of automatically mining boilerplate code, to provide tool to help api designers to find the usability issues from existing apis in the wild at scale. We will use common properties that we investigate from the boilerplate code examples above, and find patterns from the client codes that satisfy those properties. Once we finish developing our mining algorithm, we will share the tool and the mined boilerplate code candidates of various APIs publicly for further study.
         </p>
       </div>
 
