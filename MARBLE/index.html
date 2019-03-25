@@ -44,24 +44,16 @@
       <h2>Overview</h2>
       <div class="content-section">
 
-        <p>
-          Designing usable APIs is critical to developers’ productivity and software quality, but is quite difficult. Understanding how the API is used by analyzing client code at scale to discover usability issues with the APIs is even harder. Current literature has explored several methods such as lab studies and API design reviews to understand API usability issues, but API designers still face difficulty in anticipating how programmers will use their APIs. <br><br>
+        <p style="margin-bottom: -2em;">
+          <!-- Designing usable APIs is critical to developers’ productivity and software quality, but is quite difficult. Understanding how the API is used by analyzing client code at scale to discover usability issues with the APIs is even harder. Current literature has explored several methods such as lab studies and API design reviews to understand API usability issues, but API designers still face difficulty in anticipating how programmers will use their APIs. <br><br> -->
+          Designing usable APIs is critical to developers’ productivity and software quality, but is quite difficult. Understanding how an API is used by analyzing client code at scale to discover usability issues is even harder. Prior work has employed several methods to understand API usability issues, such as lab studies and API design reviews, but API designers still face difficulty in anticipating how programmers will use their APIs, so these early methods can still miss API usability issues. <br><br>
 
-          Therefore, we focus on boilerplate code, which can show the gap between the API designers’ intention and real usages by clients, based on the hypothesis that the need for boilerplate code often indicates that the API does not directly provide the methods that programmers need, or the API designers assume users will need the flexibility to put things together in multiple ways, but most users do not, so everyone uses the same methods in the same way.
-
-          <!-- Here, we focus on “boilerplate” code, which a number of experts in API design have said can be an indicator of an API usability problem. This is because the need for boilerplate code often indicates that the API does not directly provide the methods that programmers need, or the API designers assume users will need the flexibility to put things together in multiple ways, but most users do not, so everyone uses the same methods in the same way -->
+          <!-- Therefore, we focus on boilerplate code, which can show the gap between the API designers’ intention and real usages by clients, based on the hypothesis that the need for boilerplate code often indicates that the API does not directly provide the methods that programmers need, or the API designers assume users will need the flexibility to put things together in multiple ways, but most users do not, so everyone uses the same methods in the same way.
+ -->
+          In this project, we focus on one particularly annoying API usability issue &ndash; boilerplate code. For example, Java’s <code>javax.xml.transform</code> API is infamous for requiring a lot of boilerplate to write an XML document to an output stream (see the example below, taken from <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/32713.pdf">[Joshua Bloch's OOPSLA 2006 talk]</a>). <br><br>
 
         </p>
-
-      </div>
-
-      <h2>Boilerplate Survey</h2>
-      <div class="content-section">
-
-        <p style="margin-bottom: -2em;">
-          Despite general consensus on the undesirability of having to write boilerplate code and this interesting dimension regarding API usability issue, the concept remains largely undefined and understudied. Therefore, we first collect boilerplate code examples from many different sources (e.g., GitHub, StackOverflow, publications) to understand common properties and definitions. One of the examples of boilerplate code we found is from <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/32713.pdf">Joshua Bloch's OOPSLA '06 talk</a>: 
-          </p>
-          <pre>
+                  <pre>
             <code class="java">
 import org.w3c.dom.*;
 import java.io.*;
@@ -81,7 +73,24 @@ static final void writeDoc(Document doc, OutputStream out) throws IOException{
             </code>
           </pre>
         <p style="margin-top: -4em;">
-          To get more broad, real-world examples, we are also asking developers to share boilerplate code examples with us. If you know any of boilerplate code example in Java, <a href="https://www.surveymonkey.com/r/HKSB6MZ">please share them with us and help us understand them better!</a> 
+          <!-- Here, we focus on “boilerplate” code, which a number of experts in API design have said can be an indicator of an API usability problem. This is because the need for boilerplate code often indicates that the API does not directly provide the methods that programmers need, or the API designers assume users will need the flexibility to put things together in multiple ways, but most users do not, so everyone uses the same methods in the same way -->
+
+          Boilerplate can occur for many reasons. For example, if the API designers didn’t anticipate some usage scenarios, the API may not directly provide some methods that programmers need, and this can lead to boilerplate. Alternatively, if the API designers opted for finer granularity operations to increase flexibility, but most clients do not use the flexibility to put things together in multiple ways, rather using the same methods in the same way, this can also lead to boilerplate. Either way, boilerplate can indicate a gap between the API designers’ intentions and real usage scenarios by clients, and is a usability issue.
+
+        </p>
+
+      </div>
+
+      <h2>Boilerplate Survey</h2>
+      <div class="content-section">
+
+        <p>
+          <!-- Despite general consensus on the undesirability of having to write boilerplate code and this interesting dimension regarding API usability issue, the concept remains largely undefined and understudied. Therefore, we first collect boilerplate code examples from many different sources (e.g., GitHub, StackOverflow, publications) to understand common properties and definitions. One of the examples of boilerplate code we found is from <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/32713.pdf">Joshua Bloch's OOPSLA '06 talk</a>:  -->
+          Despite general consensus on the undesirability of having to write boilerplate code and this interesting dimension regarding API usability, the concept of boilerplate remains largely undefined and understudied. We started collecting boilerplate code examples from different sources (e.g., GitHub, StackOverflow, publications) to understand common properties and definitions. 
+          </p>
+        <p>
+          <!-- To get more broad, real-world examples, we are also asking developers to share boilerplate code examples with us. If you know any of boilerplate code example in Java, <a href="https://www.surveymonkey.com/r/HKSB6MZ">please share them with us and help us understand them better!</a>  -->
+          We are also asking developers to share boilerplate code examples with us. If you know of any boilerplate example, preferably involving APIs, in Java or otherwise, <a href="https://www.surveymonkey.com/r/2S3VV2K">please share it with us and help us understand it better!</a>
         </p>
 
       </div>
@@ -89,7 +98,8 @@ static final void writeDoc(Document doc, OutputStream out) throws IOException{
       <h2>Boilerplate Mining</h2>
       <div class="content-section">
         <p>
-           We explore the feasibility of automatically mining boilerplate code, to provide tool to help api designers to find the usability issues from existing apis in the wild at scale. We will use common properties that we investigate from the boilerplate code examples above, and find patterns from the client codes that satisfy those properties. Once we finish developing our mining algorithm, we will share the tool and the mined boilerplate code candidates of various APIs publicly for further study.
+           <!-- We explore the feasibility of automatically mining boilerplate code, to provide tool to help api designers to find the usability issues from existing apis in the wild at scale. We will use common properties that we investigate from the boilerplate code examples above, and find patterns from the client codes that satisfy those properties. Once we finish developing our mining algorithm, we will share the tool and the mined boilerplate code candidates of various APIs publicly for further study. -->
+           We are exploring the feasibility of automatically mining for boilerplate code in large codebases, to build tools that API designers can use to find usability issues with their APIs in the wild at scale. We operationalize common properties of boilerplate extracted from the examples above and the survey results, to find patterns in client code that satisfy those properties. Once we finish developing our mining algorithm, we will share the tool and the mined boilerplate code candidates of various APIs publicly for further study.
         </p>
       </div>
 
@@ -102,9 +112,9 @@ static final void writeDoc(Document doc, OutputStream out) throws IOException{
           <li>Brad Myers
             <a href="http://www.cs.cmu.edu/~bam/"><i class="fa fa-home"></i></a>
             <a href="mailto:bam@cs.cmu.edu"><i class="fa fa-envelope"></i></a></li>
-          <li>Andrew Macvean
+<!--           <li>Andrew Macvean
             <a href="https://ai.google/research/people/AndrewMacvean"><i class="fa fa-home"></i></a>
-            <a href="mailto:amacvean@google.com"><i class="fa fa-envelope"></i></a></li>
+            <a href="mailto:amacvean@google.com"><i class="fa fa-envelope"></i></a></li> -->
           <li>Bogdan Vasilescu
             <a href="https://bvasiles.github.io"><i class="fa fa-home"></i></a>
             <a href="mailto:vasilescu@cmu.edu"><i class="fa fa-envelope"></i></a></li>
