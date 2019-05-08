@@ -26,14 +26,14 @@
   <!-- Page Content -->
   <div class="container" style="max-width: 1620px">
     <div class="row">
-      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">java_io_BufferedReader</h1>
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">javax_swing_JFrame</h1>
     </div>
     
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (2 partitions, 269 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (3 partitions, 272 files)</h3>
         <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">java.io.BufferedReader.close
+        <h4 class="col-lg-12 col-md-12 mb-12">javax.swing.JFrame.&lt;init&gt;, javax.swing.JFrame.setVisible
 </h4>
     </div>
     <hr class="col-lg-12 col-md-12 mb-12">
@@ -41,41 +41,55 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (100 files, similarity: 0.7805223997980048)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (81 files, similarity: 0.46079026141975993)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>SenhLinsh_____Utils-Everywhere_____StreamUtils</h6>
+            <h6>openjdk-mirror_____jdk7u-jdk_____bug4337267</h6>
             <pre class="prettyprint">
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+    void initUI() {
+        window = new JFrame("bug4337267");
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setSize(800, 600);
+        Component content = createContentPane();
+        window.add(content);
+        window.setVisible(true);
+    }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>AdoptOpenJDK_____jitwatch_____NetUtil</h6>
+            <h6>haifengl_____smile_____TDistributionDemo</h6>
             <pre class="prettyprint">
-				try
-				{
-					in.close();
-				}
-				catch (IOException ioe)
-				{
-				}
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Student's T-Distribution");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.getContentPane().add(new TDistributionDemo());
+        frame.setVisible(true);
+    }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>apache_____sqoop_____TestNamedFifo</h6>
+            <h6>Waikato_____moa_____PlotTab</h6>
             <pre class="prettyprint">
-          try {
-            r.close();
-          } catch (IOException ioe) {
-            LOG.warn("Error closing reader: " + ioe);
-          }
+    private static void createAndShowGUI() {
+
+        // Create and set up the window.
+        JFrame frame = new JFrame("Test");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Create and set up the content pane.
+        JPanel panel = new PlotTab();
+        panel.setOpaque(true); // content panes must be opaque
+        frame.setContentPane(panel);
+
+        // Display the window.
+        frame.pack();
+        //frame.setSize(400, 400);
+        frame.setVisible(true);
+    }
             </pre>
           </div>
 
@@ -88,9 +102,9 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_1 (3 partitions, 753 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_1 (2 partitions, 137 files)</h3>
         <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">java.io.BufferedReader.readLine
+        <h4 class="col-lg-12 col-md-12 mb-12">javax.swing.JFrame.dispose
 </h4>
     </div>
     <hr class="col-lg-12 col-md-12 mb-12">
@@ -98,33 +112,35 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (286 files, similarity: 0.8087820248065629)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (69 files, similarity: 0.8769622071611557)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>wzgiceman_____ALibrary_____AbFileUtil</h6>
+            <h6>unofficial-openjdk_____openjdk_____MultiGradientTest</h6>
             <pre class="prettyprint">
-			while ((line = bufReader.readLine()) != null) {
-				buffer.append(line);
-			}
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>eclipse_____che_____DebuggerUtils</h6>
-            <pre class="prettyprint">
-            while ((response = br.readLine()) != null) {
-              responseData.append(response);
+            public void windowClosing(WindowEvent e) {
+                frame.dispose();
             }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>r3gis3r_____CSipSimple_____SipProfileJson</h6>
+            <h6>dmlloyd_____openjdk_____DisposeFrameOnDragTest</h6>
             <pre class="prettyprint">
-            while ((line = buf.readLine()) != null) {
-                contentBuf.append(line);
-            }
+                @Override
+                public void dragOver(DropTargetDragEvent dtde) {
+                    frame.dispose();
+                }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>alibaba_____mdrill_____Explorer</h6>
+            <pre class="prettyprint">
+        public void windowClosing(WindowEvent e) {
+          jf.dispose();
+          System.exit(0);
+        }
             </pre>
           </div>
 

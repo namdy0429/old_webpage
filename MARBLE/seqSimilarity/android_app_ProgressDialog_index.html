@@ -31,7 +31,7 @@
     
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (5 partitions, 224 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (5 partitions, 220 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">android.app.ProgressDialog.&lt;init&gt;, android.app.ProgressDialog.setMessage, android.app.ProgressDialog.show
 </h4>
@@ -41,19 +41,25 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (57 files, similarity: 0.6554244711779376)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (53 files, similarity: 0.6450197126269934)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>meganz_____android_____NodeAttachmentHistoryActivity</h6>
+            <h6>wqandroid_____ihepai_____BaseActivity</h6>
             <pre class="prettyprint">
-	public void showProgressForwarding(){
-		log("showProgressForwarding");
-
-		statusDialog = new ProgressDialog(this);
-		statusDialog.setMessage(getString(R.string.general_forwarding));
-		statusDialog.show();
-	}
+	/**
+	 * 发起get请求 并显示状态对话框
+	 * 
+	 * @param url
+	 *            请求地址
+	 * @param params
+	 *            参数
+	 */
+	public void sendGet(String url, AjaxParams params) {
+		if (checkNet(mContext)) {
+			HttpUtil.sendGet(url, params, this);
+		}else{
+			onError(url, "无法连接网络");
             </pre>
           </div>
 
@@ -71,14 +77,15 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>EspressifApp_____IOT-Espressif-Android_____DeviceTimerEditActivityAbs</h6>
+            <h6>xiaomi-sa_____alertsystem_____SettingActivity</h6>
             <pre class="prettyprint">
-        {
-            mDialog = new ProgressDialog(DeviceTimerEditActivityAbs.this);
-            mDialog.setMessage(getString(R.string.esp_device_task_dialog_message));
-            mDialog.setCancelable(false);
-            mDialog.show();
-        }
+		prepareProgress.setMessage("版本检查中...");
+		prepareProgress.setMax(100);
+		prepareProgress.show();
+	}
+
+	private void dismissPrepareDialog() {
+		if (prepareProgress != null && prepareProgress.isShowing()) {
             </pre>
           </div>
 
@@ -86,7 +93,7 @@
         
 	
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (15 files, similarity: 0.4946557523809528)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (15 files, similarity: 0.5291875809523815)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -107,6 +114,27 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
+            <h6>DF1E_____SimpleExplorer_____ExtractionTask</h6>
+            <pre class="prettyprint">
+        if (activity != null) {
+            this.dialog = new ProgressDialog(activity);
+            this.dialog.setMessage(activity.getString(R.string.unzipping));
+            this.dialog.setCancelable(true);
+            this.dialog
+                    .setOnCancelListener(new DialogInterface.OnCancelListener() {
+                        @Override
+                        public void onCancel(DialogInterface dialog) {
+                            cancel(false);
+                        }
+                    });
+            if (!activity.isFinishing()) {
+                this.dialog.show();
+            }
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
             <h6>rexstjohn_____UltimateAndroidCameraGuide_____SimplePhotoGalleryListFragment</h6>
             <pre class="prettyprint">
         try {
@@ -123,32 +151,11 @@
             </pre>
           </div>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>felixb_____callmeter_____Plans</h6>
-            <pre class="prettyprint">
-            if (inProgressRunner) {
-                if (statusMatcher == null
-                        || (msg.arg1 <= 0 && !this.statusMatcher.isShowing())) {
-                    statusMatcher = new ProgressDialog(Plans.this);
-                    statusMatcher.setCancelable(true);
-                    statusMatcher.setMessage(Plans.this.getString(R.string.reset_data_progr1));
-                    statusMatcher.setIndeterminate(true);
-                    statusMatcherProgress = false;
-                    try {
-                        statusMatcher.show();
-                    } catch (Exception e) {
-                        Log.w(TAG, "activity already finished?", e);
-                    }
-                }
-            } else {
-            </pre>
-          </div>
-
         </div>
         
 	
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (26 files, similarity: 0.4759048000000026)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (28 files, similarity: 0.45083968518518824)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -244,7 +251,82 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_19 (2 partitions, 117 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_24 (2 partitions, 27 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.app.ProgressDialog.setTitle, android.app.ProgressDialog.setIndeterminate, android.app.ProgressDialog.setCancelable
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (14 files, similarity: 0.38702103296703233)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Chainfire_____libsuperuser_____MainActivity</h6>
+            <pre class="prettyprint">
+        protected void onPreExecute() {
+            // We're creating a progress dialog here because we want the user to wait.
+            // If in your app your user can just continue on with clicking other things,
+            // don't do the dialog thing.
+
+            // make sure we're using the legacy methods for this legacy activity
+            Shell.setRedirectDeprecated(false);
+
+            dialog = new ProgressDialog(context);
+            dialog.setTitle("Some title");
+            dialog.setMessage("Doing something interesting ...");
+            dialog.setIndeterminate(true);
+            dialog.setCancelable(false);
+            dialog.show();
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>xda_____XDA-One_____RegisterFragment</h6>
+            <pre class="prettyprint">
+    public void onCreate(final Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mUserClient = RetrofitUserClient.getClient(getActivity());
+
+        mProgressDialog = new ProgressDialog(getActivity());
+        mProgressDialog.setTitle("Registering...");
+        mProgressDialog.setMessage("Registering...");
+        mProgressDialog.setIndeterminate(true);
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>magnusja_____libaums_____MainActivity</h6>
+            <pre class="prettyprint">
+		public CopyTask() {
+			dialog = new ProgressDialog(MainActivity.this);
+			dialog.setTitle("Copying file");
+			dialog.setMessage("Copying a file to the internal storage, this can take some time!");
+			dialog.setIndeterminate(false);
+			dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            dialog.setCancelable(false);
+		}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_19 (4 partitions, 115 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">android.app.ProgressDialog.&lt;init&gt;, android.app.ProgressDialog.setMessage, android.app.ProgressDialog.setCancelable
 </h4>
@@ -254,48 +336,138 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (50 files, similarity: 0.6511235820408167)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (33 files, similarity: 0.7187618901515143)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>maxiee_____HeartBeat_____DialogAsyncTask</h6>
+            <h6>EspressifApp_____IOT-Espressif-Android_____DeviceActivityAbs</h6>
             <pre class="prettyprint">
-    protected void onPreExecute() {
-        super.onPreExecute();
-        progressDialog = new ProgressDialog(mContext);
-        progressDialog.setMessage("正在提交");
-        progressDialog.setCancelable(false);
-        progressDialog.show();
+        {
+            mDialog = new ProgressDialog(mActivity);
+            mDialog.setMessage(getString(R.string.esp_device_share_progress_message));
+            mDialog.setCancelable(false);
+            mDialog.setCanceledOnTouchOutside(false);
+            mDialog.show();
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>wqandroid_____ihepai_____BaseActivity</h6>
+            <pre class="prettyprint">
+	/**
+	 * 发起get请求 并显示状态对话框
+	 * 
+	 * @param url
+	 *            请求地址
+	 * @param params
+	 *            参数
+	 */
+	public void sendGet(String url, AjaxParams params) {
+		if (checkNet(mContext)) {
+			HttpUtil.sendGet(url, params, this);
+		}else{
+			onError(url, "无法连接网络");
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>PaperAirplane-Dev-Team_____BlackLight_____NewPostActivity</h6>
+            <pre class="prettyprint">
+		protected void onPreExecute() {
+			super.onPreExecute();
+
+			prog = new ProgressDialog(NewPostActivity.this);
+			prog.setMessage(getResources().getString(R.string.plz_wait));
+			prog.setCancelable(false);
+			prog.show();
+		}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (14 files, similarity: 0.4617132637362645)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>evernote_____evernote-sdk-android_____EvernoteLoginFragment</h6>
+            <pre class="prettyprint">
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        setCancelable(false);
+
+        DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                EvernoteLoginTask task = (EvernoteLoginTask) TaskExecutor.getInstance().getTask(mTaskKey);
+                if (task != null) {
+                    task.cancel();
+                }
+                onResult(false, task);
+            }
+        };
+
+        ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setIndeterminate(true);
+        progressDialog.setMessage(getString(R.string.esdk_loading));
+        progressDialog.setButton(DialogInterface.BUTTON_NEGATIVE, getString(android.R.string.cancel), onClickListener);
+        progressDialog.setCancelable(isCancelable());
+
+        return progressDialog;
     }
-
-    @Override
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>WuXiaolong_____WoChat_____RecorderVideoActivity</h6>
+            <h6>M66B_____XPrivacy_____ActivityShare</h6>
             <pre class="prettyprint">
-			btnStart.setVisibility(View.VISIBLE);
-			btnStop.setVisibility(View.INVISIBLE);
-			chronometer.stop();
-			if (localPath == null) {
-				return;
-			}
-			String st3 = getResources().getString(R.string.Whether_to_send);
+		protected void onPreExecute() {
+			super.onPreExecute();
+
+			TypedArray ta = getTheme().obtainStyledAttributes(new int[] { R.attr.progress_horizontal });
+			int progress_horizontal = ta.getResourceId(0, 0);
+			ta.recycle();
+
+			// Show progress dialog
+			mProgressDialog = new ProgressDialog(ActivityShare.this);
+			mProgressDialog.setMessage(getString(R.string.msg_loading));
+			mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+			mProgressDialog.setProgressDrawable(getResources().getDrawable(progress_horizontal));
+			mProgressDialog.setProgressNumberFormat(null);
+			mProgressDialog.setCancelable(false);
+			mProgressDialog.setCanceledOnTouchOutside(false);
+			mProgressDialog.show();
+		}
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>vx_____connectbot_____TransferThread</h6>
+            <h6>lguipeng_____Notes_____EvernoteLoginFragment</h6>
             <pre class="prettyprint">
-	private ProgressDialog fileProgressDialog(Activity activity, String message) {
-		ProgressDialog progress = new ProgressDialog(activity);
-		progress.setIndeterminate(true);
-		progress.setMessage(message);
-		progress.setCancelable(false);
-		progress.show();
-		return progress;
-	}
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        setCancelable(false);
+
+        DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                EvernoteLoginTask task = (EvernoteLoginTask) TaskExecutor.getInstance().getTask(mTaskKey);
+                if (task != null) {
+                    task.cancel();
+                }
+                onResult(false, task);
+            }
+        };
+
+        ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setIndeterminate(true);
+        progressDialog.setMessage(getString(R.string.esdk_loading));
+        progressDialog.setButton(DialogInterface.BUTTON_NEGATIVE, getString(android.R.string.cancel), onClickListener);
+        progressDialog.setCancelable(isCancelable());
+
+        return progressDialog;
+    }
             </pre>
           </div>
 
@@ -374,7 +546,7 @@
         
 	
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (10 files, similarity: 0.6509005111111112)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (10 files, similarity: 0.6509005111111112)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -428,9 +600,9 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_23 (3 partitions, 49 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_10 (4 partitions, 106 files)</h3>
         <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">android.app.ProgressDialog.setMax
+        <h4 class="col-lg-12 col-md-12 mb-12">android.app.ProgressDialog.setProgressStyle
 </h4>
     </div>
     <hr class="col-lg-12 col-md-12 mb-12">
@@ -438,42 +610,91 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (12 files, similarity: 0.5871104848484854)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (5 files, similarity: 0.568827)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>DroidPlanner_____Tower_____ParamsFragment</h6>
+            <h6>leancloud_____leanchat-android_____BaseFragment</h6>
             <pre class="prettyprint">
-        if (progressDialog.isIndeterminate()) {
-            progressDialog.setIndeterminate(false);
-            progressDialog.setMax(max);
-        }
+  protected ProgressDialog showSpinnerDialog() {
+    //activity = modifyDialogContext(activity);
+    ProgressDialog dialog = new ProgressDialog(getActivity());
+    dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+    dialog.setCancelable(true);
+    dialog.setMessage(getString(R.string.chat_utils_hardLoading));
+    if (!getActivity().isFinishing()) {
+      dialog.show();
+    }
+    return dialog;
+  }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>jp1017_____ActivityLauncher_____AsyncProvider</h6>
+            <h6>zhoubowen-sky_____LingDong_____Files_Trans_Activity</h6>
             <pre class="prettyprint">
-			if(value == 0) {
-				this.progress.setIndeterminate(false);
-				this.progress.setMax(this.max);
-			}
-            </pre>
-          </div>
+        progressDialog.setButton(DialogInterface.BUTTON_POSITIVE, "完成", new DialogInterface.OnClickListener() {
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>magnusja_____libaums_____MainActivity</h6>
-            <pre class="prettyprint">
-        @Override
-        protected void onProgressUpdate(Integer... values) {
-            dialog.setIndeterminate(false);
-            int max = (int) size;
-            if(size > Integer.MAX_VALUE) {
-                max = (int) (size / 1024);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // dialog 里的 点击事件
+                //Toast.makeText(getApplicationContext(), "发送完成", 0).show();
+                progressDialog.dismiss();
+
             }
-            dialog.setMax(max);
-            dialog.setProgress(values[0]);
+        });
+        // 取消按钮
+        // progressDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "取消", new
+        // DialogInterface.OnClickListener() {
+        //
+        // @Override
+        // public void onClick(DialogInterface dialog, int which) {
+        // // dialog 里的 点击事件
+        // progressDialog.dismiss();
+        // }
+        // });
+        //
+        if (!FilesTransActivityContent.mContent.isFinishing()) {
+            progressDialog.show();
         }
+
+
+    }
+
+    //显示接收进度
+    protected void showRecieveProgressDialog() {
+
+        recevieProgressDialog = new ProgressDialog(FilesTransActivityContent.mContent);
+        recevieProgressDialog.setTitle("正在接收   "+File_Name+"...");
+        // 设置进度条样式
+        recevieProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        // 设置进度条最大值
+        recevieProgressDialog.setMax(100);
+        // 完成按钮
+        recevieProgressDialog.setButton(DialogInterface.BUTTON_POSITIVE, "完成", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AppCanOpenSource_____appcan-android_____EBrowserWindow</h6>
+            <pre class="prettyprint">
+                .getSlidingWind(EBrowserWindow.rootLeftSlidingWinName);
+        if (leftSlidingWin != null) {
+            leftSlidingWin.addUriTask(leftSlidingWin.mMainView, js);
+        }
+        EBrowserWindow rightSlidingWin = windowStack
+                .getSlidingWind(EBrowserWindow.rootRightSlidingWinName);
+        if (rightSlidingWin != null) {
+            rightSlidingWin.addUriTask(rightSlidingWin.mMainView, js);
+        }
+
+        for (int i = 0; i < eBrwWins.size(); i++) {
+            EBrowserWindow eBrwWin = eBrwWins.get(i);
+            eBrwWin.addUriTask(eBrwWin.mMainView, js);
+            Collection<EBrowserView> eBrwViews = eBrwWin.mPopTable.values();
             </pre>
           </div>
 
@@ -486,7 +707,7 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_7 (3 partitions, 117 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_7 (3 partitions, 109 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">android.app.ProgressDialog.setTitle
 </h4>
@@ -496,44 +717,25 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (35 files, similarity: 0.6081101025210026)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (38 files, similarity: 0.560621685632994)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>owncloud_____News-Android-App_____NewFeedActivity</h6>
+            <h6>magnusja_____libaums_____MainActivity</h6>
             <pre class="prettyprint">
-        @Override
-        protected void onPreExecute() {
-            pd = new ProgressDialog(mContext);
-            pd.setTitle("Parsing OMPL...");
-            pd.setMessage("Please wait.");
-            pd.setCancelable(false);
-            pd.setIndeterminate(true);
-            pd.show();
-
-            super.onPreExecute();
-        }
+		public CopyTask() {
+			dialog = new ProgressDialog(MainActivity.this);
+			dialog.setTitle("Copying file");
+			dialog.setMessage("Copying a file to the internal storage, this can take some time!");
+			dialog.setIndeterminate(false);
+			dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            dialog.setCancelable(false);
+		}
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>Odoo-mobile_____framework_____OdooAccountQuickManage</h6>
-            <pre class="prettyprint">
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            progressDialog = new ProgressDialog(OdooAccountQuickManage.this);
-            progressDialog.setTitle(R.string.title_working);
-            progressDialog.setMessage(OResource.string(OdooAccountQuickManage.this,
-                    R.string.toast_updating_password));
-            progressDialog.setCancelable(false);
-            progressDialog.show();
-        }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>awslabs_____aws-sdk-android-samples_____DeviceSettings</h6>
+            <h6>awslabs_____aws-sdk-android-samples_____VerifyActivity</h6>
             <pre class="prettyprint">
     private void showWaitDialog(String message) {
         closeWaitDialog();
@@ -544,6 +746,21 @@
             </pre>
           </div>
 
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>EliFUT_____android_____MainActivity</h6>
+            <pre class="prettyprint">
+  private ProgressDialog buildProgressDialog() {
+    ProgressDialog progressDialog = new ProgressDialog(this);
+    progressDialog.setMax(100);
+    progressDialog.setIndeterminate(false);
+    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+    progressDialog.setTitle(R.string.loading);
+    progressDialog.setMessage(getString(R.string.please_wait_downloading_data));
+    return progressDialog;
+  }
+            </pre>
+          </div>
+
         </div>
         
 	
@@ -553,7 +770,7 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_1 (3 partitions, 474 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_1 (4 partitions, 435 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">android.app.ProgressDialog.show
 </h4>
@@ -563,254 +780,16 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (134 files, similarity: 0.7612914781731376)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (123 files, similarity: 0.6299817863521334)</h4>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>meganz_____android_____FileInfoActivityLollipop</h6>
-            <pre class="prettyprint">
-		switch (v.getId()) {
-			case R.id.file_properties_text_number_versions:{
-                Intent i = new Intent(this, VersionsFileActivity.class);
-                i.putExtra("handle", node.getHandle());
-                startActivity(i);
-				break;
-			}
-			case R.id.file_properties_link_button:{
-				log("copy link button");
-				if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-					android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-					clipboard.setText(node.getPublicLink());
-				} else {
-					android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-					android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Text", node.getPublicLink());
-					clipboard.setPrimaryClip(clip);
-				}
-				Snackbar.make(fragmentContainer, getString(R.string.file_properties_get_link), Snackbar.LENGTH_LONG).show();
-				break;
-			}
-			case R.id.file_properties_shared_layout:
-			case R.id.file_properties_shared_info_button:{
-                sharedContactClicked();
-				break;
-			}
-            case R.id.more_button:
-                Intent i = new Intent(this, FileContactListActivityLollipop.class);
-                i.putExtra("name", node.getHandle());
-                startActivity(i);
-                break;
-			case R.id.file_properties_switch:{
-				boolean isChecked = offlineSwitch.isChecked();
-
-				if(owner){
-					log("Owner: me");
-					if (!isChecked){
-						log("isChecked");
-                        isRemoveOffline = true;
-                        handle = node.getHandle();
-						availableOfflineBoolean = false;
-						offlineSwitch.setChecked(false);
-						mOffDelete = dbH.findByHandle(handle);
-                        OfflineUtils.removeOffline(mOffDelete, dbH, this, from);
-						supportInvalidateOptionsMenu();
-					}
-					else{
-                        log("NOT Checked");
-                        isRemoveOffline = false;
-                        handle = -1;
-						availableOfflineBoolean = true;
-						offlineSwitch.setChecked(true);
-
-						File destination = null;
-						if (from == Constants.FROM_INCOMING_SHARES) {
-							log("FROM_INCOMING_SHARES");
-							//Find in the filesystem
-							if (Environment.getExternalStorageDirectory() != null) {
-								long handleIncoming = OfflineUtils.findIncomingParentHandle(node, megaApi);
-								destination = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Util.offlineDIR + "/" + Long.toString(handleIncoming) + "/" + MegaApiUtils.createStringTree(node, this));
-								log("offline File INCOMING: " + destination.getAbsolutePath());
-							} else {
-								destination = this.getFilesDir();
-							}
-
-						}
-						else if(from==Constants.FROM_INBOX){
-							log("FROM_INBOX");
-							if (Environment.getExternalStorageDirectory() != null) {
-								destination = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Util.offlineDIR + "/in/" + MegaApiUtils.createStringTree(node, this));
-								log("offline File INBOX: " + destination.getAbsolutePath());
-							} else {
-								destination = this.getFilesDir();
-							}
-						}
-						else {
-							log("NOT INCOMING NOT INBOX");
-							//Find in the filesystem
-
-							if (Environment.getExternalStorageDirectory() != null){
-								destination = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Util.offlineDIR + "/"+MegaApiUtils.createStringTree(node, this));
-							}
-							else{
-								destination = getFilesDir();
-							}
-						}
-
-						log("Path destination: "+destination);
-
-						if (destination.exists() && destination.isDirectory()){
-							File offlineFile = new File(destination, node.getName());
-							if (offlineFile.exists() && node.getSize() == offlineFile.length() && offlineFile.getName().equals(node.getName())){ //This means that is already available offline
-								return;
-							}
-						}
-
-						log("Handle to save for offline : "+node.getHandle());
-                        OfflineUtils.saveOffline(destination, node, this, fileInfoActivity, megaApi);
-
-						supportInvalidateOptionsMenu();
-					}
-				}
-				else{
-
-					log("not owner");
-
-					if (!isChecked){
-						availableOfflineBoolean = false;
-						offlineSwitch.setChecked(false);
-						mOffDelete = dbH.findByHandle(node.getHandle());
-                        OfflineUtils.removeOffline(mOffDelete, dbH, this, from);
-						supportInvalidateOptionsMenu();
-					}
-					else{
-						availableOfflineBoolean = true;
-						offlineSwitch.setChecked(true);
-
-						supportInvalidateOptionsMenu();
-
-						log("Comprobando el node"+node.getName());
-
-						//check the parent
-						long result = -1;
-						result=OfflineUtils.findIncomingParentHandle(node, megaApi);
-						log("IncomingParentHandle: "+result);
-						if(result!=-1){
-							MegaNode megaNode = megaApi.getNodeByHandle(result);
-							if(megaNode!=null){
-								log("ParentHandleIncoming: "+megaNode.getName());
-							}
-							String handleString = Long.toString(result);
-							String destinationPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Util.offlineDIR + "/" + handleString + "/"+MegaApiUtils.createStringTree(node, this);
-							log("Not owner path destination: "+destinationPath);
-
-							File destination = null;
-							if (Environment.getExternalStorageDirectory() != null){
-								destination = new File(destinationPath);
-							}
-							else{
-								destination = getFilesDir();
-							}
-
-							if (destination.exists() && destination.isDirectory()){
-								File offlineFile = new File(destination, node.getName());
-								if (offlineFile.exists() && node.getSize() == offlineFile.length() && offlineFile.getName().equals(node.getName())){ //This means that is already available offline
-									return;
-								}
-							}
-							OfflineUtils.saveOffline(destination, node, this, fileInfoActivity, megaApi);
-						}
-						else{
-							log("result=findIncomingParentHandle NOT result!");
-						}
-					}
-				}
-				break;
-			}
-            case R.id.file_properties_info_data_location:{
-
-                Intent intent = new Intent(this, ManagerActivityLollipop.class);
-                intent.setAction(Constants.ACTION_OPEN_FOLDER);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                intent.putExtra("locationFileInfo", true);
-                if (adapterType == Constants.OFFLINE_ADAPTER){
-                    intent.putExtra("offline_adapter", true);
-                    if (path != null){
-                        intent.putExtra("path", path);
-                        intent.putExtra("pathNavigation", pathNavigation);
-                    }
-                }
-                else {
-                    if (megaApi.getParentNode(node) != null){
-                        intent.putExtra("PARENT_HANDLE", megaApi.getParentNode(node).getHandle());
-                    }
-                    intent.putExtra("fragmentHandle", fragmentHandle);
-                }
-                startActivity(intent);
-                this.finish();
-                break;
-            }
-		}
-            </pre>
-          </div>
-
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>SummerRC_____BiLiBiLi_____CropImage</h6>
             <pre class="prettyprint">
-				protected void onPreExecute() {
-					dialog.show();
-				}
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>naman14_____Timber_____LastFmLoginDialog</h6>
-            <pre class="prettyprint">
-                            @Override
-                            public void userInfoFailed() {
-                                progressDialog.dismiss();
-                                Toast.makeText(getTargetFragment().getActivity(), getString(R.string.lastfm_login_failture), Toast.LENGTH_SHORT).show();
-                            }
-            </pre>
-          </div>
-
-        </div>
-        
-	
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (114 files, similarity: 0.6380882414221348)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>thedracle_____cordova-android-chromeview_____CordovaActivity</h6>
-            <pre class="prettyprint">
-    /**
-     * Show the spinner.  Must be called from the UI thread.
-     *
-     * @param title         Title of the dialog
-     * @param message       The message of the dialog
-     */
-    public void spinnerStart(final String title, final String message) {
-        if (this.spinnerDialog != null) {
-            this.spinnerDialog.dismiss();
-            this.spinnerDialog = null;
-        }
-        final CordovaActivity me = this;
-        this.spinnerDialog = ProgressDialog.show(CordovaActivity.this, title, message, true, true,
-                new DialogInterface.OnCancelListener() {
-                    public void onCancel(DialogInterface dialog) {
-                        me.spinnerDialog = null;
-                    }
-                });
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>leancloud_____leanchat-android_____BaseFragment</h6>
-            <pre class="prettyprint">
-    if (!getActivity().isFinishing()) {
-      dialog.show();
-    }
+					if (mNumFaces > 1) {
+						Toast t = Toast.makeText(CropImage.this, R.string.cropimage_face_multiple, Toast.LENGTH_SHORT);
+						t.show();
+					}
             </pre>
           </div>
 
@@ -825,115 +804,11 @@
             </pre>
           </div>
 
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_14 (3 partitions, 59 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">android.app.ProgressDialog.setProgress
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (21 files, similarity: 0.7233479857142856)</h4>
-        </div>
-        <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>psaravan_____JamsMusicPlayer_____ID3sArtistEditorDialog</h6>
+            <h6>M66B_____XPrivacy_____ActivityShare</h6>
             <pre class="prettyprint">
-		@Override
-		protected void onProgressUpdate(String... values) {
-			super.onProgressUpdate(values);
-			pd.setProgress(i);
-			String message = mContext.getResources().getString(R.string.saving_song_info_for) + " " + titlesList.get(i) + ".";
-			pd.setMessage(message);
-			
-		}
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>rmtheis_____android-ocr_____OcrInitAsyncTask</h6>
-            <pre class="prettyprint">
-  /**
-   * Update the dialog box with the latest incremental progress.
-   * 
-   * @param message
-   *          [0] Text to be displayed
-   * @param message
-   *          [1] Numeric value for the progress
-   */
-  @Override
-  protected void onProgressUpdate(String... message) {
-    super.onProgressUpdate(message);
-    int percentComplete = 0;
-
-    percentComplete = Integer.parseInt(message[1]);
-    dialog.setMessage(message[0]);
-    dialog.setProgress(percentComplete);
-    dialog.show();
-  }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>MediaMonks_____tilt-game-android_____ActivityUtils</h6>
-            <pre class="prettyprint">
-			@Override
-			public void onProgressUpdate(final Integer... pValues) {
-				this.mPD.setProgress(pValues[0]);
-			}
-            </pre>
-          </div>
-
-        </div>
-        
-	
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (18 files, similarity: 0.7098265686274529)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>AndroidVTS_____android-vts_____ApplicationVulnerabilityTester</h6>
-            <pre class="prettyprint">
-            if(mShowWaitDiaglog) {
-                Log.d("ANDRO_ASYNC", progress[0]);
-                mProgressDialog.setProgress(Integer.parseInt(progress[0]));
-            }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>jp1017_____ActivityLauncher_____AsyncProvider</h6>
-            <pre class="prettyprint">
-		if(this.progress != null && values.length > 0) {
-			int value = values[0];
-			
-			if(value == 0) {
-				this.progress.setIndeterminate(false);
-				this.progress.setMax(this.max);
-			}
-			
-			this.progress.setProgress(value);
-		}
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>pragma-_____networklog_____ExportDialog</h6>
-            <pre class="prettyprint">
-                if(progressDialog != null) {
-                  progressDialog.setProgress(progress);
-                }
+		if (result != null)
+			Toast.makeText(this, result, Toast.LENGTH_LONG).show();
             </pre>
           </div>
 
@@ -946,7 +821,7 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (3 partitions, 438 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (3 partitions, 307 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">android.app.ProgressDialog.dismiss
 </h4>
@@ -956,33 +831,38 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (192 files, similarity: 0.9023274252290404)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (102 files, similarity: 0.9017728180936055)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>CommonUtils_____android_____DownloadFile</h6>
+            <h6>PeachBlossom_____treader_____BaseActivity</h6>
             <pre class="prettyprint">
-        if (pDialog != null && pDialog.isShowing()) {
-            pDialog.dismiss();
+        if (mProgressDialog.isShowing()) {
+            mProgressDialog.dismiss();
         }
+    }
+
+    /**
+     * 检查是否拥有权限
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>feicien_____android-auto-update_____CheckUpdateTask</h6>
+            <h6>AppLozic_____Applozic-Android-SDK_____MobiComAttachmentSelectorActivity</h6>
             <pre class="prettyprint">
-        if (dialog != null && dialog.isShowing()) {
-            dialog.dismiss();
-        }
+            if (progressDialog != null && progressDialog.isShowing()) {
+                progressDialog.dismiss();
+            }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>AppLozic_____Applozic-Android-SDK_____ConversationUIService</h6>
+            <h6>lfkdsk_____JustWeTools_____CodeView</h6>
             <pre class="prettyprint">
-                                if (progressDialog != null && progressDialog.isShowing()) {
-                                    progressDialog.dismiss();
-                                }
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////        READER        ///////////////////////////////////
             </pre>
           </div>
 
@@ -990,45 +870,46 @@
         
 	
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (141 files, similarity: 0.7819694805472175)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (52 files, similarity: 0.8315177051281917)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>WritingMinds_____ffmpeg-android-java_____Home</h6>
+            <h6>awslabs_____aws-sdk-android-samples_____DeviceSettings</h6>
             <pre class="prettyprint">
-                @Override
-                public void onFinish() {
-                    Log.d(TAG, "Finished command : ffmpeg "+command);
-                    progressDialog.dismiss();
-                }
+        try {
+            waitDialog.dismiss();
+        }
+        catch (Exception e) {
+            // Ignore these errors
+        }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>heruoxin_____Clip-Stack_____ActivityBackup</h6>
+            <h6>meganz_____android_____FolderLinkActivityLollipop</h6>
             <pre class="prettyprint">
-                                        @Override
-                                        public void run() {
-                                            backupObject.makeImport();
-                                            progressDialog.dismiss();
-                                            finish();
-                                        }
+				try{
+					statusDialog.dismiss();
+				} catch(Exception ex) {};
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>huangfangyi_____FanXin2.0_IM_____GroupSetingsGridApdater</h6>
+            <h6>EspressifApp_____IOT-Espressif-Android_____EspButtonCustomKeySettingsActivity</h6>
             <pre class="prettyprint">
-                        public void run() {
-                            deleteDialog.dismiss();
-                            notifyDataSetChanged();
-                            ((ChatSettingGroupActivity)context).refreshMembers();
-
-//                                ((TextView) findViewById(R.id.group_name)).setText(group.getGroupName() + "("
-//                                        + group.getAffiliationsCount() + st);
-                        }
-                    });
-                } catch (final Exception e) {
+        @Override
+        protected void onPostExecute(Boolean result)
+        {
+            mProgressDialog.dismiss();
+            mProgressDialog = null;
+            
+            if (result)
+            {
+                setKeyStatus(mPostSettings);
+            }
+            
+            log.debug("onPostExecute() KeyActionSetTask result = " + result);
+        }
             </pre>
           </div>
 
@@ -1041,7 +922,7 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_3 (3 partitions, 110 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_3 (3 partitions, 106 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">android.app.ProgressDialog.isShowing
 </h4>
@@ -1055,20 +936,20 @@
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>crosswalk-project_____crosswalk-cordova-android_____CordovaActivity</h6>
+            <h6>feicien_____android-auto-update_____CheckUpdateTask</h6>
             <pre class="prettyprint">
-        if (this.spinnerDialog != null && this.spinnerDialog.isShowing()) {
-            this.spinnerDialog.dismiss();
-            this.spinnerDialog = null;
+        if (dialog != null && dialog.isShowing()) {
+            dialog.dismiss();
         }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>feicien_____android-auto-update_____CheckUpdateTask</h6>
+            <h6>crosswalk-project_____crosswalk-cordova-android_____CordovaActivity</h6>
             <pre class="prettyprint">
-        if (dialog != null && dialog.isShowing()) {
-            dialog.dismiss();
+        if (this.spinnerDialog != null && this.spinnerDialog.isShowing()) {
+            this.spinnerDialog.dismiss();
+            this.spinnerDialog = null;
         }
             </pre>
           </div>
@@ -1086,9 +967,29 @@
         
 	
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (31 files, similarity: 0.7970197247311827)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (27 files, similarity: 0.8026922279202244)</h4>
         </div>
         <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>jensstein_____oandbackup_____HandleMessages</h6>
+            <pre class="prettyprint">
+                    if(progress != null && progress.isShowing())
+                    {
+                        progress.setTitle(title);
+                        progress.setMessage(msg);
+                    }
+                    else if((context = mContext.get()) != null)
+                    {
+                        // TODO: notice if a BadTokenException might seldomly occur here
+                        progress = ProgressDialog.show(context, title, msg, true, false);
+                    }
+                    else
+                    {
+                        Log.e(TAG, "context from weakreference is null");
+                    }
+            </pre>
+          </div>
+
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>wangchenyan_____PonyMusic_____BaseActivity</h6>
             <pre class="prettyprint">
@@ -1110,23 +1011,11 @@
             </pre>
           </div>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>jensstein_____oandbackup_____HandleMessages</h6>
-            <pre class="prettyprint">
-        public boolean isShowing()
-        {
-            if(progress != null)
-                return progress.isShowing();
-            return false;
-        }
-            </pre>
-          </div>
-
         </div>
         
 	
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (9 files, similarity: 0.7676388055555556)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (9 files, similarity: 0.7676388055555556)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
