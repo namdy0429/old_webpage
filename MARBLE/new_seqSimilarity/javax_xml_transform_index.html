@@ -31,88 +31,6 @@
     
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_15 (2 partitions, 15 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">javax.xml.transform.TransformerFactory.newInstance, javax.xml.transform.Transformer.setOutputProperty, javax.xml.transform.dom.DOMSource.&lt;init&gt;, javax.xml.transform.stream.StreamResult.&lt;init&gt;, javax.xml.transform.Transformer.transform
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (6 files, similarity: 0.28226519999999994)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>geoserver_____geoserver_____CatalogWriter</h6>
-            <pre class="prettyprint">
-    public void write(File file) throws IOException {
-        try (FileOutputStream os = new FileOutputStream(file)) {
-            Transformer tx = TransformerFactory.newInstance().newTransformer();
-            tx.setOutputProperty(OutputKeys.INDENT, "yes");
-            DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(os);
-
-            tx.transform(source, result);
-        } catch (Exception e) {
-            String msg = "Could not write catalog to " + file;
-            throw (IOException) new IOException(msg).initCause(e);
-        }
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>Catrobat_____Catroid_____BackwardCompatibleCatrobatLanguageXStream</h6>
-            <pre class="prettyprint">
-	private void saveDocument(Document doc, File file) {
-		try {
-			Transformer serializer = TransformerFactory.newInstance().newTransformer();
-			serializer.setOutputProperty(OutputKeys.INDENT, "yes");
-			serializer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
-
-			DOMSource source = new DOMSource(doc);
-			StreamResult result = new StreamResult(file.getPath());
-			serializer.transform(source, result);
-		} catch (Exception exception) {
-			Log.e(TAG, "Failed to save document to file", exception);
-		}
-	}
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>reds-heig_____logisim-evolution_____BoardWriterClass</h6>
-            <pre class="prettyprint">
-	public void PrintXml(String filename) {
-		try {
-			TransformerFactory tranFactory = TransformerFactory.newInstance();
-			tranFactory.setAttribute("indent-number", 3);
-			Transformer aTransformer = tranFactory.newTransformer();
-			aTransformer.setOutputProperty(OutputKeys.INDENT, "yes");
-			Source src = new DOMSource(boardInfo);
-			File file = new File(filename);
-			Result dest = new StreamResult(file);
-			aTransformer.transform(src, dest);
-		} catch (Exception e) {
-			logger.error(
-					"Exceptions not handled yet in PrintXml(), but got an exception: {}",
-					e.getMessage());
-		}
-	}
-            </pre>
-          </div>
-
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
         <h3 class="col-lg-12 col-md-12 mb-12">pattern_32 (3 partitions, 30 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">javax.xml.transform.TransformerFactory.newInstance, javax.xml.transform.TransformerFactory.newTransformer, javax.xml.transform.Transformer.setOutputProperty, javax.xml.transform.stream.StreamResult.&lt;init&gt;, javax.xml.transform.Transformer.transform
@@ -123,7 +41,7 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (10 files, similarity: 0.334050888888889)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (10 files, similarity: 0.334050888888889)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -204,7 +122,7 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (31 files, similarity: 0.9675577806451571)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (31 files, similarity: 0.9675577806451571)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">

@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">android_support_v4_app_ActivityCompat</h1>
+    </div>
+    
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (3 partitions, 87 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.support.v4.app.ActivityCompat.checkSelfPermission
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (38 files, similarity: 0.8036063072546226)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>woxingxiao_____GracefulMovies_____LocationService</h6>
+            <pre class="prettyprint">
+                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+
+        mLocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        if (mLocationManager == null)
+            return;
+
+        List<String> providers = mLocationManager.getProviders(true);
+
+        String locationProvider;
+        /**
+         * 如果首选GPS定位，会存在这种情况，上次GPS启动采集数据在A地，本次在B地需要定位，但用户恰好在室内无
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>rovo89_____XposedInstaller_____ModulesFragment</h6>
+            <pre class="prettyprint">
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            FragmentCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_EXTERNAL_PERMISSION);
+            return true;
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CommonUtils_____android_____Common</h6>
+            <pre class="prettyprint">
+                        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                            // TODO: Consider calling
+                            //    ActivityCompat#requestPermissions
+                            // here to request the missing permissions, and then overriding
+                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                            //                                          int[] grantResults)
+                            // to handle the case where the user grants the permission. See the documentation
+                            // for ActivityCompat#requestPermissions for more details.
+                            return location;
+                        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (10 files, similarity: 0.6645728000000003)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>titansgroup_____k4l-video-trimmer_____MainActivity</h6>
+            <pre class="prettyprint">
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            requestPermission(Manifest.permission.READ_EXTERNAL_STORAGE, getString(R.string.permission_read_storage_rationale), REQUEST_STORAGE_READ_ACCESS_PERMISSION);
+        } else {
+            Intent intent = new Intent();
+            intent.setTypeAndNormalize("video/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            startActivityForResult(Intent.createChooser(intent, getString(R.string.label_select_video)), REQUEST_VIDEO_TRIMMER);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AppLozic_____Applozic-Android-SDK_____MobiComConversationFragment</h6>
+            <pre class="prettyprint">
+        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.RECORD_AUDIO},
+                    10);
+        } else {
+            applozicAudioRecordManager.recordAudio();
+            t.cancel();
+            t.start();
+            count = 0;
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>shelwee_____UpdateHelper_____UpdateHelper</h6>
+            <pre class="prettyprint">
+            if (ActivityCompat.checkSelfPermission(mContext, permission) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions((Activity) mContext, new String[]{permission}, REQUEST_PERMISSION_CODE);
+            }else {
+                startCheck();
+            }
+        }else {
+            startCheck();
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_3 (3 partitions, 65 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.support.v4.app.ActivityCompat.startActivity
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (30 files, similarity: 0.6044367885057468)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Othershe_____NiceRead_____GankItemFragment</h6>
+            <pre class="prettyprint">
+            public void onItemClick(ViewHolder viewHolder, GankItemData gankItemData, int position) {
+                Intent intent = new Intent(mActivity, GankDetailActivity.class);
+                intent.putExtra("gank_item_data", gankItemData);
+                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(mActivity,
+                        viewHolder.getView(R.id.gank_item_icon), "shareView");
+                ActivityCompat.startActivity(mActivity, intent, optionsCompat.toBundle());
+            }
+        });
+
+        mGankItemAdapter.setOnLoadMoreListener(new OnLoadMoreListener() {
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>youlookwhat_____CloudReader_____MovieDetailActivity</h6>
+            <pre class="prettyprint">
+
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CameloeAnthony_____Ant_____ZhihuDailyDetailActivity</h6>
+            <pre class="prettyprint">
+        Intent starter = new Intent(context, ZhihuDailyDetailActivity.class);
+        starter.putExtra(ARG_DAILY_ID, id);
+        ActivityCompat.startActivity((Activity) context, starter, ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, view, TRANSLATE_VIEW).toBundle());
+    }
+}
+
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_1 (3 partitions, 96 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.support.v4.app.ActivityCompat.shouldShowRequestPermissionRationale
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (35 files, similarity: 0.8653522655462192)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>wseemann_____FFmpegMediaMetadataRetriever_____FMMRDemo</h6>
+            <pre class="prettyprint">
+			if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+					Manifest.permission.READ_EXTERNAL_STORAGE)) {
+
+				// Show an expanation to the user *asynchronously* -- don't block
+				// this thread waiting for the user's response! After the user
+				// sees the explanation, try again to request the permission.
+
+			} else {
+
+				// No explanation needed, we can request the permission.
+
+				ActivityCompat.requestPermissions(this,
+						new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+						MY_PERMISSIONS_REQUEST_EXTERNAL_STORAGE);
+
+				// MY_PERMISSIONS_REQUEST_EXTERNAL_STORAGE is an
+				// app-defined int constant. The callback method gets the
+				// result of the request.
+			}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Dawish_____ijkplayer-android-demo_____AppActivity</h6>
+            <pre class="prettyprint">
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                // TODO: show explanation
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>michelelacorte_____FlickLauncher_____RemoteShortcuts</h6>
+            <pre class="prettyprint">
+        if (ActivityCompat.shouldShowRequestPermissionRationale(activity, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            Log.d(TAG, "Write External Storage permission allows us to do store shortcuts data. Please allow this permission in App Settings.");
+        } else {
+            ActivityCompat.requestPermissions(activity, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 111);
+            Log.d(TAG, "Write External Storage permission allows us to do store shortcuts data.");
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (28 files, similarity: 0.6632531825396819)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>android_____platform_packages_apps_contacts_____QuickContactActivity</h6>
+            <pre class="prettyprint">
+    protected void onCreate(Bundle savedInstanceState) {
+        Trace.beginSection("onCreate()");
+        super.onCreate(savedInstanceState);
+
+        if (RequestPermissionsActivity.startPermissionActivityIfNeeded(this)) {
+            return;
+        }
+
+        mIsRecreatedInstance = savedInstanceState != null;
+        if (mIsRecreatedInstance) {
+            mPreviousContactId = savedInstanceState.getLong(KEY_PREVIOUS_CONTACT_ID);
+
+            // Phone specific options menus
+            mSendToVoicemailState = savedInstanceState.getBoolean(KEY_SEND_TO_VOICE_MAIL_STATE);
+            mArePhoneOptionsChangable =
+                    savedInstanceState.getBoolean(KEY_ARE_PHONE_OPTIONS_CHANGEABLE);
+            mCustomRingtone = savedInstanceState.getString(KEY_CUSTOM_RINGTONE);
+        }
+        mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setIndeterminate(true);
+        mProgressDialog.setCancelable(false);
+
+        mListener = new SaveServiceListener();
+        final IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(ContactSaveService.BROADCAST_LINK_COMPLETE);
+        intentFilter.addAction(ContactSaveService.BROADCAST_UNLINK_COMPLETE);
+        LocalBroadcastManager.getInstance(this).registerReceiver(mListener,
+                intentFilter);
+
+
+        mShouldLog = true;
+
+        // There're 3 states for each permission:
+        // 1. App doesn't have permission, not asked user yet.
+        // 2. App doesn't have permission, user denied it previously.
+        // 3. App has permission.
+        // Permission explanation card is displayed only for case 1.
+        final boolean hasTelephonyFeature =
+                getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
+
+        final boolean hasCalendarPermission = PermissionsUtil.hasPermission(
+                this, Manifest.permission.READ_CALENDAR);
+        final boolean hasSMSPermission = hasTelephonyFeature
+                && PermissionsUtil.hasPermission(this, Manifest.permission.READ_SMS);
+
+        final boolean wasCalendarPermissionDenied =
+                ActivityCompat.shouldShowRequestPermissionRationale(
+                        this, Manifest.permission.READ_CALENDAR);
+        final boolean wasSMSPermissionDenied =
+                hasTelephonyFeature && ActivityCompat.shouldShowRequestPermissionRationale(
+                        this, Manifest.permission.READ_SMS);
+
+        final boolean shouldDisplayCalendarMessage =
+                !hasCalendarPermission && !wasCalendarPermissionDenied;
+        final boolean shouldDisplaySMSMessage =
+                hasTelephonyFeature && !hasSMSPermission && !wasSMSPermissionDenied;
+        mShouldShowPermissionExplanation = shouldDisplayCalendarMessage || shouldDisplaySMSMessage;
+
+        if (shouldDisplayCalendarMessage && shouldDisplaySMSMessage) {
+            mPermissionExplanationCardSubHeader =
+                    getString(R.string.permission_explanation_subheader_calendar_and_SMS);
+        } else if (shouldDisplayCalendarMessage) {
+            mPermissionExplanationCardSubHeader =
+                    getString(R.string.permission_explanation_subheader_calendar);
+        } else if (shouldDisplaySMSMessage) {
+            mPermissionExplanationCardSubHeader =
+                    getString(R.string.permission_explanation_subheader_SMS);
+        }
+
+        final int previousScreenType = getIntent().getIntExtra
+                (EXTRA_PREVIOUS_SCREEN_TYPE, ScreenType.UNKNOWN);
+        Logger.logScreenView(this, ScreenType.QUICK_CONTACT, previousScreenType);
+
+        mReferrer = getCallingPackage();
+        if (mReferrer == null && CompatUtils.isLollipopMr1Compatible() && getReferrer() != null) {
+            mReferrer = getReferrer().getAuthority();
+        }
+        mContactType = ContactType.UNKNOWN_TYPE;
+
+        if (CompatUtils.isLollipopCompatible()) {
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
+
+        processIntent(getIntent());
+
+        // Show QuickContact in front of soft input
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,
+                WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+
+        setContentView(R.layout.quickcontact_activity);
+
+        mMaterialColorMapUtils = new MaterialColorMapUtils(getResources());
+
+        mScroller = (MultiShrinkScroller) findViewById(R.id.multiscroller);
+
+        mContactCard = (ExpandingEntryCardView) findViewById(R.id.communication_card);
+        mNoContactDetailsCard = (ExpandingEntryCardView) findViewById(R.id.no_contact_data_card);
+        mRecentCard = (ExpandingEntryCardView) findViewById(R.id.recent_card);
+        mAboutCard = (ExpandingEntryCardView) findViewById(R.id.about_card);
+        mPermissionExplanationCard =
+                (ExpandingEntryCardView) findViewById(R.id.permission_explanation_card);
+
+        mPermissionExplanationCard.setOnClickListener(mEntryClickHandler);
+        mNoContactDetailsCard.setOnClickListener(mEntryClickHandler);
+        mContactCard.setOnClickListener(mEntryClickHandler);
+        mContactCard.setOnCreateContextMenuListener(mEntryContextMenuListener);
+
+        mRecentCard.setOnClickListener(mEntryClickHandler);
+        mRecentCard.setTitle(getResources().getString(R.string.recent_card_title));
+
+        mAboutCard.setOnClickListener(mEntryClickHandler);
+        mAboutCard.setOnCreateContextMenuListener(mEntryContextMenuListener);
+
+        mPhotoView = (QuickContactImageView) findViewById(R.id.photo);
+        final View transparentView = findViewById(R.id.transparent_view);
+        if (mScroller != null) {
+            transparentView.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mScroller.scrollOffBottom();
+                }
+            });
+        }
+
+        // Allow a shadow to be shown under the toolbar.
+        ViewUtil.addRectangularOutlineProvider(findViewById(R.id.toolbar_parent), getResources());
+
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setActionBar(toolbar);
+        getActionBar().setTitle(null);
+        // Put a TextView with a known resource id into the ActionBar. This allows us to easily
+        // find the correct TextView location & size later.
+        toolbar.addView(getLayoutInflater().inflate(R.layout.quickcontact_title_placeholder, null));
+
+        mHasAlreadyBeenOpened = savedInstanceState != null;
+        mIsEntranceAnimationFinished = mHasAlreadyBeenOpened;
+        mWindowScrim = new ColorDrawable(SCRIM_COLOR);
+        mWindowScrim.setAlpha(0);
+        getWindow().setBackgroundDrawable(mWindowScrim);
+
+        mScroller.initialize(mMultiShrinkScrollerListener, mExtraMode == MODE_FULLY_EXPANDED,
+                /* maximumHeaderTextSize */ -1,
+                /* shouldUpdateNameViewHeight */ true);
+        // mScroller needs to perform asynchronous measurements after initalize(), therefore
+        // we can't mark this as GONE.
+        mScroller.setVisibility(View.INVISIBLE);
+
+        setHeaderNameText(R.string.missing_name);
+
+        SchedulingUtils.doOnPreDraw(mScroller, /* drawNextFrame = */ true,
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        if (!mHasAlreadyBeenOpened) {
+                            // The initial scrim opacity must match the scrim opacity that would be
+                            // achieved by scrolling to the starting position.
+                            final float alphaRatio = mExtraMode == MODE_FULLY_EXPANDED ?
+                                    1 : mScroller.getStartingTransparentHeightRatio();
+                            final int duration = getResources().getInteger(
+                                    android.R.integer.config_shortAnimTime);
+                            final int desiredAlpha = (int) (0xFF * alphaRatio);
+                            ObjectAnimator o = ObjectAnimator.ofInt(mWindowScrim, "alpha", 0,
+                                    desiredAlpha).setDuration(duration);
+
+                            o.start();
+                        }
+                    }
+                });
+
+        if (savedInstanceState != null) {
+            final int color = savedInstanceState.getInt(KEY_THEME_COLOR, 0);
+            SchedulingUtils.doOnPreDraw(mScroller, /* drawNextFrame = */ false,
+                    new Runnable() {
+                        @Override
+                        public void run() {
+                            // Need to wait for the pre draw before setting the initial scroll
+                            // value. Prior to pre draw all scroll values are invalid.
+                            if (mHasAlreadyBeenOpened) {
+                                mScroller.setVisibility(View.VISIBLE);
+                                mScroller.setScroll(mScroller.getScrollNeededToBeFullScreen());
+                            }
+                            // Need to wait for pre draw for setting the theme color. Setting the
+                            // header tint before the MultiShrinkScroller has been measured will
+                            // cause incorrect tinting calculations.
+                            if (color != 0) {
+                                setThemeColor(mMaterialColorMapUtils
+                                        .calculatePrimaryAndSecondaryColor(color));
+                            }
+                        }
+                    });
+        }
+
+        Trace.endSection();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>alhazmy13_____MediaPicker_____ImageActivity</h6>
+            <pre class="prettyprint">
+        if (ActivityCompat.checkSelfPermission(ImageActivity.this, permission) != PackageManager.PERMISSION_GRANTED) {
+            permissionsList.add(permission);
+            // Check for Rationale Option
+            return ActivityCompat.shouldShowRequestPermissionRationale(ImageActivity.this, permission);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>00ec454_____Ask_____AskActivity</h6>
+            <pre class="prettyprint">
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, permission)) {
+                showRationalsFor.add(permission);
+                // if multiple rational message corresponding to each permission
+                if (rationalMessages != null && rationalMessages.length == permissions.length) {
+                    if (!neededRationalMessages.contains(rationalMessages[i])) {
+                        neededRationalMessages.add(rationalMessages[i]);
+                    }
+                }
+            }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (4 partitions, 246 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.support.v4.app.ActivityCompat.requestPermissions
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (61 files, similarity: 0.7841802109289366)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TakuSemba_____CropMe_____CropActivity</h6>
+            <pre class="prettyprint">
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Snackbar.make(parent, R.string.error_permission_is_off, Snackbar.LENGTH_LONG).show();
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION);
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>wseemann_____FFmpegMediaMetadataRetriever_____FMMRDemo</h6>
+            <pre class="prettyprint">
+			if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+					Manifest.permission.READ_EXTERNAL_STORAGE)) {
+
+				// Show an expanation to the user *asynchronously* -- don't block
+				// this thread waiting for the user's response! After the user
+				// sees the explanation, try again to request the permission.
+
+			} else {
+
+				// No explanation needed, we can request the permission.
+
+				ActivityCompat.requestPermissions(this,
+						new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+						MY_PERMISSIONS_REQUEST_EXTERNAL_STORAGE);
+
+				// MY_PERMISSIONS_REQUEST_EXTERNAL_STORAGE is an
+				// app-defined int constant. The callback method gets the
+				// result of the request.
+			}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>michelelacorte_____FlickLauncher_____RemoteShortcuts</h6>
+            <pre class="prettyprint">
+        if (ActivityCompat.shouldShowRequestPermissionRationale(activity, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            Log.d(TAG, "Write External Storage permission allows us to do store shortcuts data. Please allow this permission in App Settings.");
+        } else {
+            ActivityCompat.requestPermissions(activity, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 111);
+            Log.d(TAG, "Write External Storage permission allows us to do store shortcuts data.");
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (75 files, similarity: 0.7475946929729533)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>xiaokangwang_____V2RayGO_____MainScreen</h6>
+            <pre class="prettyprint">
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        0);
+
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>gdutxiaoxu_____CoordinatorLayoutExample_____BaseMVPActivity</h6>
+            <pre class="prettyprint">
+            if (ContextCompat.checkSelfPermission(top, permission) != PackageManager
+                    .PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(top, permissions, REQUEST_CODE);
+                list.add(permission);
+            }
+
+        }
+        if (list.isEmpty()) {
+            mPermissonListener.onGranted();
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>forJrking_____HeiPermission_____EasyPermissions</h6>
+            <pre class="prettyprint">
+        } else if (object instanceof android.app.Fragment) {
+            ((android.app.Fragment) object).requestPermissions(perms, requestCode);
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (63 files, similarity: 0.6706557480798714)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>aliyun_____alicloud-android-demo_____DemoLoginActivity</h6>
+            <pre class="prettyprint">
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, CAMERA_PERMISSIONS);
+        } else {
+            scan();
+        }
+    }
+
+    public void scan() {
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>meganz_____android_____ManagerActivityLollipop</h6>
+            <pre class="prettyprint">
+		        		if (!hasStoragePermission){
+		        			ActivityCompat.requestPermissions(this,
+					                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+									Constants.REQUEST_WRITE_STORAGE);
+		        		}
+		        		else{
+		        			this.takePicture();
+		        			fromTakePicture = -1;
+		        		}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Glucosio_____glucosio-android_____ExportPresenter</h6>
+            <pre class="prettyprint">
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+            return false;
+        } else {
+            return true;
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+	

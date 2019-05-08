@@ -31,7 +31,7 @@
     
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (4 partitions, 329 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (4 partitions, 377 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">javax.swing.SwingUtilities.invokeLater
 </h4>
@@ -41,9 +41,33 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (68 files, similarity: 0.5563077712906124)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (97 files, similarity: 0.6879144606958497)</h4>
         </div>
         <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>triplea-game_____triplea_____PlacePanel</h6>
+            <pre class="prettyprint">
+  private void refreshActionLabelText(final boolean bid) {
+    SwingUtilities
+        .invokeLater(() -> actionLabel.setText(getCurrentPlayer().getName() + " place" + (bid ? " for bid" : "")));
+  }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>oracle_____visualvm_____HTMLTextAreaSearchUtils</h6>
+            <pre class="prettyprint">
+                protected void fireActionPerformed(ActionEvent e) {
+                    super.fireActionPerformed(e);
+                    SwingUtilities.invokeLater(new Runnable() {
+                        public void run() {
+                            clearResultsFeedback(DocumentSearchResult.current(area));
+                        }
+                    });
+                }
+            </pre>
+          </div>
+
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>tinyMediaManager_____tinyMediaManager_____MovieChooserDialog</h6>
             <pre class="prettyprint">
@@ -60,137 +84,59 @@
             </pre>
           </div>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>triplea-game_____triplea_____PlacePanel</h6>
-            <pre class="prettyprint">
-  private void refreshActionLabelText(final boolean bid) {
-    SwingUtilities
-        .invokeLater(() -> actionLabel.setText(getCurrentPlayer().getName() + " place" + (bid ? " for bid" : "")));
-  }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>oracle_____visualvm_____HTMLTextAreaSearchUtils</h6>
-            <pre class="prettyprint">
-            public void actionPerformed(ActionEvent e) {
-                SwingUtilities.invokeLater(new Runnable() {
-                    public void run() {
-                        ((SearchPanel)area.getClientProperty(PROP_SEARCH_PANEL)).setVisible(false);
-                    }
-                });
-            }
-            </pre>
-          </div>
-
         </div>
         
 	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_4 (2 partitions, 34 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">javax.swing.SwingUtilities.isLeftMouseButton
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (18 files, similarity: 0.6736525490196079)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (16 files, similarity: 0.5749029499999998)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>RPTools_____maptool_____FreehandTool</h6>
+            <h6>dmlloyd_____openjdk_____RepaintManagerFPUIScaleTest</h6>
             <pre class="prettyprint">
-    if (SwingUtilities.isLeftMouseButton(e)) {
-      startLine(e);
-      setIsEraser(isEraser(e));
+    public static void main(String args[]) throws Exception {
+
+        countDownLatch = new CountDownLatch(1);
+
+        SwingUtilities.invokeLater(RepaintManagerFPUIScaleTest::createUI);
+        countDownLatch.await(15, TimeUnit.MINUTES);
+
+        if (!testResult) {
+            throw new RuntimeException("Test fails!");
+        }
     }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>magarena_____magarena_____GameStateRunner</h6>
+            <h6>oracle_____visualvm_____Demo</h6>
             <pre class="prettyprint">
-                if (SwingUtilities.isLeftMouseButton(e) && e.getClickCount() == 2) {
-                    loadTestClassAndRun(testClasses.getSelectedValue());
-                }
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//            UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+//            UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+//            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+//            UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
+//            UIManager.setLookAndFeel("com.sun.java.swing.plaf.mac.MacLookAndFeel");
+//            UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+            SwingUtilities.invokeLater(new Demo());
+        } catch (Exception e) {}
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>metasfresh_____metasfresh_____PerformanceIndicator</h6>
+            <h6>unofficial-openjdk_____openjdk_____WindowsClassicHiDPIIconsTest</h6>
             <pre class="prettyprint">
-                if (SwingUtilities.isLeftMouseButton(me) && me.getClickCount() > 1)
-                        fireActionPerformed(me);
-            </pre>
-          </div>
+    public static void main(String args[]) throws Exception {
+        countDownLatch = new CountDownLatch(1);
 
-        </div>
-        
-	
-      </div>
-    </div>
+        SwingUtilities.invokeLater(WindowsClassicHiDPIIconsTest::createUI);
+        countDownLatch.await(15, TimeUnit.MINUTES);
 
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (4 partitions, 50 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">javax.swing.SwingUtilities.isEventDispatchThread
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (14 files, similarity: 0.7040209890109878)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>metasfresh_____metasfresh_____Waiting</h6>
-            <pre class="prettyprint">
-		if(SwingUtilities.isEventDispatchThread())
-		{
-			disposeRunnable.run();
-		}
-		else
-		{
-			SwingUtilities.invokeLater(disposeRunnable);
-		}
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>danfickle_____openhtmltopdf_____SelectionHighlighter</h6>
-            <pre class="prettyprint">
-        if (SwingUtilities.isEventDispatchThread()) {
-            panel.scrollRectToVisible(nloc);
-        } else {
-            SwingUtilities.invokeLater(new SafeScroller(nloc));
+        if (!testResult) {
+            throw new RuntimeException("Test fails!");
         }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>Nilhcem_____FakeSMTP_____UncaughtExceptionHandler</h6>
-            <pre class="prettyprint">
-			if (SwingUtilities.isEventDispatchThread()) {
-				showException(t, e);
-			} else {
-				SwingUtilities.invokeLater(new Runnable() {
-					public void run() {
-						showException(t, e);
-					}
-				});
-			}
+    }
             </pre>
           </div>
 

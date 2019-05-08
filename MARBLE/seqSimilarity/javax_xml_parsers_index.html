@@ -41,7 +41,7 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (13 files, similarity: 0.4642206410256409)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (13 files, similarity: 0.4642206410256409)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -120,7 +120,7 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (16 files, similarity: 0.4437684166666674)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (16 files, similarity: 0.4437684166666674)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -186,7 +186,7 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (50 files, similarity: 0.3839602106122489)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (48 files, similarity: 0.3987026329787275)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -250,7 +250,7 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (23 files, similarity: 0.4708186166007913)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (23 files, similarity: 0.4708186166007913)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -294,92 +294,6 @@
 
         parser.parse(is, this);
     }
-            </pre>
-          </div>
-
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_27 (4 partitions, 39 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">javax.xml.parsers.SAXParserFactory.setValidating
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (5 files, similarity: 0.6439420000000002)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>apache_____tomcat_____Digester</h6>
-            <pre class="prettyprint">
-        if (factory == null) {
-            factory = SAXParserFactory.newInstance();
-
-            factory.setNamespaceAware(namespaceAware);
-            // Preserve xmlns attributes
-            if (namespaceAware) {
-                factory.setFeature("http://xml.org/sax/features/namespace-prefixes", true);
-            }
-
-            factory.setValidating(validating);
-            if (validating) {
-                // Enable DTD validation
-                factory.setFeature("http://xml.org/sax/features/validation", true);
-                // Enable schema validation
-                factory.setFeature("http://apache.org/xml/features/validation/schema", true);
-            }
-        }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>sakaiproject_____sakai_____SAXSerializableCollectionAccess</h6>
-            <pre class="prettyprint">
-		if (parserFactory == null)
-		{
-			parserFactory = SAXParserFactory.newInstance();
-			parserFactory.setNamespaceAware(false);
-			parserFactory.setValidating(false);
-		}
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>apache_____tomcat70_____Digester</h6>
-            <pre class="prettyprint">
-        if (factory == null) {
-            factory = SAXParserFactory.newInstance();
-
-            factory.setNamespaceAware(namespaceAware);
-            // Preserve xmlns attributes
-            if (namespaceAware) {
-                factory.setFeature(
-                        "http://xml.org/sax/features/namespace-prefixes",
-                        true);
-            }
-
-            factory.setValidating(validating);
-            if (validating) {
-                // Enable DTD validation
-                factory.setFeature(
-                        "http://xml.org/sax/features/validation",
-                        true);
-                // Enable schema validation
-                factory.setFeature(
-                        "http://apache.org/xml/features/validation/schema",
-                        true);
-            }
-        }
             </pre>
           </div>
 
