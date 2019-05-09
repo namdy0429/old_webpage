@@ -131,7 +131,14 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>youlookwhat_____CloudReader_____MovieDetailActivity</h6>
             <pre class="prettyprint">
-
+    public static void start(Activity context, SubjectsBean positionData, ImageView imageView) {
+        Intent intent = new Intent(context, MovieDetailActivity.class);
+        intent.putExtra("bean", positionData);
+        ActivityOptionsCompat options =
+                ActivityOptionsCompat.makeSceneTransitionAnimation(context,
+                        imageView, CommonUtils.getString(R.string.transition_movie_img));//�~Nxml�~V~G件对�~T
+        ActivityCompat.startActivity(context, intent, options.toBundle());
+    }
             </pre>
           </div>
 
