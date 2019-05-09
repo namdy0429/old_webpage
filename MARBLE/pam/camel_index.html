@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">camel</h1>
+    </div>
+    
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_4 (4 partitions, 103 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.camel.Exchange.getIn, org.apache.camel.Exchange.getIn
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (5 files, similarity: 0.8989435)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>WinnerProcessor</h6>
+            <pre class="prettyprint">
+    public void process(Exchange exchange) throws Exception {
+        int counter = OrderProcessingWithCamel.counter;
+        String subject = exchange.getIn().getHeader("Subject").toString();
+        String from = exchange.getIn().getHeader("From").toString();
+        System.out.println("winner message received : (" + System.nanoTime() + ") - " + from + " : " + subject);
+
+        sendGrowl(counter, from);
+
+        OrderProcessingWithCamel.counter++;
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UsedCarOrderProcessor</h6>
+            <pre class="prettyprint">
+    public void process(Exchange exchange) throws Exception {
+        String subject = exchange.getIn().getHeader("Subject").toString();
+        String from = exchange.getIn().getHeader("From").toString();
+        System.out.println("used car order received : (" + System.nanoTime() + ") - " + from + " : " + subject);
+
+        sendGrowl(subject, from);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>NewCarOrderProcessor</h6>
+            <pre class="prettyprint">
+    public void process(Exchange exchange) throws Exception {
+        String subject = exchange.getIn().getHeader("Subject").toString();
+        String from = exchange.getIn().getHeader("From").toString();
+        System.out.println("new car order received : (" + System.nanoTime() + ") - " + from + " : " + subject);
+
+        sendGrowl(subject, from);
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (25 files, similarity: 0.643794446666667)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>C24IOTransform</h6>
+            <pre class="prettyprint">
+            dataObject = exchange.getIn().getMandatoryBody(ComplexDataObject.class);
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>DataPrinter</h6>
+            <pre class="prettyprint">
+		data.add(exchange.getIn().getBody());
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ExcellProducer</h6>
+            <pre class="prettyprint">
+		EndpointConfigurer.configure(exchange.getIn().getHeaders(), endpoint, "excell");
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_19 (4 partitions, 108 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.camel.impl.DefaultCamelContext.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (31 files, similarity: 0.6379910301075267)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ResultConverterTest</h6>
+            <pre class="prettyprint">
+    @Before
+    public void getTypeConverter()
+    {
+        DefaultCamelContext camelContext = new DefaultCamelContext();
+        typeConverter = camelContext.getTypeConverter();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SmslibEndpointIntegrationTest</h6>
+            <pre class="prettyprint">
+	@Before
+	public void setUp() {
+		context = new DefaultCamelContext();
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>RemoteCamelFacadeTest</h6>
+            <pre class="prettyprint">
+    @Override
+    protected CamelContext createCamelContext() throws Exception {
+        DefaultCamelContext answer = new DefaultCamelContext();
+        answer.setName(name);
+        return answer;
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (21 files, similarity: 0.6145653523809531)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TimerExample</h6>
+            <pre class="prettyprint">
+    public static void main(String args[]) throws Exception {
+        // create CamelContext
+        CamelContext context = new DefaultCamelContext();
+
+        // add our route to the CamelContext
+        context.addRoutes(new RouteBuilder() {
+            public void configure() {
+                from("timer://myTimer?period=2000")
+                .setBody().simple("Current time is ${header.firedTime}")
+                .to("stream:out");
+            }
+        });
+
+        // start the route and let it do its work
+        context.start();
+        Thread.sleep(5000);
+
+        // stop the CamelContext
+        context.stop();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Starter</h6>
+            <pre class="prettyprint">
+    public void run() throws Exception {
+        CamelContext context = new DefaultCamelContext();
+        context.addComponent("properties", new PropertiesComponent("sampleconfig.properties"));
+        context.addRoutes(new OrderRouteBuilder());
+        context.start(); 
+        System.in.read();
+        context.stop();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>QuartzCronExample</h6>
+            <pre class="prettyprint">
+    public static void main(String args[]) throws Exception {
+        // create CamelContext
+        CamelContext context = new DefaultCamelContext();
+
+        // add our route to the CamelContext
+        context.addRoutes(new RouteBuilder() {
+            public void configure() {
+                from("quartz://report?cron=0/2+*+*+*+*+?")
+                .setBody().simple("I was fired at ${header.fireTime}")
+                .to("stream:out");
+            }
+        });
+
+        // start the route and let it do its work
+        context.start();
+        Thread.sleep(10000);
+
+        // stop the CamelContext
+        context.stop();
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_7 (3 partitions, 87 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.camel.Exchange.getOut
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (19 files, similarity: 0.7079052397660823)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SynonymConsolidator_1</h6>
+            <pre class="prettyprint">
+				if (exchange.getOut().getBody() != null) {
+					/** Iterate through results and replace */
+					for (SolrDocument document : (SolrDocumentList) exchange.getOut().getBody()) {
+						document.setField(field, "");					
+
+						Exchange newExchange = new DefaultExchange(context);
+						configureExchange(newExchange, document);
+						retriever.send("direct:storage", newExchange);
+					}
+				}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SpringXMLTest</h6>
+            <pre class="prettyprint">
+    @Handler
+    public void handle(Exchange exchange) {
+        exchange.getOut().setBody("RESPONSE");
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TestCamelRouter</h6>
+            <pre class="prettyprint">
+            public void process(Exchange exchange) throws Exception {
+                exchange.getOut().setBody("out");
+            }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_3 (3 partitions, 95 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.camel.Processor.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (29 files, similarity: 0.51053742364532)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TwitterRouteTest</h6>
+            <pre class="prettyprint">
+    @Test
+    public void failedTweetsAreLogged() throws Exception {
+        MockEndpoint result = getMockEndpoint("mock:result");
+        result.whenAnyExchangeReceived(new Processor() {
+            public void process(Exchange exchange) throws Exception {
+                throw new RuntimeException("Simulated connection error");
+            }
+        });
+
+        MockEndpoint error = getMockEndpoint("mock:error");
+        error.expectedMessageCount(1);
+
+
+        Status status = aTweet();
+        template.sendBody("direct:start", status);
+        error.assertIsSatisfied();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TwitterRoute_1</h6>
+            <pre class="prettyprint">
+        from(fromEndpoint())
+
+                .process(new Processor() {
+                    @Override
+                    public void process(Exchange exchange) throws Exception {
+                        LOGGER.debug("Got a tweet for processing: {}", exchange.getIn().getBody());
+
+                        Status status = exchange.getIn().getBody(Status.class);
+                        TwitterTweet twitterTweet = new TweetConverter().convert(status);
+                        Activity activity = new TwitterTweetConverter().convert(twitterTweet);
+                        exchange.getIn().setBody(activity);
+                    }
+                })
+
+                .marshal().json(JsonLibrary.Jackson)
+
+                .convertBodyTo(String.class)
+
+                .process(new Processor() {
+                    @Override
+                    public void process(Exchange exchange) throws Exception {
+                        LOGGER.debug("Sending twitterTweet to the queue. {} ", exchange.getIn().getBody());
+                    }
+                })
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SpringAMQPConsumerTest</h6>
+            <pre class="prettyprint">
+    @Test 
+    public void restartConsumer() throws Exception {
+        Processor defaultProcessor = new Processor() {
+            @Override
+            public void process(Exchange exchange) throws Exception { }
+        };
+        
+        Consumer amqpConsumer = context().getEndpoint("spring-amqp:directExchange:q0:test.a?durable=false&autodelete=true&exclusive=false").createConsumer(defaultProcessor);
+        amqpConsumer.stop();
+        amqpConsumer.start();
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_1 (4 partitions, 291 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.camel.Exchange.getIn
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (13 files, similarity: 0.7009347307692304)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>XPathTest</h6>
+            <pre class="prettyprint">
+    @Test
+    public void testParsingMessage() throws Exception {
+        MockEndpoint resultEndpoint = resolveMandatoryEndpoint("mock:result", MockEndpoint.class);
+        resultEndpoint.expectedMessageCount(1);
+
+        resultEndpoint.assertIsSatisfied(15000L);
+
+        List<Exchange> list = resultEndpoint.getReceivedExchanges();
+        Exchange exchange = list.get(0);
+        Message in = exchange.getIn();
+        log.info("Headers: " + in.getHeaders());
+        ComplexDataObject object = assertIsInstanceOf(ComplexDataObject.class, in.getBody());
+        log.info("Received: " + object);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UnmarshalTest</h6>
+            <pre class="prettyprint">
+    @Test
+    public void testParsingMessage() throws Exception {
+        MockEndpoint resultEndpoint = resolveMandatoryEndpoint("mock:result", MockEndpoint.class);
+        resultEndpoint.expectedMessageCount(1);
+
+        resultEndpoint.assertIsSatisfied();
+
+        List<Exchange> list = resultEndpoint.getReceivedExchanges();
+        Exchange exchange = list.get(0);
+        Message in = exchange.getIn();
+        ComplexDataObject object = assertIsInstanceOf(ComplexDataObject.class, in.getBody());
+        log.info("Received: " + object);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TransformUsingBeanTest</h6>
+            <pre class="prettyprint">
+    @Test
+    public void testTransform() throws Exception {
+        MockEndpoint resultEndpoint = resolveMandatoryEndpoint("mock:result", MockEndpoint.class);
+        resultEndpoint.expectedMessageCount(1);
+
+        resultEndpoint.assertIsSatisfied();
+
+        List<Exchange> list = resultEndpoint.getReceivedExchanges();
+        Exchange exchange = list.get(0);
+        Message in = exchange.getIn();
+
+        String text = in.getBody(String.class);
+        log.info("Received: " + text);
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (91 files, similarity: 0.6910596400488361)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>OrderRouterWithMulticast</h6>
+            <pre class="prettyprint">
+                    public void process(Exchange exchange) throws Exception {
+                        System.out.println("Accounting received order: " 
+                                + exchange.getIn().getHeader("CamelFileName"));   
+                    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>OrderRouter</h6>
+            <pre class="prettyprint">
+                    public void process(Exchange exchange) throws Exception {
+                        System.out.println("Received XML order: " 
+                                + exchange.getIn().getHeader("CamelFileName"));   
+                    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>OrderRouterWithSeda</h6>
+            <pre class="prettyprint">
+                    public void process(Exchange exchange) throws Exception {
+                        System.out.println("Accounting received order: "
+                                + exchange.getIn().getHeader("CamelFileName"));  
+                    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (3 partitions, 81 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.camel.component.mock.MockEndpoint.expectedMessageCount, org.apache.camel.component.mock.MockEndpoint.assertIsSatisfied
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (32 files, similarity: 0.6885244798387086)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>BuryProducerTest</h6>
+            <pre class="prettyprint">
+    public void testNoJobId() throws InterruptedException, IOException {
+        resultEndpoint.expectedMessageCount(0);
+        direct.sendBody(new byte[0]);
+
+        resultEndpoint.assertIsSatisfied();
+        assertListSize("Number of exceptions", resultEndpoint.getFailures(), 1);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>DeleteProducerTest</h6>
+            <pre class="prettyprint">
+    public void testNoJobId() throws InterruptedException, IOException {
+        resultEndpoint.expectedMessageCount(0);
+        direct.sendBody(new byte[0]);
+
+        resultEndpoint.assertIsSatisfied();
+        assertListSize("Number of exceptions", resultEndpoint.getFailures(), 1);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ExceptionExtensionTest</h6>
+            <pre class="prettyprint">
+    public void testError1() throws InterruptedException {
+        mockError1.expectedMessageCount(1);
+        mockError2.expectedMessageCount(0);
+        producerTemplate.sendBody("direct:input", "abc");
+        mockError1.assertIsSatisfied();
+        mockError2.assertIsSatisfied();
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (3 partitions, 301 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.camel.builder.RouteBuilder.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (117 files, similarity: 0.7695881556145592)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AsyncOneThreadTest</h6>
+            <pre class="prettyprint">
+    @Override
+    protected RouteBuilder createRouteBuilder() throws Exception {
+        return new RouteBuilder() {
+            @Override
+            public void configure() throws Exception {
+                // route the message to a log so we can see details about MEP and thread name
+                from("seda:start")
+                    .to("log:A")
+                    .to("log:B");
+            }
+        };
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>BuryProducerTest</h6>
+            <pre class="prettyprint">
+    @Override
+    protected RouteBuilder createRouteBuilder() {
+        return new RouteBuilder() {
+            @Override
+            public void configure() {
+                from("direct:start").to("beanstalk:"+tubeName+"?command=bury").to("mock:result");
+            }
+        };
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CamelConcurrentProducerCreationTest</h6>
+            <pre class="prettyprint">
+    @Override
+    protected RouteBuilder createRoutes() {
+        return new RouteBuilder() {
+            @Override
+            public void configure() throws Exception {
+                from("jbi:endpoint:urn:test:service:endpoint").to("mock:test");
+            }
+        };
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_10 (3 partitions, 85 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.camel.component.mock.MockEndpoint.expectedBodiesReceived
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (33 files, similarity: 0.785779117424242)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>DefaultErrorHandlerAsyncTest</h6>
+            <pre class="prettyprint">
+    @Test
+    public void testOrderOk() throws Exception {
+        MockEndpoint mock = getMockEndpoint("mock:queue.order");
+        mock.expectedBodiesReceived("amount=1,name=Camel in Action,id=123,status=OK");
+
+        template.sendBody("seda:queue.inbox","amount=1,name=Camel in Action");
+
+        assertMockEndpointsSatisfied();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>DefaultErrorHandlerTest</h6>
+            <pre class="prettyprint">
+    @Test
+    public void testOrderOk() throws Exception {
+        MockEndpoint mock = getMockEndpoint("mock:queue.order");
+        mock.expectedBodiesReceived("amount=1,name=Camel in Action,id=123,status=OK");
+
+        template.sendBody("seda:queue.inbox","amount=1,name=Camel in Action");
+
+        assertMockEndpointsSatisfied();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>FirstMockTest</h6>
+            <pre class="prettyprint">
+    @Test
+    public void testSameMessageArrived() throws Exception {
+        // get the mock endpoint
+        MockEndpoint quote = getMockEndpoint("mock:quote");
+        // set expectations that the same message arrived as we send
+        quote.expectedBodiesReceived("Camel rocks");
+
+        // fire in a message to Camel
+        template.sendBody("jms:topic:quote", "Camel rocks");
+
+        // verify the result
+        quote.assertIsSatisfied();
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (22 files, similarity: 0.6508680519480522)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SpringAggregateABCEagerTest</h6>
+            <pre class="prettyprint">
+    @Test
+    public void testABCEager() throws Exception {
+        MockEndpoint mock = getMockEndpoint("mock:result");
+        // we expect ABC in the published message
+        // notice: Only 1 message is expected
+        mock.expectedBodiesReceived("ABC");
+
+        // send the first message
+        template.sendBodyAndHeader("direct:start", "A", "myId", 1);
+        // send the 2nd message with the same correlation key
+        template.sendBodyAndHeader("direct:start", "B", "myId", 1);
+        // the F message has another correlation key
+        template.sendBodyAndHeader("direct:start", "F", "myId", 2);
+        // now we have 3 messages with the same correlation key
+        // and the Aggregator should publish the message
+        template.sendBodyAndHeader("direct:start", "C", "myId", 1);
+        // and now the END message to trigger completion
+        template.sendBodyAndHeader("direct:start", "END", "myId", 1);
+
+        assertMockEndpointsSatisfied();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SpringAggregateABCCloseTest</h6>
+            <pre class="prettyprint">
+    @Test
+    public void testABCClose() throws Exception {
+        MockEndpoint mock = getMockEndpoint("mock:result");
+        // we expect ABC in the published message
+        // notice: Only 1 message is expected
+        mock.expectedBodiesReceived("ABC");
+
+        // send the first message
+        template.sendBodyAndHeader("direct:start", "A", "myId", 1);
+        // send the 2nd message with the same correlation key
+        template.sendBodyAndHeader("direct:start", "B", "myId", 1);
+        // the F message has another correlation key
+        template.sendBodyAndHeader("direct:start", "F", "myId", 2);
+        // now we have 3 messages with the same correlation key
+        // and the Aggregator should publish the message
+        template.sendBodyAndHeader("direct:start", "C", "myId", 1);
+
+        // sending with correlation id 1 should fail as its closed
+        try {
+            template.sendBodyAndHeader("direct:start", "A2", "myId", 1);
+        } catch (CamelExecutionException e) {
+            ClosedCorrelationKeyException cause = assertIsInstanceOf(ClosedCorrelationKeyException.class, e.getCause());
+            assertEquals("1", cause.getCorrelationKey());
+        }
+
+        assertMockEndpointsSatisfied();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SpringAggregateABCInvalidTest</h6>
+            <pre class="prettyprint">
+    @Test
+    public void testABCInvalid() throws Exception {
+        MockEndpoint mock = getMockEndpoint("mock:result");
+        // we expect ABC in the published message
+        // notice: Only 1 message is expected
+        mock.expectedBodiesReceived("ABC");
+
+        // send the first message
+        template.sendBodyAndHeader("direct:start", "A", "myId", 1);
+        // send the 2nd message with the same correlation key
+        template.sendBodyAndHeader("direct:start", "B", "myId", 1);
+        // the F message has another correlation key
+        template.sendBodyAndHeader("direct:start", "F", "myId", 2);
+        // this message has no correlation key so its ignored
+        template.sendBody("direct:start", "C");
+        // so we resend the message this time with a correlation key
+        template.sendBodyAndHeader("direct:start", "C", "myId", 1);
+
+        assertMockEndpointsSatisfied();
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+	

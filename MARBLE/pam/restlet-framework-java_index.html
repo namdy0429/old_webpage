@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">restlet-framework-java</h1>
+    </div>
+    
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (3 partitions, 113 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.restlet.resource.ResourceException.&lt;init&gt;, org.restlet.resource.ResourceException.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (18 files, similarity: 0.5730889215686279)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UserAccountPlexusResource</h6>
+            <pre class="prettyprint">
+        try
+        {
+            User user = userAccountManager.readAccount( getUserId( request ) );
+
+            result.setData( nexusToRestModel( user, request ) );
+        }
+        catch ( UserNotFoundException e )
+        {
+            String msg = "User account '" + getUserId( request ) + "' not found.";
+
+            getLogger().debug( msg, e );
+
+            throw new ResourceException( Status.CLIENT_ERROR_NOT_FOUND, msg );
+        }
+        catch ( AuthorizationException e )
+        {
+            throw new ResourceException( Status.CLIENT_ERROR_FORBIDDEN, "Not allowed to read account '"
+                + getUserId( request ) + "'." );
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SubjectResource</h6>
+            <pre class="prettyprint">
+        try {
+            inRep = new SubjectJsonRepresentation(new JsonRepresentation(representation).getJsonObject());
+        } catch (JSONException e) {
+            throw new ResourceException(
+                Status.CLIENT_ERROR_NOT_ACCEPTABLE, "The entity is not proper JSON", e);
+        } catch (IOException e) {
+            throw new ResourceException(
+                Status.CLIENT_ERROR_BAD_REQUEST, "The entity could not be parsed", e);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ScheduledCalendarResource</h6>
+            <pre class="prettyprint">
+            try {
+                scheduled = nextScheduledStudySegmentSerializer.readDocument(entity.getStream());
+                scheduleService.resolveNextScheduledStudySegment(scheduled);
+            } catch (IOException e) {
+                log.warn("PUT failed with IOException", e);
+                throw new ResourceException(e);
+            } catch (StudyCalendarValidationException exp) {
+                throw new ResourceException(Status.CLIENT_ERROR_BAD_REQUEST, exp.getMessage());
+            }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_19 (3 partitions, 86 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.restlet.data.Form.getFirstValue
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (24 files, similarity: 0.6232020289855071)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AbstractIndexContentPlexusResource</h6>
+            <pre class="prettyprint">
+        if ( form.getFirstValue( HINT_GROUP_ID ) != null )
+        {
+            groupIdHint = form.getFirstValue( HINT_GROUP_ID );
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AccountIdOAuthParamStrategy</h6>
+            <pre class="prettyprint">
+            if(httpHeaders.getFirstValue("accountid") != null)
+            {
+                accountid = (String) httpHeaders.getFirstValue("accountid");
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AbstractFeedPlexusResource</h6>
+            <pre class="prettyprint">
+            if ( params.getFirstValue( "from" ) != null )
+            {
+                from = Integer.valueOf( params.getFirstValue( "from" ) );
+            }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (16 files, similarity: 0.5437198416666666)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TimeoutPlexusResource</h6>
+            <pre class="prettyprint">
+    @Override
+    public Object get( Context context, Request request, Response response, Variant variant )
+        throws ResourceException
+    {
+        Form form = request.getResourceRef().getQueryAsForm();
+        
+        int requestedTimeout = Integer.parseInt( form.getFirstValue( "timeout" ) );
+		
+		try
+		{
+		    Thread.sleep( 1000 * requestedTimeout );
+		}
+		catch ( Exception e )
+		{
+		}
+		
+		return null;
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SessionResource_1</h6>
+            <pre class="prettyprint">
+    private boolean onlyIds() {
+        Form query = getRequest().getResourceRef().getQueryAsForm(CharacterSet.UTF_8);
+        return Boolean.TRUE.toString().equals(query.getFirstValue("onlyid", null));
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UserDBResource</h6>
+            <pre class="prettyprint">
+		try {
+			search_name = "search";
+			search_value = form.getFirstValue(search_name);
+		} catch (Exception x) {
+			search_value = null;
+		}		
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_3 (2 partitions, 108 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.restlet.data.Request.getAttributes
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (39 files, similarity: 0.6900067341430514)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AbstractComponentListPlexusResource</h6>
+            <pre class="prettyprint">
+    protected String getRole( Request request )
+    {
+        return request.getAttributes().get( ROLE_ID ).toString();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AbstractRepositoryMirrorPlexusResource</h6>
+            <pre class="prettyprint">
+    protected String getRepositoryId( Request request )
+    {
+        return request.getAttributes().get( REPOSITORY_ID_KEY ).toString();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AbstractRepositoryPlexusResource</h6>
+            <pre class="prettyprint">
+    /**
+     * Pull the repository Id out of the Request.
+     * 
+     * @param request
+     * @return
+     */
+    protected String getRepositoryId( Request request )
+    {
+        return request.getAttributes().get( REPOSITORY_ID_KEY ).toString();
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (3 partitions, 199 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.restlet.resource.ResourceException.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (86 files, similarity: 0.9371965316005634)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AbstractIndexPlexusResource</h6>
+            <pre class="prettyprint">
+                catch ( NoSuchRepositoryException e )
+                {
+                    throw new ResourceException( Status.CLIENT_ERROR_BAD_REQUEST, "Repository with ID='"
+                        + getRepositoryId( request ) + "' does not exists!", e );
+                }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AbstractRestorePlexusResource</h6>
+            <pre class="prettyprint">
+            catch ( NoSuchRepositoryException e )
+            {
+                throw new ResourceException( Status.CLIENT_ERROR_NOT_FOUND, "Repository not found!", e );
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AmendmentApprovalsResource</h6>
+            <pre class="prettyprint">
+        } catch (StudyCalendarValidationException scve) {
+            throw new ResourceException(Status.CLIENT_ERROR_BAD_REQUEST, scve.getMessage(), scve);
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (36 files, similarity: 0.8649915873015861)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UserChangePasswordPlexusResource</h6>
+            <pre class="prettyprint">
+            catch ( InvalidConfigurationException e )
+            {
+                // this should never happen
+                getLogger().warn( "Failed to set password!", e );
+
+                throw new ResourceException( Status.CLIENT_ERROR_BAD_REQUEST, "Failed to set password!." );
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UserSetPasswordPlexusResource</h6>
+            <pre class="prettyprint">
+            catch ( InvalidConfigurationException e )
+            {
+                // this should never happen
+                getLogger().warn( "Failed to set password!", e );
+
+                throw new ResourceException( Status.CLIENT_ERROR_BAD_REQUEST, "Failed to set password!." );
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UserForgotIdPlexusResource</h6>
+            <pre class="prettyprint">
+        catch ( UserNotFoundException e )
+        {
+            getLogger().debug( "Invalid email received: " + email, e );
+
+            throw new ResourceException( Status.CLIENT_ERROR_BAD_REQUEST, "Email address not found!" );
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (77 files, similarity: 0.5997626083390288)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ValidatingForm</h6>
+            <pre class="prettyprint">
+    public void throwForValidationFailureIfNecessary() throws ResourceException {
+        if (getErrors().size() == 0) return;
+        throw new ResourceException(
+            Status.CLIENT_ERROR_UNPROCESSABLE_ENTITY,
+            StringUtils.join(getErrors().iterator(), "\n"));
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UserPrefsFormUIResource</h6>
+            <pre class="prettyprint">
+    /**
+     * Provide the settings output for the gadget definitions supplied.
+     *
+     * @param variant
+     *            - context.
+     * @return Representation of the response.
+     *
+     * @throws ResourceException
+     *             when an error is encountered with the representation code.
+     */
+    @Override
+    public Representation represent(final Variant variant) throws ResourceException
+    {
+        // retrieve gadget metadata with preferences from shindig.
+        // assembly script based on types and number of preferences.
+        if (moduleId != null && moduleId > 0 && gadgetDefUrl != null)
+        {
+            StringBuilder sb = new StringBuilder();
+            try
+            {
+                Map<String, GeneralGadgetDefinition> gadgetDefs = new HashMap<String, GeneralGadgetDefinition>();
+                GadgetDefinition targetGadgetDef = gadgetMapper.findById(moduleId).getGadgetDefinition();
+                gadgetDefs.put(gadgetDefUrl, targetGadgetDef);
+                List<GadgetMetaDataDTO> gadgetMetaData = gadgetMetaFetcher.getGadgetsMetaData(gadgetDefs);
+                for (GadgetMetaDataDTO currentGMeta : gadgetMetaData)
+                {
+                    logger.debug("Retrieved Metadata for Gadget" + targetGadgetDef.getId() + " Author: "
+                            + currentGMeta.getAuthor() + " UserPrefsSize: " + currentGMeta.getUserPrefs().size());
+                    buildUserPreferencesUI(currentGMeta, sb);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.error("Error occurred retrieving User Preferences script", ex);
+                sb.append("var htmlString_" + moduleId + "='';");
+                sb.append("htmlString_" + moduleId + " += '<div class=\"gadget-preferences\">"
+                        + USER_PREFS_ERROR_MESSAGE + "</div>';");
+                sb.append("gadget_callback_" + moduleId + "(htmlString_" + moduleId + ");");
+            }
+            logger.debug("Returning the edit settings script: " + sb.toString());
+            Representation rep = new StringRepresentation(sb.toString(), MediaType.APPLICATION_JAVASCRIPT);
+            rep.setExpirationDate(new Date());
+            return rep;
+        }
+        else
+        {
+            logger.error("Bad request:  Invalid application id passed to endpoint");
+            throw new ResourceException(Status.CLIENT_ERROR_BAD_REQUEST, "Invalid application id passed to endpoint");
+        }
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UsersResource</h6>
+            <pre class="prettyprint">
+            if (limit < 1) {
+                throw new ResourceException(
+                    CLIENT_ERROR_BAD_REQUEST, "Limit must be a positive integer.");
+            }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+	

@@ -1,0 +1,957 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">webobjects</h1>
+    </div>
+    
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (3 partitions, 114 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">com.webobjects.foundation.NSMutableArray.&lt;init&gt;, com.webobjects.foundation.NSMutableArray.addObject
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (34 files, similarity: 0.7937282549019613)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>_Venue</h6>
+            <pre class="prettyprint">
+      else {
+        NSMutableArray qualifiers = new NSMutableArray();
+        qualifiers.addObject(qualifier);
+        qualifiers.addObject(inverseQualifier);
+        fullQualifier = new EOAndQualifier(qualifiers);
+      }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>_VEvent</h6>
+            <pre class="prettyprint">
+      else {
+        NSMutableArray qualifiers = new NSMutableArray();
+        qualifiers.addObject(qualifier);
+        qualifiers.addObject(inverseQualifier);
+        fullQualifier = new EOAndQualifier(qualifiers);
+      }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>_User</h6>
+            <pre class="prettyprint">
+      else {
+        NSMutableArray qualifiers = new NSMutableArray();
+        qualifiers.addObject(qualifier);
+        qualifiers.addObject(inverseQualifier);
+        fullQualifier = new EOAndQualifier(qualifiers);
+      }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (2 partitions, 69 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">com.webobjects.eocontrol.EOKeyValueQualifier.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (42 files, similarity: 0.7839432439024329)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>_AttendeeType</h6>
+            <pre class="prettyprint">
+    if (fetch) {
+      EOQualifier fullQualifier;
+      EOQualifier inverseQualifier = new EOKeyValueQualifier(com.dyned.conf.eom.Attendee.TYPE_KEY, EOQualifier.QualifierOperatorEqual, this);
+    	
+      if (qualifier == null) {
+        fullQualifier = inverseQualifier;
+      }
+      else {
+        NSMutableArray qualifiers = new NSMutableArray();
+        qualifiers.addObject(qualifier);
+        qualifiers.addObject(inverseQualifier);
+        fullQualifier = new EOAndQualifier(qualifiers);
+      }
+
+      results = com.dyned.conf.eom.Attendee.fetchAttendees(editingContext(), fullQualifier, sortOrderings);
+    }
+    else {
+      results = attendees();
+      if (qualifier != null) {
+        results = (NSArray<com.dyned.conf.eom.Attendee>)EOQualifier.filteredArrayWithQualifier(results, qualifier);
+      }
+      if (sortOrderings != null) {
+        results = (NSArray<com.dyned.conf.eom.Attendee>)EOSortOrdering.sortedArrayUsingKeyOrderArray(results, sortOrderings);
+      }
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>_AttendeeMealPreference</h6>
+            <pre class="prettyprint">
+    if (fetch) {
+      EOQualifier fullQualifier;
+      EOQualifier inverseQualifier = new EOKeyValueQualifier(com.dyned.conf.eom.Attendee.MEAL_PREFERENCE_KEY, EOQualifier.QualifierOperatorEqual, this);
+    	
+      if (qualifier == null) {
+        fullQualifier = inverseQualifier;
+      }
+      else {
+        NSMutableArray qualifiers = new NSMutableArray();
+        qualifiers.addObject(qualifier);
+        qualifiers.addObject(inverseQualifier);
+        fullQualifier = new EOAndQualifier(qualifiers);
+      }
+
+      results = com.dyned.conf.eom.Attendee.fetchAttendees(editingContext(), fullQualifier, sortOrderings);
+    }
+    else {
+      results = attendees();
+      if (qualifier != null) {
+        results = (NSArray<com.dyned.conf.eom.Attendee>)EOQualifier.filteredArrayWithQualifier(results, qualifier);
+      }
+      if (sortOrderings != null) {
+        results = (NSArray<com.dyned.conf.eom.Attendee>)EOSortOrdering.sortedArrayUsingKeyOrderArray(results, sortOrderings);
+      }
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>_AttendeeFunction</h6>
+            <pre class="prettyprint">
+    if (fetch) {
+      EOQualifier fullQualifier;
+      EOQualifier inverseQualifier = new EOKeyValueQualifier(com.dyned.conf.eom.Attendee.FUNCTION_KEY, EOQualifier.QualifierOperatorEqual, this);
+    	
+      if (qualifier == null) {
+        fullQualifier = inverseQualifier;
+      }
+      else {
+        NSMutableArray qualifiers = new NSMutableArray();
+        qualifiers.addObject(qualifier);
+        qualifiers.addObject(inverseQualifier);
+        fullQualifier = new EOAndQualifier(qualifiers);
+      }
+
+      results = com.dyned.conf.eom.Attendee.fetchAttendees(editingContext(), fullQualifier, sortOrderings);
+    }
+    else {
+      results = attendees();
+      if (qualifier != null) {
+        results = (NSArray<com.dyned.conf.eom.Attendee>)EOQualifier.filteredArrayWithQualifier(results, qualifier);
+      }
+      if (sortOrderings != null) {
+        results = (NSArray<com.dyned.conf.eom.Attendee>)EOSortOrdering.sortedArrayUsingKeyOrderArray(results, sortOrderings);
+      }
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_5 (4 partitions, 68 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">com.webobjects.foundation.NSArray.count, com.webobjects.foundation.NSArray.objectAtIndex
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (11 files, similarity: 0.6828945090909091)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>_ScolMaquetteResponsableEc</h6>
+            <pre class="prettyprint">
+    else if (count == 1) {
+      eoObject = (ScolMaquetteResponsableEc)eoObjects.objectAtIndex(0);
+    }
+    else {
+      throw new IllegalStateException("There was more than one ScolMaquetteResponsableEc that matched the qualifier '" + qualifier + "'.");
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>_ScolMaquetteRepartitionAp</h6>
+            <pre class="prettyprint">
+    else if (count == 1) {
+      eoObject = (ScolMaquetteRepartitionAp)eoObjects.objectAtIndex(0);
+    }
+    else {
+      throw new IllegalStateException("There was more than one ScolMaquetteRepartitionAp that matched the qualifier '" + qualifier + "'.");
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>_ScolMaquetteChargesAp</h6>
+            <pre class="prettyprint">
+    else if (count == 1) {
+      eoObject = (ScolMaquetteChargesAp)eoObjects.objectAtIndex(0);
+    }
+    else {
+      throw new IllegalStateException("There was more than one ScolMaquetteChargesAp that matched the qualifier '" + qualifier + "'.");
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (11 files, similarity: 0.6717666545454546)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>IMPickListAction</h6>
+            <pre class="prettyprint">
+		if (context.elementID().equals(context.senderID())) {
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>NotesPage</h6>
+            <pre class="prettyprint">
+    	if ((categoryArray() != null) && (categoryArray().count() > 0))
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ERXStringListPicker</h6>
+            <pre class="prettyprint">
+        if (_selection==null && list().count() > 0)
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (6 files, similarity: 0.5743858000000001)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>GSVEOModel</h6>
+            <pre class="prettyprint">
+         for(int i=0;i<entities().count();i++)
+             temp.addObject(new GSVEOEntity(this, (String)((NSDictionary)(entities().objectAtIndex(i))).objectForKey("name")));
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>GSVEOEntity</h6>
+            <pre class="prettyprint">
+            for(int i=0;i<attributes().count();i++)
+                temp.addObject(new GSVEOAttribute(this, (NSDictionary)(attributes().objectAtIndex(i))));
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ERXToManyQualifier</h6>
+            <pre class="prettyprint">
+            for (int i=0; i<toManyKeys.count()-1;i++) {
+                targetRelationship= targetEntity.anyRelationshipNamed(toManyKeys.objectAtIndex(i));
+                targetEntity=targetRelationship.destinationEntity();
+            }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_31 (3 partitions, 115 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">com.webobjects.foundation.NSMutableDictionary.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (30 files, similarity: 0.7431546620689661)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>EOFSQLGenerator56</h6>
+            <pre class="prettyprint">
+			if (entityModelerDict == null) {
+				mutableEntityModelerDict = new NSMutableDictionary();
+			} else {
+				mutableEntityModelerDict = entityModelerDict.mutableClone();
+			}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>EOFSQLGenerator53</h6>
+            <pre class="prettyprint">
+			if (entityModelerDict == null) {
+				mutableEntityModelerDict = new NSMutableDictionary();
+			} else {
+				mutableEntityModelerDict = entityModelerDict.mutableClone();
+			}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ERD2WEditableListPage</h6>
+            <pre class="prettyprint">
+    protected NSMutableDictionary errorMessagesDictionaries(){
+        if(_errorMessagesDictionaries == null){
+            _errorMessagesDictionaries = new NSMutableDictionary();
+        }
+        return _errorMessagesDictionaries;
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (18 files, similarity: 0.5990719215686278)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>OngletsCtrlr</h6>
+            <pre class="prettyprint">
+		maSession = sess;
+		monApp = sess.monApp;
+		indCtl = ind;
+		monLogin = login;
+		listeOptions = null;
+		droitsTypeUtilisateur = new NSMutableDictionary();
+		initDroitsMenu();
+
+//		s'enregistrer pour les notifs (chgt d'année en cours)
+		NSNotificationCenter.defaultCenter().addObserver(this,    // on doit me prévenir moi-même !
+				new NSSelector("initDroitsScolPeda",                           // via cette méthode
+						new Class [] {NSNotification.class}),               // argument obligatoire !!!
+						"chgtAnneeEnCours",                                   // la signature de la notif qui me plait
+						maSession);                    // instance de celui qui la poste !
+
+
+	}
+
+	//--- Gestion de l'affichage des options de menus en fonction des droits
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>WOHelperFunctionDeclarationParser</h6>
+            <pre class="prettyprint">
+	public WOHelperFunctionDeclarationParser() {
+		_quotedStrings = new NSMutableDictionary();
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>FonctionsCtrlr</h6>
+            <pre class="prettyprint">
+    public FonctionsCtrlr(OngletsCtrlr ctlOnglets, String[] fonctions) {
+    	super();
+    	monCtlOnglets = ctlOnglets;
+    	lesFonctions = fonctions;
+    	droitsFonctions = new NSMutableDictionary();
+    }
+
+    // pour chaques fonctions assur�es par ce module, raffraichir les droits par rapport au nouveau dipl�me... 
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_1 (3 partitions, 147 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">com.webobjects.foundation.NSArray.objectEnumerator
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (33 files, similarity: 0.7781771950757579)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ERXEnterpriseObjectCache</h6>
+            <pre class="prettyprint">
+	                for (Enumeration enumeration = objects.objectEnumerator(); enumeration.hasMoreElements();) {
+	                    T eo = (T) enumeration.nextElement();
+	                    addObject(eo);
+	                }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ERXCheckboxMatrix</h6>
+            <pre class="prettyprint">
+                for (Enumeration e = objectsToRemove.objectEnumerator(); e.hasMoreElements();) {
+                    EOEnterpriseObject eo = (EOEnterpriseObject)e.nextElement();
+                    owner.removeObjectFromBothSidesOfRelationshipWithKey(eo, relname);
+                }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ERAutoIndex</h6>
+            <pre class="prettyprint">
+            for (Enumeration e = keys.objectEnumerator(); e.hasMoreElements();) {
+                String keyPath = (String) e.nextElement();
+                configureKeyPath(config, keyPath, source);
+            }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_16 (3 partitions, 122 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">com.webobjects.foundation.NSArray.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (32 files, similarity: 0.7266389939516117)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>PayPalSingleItemLinkBase</h6>
+            <pre class="prettyprint">
+    /** the base list of bindings to pull from WOComponents
+     * 
+     * @return NSArray
+     */
+    protected NSArray baseBindingList() {
+        return new NSArray( new Object[]
+            {   "payPalBusinessName",
+                "userDefinableQuantity",
+                "itemName",
+                "itemNumber",
+                "amount",
+                "currencyCode",
+                "collectShippingAddress",
+                "allowCustomerNote",
+                "logoURL",
+                "returnURL",
+                "cancelURL",
+                "notifyURL",
+                "useIPN",
+                "useDefaultIPNURL",
+                "tax_rate",
+                "custom"});
+    } 
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>PayPalSingleItemHyperlink</h6>
+            <pre class="prettyprint">
+    /** additionalBindingList is a NSArray of bindings to pull when we synchronize our values with the WOComponent's binding settings.  It's a simple way to customize the bindings that should be pulled, in addition to the superclass' base list of bindings that it cares about (baseBindingList()).
+     *
+     * @return NSArray
+     */
+    protected NSArray additionalBindingList() {
+        NSMutableArray bindingArray = new NSMutableArray(); // super.bindingList();
+        bindingArray.addObjectsFromArray(new NSArray(new Object[] {}));
+        return bindingArray;
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>PayPalSingleItemFormLink</h6>
+            <pre class="prettyprint">
+    /**
+     * additionalBindingList is a NSArray of bindings to pull when we
+     * synchronize our values with the WOComponent's binding settings. It's a
+     * simple way to customize the bindings that should be pulled, in addition
+     * to the superclass' base list of bindings that it cares about
+     * (baseBindingList()).
+     * 
+     * @return NSArray
+     */
+    protected NSArray additionalBindingList() {
+        NSMutableArray bindingsArray = new NSMutableArray();
+        bindingsArray.addObjectsFromArray(new NSArray(new Object[] { "useImageButton"}));
+
+        return bindingsArray;
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_4 (3 partitions, 174 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">com.webobjects.foundation.NSDictionary.objectForKey
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (66 files, similarity: 0.6284642466200424)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ERDListPageRepetition</h6>
+            <pre class="prettyprint">
+    public NSArray leftActions() {
+        return (NSArray)actions().objectForKey("left");
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AjaxUpdateTrigger</h6>
+            <pre class="prettyprint">
+	public AjaxUpdateTrigger(String name, NSDictionary associations, WOElement template) {
+		super(name, associations, template);
+		_associations = associations;
+		_updateContainerIDs = (WOAssociation) associations.objectForKey("updateContainerIDs");
+		_resetAfterUpdate = (WOAssociation) associations.objectForKey("resetAfterUpdate");
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ERDSavedQueriesComponent</h6>
+            <pre class="prettyprint">
+		public String name() {
+			return (String) dict.objectForKey(NAME_KEY);
+		}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_7 (3 partitions, 217 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">com.webobjects.foundation.NSArray.count
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (82 files, similarity: 0.7229511129177943)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CommentCtrlr</h6>
+            <pre class="prettyprint">
+    						if (lesRefAuComment != null && lesRefAuComment.count() == 0) 
+    							ec.deleteObject(ipComment);
+
+    						// MAJ Base
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>EOEnterpriseObjectClazz</h6>
+            <pre class="prettyprint">
+					if(candidates.count() > 1) {
+						log.warn("More than one entity found: " + candidates);
+					}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AjaxSelectionList</h6>
+            <pre class="prettyprint">
+				if (index >= 0 && index < list.count()) {
+					selection = list.objectAtIndex(index);
+				}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (32 files, similarity: 0.5817686814516124)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ReleveNotes</h6>
+            <pre class="prettyprint">
+				NSLog.out.appendln("Ligne " +i+ ":" +myResult.objectAtIndex(i));
+			}
+		}
+		return myResult;
+	}
+	
+	// **************** PARTIE nécessaire à JasperReports pour inmprimer les données du RN en mémoire...
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>GSVExceptionRepetition</h6>
+            <pre class="prettyprint">
+                        for( int i=0;i<attributeKeys().count();i++){
+                            array.addObjectsFromArray((NSArray)d.objectForKey( attributeKeys().objectAtIndex(i) ));
+                        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>GSVExceptionViewer</h6>
+            <pre class="prettyprint">
+                    for( int i=0;i<this.attributeKeys().count();i++){
+                        array.addObjectsFromArray((NSArray)d.objectForKey(this.attributeKeys().objectAtIndex(i)));
+                    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_6 (3 partitions, 138 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">com.webobjects.appserver.WOApplication.application
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (34 files, similarity: 0.6262337272727281)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ERXRouteRequestHandler</h6>
+            <pre class="prettyprint">
+	/**
+	 * Registers an ERXRestRequestHandler with the WOApplication for the handler key "rest".
+	 * 
+	 * @param requestHandler
+	 *            the rest request handler to register
+	 */
+	public static void register(ERXRouteRequestHandler requestHandler) {
+		WOApplication.application().registerRequestHandler(requestHandler, ERXRouteRequestHandler.Key);
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ERXSyncHandler</h6>
+            <pre class="prettyprint">
+	public static void register(ERXSyncHandler handler)
+	{
+		WOApplication.application().registerRequestHandler(handler, ERXSyncConstants.SYNC);
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Factory_1</h6>
+            <pre class="prettyprint">
+    protected WOComponent pageWithName(String name) {
+        return WOApplication.application().pageWithName(name, session().context());
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (41 files, similarity: 0.583463807317072)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>WOJRebelClassReloadHandler</h6>
+            <pre class="prettyprint">
+		if (resetComponentCache) {
+		  resetComponentCache = false;
+		  log.echo("JRebel: Resetting Component Definition cache");
+		  WOApplication.application()._removeComponentDefinitionCacheContents();
+		}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>YUIUtils</h6>
+            <pre class="prettyprint">
+        if(WOApplication.application().isCachingEnabled()) {
+            fileName = fileName.replaceFirst("\\.js$", "-min.js");
+        } else {
+            // debug version is not working in WOLips, probably due to the differences in build
+            // fileName = fileName.replaceFirst("\\.js", "-debug.js");
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>YUITooltip</h6>
+            <pre class="prettyprint">
+    if (options.objectForKey("text") == null && hasChildrenElements()) {
+      WOResponse childrenResponse = WOApplication.application().createResponseInContext(context);
+      super.appendToResponse(childrenResponse, context);
+      String text = childrenResponse.contentString();
+      text = text.replaceAll("\"", "&quot;");
+      options.setObjectForKey("\"" + text + "\"", "text");
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_29 (5 partitions, 141 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">com.webobjects.foundation.NSMutableDictionary.setObjectForKey
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (23 files, similarity: 0.8249709446640304)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>OngletsCtrlr</h6>
+            <pre class="prettyprint">
+				droitStocke = new Droit(maSession,droit,typeUser,keyFct);
+				droitsTypeUtilisateur.setObjectForKey(droitStocke,keyFct);
+			}
+			else 
+				droitStocke.majDroit(droit,typeUser);
+		}
+	}
+	
+	private void fetchDroitsScolPeda(String login) {
+		// On est un personnel avec droits sur la gestion d'un ou +ieurs diplomes...
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>FonctionsCtrlr</h6>
+            <pre class="prettyprint">
+	for (int i = 0;i < lesFonctions.length; i++) {
+    		String cle = lesFonctions[i];
+    		int val = monCtlOnglets.getDroitsTypeUtilisateur(cle,diplAnnee);
+    		droitsFonctions.setObjectForKey(new Integer(val),cle);
+    	}
+    }
+
+	public int droitsPourFonctionEtDiplome(String fonction, String diplAnnee) {
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ERXRemoteSynchronizer</h6>
+            <pre class="prettyprint">
+				if (globalIDsForEntity == null) {
+					globalIDsForEntity = new NSMutableSet();
+					result.setObjectForKey(globalIDsForEntity, entityName);
+				}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 4 (43 files, similarity: 0.7513904994462887)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>MTAjaxUpdateLink</h6>
+            <pre class="prettyprint">
+		if (options.objectForKey("async") == null) {
+			options.setObjectForKey("true", "async");
+		}		
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>MTAjaxModalContainer</h6>
+            <pre class="prettyprint">
+		if (options.objectForKey("async") == null) {
+			options.setObjectForKey("true", "async");
+		}		
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>MTAjaxSubmitButton</h6>
+            <pre class="prettyprint">
+		if(!defaultFormSerializer.equals(systemDefaultFormSerializer)) {
+			options.setObjectForKey(formSerializer, "_fs");
+		}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (12 files, similarity: 0.6370249545454544)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>WOOgnl</h6>
+            <pre class="prettyprint">
+							for (Enumeration ee = keys.objectEnumerator(); ee.hasMoreElements();) {
+								associations.setObjectForKey(newAssociation, e.nextElement());
+							}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>MenuCtrlr</h6>
+            <pre class="prettyprint">
+			OptionMenu om = (OptionMenu)e.nextElement();
+			String cle = om.getRefOM();
+			tmpDict.setObjectForKey(om,cle);
+		}
+		dictOptions = tmpDict.immutableClone();
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ListeDiplRNCtrlr</h6>
+            <pre class="prettyprint">
+    		while (e.hasMoreElements())  {
+    			IpDiplSansRn eoIpDiplSansRN = (IpDiplSansRn)e.nextElement(); 
+    			Integer fspnKey = (Integer)eoIpDiplSansRN.fspnKey();
+    			
+    			listeEOipDiplSansRn.setObjectForKey(eoIpDiplSansRN, fspnKey);
+    		}
+    	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+	

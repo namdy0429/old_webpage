@@ -1,0 +1,1272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">drools</h1>
+    </div>
+    
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_686 (3 partitions, 64 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.drools.io.impl.ClassPathResource.&lt;init&gt;, org.drools.builder.KnowledgeBuilder.add, org.drools.KnowledgeBase.newStatefulKnowledgeSession
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (21 files, similarity: 0.7117978000000005)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ColorsSelectionProcessTest</h6>
+            <pre class="prettyprint">
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add colorsSelectionProcess.bpmn to kbuilder
+        kbuilder.add(new ClassPathResource("process/colorsSelectionProcess.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ConditionalStartEventProcessTest</h6>
+            <pre class="prettyprint">
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add the drl containing the global definition to kbuilder
+        kbuilder.add(new ClassPathResource("rule/conditionalStartEventRule.drl"), ResourceType.DRL);
+        //Add process to kbuilder
+        kbuilder.add(new ClassPathResource("process/conditionalStartEventProcess.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>DelegationProcessTest</h6>
+            <pre class="prettyprint">
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add simpleProcess.bpmn to kbuilder
+        kbuilder.add(new ClassPathResource("process/sampleProcess.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_23 (4 partitions, 126 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.drools.builder.KnowledgeBuilderFactory.newKnowledgeBuilder, org.drools.builder.KnowledgeBuilder.add, org.drools.builder.KnowledgeBuilder.getKnowledgePackages, org.drools.KnowledgeBase.addKnowledgePackages
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (23 files, similarity: 0.6432841422924902)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SimpleProcessTest</h6>
+            <pre class="prettyprint">
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add simpleProcess.bpmn to kbuilder
+        kbuilder.add(new ClassPathResource("process/simpleProcess.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ConditionalStartEventProcessTest</h6>
+            <pre class="prettyprint">
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add the drl containing the global definition to kbuilder
+        kbuilder.add(new ClassPathResource("rule/conditionalStartEventRule.drl"), ResourceType.DRL);
+        //Add process to kbuilder
+        kbuilder.add(new ClassPathResource("process/conditionalStartEventProcess.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ColorsSelectionProcessTest</h6>
+            <pre class="prettyprint">
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add colorsSelectionProcess.bpmn to kbuilder
+        kbuilder.add(new ClassPathResource("process/colorsSelectionProcess.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (10 files, similarity: 0.5824063555555555)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>EmergencyBedRequestBaseTest</h6>
+            <pre class="prettyprint">
+    private void initializeSession() {
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        for (Map.Entry<Resource, ResourceType> entry : this.getResources().entrySet()) {
+            kbuilder.add(entry.getKey(), entry.getValue());
+        }
+        
+        if (kbuilder.hasErrors()) {
+            KnowledgeBuilderErrors errors = kbuilder.getErrors();
+
+            for (KnowledgeBuilderError error : errors) {
+                System.out.println(">>> Error:" + error.getMessage());
+
+            }
+            throw new IllegalStateException(">>> Knowledge couldn't be parsed! ");
+        }
+
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        session = kbase.newStatefulKnowledgeSession();
+        KnowledgeRuntimeLoggerFactory.newConsoleLogger(session);
+
+        session.addEventListener(new DefaultAgendaEventListener(){
+
+            @Override
+            public void afterRuleFlowGroupActivated(org.drools.event.rule.RuleFlowGroupActivatedEvent event) {
+                session.fireAllRules();
+            }
+            
+        });
+        
+        session.addEventListener(new DefaultProcessEventListener(){
+
+            @Override
+            public void beforeProcessStarted(ProcessStartedEvent event) {
+                session.insert(event.getProcessInstance());
+            }
+            
+        });
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ServiceTaskTest</h6>
+            <pre class="prettyprint">
+    private void initializeSession() {
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        kbuilder.add(new ClassPathResource("HospitalInvokeInsuranceScenarioV1-data.bpmn"), ResourceType.BPMN2);
+        if (kbuilder.hasErrors()) {
+            KnowledgeBuilderErrors errors = kbuilder.getErrors();
+
+            for (KnowledgeBuilderError error : errors) {
+                System.out.println(">>> Error:" + error.getMessage());
+
+            }
+            throw new IllegalStateException(">>> Knowledge couldn't be parsed! ");
+        }
+
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        session = kbase.newStatefulKnowledgeSession();
+        KnowledgeRuntimeLoggerFactory.newConsoleLogger(session);
+
+        session.addEventListener(new DefaultAgendaEventListener(){
+
+            @Override
+            public void afterRuleFlowGroupActivated(org.drools.event.rule.RuleFlowGroupActivatedEvent event) {
+                session.fireAllRules();
+            }
+            
+        });
+
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>RulesHelper</h6>
+            <pre class="prettyprint">
+    private static StatelessKnowledgeSession createStatelessSession(String rules){
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+        kbuilder.add(new ClassPathResource(rules), ResourceType.DRL);
+        
+        if (kbuilder.hasErrors()) {
+            for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                System.out.println(">>> Error:" + error.getMessage());
+
+            }
+            throw new IllegalStateException(">>> Knowledge couldn't be parsed! ");
+        }
+        
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+        
+        return kbase.newStatelessKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (4 partitions, 102 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.drools.builder.KnowledgeBuilderFactory.newKnowledgeBuilder, org.drools.builder.KnowledgeBuilder.getErrors, org.drools.KnowledgeBaseFactory.newKnowledgeBase, org.drools.builder.KnowledgeBuilder.getKnowledgePackages, org.drools.KnowledgeBase.addKnowledgePackages
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (7 files, similarity: 0.7218459047619049)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>EmergencyBedRequestBaseTest</h6>
+            <pre class="prettyprint">
+    private void initializeSession() {
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        for (Map.Entry<Resource, ResourceType> entry : this.getResources().entrySet()) {
+            kbuilder.add(entry.getKey(), entry.getValue());
+        }
+        
+        if (kbuilder.hasErrors()) {
+            KnowledgeBuilderErrors errors = kbuilder.getErrors();
+
+            for (KnowledgeBuilderError error : errors) {
+                System.out.println(">>> Error:" + error.getMessage());
+
+            }
+            throw new IllegalStateException(">>> Knowledge couldn't be parsed! ");
+        }
+
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        session = kbase.newStatefulKnowledgeSession();
+        KnowledgeRuntimeLoggerFactory.newConsoleLogger(session);
+
+        session.addEventListener(new DefaultAgendaEventListener(){
+
+            @Override
+            public void afterRuleFlowGroupActivated(org.drools.event.rule.RuleFlowGroupActivatedEvent event) {
+                session.fireAllRules();
+            }
+            
+        });
+        
+        session.addEventListener(new DefaultProcessEventListener(){
+
+            @Override
+            public void beforeProcessStarted(ProcessStartedEvent event) {
+                session.insert(event.getProcessInstance());
+            }
+            
+        });
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ServiceTaskTest</h6>
+            <pre class="prettyprint">
+    private void initializeSession() {
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        kbuilder.add(new ClassPathResource("HospitalInvokeInsuranceScenarioV1-data.bpmn"), ResourceType.BPMN2);
+        if (kbuilder.hasErrors()) {
+            KnowledgeBuilderErrors errors = kbuilder.getErrors();
+
+            for (KnowledgeBuilderError error : errors) {
+                System.out.println(">>> Error:" + error.getMessage());
+
+            }
+            throw new IllegalStateException(">>> Knowledge couldn't be parsed! ");
+        }
+
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        session = kbase.newStatefulKnowledgeSession();
+        KnowledgeRuntimeLoggerFactory.newConsoleLogger(session);
+
+        session.addEventListener(new DefaultAgendaEventListener(){
+
+            @Override
+            public void afterRuleFlowGroupActivated(org.drools.event.rule.RuleFlowGroupActivatedEvent event) {
+                session.fireAllRules();
+            }
+            
+        });
+
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>GenericWebServiceTaskTest</h6>
+            <pre class="prettyprint">
+    private void initializeSession() {
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        kbuilder.add(new ClassPathResource("HospitalInvokeInsuranceScenarioV3-data.bpmn"), ResourceType.BPMN2);
+        if (kbuilder.hasErrors()) {
+            KnowledgeBuilderErrors errors = kbuilder.getErrors();
+
+            for (KnowledgeBuilderError error : errors) {
+                System.out.println(">>> Error:" + error.getMessage());
+
+            }
+            throw new IllegalStateException(">>> Knowledge couldn't be parsed! ");
+        }
+
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        session = kbase.newStatefulKnowledgeSession();
+        KnowledgeRuntimeLoggerFactory.newConsoleLogger(session);
+
+        session.addEventListener(new DefaultAgendaEventListener(){
+
+            @Override
+            public void afterRuleFlowGroupActivated(org.drools.event.rule.RuleFlowGroupActivatedEvent event) {
+                session.fireAllRules();
+            }
+            
+        });
+
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (23 files, similarity: 0.6432841422924903)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ColorsSelectionProcessTest</h6>
+            <pre class="prettyprint">
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add colorsSelectionProcess.bpmn to kbuilder
+        kbuilder.add(new ClassPathResource("process/colorsSelectionProcess.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ConditionalStartEventProcessTest</h6>
+            <pre class="prettyprint">
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add the drl containing the global definition to kbuilder
+        kbuilder.add(new ClassPathResource("rule/conditionalStartEventRule.drl"), ResourceType.DRL);
+        //Add process to kbuilder
+        kbuilder.add(new ClassPathResource("process/conditionalStartEventProcess.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>DelegationProcessTest</h6>
+            <pre class="prettyprint">
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add simpleProcess.bpmn to kbuilder
+        kbuilder.add(new ClassPathResource("process/sampleProcess.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_1 (3 partitions, 94 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.drools.SystemEventListenerFactory.getSystemEventListener
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (14 files, similarity: 0.8980365164835165)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TaskLifeCycleJMSAsyncTest</h6>
+            <pre class="prettyprint">
+	protected void setUp() throws Exception {
+		super.setUp();
+		
+		ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory("vm://localhost?broker.persistent=false");
+		
+		this.context = EasyMock.createMock(Context.class);
+		EasyMock.expect(context.lookup("ConnectionFactory")).andReturn(factory).anyTimes();
+		EasyMock.replay(context);
+		
+		Properties serverProperties = new Properties();
+		serverProperties.setProperty("JMSTaskServer.connectionFactory", "ConnectionFactory");
+		serverProperties.setProperty("JMSTaskServer.transacted", "true");
+		serverProperties.setProperty("JMSTaskServer.acknowledgeMode", "AUTO_ACKNOWLEDGE");
+		serverProperties.setProperty("JMSTaskServer.queueName", "tasksQueue");
+		serverProperties.setProperty("JMSTaskServer.responseQueueName", "tasksResponseQueue");
+		
+		server = new JMSTaskServer(taskService, serverProperties, context);
+		Thread thread = new Thread(server);
+		thread.start();
+		System.out.println("Waiting for the JMS Task Server to come up");
+        while (!server.isRunning()) {
+        	System.out.print(".");
+        	Thread.sleep( 50 );
+        }
+
+        Properties clientProperties = new Properties();
+		clientProperties.setProperty("JMSTaskClient.connectionFactory", "ConnectionFactory");
+		clientProperties.setProperty("JMSTaskClient.transactedQueue", "true");
+		clientProperties.setProperty("JMSTaskClient.acknowledgeMode", "AUTO_ACKNOWLEDGE");
+		clientProperties.setProperty("JMSTaskClient.queueName", "tasksQueue");
+		clientProperties.setProperty("JMSTaskClient.responseQueueName", "tasksResponseQueue");
+        
+		client = new TaskClient(new JMSTaskClientConnector("client 1",
+								new JMSTaskClientHandler(SystemEventListenerFactory.getSystemEventListener()),
+								clientProperties, context));
+		client.connect();
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TaskLifeCycleJMSUserGroupCallbackAsyncTest</h6>
+            <pre class="prettyprint">
+    protected void setUp() throws Exception {
+        super.setUp();
+        
+        ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory("vm://localhost?broker.persistent=false");
+        
+        this.context = EasyMock.createMock(Context.class);
+        EasyMock.expect(context.lookup("ConnectionFactory")).andReturn(factory).anyTimes();
+        EasyMock.replay(context);
+        
+        Properties serverProperties = new Properties();
+        serverProperties.setProperty("JMSTaskServer.connectionFactory", "ConnectionFactory");
+        serverProperties.setProperty("JMSTaskServer.transacted", "true");
+        serverProperties.setProperty("JMSTaskServer.acknowledgeMode", "AUTO_ACKNOWLEDGE");
+        serverProperties.setProperty("JMSTaskServer.queueName", "tasksQueue");
+        serverProperties.setProperty("JMSTaskServer.responseQueueName", "tasksResponseQueue");
+        
+        server = new JMSTaskServer(taskService, serverProperties, context);
+        Thread thread = new Thread(server);
+        thread.start();
+        System.out.println("Waiting for the JMS Task Server to come up");
+        while (!server.isRunning()) {
+            System.out.print(".");
+            Thread.sleep( 50 );
+        }
+
+        Properties clientProperties = new Properties();
+        clientProperties.setProperty("JMSTaskClient.connectionFactory", "ConnectionFactory");
+        clientProperties.setProperty("JMSTaskClient.transactedQueue", "true");
+        clientProperties.setProperty("JMSTaskClient.acknowledgeMode", "AUTO_ACKNOWLEDGE");
+        clientProperties.setProperty("JMSTaskClient.queueName", "tasksQueue");
+        clientProperties.setProperty("JMSTaskClient.responseQueueName", "tasksResponseQueue");
+        
+        client = new TaskClient(new JMSTaskClientConnector("client 1",
+                                new JMSTaskClientHandler(SystemEventListenerFactory.getSystemEventListener()),
+                                clientProperties, context));
+        client.connect();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TaskServiceCommentsAndAttachmentsJMSAsyncTest_1</h6>
+            <pre class="prettyprint">
+	protected void setUp() throws Exception {
+		super.setUp();
+		
+		ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory("vm://localhost?broker.persistent=false");
+		
+		this.context = EasyMock.createMock(Context.class);
+		EasyMock.expect(context.lookup("ConnectionFactory")).andReturn(factory).anyTimes();
+		EasyMock.replay(context);
+		
+		Properties serverProperties = new Properties();
+		serverProperties.setProperty("JMSTaskServer.connectionFactory", "ConnectionFactory");
+		serverProperties.setProperty("JMSTaskServer.transacted", "true");
+		serverProperties.setProperty("JMSTaskServer.acknowledgeMode", "AUTO_ACKNOWLEDGE");
+		serverProperties.setProperty("JMSTaskServer.queueName", "tasksQueue");
+		serverProperties.setProperty("JMSTaskServer.responseQueueName", "tasksResponseQueue");
+		
+		server = new JMSTaskServer(taskService, serverProperties, context);
+		Thread thread = new Thread(server);
+		thread.start();
+		System.out.println("Waiting for the JMS Task Server to come up");
+        while (!server.isRunning()) {
+        	System.out.print(".");
+        	Thread.sleep( 50 );
+        }
+
+        Properties clientProperties = new Properties();
+		clientProperties.setProperty("JMSTaskClient.connectionFactory", "ConnectionFactory");
+		clientProperties.setProperty("JMSTaskClient.transactedQueue", "true");
+		clientProperties.setProperty("JMSTaskClient.acknowledgeMode", "AUTO_ACKNOWLEDGE");
+		clientProperties.setProperty("JMSTaskClient.queueName", "tasksQueue");
+		clientProperties.setProperty("JMSTaskClient.responseQueueName", "tasksResponseQueue");
+        
+		client = new TaskClient(new JMSTaskClientConnector("client 1",
+								new JMSTaskClientHandler(SystemEventListenerFactory.getSystemEventListener()),
+								clientProperties, context));
+		client.connect();
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_9 (3 partitions, 165 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.drools.KnowledgeBase.newStatefulKnowledgeSession
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (21 files, similarity: 0.7117978000000004)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SimpleProcessTest</h6>
+            <pre class="prettyprint">
+    /**
+     * Creates a ksession from a kbase containing process definition
+     * @return 
+     */
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add simpleProcess.bpmn to kbuilder
+        kbuilder.add(new ClassPathResource("process/simpleProcess.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SingleEventProcessTest</h6>
+            <pre class="prettyprint">
+    /**
+     * Creates a ksession from a kbase containing process definition
+     * @return 
+     */
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add simpleProcess.bpmn to kbuilder
+        kbuilder.add(new ClassPathResource("process/singleEventProcess.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SingleEventProcessWithDataTest</h6>
+            <pre class="prettyprint">
+    /**
+     * Creates a ksession from a kbase containing process definition
+     * @return 
+     */
+    public StatefulKnowledgeSession createKSession(){
+        //Create the kbuilder
+        KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+        //Add simpleProcess.bpmn to kbuilder
+        kbuilder.add(new ClassPathResource("process/singleEventProcessWithData.bpmn"), ResourceType.BPMN2);
+        System.out.println("Compiling resources");
+        
+        //Check for errors
+        if (kbuilder.hasErrors()) {
+            if (kbuilder.getErrors().size() > 0) {
+                for (KnowledgeBuilderError error : kbuilder.getErrors()) {
+                    System.out.println("Error building kbase: " + error.getMessage());
+                }
+            }
+            throw new RuntimeException("Error building kbase!");
+        }
+
+        //Create a knowledge base and add the generated package
+        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+        kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+
+        //return a new statefull session
+        return kbase.newStatefulKnowledgeSession();
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_30 (3 partitions, 76 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.drools.logger.KnowledgeRuntimeLoggerFactory.newConsoleLogger
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (28 files, similarity: 0.5706503968253964)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>BoundaryTimerEventProcessTest</h6>
+            <pre class="prettyprint">
+    @Before
+    public void setup() throws IOException {
+        this.ksession = this.createKSession();
+
+        //Console log. Try to analyze it first
+        KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
+
+        //File logger: try to open its output using Audit View in eclipse
+        File logFile = File.createTempFile("process-output", "");
+        System.out.println("Log file= " + logFile.getAbsolutePath() + ".log");
+        fileLogger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, logFile.getAbsolutePath());
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>DelayTimerEventProcessTest</h6>
+            <pre class="prettyprint">
+    @Before
+    public void setup() throws IOException{
+        this.ksession = this.createKSession();
+        
+        //Console log. Try to analyze it first
+        KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
+        
+        //File logger: try to open its output using Audit View in eclipse
+        File logFile = File.createTempFile("process-output", "");
+        System.out.println("Log file= "+logFile.getAbsolutePath()+".log");
+        fileLogger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession,logFile.getAbsolutePath());
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ConditionalStartEventProcessTest</h6>
+            <pre class="prettyprint">
+    @Before
+    public void setup() throws IOException{
+        this.ksession = this.createKSession();
+        
+        //Console log. Try to analyze it first
+        KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
+        
+        //File logger: try to open its output using Audit View in eclipse
+        File logFile = File.createTempFile("process-output", "");
+        System.out.println("Log file= "+logFile.getAbsolutePath()+".log");
+        fileLogger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession,logFile.getAbsolutePath());
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_169 (3 partitions, 24 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.drools.io.ResourceFactory.newClassPathResource, org.drools.builder.KnowledgeBuilder.add
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (8 files, similarity: 0.7517166428571432)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>JbpmJUnitTestCase</h6>
+            <pre class="prettyprint">
+			kbuilder.add(ResourceFactory.newClassPathResource(entry.getKey()), entry.getValue());
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>JbpmBpmn2TestCase</h6>
+            <pre class="prettyprint">
+			kbuilder.add(ResourceFactory.newClassPathResource(entry.getKey()), entry.getValue());
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>PricingRuleLauncher_2</h6>
+            <pre class="prettyprint">
+        kbuilder.add( ResourceFactory.newClassPathResource( "/data/ExamplePolicyPricing.xls", getClass() ),
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_12 (2 partitions, 78 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.drools.runtime.StatefulKnowledgeSession.dispose
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (31 files, similarity: 0.5890539956989244)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AdminAPIsWithListenerTest</h6>
+            <pre class="prettyprint">
+    private StatefulKnowledgeSession reloadSession(StatefulKnowledgeSession ksession, KnowledgeBase kbase, Environment env) {
+        int sessionId = ksession.getId();
+        ksession.dispose();
+        return JPAKnowledgeService.loadStatefulKnowledgeSession(sessionId, kbase, null, env);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AmbulanceMonitorService</h6>
+            <pre class="prettyprint">
+    @Override
+    public void vehicleRemoved() {
+        session.dispose();
+        sessionThread.stop();
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>KnowledgeSessionService</h6>
+            <pre class="prettyprint">
+        if(bamProducer != null)
+            bamProducer.dispose();
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_18 (3 partitions, 95 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.drools.runtime.process.WorkItem.getId
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (30 files, similarity: 0.6652058988505736)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>JPAWorkingMemoryDbLoggerTest</h6>
+            <pre class="prettyprint">
+            public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
+                Map<String, Object> results = new HashMap<String, Object>();
+                results.put("Result", "ResultValue");
+                manager.completeWorkItem(workItem.getId(), results);
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>MigrationTest</h6>
+            <pre class="prettyprint">
+                @Override
+                public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
+                    workItemValue.append(workItem.getParameter("workItemParam1"));
+                    manager.completeWorkItem(workItem.getId(), null);
+                }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>MultiSessionsPatternsTest</h6>
+            <pre class="prettyprint">
+        public void executeWorkItem(WorkItem wi, WorkItemManager wim) {
+            System.out.println(">>> Working on a Human Interaction");
+            System.out.println(">>> Completing a Human Interaction");
+            wim.completeWorkItem(wi.getId(), null);
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (31 files, similarity: 0.5215944064516137)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SyncDeadlineEnabledWSHumanTaskHandler</h6>
+            <pre class="prettyprint">
+        if(session != null && (session instanceof StatefulKnowledgeSession)) { 
+        	taskData.setProcessSessionId( ((StatefulKnowledgeSession) session).getId() );
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UIWorkItemHandler_1</h6>
+            <pre class="prettyprint">
+        if (manager != null) {
+            manager.completeWorkItem(workItem.getId(), results);
+            workItems.remove(workItem);
+            reloadWorkItemsList();
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UIWorkItemHandler</h6>
+            <pre class="prettyprint">
+        if (manager != null) {
+            manager.completeWorkItem(workItem.getId(), results);
+            workItems.remove(workItem);
+            reloadWorkItemsList();
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_109 (3 partitions, 59 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.drools.runtime.process.WorkItemManager.completeWorkItem
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (18 files, similarity: 0.8266775032679741)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>JPAWorkingMemoryDbLoggerTest</h6>
+            <pre class="prettyprint">
+            public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
+                Map<String, Object> results = new HashMap<String, Object>();
+                results.put("Result", "ResultValue");
+                manager.completeWorkItem(workItem.getId(), results);
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>MultiSessionsPatternsTest</h6>
+            <pre class="prettyprint">
+        public void executeWorkItem(WorkItem wi, WorkItemManager wim) {
+            System.out.println(">>> Working on a Human Interaction");
+            System.out.println(">>> Completing a Human Interaction");
+            wim.completeWorkItem(wi.getId(), null);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>MigrationTest</h6>
+            <pre class="prettyprint">
+                @Override
+                public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
+                    workItemValue.append(workItem.getParameter("workItemParam1"));
+                    manager.completeWorkItem(workItem.getId(), null);
+                }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (10 files, similarity: 0.6680314222222222)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UIWorkItemHandler_1</h6>
+            <pre class="prettyprint">
+        if (manager != null) {
+            manager.completeWorkItem(workItem.getId(), results);
+            workItems.remove(workItem);
+            reloadWorkItemsList();
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UIWorkItemHandler</h6>
+            <pre class="prettyprint">
+        if (manager != null) {
+            manager.completeWorkItem(workItem.getId(), results);
+            workItems.remove(workItem);
+            reloadWorkItemsList();
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SyncWSHumanTaskHandler</h6>
+            <pre class="prettyprint">
+					if (session != null) {
+						session.getWorkItemManager().completeWorkItem(workItemId, results);
+					} else {
+						manager.completeWorkItem(workItemId, results);
+					}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+	

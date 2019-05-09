@@ -1,0 +1,1493 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">hadoop</h1>
+    </div>
+    
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_11 (6 partitions, 751 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.fs.Path.&lt;init&gt;, org.apache.hadoop.fs.Path.&lt;init&gt;, org.apache.hadoop.fs.Path.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 5 (5 files, similarity: 0.5098794999999999)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>MeanJob</h6>
+            <pre class="prettyprint">
+	{
+		double value = 0;
+		JobControl jobControl = new JobControl("mean job");
+		try 
+		{
+			job = new Job();
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		job.setJarByClass(MeanJob.class);
+		log.info("Mean Job initialized");
+		log.warn("Mean job: Processing...Do not terminate/close");
+		log.debug("Mean job: Mapping process started");
+
+		try 
+		{
+			ChainMapper.addMapper(job, FieldSeperator.FieldSeperationMapper.class,DoubleWritable.class,Text.class,NullWritable.class,Text.class,job.getConfiguration());
+			ChainMapper.addMapper(job, MeanMapper.class,NullWritable.class,Text.class,Text.class,DoubleWritable.class,job.getConfiguration());
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+
+		job.getConfiguration().set("fields.spec", ""+column);
+		job.getConfiguration().setInt("n",n);
+
+		job.setReducerClass(DoubleSumReducer.class);
+		try 
+		{
+			FileInputFormat.addInputPath(job, new Path(inputFilePath));
+			fs = FileSystem.get(job.getConfiguration());
+			if(!fs.exists(new Path(inputFilePath)))
+			{
+				throw new NectarException("Exception occured:File "+inputFilePath+" not found ");
+			}
+		} 
+		catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			String trace =new String();
+			log.error(e.toString());
+			for(StackTraceElement s:e.getStackTrace())
+			{
+				trace+="\n\t at "+s.toString();
+			}
+			log.debug(trace);
+			log.debug("Mean Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		FileOutputFormat.setOutputPath(job,new Path(outputFilePath));
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(DoubleWritable.class);
+		job.setInputFormatClass(TextInputFormat.class);
+		log.debug("Mean job: Mapping process completed");
+
+		log.debug("Mean job: Reducing process started");
+		try 
+		{
+			controlledJob = new ControlledJob(job.getConfiguration());
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		jobControl.addJob(controlledJob);
+		Thread thread = new Thread(jobControl);
+		thread.start();
+		while(!jobControl.allFinished())
+		{
+			try 
+			{
+				Thread.sleep(10000);
+			} 
+			catch (InterruptedException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		jobControl.stop();
+		try 
+		{
+			FSDataInputStream in = fs.open(new Path(outputFilePath+"/part-r-00000"));
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
+			String valueLine = bufferedReader.readLine();
+			String [] fields = valueLine.split("\t");
+			value = Double.parseDouble(fields[1]);
+			bufferedReader.close();
+			in.close();
+		} 
+		catch (IOException e) 
+		{
+			log.error("Exception occured: Output file cannot be read.");
+			log.debug(e.getMessage());
+			log.debug("Mean Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		log.debug("Mean job: Reducing process completed");
+		log.info("Mean Job completed\n");
+		return value;
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SigmaSqJob</h6>
+            <pre class="prettyprint">
+	{
+		// TODO Auto-generated method stub
+		double value=0;
+		JobControl jobControl = new JobControl("sigmajob");
+		try 
+		{
+			job = new Job();
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		job.setJarByClass(SigmaSqJob.class);
+		log.info("Sigma square Job initialized");
+		log.warn("Sigma square job: Processing...Do not terminate/close");
+		log.debug("Sigma square job: Mapping process started");
+
+		try 
+		{
+			ChainMapper.addMapper(job, FieldSeperator.FieldSeperationMapper.class,DoubleWritable.class,Text.class,NullWritable.class,Text.class,job.getConfiguration());
+			ChainMapper.addMapper(job, SigmaSqMapper.class,NullWritable.class,Text.class,Text.class,DoubleWritable.class,job.getConfiguration());
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		job.getConfiguration().set("fields.spec", ""+column);
+		job.setReducerClass(DoubleSumReducer.class);
+		try 
+		{
+			FileInputFormat.addInputPath(job, new Path(inputFilePath));
+			fs = FileSystem.get(job.getConfiguration());
+			if(!fs.exists(new Path(inputFilePath)))
+			{
+				throw new NectarException("Exception occured:File "+inputFilePath+" not found ");
+			}
+		} 
+		catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			String trace =new String();
+			log.error(e.toString());
+			for(StackTraceElement s:e.getStackTrace())
+			{
+				trace+="\n\t at "+s.toString();
+			}
+			log.debug(trace);
+			log.debug("Sigma square Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		FileOutputFormat.setOutputPath(job,new Path(outputFilePath));
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(DoubleWritable.class);
+		job.setInputFormatClass(TextInputFormat.class);
+		log.debug("Sigma square job: Mapping process completed");
+
+		log.debug("Sigma square job: Reducing process started");
+		try 
+		{
+			controlledJob = new ControlledJob(job.getConfiguration());
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		jobControl.addJob(controlledJob);
+		Thread thread = new Thread(jobControl);
+		thread.start();
+		while(!jobControl.allFinished())
+		{
+			try 
+			{
+				Thread.sleep(10000);
+			} 
+			catch (InterruptedException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		jobControl.stop();
+		try 
+		{
+			fs = FileSystem.get(job.getConfiguration());
+			FSDataInputStream in =fs.open(new Path(outputFilePath+"/part-r-00000"));
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
+			String valueLine = bufferedReader.readLine();
+			String [] fields = valueLine.split("\t");
+			value = Double.parseDouble(fields[1]);
+			bufferedReader.close();
+			in.close();
+		} 
+		catch (IOException e) 
+		{
+			log.error("Exception occured: Output file cannot be read.");
+			log.debug(e.getMessage());
+			log.debug("Sigma square Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		log.debug("Sigma square job: Reducing process completed");
+		log.info("Sigma square Job completed\n");
+		return value;
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SigmaXYJob</h6>
+            <pre class="prettyprint">
+	{
+		double value=0;
+		JobControl jobControl = new JobControl("sigmajob");
+		try 
+		{
+			job = new Job();
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		job.setJarByClass(SigmaXYJob.class);
+		log.info("SigmaXY Job initialized");
+		log.warn("SigmaXY job: Processing...Do not terminate/close");
+		log.debug("SigmaXY job: Mapping process started");
+
+		try 
+		{
+			ChainMapper.addMapper(job, FieldSeperator.FieldSeperationMapper.class,LongWritable.class,Text.class,NullWritable.class,Text.class,job.getConfiguration());
+			ChainMapper.addMapper(job, SigmaXYMapper.class,NullWritable.class,Text.class,Text.class,DoubleWritable.class,job.getConfiguration());
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		job.getConfiguration().set("fields.spec",x + "," +y);
+
+		job.setReducerClass(DoubleSumReducer.class);
+		try 
+		{
+			FileInputFormat.addInputPath(job, new Path(inputFilePath));
+			fs = FileSystem.get(job.getConfiguration());
+			if(!fs.exists(new Path(inputFilePath)))
+			{
+				throw new NectarException("Exception occured:File "+inputFilePath+" not found ");
+			}
+		} 
+		catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			String trace =new String();
+			log.error(e.toString());
+			for(StackTraceElement s:e.getStackTrace())
+			{
+				trace+="\n\t at "+s.toString();
+			}
+			log.debug(trace);
+			log.debug("SigmaXY Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		FileOutputFormat.setOutputPath(job,new Path(outputFilePath));
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(DoubleWritable.class);
+		job.setInputFormatClass(TextInputFormat.class);
+		log.debug("SigmaXY job: Mapping process completed");
+
+		log.debug("SigmaXY job: Reducing process started");
+		try 
+		{
+			controlledJob = new ControlledJob(job.getConfiguration());
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		jobControl.addJob(controlledJob);
+		Thread thread = new Thread(jobControl);
+		thread.start();
+		while(!jobControl.allFinished())
+		{
+			try 
+			{
+				Thread.sleep(10000);
+			} 
+			catch (InterruptedException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		jobControl.stop();
+		FileSystem fs;
+		try 
+		{
+			fs = FileSystem.get(job.getConfiguration());
+			FSDataInputStream in =fs.open(new Path(outputFilePath+"/part-r-00000"));
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
+			String valueLine = bufferedReader.readLine();
+			String [] fields = valueLine.split("\t");
+			value = Double.parseDouble(fields[1]);
+			bufferedReader.close();
+			in.close();
+		} 
+		catch (IOException e) 
+		{
+			log.error("Exception occured: Output file cannot be read.");
+			log.debug(e.getMessage());
+			log.debug("SigmaXY Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		log.debug("SigmaXY job: Reducing process completed");
+		log.info("SigmaXY Job completed\n");
+		return value;
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_87 (5 partitions, 563 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.mapreduce.lib.output.FileOutputFormat.setOutputPath
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 4 (5 files, similarity: 0.8566233999999999)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SigmaJob</h6>
+            <pre class="prettyprint">
+	{
+		double value = 0;
+		JobControl jobControl = new JobControl("sigmajob");
+		try 
+		{
+			job = new Job();
+		} 
+		catch (IOException e1) 
+		{
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		job.setJarByClass(SigmaJob.class);
+		log.info("Sigma Job initialized");
+		log.warn("Sigma job: Processing...Do not terminate/close");
+		log.debug("Sigma job: Mapping process started");
+		try 
+		{
+			ChainMapper.addMapper(job, FieldSeperator.FieldSeperationMapper.class,LongWritable.class,Text.class,NullWritable.class,Text.class,job.getConfiguration());
+			ChainMapper.addMapper(job, SigmaMapper.class,NullWritable.class,Text.class,Text.class,DoubleWritable.class,job.getConfiguration());
+		} 
+		catch (IOException e1) 
+		{
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		job.getConfiguration().set("fields.spec", ""+column);
+
+		job.setReducerClass(DoubleSumReducer.class);
+		try 
+		{
+			FileInputFormat.addInputPath(job, new Path(inputFilePath));
+			fs = FileSystem.get(job.getConfiguration());
+			if(!fs.exists(new Path(inputFilePath)))
+			{
+				throw new NectarException("Exception occured:File "+inputFilePath+" not found ");
+			}
+		} 
+		catch (Exception e2) 
+		{
+			// TODO Auto-generated catch block
+			String trace =new String();
+			log.error(e2.toString());
+			for(StackTraceElement s:e2.getStackTrace())
+			{
+				trace+="\n\t at "+s.toString();
+			}
+			log.debug(trace);
+			log.debug("Sigma Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		FileOutputFormat.setOutputPath(job,new Path(outputFilePath));
+		job.setMapOutputValueClass(DoubleWritable.class);
+		job.setMapOutputKeyClass(Text.class);
+		job.setInputFormatClass(TextInputFormat.class);
+		log.debug("Sigma job: Mapping process completed");
+
+		log.debug("Sigma job: Reducing process started");
+		try 
+		{
+			controlledJob = new ControlledJob(job.getConfiguration());
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		jobControl.addJob(controlledJob);
+		Thread thread = new Thread(jobControl);
+		thread.start();
+		while(!jobControl.allFinished())
+		{
+			try 
+			{
+				Thread.sleep(10000);
+			} 
+			catch (InterruptedException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		try 
+		{
+			FSDataInputStream in =fs.open(new Path(outputFilePath+"/part-r-00000"));
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
+			String valueLine = bufferedReader.readLine();
+			String [] fields = valueLine.split("\t");
+			value = Double.parseDouble(fields[1]);
+			bufferedReader.close();
+			in.close();
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			log.error("Exception occured: Output file cannot be read.");
+			log.debug(e.getMessage());
+			log.debug("Sigma Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		log.debug("Sigma job: Reducing process completed");
+		log.info("Sigma Job completed\n");
+		return value;
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SigmaXYJob</h6>
+            <pre class="prettyprint">
+	{
+		double value=0;
+		JobControl jobControl = new JobControl("sigmajob");
+		try 
+		{
+			job = new Job();
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		job.setJarByClass(SigmaXYJob.class);
+		log.info("SigmaXY Job initialized");
+		log.warn("SigmaXY job: Processing...Do not terminate/close");
+		log.debug("SigmaXY job: Mapping process started");
+
+		try 
+		{
+			ChainMapper.addMapper(job, FieldSeperator.FieldSeperationMapper.class,LongWritable.class,Text.class,NullWritable.class,Text.class,job.getConfiguration());
+			ChainMapper.addMapper(job, SigmaXYMapper.class,NullWritable.class,Text.class,Text.class,DoubleWritable.class,job.getConfiguration());
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		job.getConfiguration().set("fields.spec",x + "," +y);
+
+		job.setReducerClass(DoubleSumReducer.class);
+		try 
+		{
+			FileInputFormat.addInputPath(job, new Path(inputFilePath));
+			fs = FileSystem.get(job.getConfiguration());
+			if(!fs.exists(new Path(inputFilePath)))
+			{
+				throw new NectarException("Exception occured:File "+inputFilePath+" not found ");
+			}
+		} 
+		catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			String trace =new String();
+			log.error(e.toString());
+			for(StackTraceElement s:e.getStackTrace())
+			{
+				trace+="\n\t at "+s.toString();
+			}
+			log.debug(trace);
+			log.debug("SigmaXY Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		FileOutputFormat.setOutputPath(job,new Path(outputFilePath));
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(DoubleWritable.class);
+		job.setInputFormatClass(TextInputFormat.class);
+		log.debug("SigmaXY job: Mapping process completed");
+
+		log.debug("SigmaXY job: Reducing process started");
+		try 
+		{
+			controlledJob = new ControlledJob(job.getConfiguration());
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		jobControl.addJob(controlledJob);
+		Thread thread = new Thread(jobControl);
+		thread.start();
+		while(!jobControl.allFinished())
+		{
+			try 
+			{
+				Thread.sleep(10000);
+			} 
+			catch (InterruptedException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		jobControl.stop();
+		FileSystem fs;
+		try 
+		{
+			fs = FileSystem.get(job.getConfiguration());
+			FSDataInputStream in =fs.open(new Path(outputFilePath+"/part-r-00000"));
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
+			String valueLine = bufferedReader.readLine();
+			String [] fields = valueLine.split("\t");
+			value = Double.parseDouble(fields[1]);
+			bufferedReader.close();
+			in.close();
+		} 
+		catch (IOException e) 
+		{
+			log.error("Exception occured: Output file cannot be read.");
+			log.debug(e.getMessage());
+			log.debug("SigmaXY Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		log.debug("SigmaXY job: Reducing process completed");
+		log.info("SigmaXY Job completed\n");
+		return value;
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SigmaSqJob</h6>
+            <pre class="prettyprint">
+	{
+		// TODO Auto-generated method stub
+		double value=0;
+		JobControl jobControl = new JobControl("sigmajob");
+		try 
+		{
+			job = new Job();
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		job.setJarByClass(SigmaSqJob.class);
+		log.info("Sigma square Job initialized");
+		log.warn("Sigma square job: Processing...Do not terminate/close");
+		log.debug("Sigma square job: Mapping process started");
+
+		try 
+		{
+			ChainMapper.addMapper(job, FieldSeperator.FieldSeperationMapper.class,DoubleWritable.class,Text.class,NullWritable.class,Text.class,job.getConfiguration());
+			ChainMapper.addMapper(job, SigmaSqMapper.class,NullWritable.class,Text.class,Text.class,DoubleWritable.class,job.getConfiguration());
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		job.getConfiguration().set("fields.spec", ""+column);
+		job.setReducerClass(DoubleSumReducer.class);
+		try 
+		{
+			FileInputFormat.addInputPath(job, new Path(inputFilePath));
+			fs = FileSystem.get(job.getConfiguration());
+			if(!fs.exists(new Path(inputFilePath)))
+			{
+				throw new NectarException("Exception occured:File "+inputFilePath+" not found ");
+			}
+		} 
+		catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			String trace =new String();
+			log.error(e.toString());
+			for(StackTraceElement s:e.getStackTrace())
+			{
+				trace+="\n\t at "+s.toString();
+			}
+			log.debug(trace);
+			log.debug("Sigma square Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		FileOutputFormat.setOutputPath(job,new Path(outputFilePath));
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(DoubleWritable.class);
+		job.setInputFormatClass(TextInputFormat.class);
+		log.debug("Sigma square job: Mapping process completed");
+
+		log.debug("Sigma square job: Reducing process started");
+		try 
+		{
+			controlledJob = new ControlledJob(job.getConfiguration());
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		jobControl.addJob(controlledJob);
+		Thread thread = new Thread(jobControl);
+		thread.start();
+		while(!jobControl.allFinished())
+		{
+			try 
+			{
+				Thread.sleep(10000);
+			} 
+			catch (InterruptedException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		jobControl.stop();
+		try 
+		{
+			fs = FileSystem.get(job.getConfiguration());
+			FSDataInputStream in =fs.open(new Path(outputFilePath+"/part-r-00000"));
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
+			String valueLine = bufferedReader.readLine();
+			String [] fields = valueLine.split("\t");
+			value = Double.parseDouble(fields[1]);
+			bufferedReader.close();
+			in.close();
+		} 
+		catch (IOException e) 
+		{
+			log.error("Exception occured: Output file cannot be read.");
+			log.debug(e.getMessage());
+			log.debug("Sigma square Job terminated abruptly\n");
+			throw new NectarException();
+		}
+		log.debug("Sigma square job: Reducing process completed");
+		log.info("Sigma square Job completed\n");
+		return value;
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_9 (3 partitions, 513 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.io.Text.&lt;init&gt;, org.apache.hadoop.io.Text.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (178 files, similarity: 0.7024945547514987)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AdsorptionHadoop</h6>
+            <pre class="prettyprint">
+       output.collect(new Text(fields[0]), new Text(line));
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AccumuloEdgeInputFormat</h6>
+            <pre class="prettyprint">
+    private static final Text uselessEdgeValue = new Text();
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AvroSequenceFile</h6>
+            <pre class="prettyprint">
+  /** The SequencFile.Metadata field for the Avro key writer schema. */
+  public static final Text METADATA_FIELD_KEY_SCHEMA = new Text("avro.key.schema");
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (67 files, similarity: 0.646610539574851)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Write_2</h6>
+            <pre class="prettyprint">
+    m.put(new Text("cf"), new Text("cq"), new Value(new String("val").getBytes()));
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>VerifyTabletAssignments</h6>
+            <pre class="prettyprint">
+      } else {
+        row = new Text(row);
+        row2 = new Text(row);
+        
+        row.getBytes()[row.getLength() - 1] = (byte) (row.getBytes()[row.getLength() - 1] - 1);
+      }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>VisibilityFilter</h6>
+            <pre class="prettyprint">
+  public VisibilityFilter(SortedKeyValueIterator<Key,Value> iterator, Authorizations authorizations, byte[] defaultVisibility) {
+    setSource(iterator);
+    this.ve = new VisibilityEvaluator(authorizations);
+    this.defaultVisibility = new Text(defaultVisibility);
+    this.cache = new LRUMap(1000);
+    this.tmpVis = new Text();
+  }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_8 (4 partitions, 1218 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.fs.FileSystem.get
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (341 files, similarity: 0.5199866860445757)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>BSPMaster</h6>
+            <pre class="prettyprint">
+          if (fs == null) {
+            fs = FileSystem.get(conf);
+          }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CDMahoutEvaluatorTest</h6>
+            <pre class="prettyprint">
+    for (int index = 0; index < nbrules; index++) {
+      assertEquals("rule " + index, RandomRuleResults.getResult(index),
+          results.get(index));
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>DistributedCacheFactoryBean</h6>
+            <pre class="prettyprint">
+		if (fs == null) {
+			fs = FileSystem.get(conf);
+		}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_3 (3 partitions, 1807 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.conf.Configuration.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (573 files, similarity: 0.6445302980937221)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AFormatterWG</h6>
+            <pre class="prettyprint">
+	public static void main(String[] args) throws Exception {
+		int res = ToolRunner.run(new Configuration(), new AFormatterWG(), args);
+		System.exit(res);
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AnnotateClueRunWithURLs</h6>
+            <pre class="prettyprint">
+	/**
+	 * Dispatches command-line arguments to the tool via the
+	 * <code>ToolRunner</code>.
+	 */
+	public static void main(String[] args) throws Exception {
+		int res = ToolRunner.run(new Configuration(), new AnnotateClueRunWithURLs(), args);
+		System.exit(res);
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AnnotateClueRunAllWithURLs</h6>
+            <pre class="prettyprint">
+	/**
+	 * Dispatches command-line arguments to the tool via the
+	 * <code>ToolRunner</code>.
+	 */
+	public static void main(String[] args) throws Exception {
+		int res = ToolRunner.run(new Configuration(), new AnnotateClueRunAllWithURLs(), args);
+		System.exit(res);
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_4 (3 partitions, 990 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.conf.Configuration.get
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (181 files, similarity: 0.6039100473910786)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ZooKeeperStorage</h6>
+            <pre class="prettyprint">
+    /**
+     * Open a ZooKeeper connection for the JobState.
+     */
+    public static ZooKeeper zkOpen(Configuration conf)
+        throws IOException
+    {
+        return zkOpen(conf.get(ZK_HOSTS),
+                      conf.getInt(ZK_SESSION_TIMEOUT, 30000));
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ZooKeeperStorage_1</h6>
+            <pre class="prettyprint">
+    /**
+     * Open a ZooKeeper connection for the JobState.
+     */
+    public static ZooKeeper zkOpen(Configuration conf)
+        throws IOException {
+        return zkOpen(conf.get(ZK_HOSTS),
+            conf.getInt(ZK_SESSION_TIMEOUT, 30000));
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>YamlModelParser</h6>
+            <pre class="prettyprint">
+    public static Cube getCubeModel(Configuration conf) throws IOException {
+        String modelStr = conf.get(Pig8CubeIncrementalCompilerBean.PROP_CUBEMODEL);
+        if (modelStr == null)
+            return null;
+        return decodeCubeModel(modelStr);
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (333 files, similarity: 0.5312477874561798)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>BaseJobsServlet_1</h6>
+            <pre class="prettyprint">
+        if (conf.get(WorkflowAppService.HADOOP_JT_KERBEROS_NAME) == null) {
+            conf.set(WorkflowAppService.HADOOP_JT_KERBEROS_NAME, "mapred/_HOST@" + localRealm);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>BaseJobsServlet_2</h6>
+            <pre class="prettyprint">
+        if (conf.get(WorkflowAppService.HADOOP_JT_KERBEROS_NAME) == null) {
+            conf.set(WorkflowAppService.HADOOP_JT_KERBEROS_NAME, "mapred/_HOST@" + localRealm);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>BaseJobsServlet</h6>
+            <pre class="prettyprint">
+        if (conf.get(OozieClient.USER_NAME) == null) {
+            throw new XServletException(HttpServletResponse.SC_BAD_REQUEST, ErrorCode.E0401,
+                    OozieClient.USER_NAME);
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_14 (3 partitions, 515 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.io.IntWritable.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (139 files, similarity: 0.6657307095193886)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>OrderInversion</h6>
+            <pre class="prettyprint">
+				for (IntWritable value : values) {
+					cooccurrence_count += value.get();
+				}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>NullReducer</h6>
+            <pre class="prettyprint">
+    for (IntWritable value : values) {
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>PacketCount</h6>
+            <pre class="prettyprint">
+    public void reduce(Text key, Iterable<IntWritable> values, Context context) 
+      throws IOException, InterruptedException {
+        int sum = 0;
+        for (IntWritable val : values) {
+            sum += val.get();
+        }
+        context.write(key, new IntWritable(sum));
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_1 (3 partitions, 1395 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.io.Text.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (311 files, similarity: 0.6286404588528945)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TextConverter</h6>
+            <pre class="prettyprint">
+  public TextConverter() {
+    super(new Text());
+  }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TestWordCount</h6>
+            <pre class="prettyprint">
+    @Override
+    protected void setup(Context context) {
+      mCount = new IntWritable(0);
+      mText = new Text("");
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TestWordCount_2</h6>
+            <pre class="prettyprint">
+    @Override
+    protected void setup(Context context) {
+      mCount = new IntWritable(0);
+      mText = new Text("");
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (418 files, similarity: 0.5191548102417012)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>XtrExtract_2</h6>
+            <pre class="prettyprint">
+      for(Report r:sortedReports)
+        finalOutput[i++] = new Text(r.toString());
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>XtrExtract</h6>
+            <pre class="prettyprint">
+      for(Report r:sortedReports)
+        finalOutput[i++] = new Text(r.toString());
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ZipFileProcessor</h6>
+            <pre class="prettyprint">
+        for (String name : names) {
+            String value = metadata.get(name);
+            // TODO how could value be null? (but it did happen to me)
+            if (value == null) {
+                value = "";
+            }
+            mapWritable.put(new Text(name), new Text(value));
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_6 (3 partitions, 887 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.io.Text.toString
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (254 files, similarity: 0.5661919413339118)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>XmlExporter</h6>
+            <pre class="prettyprint">
+        		for(int i=0 ; i<words.length ; i++)
+        			ws+=words[i].toString()+XmlConst.DELIMITER;
+        		child.setAttribute(XmlConst.WORDS, ws.substring(0, ws.length() - 1));
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>WordsInCorpusTFIDFReducer</h6>
+            <pre class="prettyprint">
+		for (Text val : values) {
+			String[] documentAndFrequencies = val.toString().split("=");
+			numberOfDocsInCorpusWithKey++;
+			tempFrequencies.put(documentAndFrequencies[0],
+					documentAndFrequencies[1]);
+		}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>XtrExtract</h6>
+            <pre class="prettyprint">
+      for(Report r:sortedReports)
+        finalOutput[i++] = new Text(r.toString());
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_23 (3 partitions, 529 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.fs.FileSystem.delete
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (27 files, similarity: 0.7711760769230755)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>stats</h6>
+            <pre class="prettyprint">
+        if ( overrideOutput ) {
+            fs.delete(new Path(args[1]), true);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>infer</h6>
+            <pre class="prettyprint">
+        if ( overrideOutput ) {
+            fs.delete(new Path(args[1]), true);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TestUtils_2</h6>
+            <pre class="prettyprint">
+        if (fs.exists(new Path(full))) {
+            fs.delete(new Path(full), true);
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (195 files, similarity: 0.7460352543483612)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ClueWebAnchorTextForwardIndexHttpServer</h6>
+            <pre class="prettyprint">
+		if (fs.exists(tmpPath)) {
+			fs.delete(tmpPath, true);
+		}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>BulkImportJobExample</h6>
+            <pre class="prettyprint">
+      if (fs.exists(dst)) fs.delete(dst, false);
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CosineMapReduceJob</h6>
+            <pre class="prettyprint">
+    if (fs.exists(output)) {
+      fs.delete(output, true);
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_21 (3 partitions, 511 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.fs.FileSystem.exists
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (213 files, similarity: 0.8522918471076463)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CrawlDb</h6>
+            <pre class="prettyprint">
+      if (fs.exists(outPath) ) fs.delete(outPath, true);
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CrawlDb_1</h6>
+            <pre class="prettyprint">
+      if (fs.exists(outPath) ) fs.delete(outPath, true);
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Covariance</h6>
+            <pre class="prettyprint">
+		if (fs.exists(output_path)) {
+			fs.delete(output_path, true);
+		}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (124 files, similarity: 0.5898713632310639)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ZooKeeperManager</h6>
+            <pre class="prettyprint">
+    try {
+      return fs.exists(myClosedPath);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>WeightedDistanceMeasure</h6>
+            <pre class="prettyprint">
+        if (!fs.exists(weightsFile.get())) {
+          throw new FileNotFoundException(weightsFile.get().toString());
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>WeightedDistanceMeasure_1</h6>
+            <pre class="prettyprint">
+        if (!fs.exists(weightsFile.get())) {
+          throw new FileNotFoundException(weightsFile.get().toString());
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_10 (2 partitions, 830 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.apache.hadoop.util.ToolRunner.run
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (439 files, similarity: 0.7698690208130946)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CollocDriver_1</h6>
+            <pre class="prettyprint">
+  public static void main(String[] args) throws Exception {
+    ToolRunner.run(new CollocDriver(), args);
+  }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CollocDriver</h6>
+            <pre class="prettyprint">
+  public static void main(String[] args) throws Exception {
+    ToolRunner.run(new CollocDriver(), args);
+  }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Combinator</h6>
+            <pre class="prettyprint">
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws Exception {
+        int exitCode = ToolRunner.run(new Combinator(), args);
+        System.exit(exitCode);
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (391 files, similarity: 0.6099605311428026)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>VariationalInference</h6>
+            <pre class="prettyprint">
+  public static void main(String[] args) throws Exception {
+    int res = ToolRunner.run(new Configuration(), new VariationalInference(), args);
+    System.exit(res);
+  }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UuidJob</h6>
+            <pre class="prettyprint">
+	public static void main(String[] args) throws Exception {
+		int res = ToolRunner.run(new Configuration(), new UuidJob(), args);
+		System.exit(res);
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>VectorDumper</h6>
+            <pre class="prettyprint">
+  public static void main(String[] args) throws Exception {
+    ToolRunner.run(new Configuration(), new VectorDumper(), args);
+  }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+	

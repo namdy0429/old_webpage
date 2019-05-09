@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">andengine</h1>
+    </div>
+    
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_4 (2 partitions, 24 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.andengine.entity.sprite.Sprite.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (9 files, similarity: 0.5216791388888888)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Ball</h6>
+            <pre class="prettyprint">
+	public Ball(float xSpeed, float ySpeed, float pX, float pY,
+			ITextureRegion pTextureRegion,
+			VertexBufferObjectManager pVertexBufferObjectManager) {
+		sprite = new Sprite(pX, pY, pTextureRegion, pVertexBufferObjectManager);
+		this.xSpeed = xSpeed;
+		this.ySpeed = ySpeed;
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Frog</h6>
+            <pre class="prettyprint">
+	public Frog() {
+		sprite = new Sprite(AntiFrogActivity.displayWidth-330, AntiFrogActivity.displayHeight/2-90, 
+				AntiFrogActivity.getSharedInstance().mFrogger, AntiFrogActivity.getSharedInstance().getVertexBufferObjectManager());
+		init();
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Comet</h6>
+            <pre class="prettyprint">
+	public static Comet createComet(Engine engine, PhysicsWorld physicsWorld) {
+		float size = COMET_SIZE * TetraActivity.CAMERA_HEIGHT;
+		float x = (TetraActivity.CAMERA_WIDTH - size) / 2;
+		float y = (TetraActivity.CAMERA_HEIGHT - size) / 2;
+		Sprite sprite = new Sprite(x, y, size, size, RegionManager.getInstance().get(
+				RegionManager.Region.COMET), engine.getVertexBufferObjectManager());
+		Body body = PhysicsFactory.createCircleBody(physicsWorld, sprite, BodyType.DynamicBody,
+				COMET_FIXTURE_DEF);
+		return new Comet(engine, physicsWorld, sprite, body, engine.getCamera());
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_16 (1 partitions, 5 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.andengine.entity.util.FPSLogger.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (5 files, similarity: 0.8677783)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>BaseActivity_2</h6>
+            <pre class="prettyprint">
+	@Override
+	protected Scene onCreateScene() {
+		mEngine.registerUpdateHandler(new FPSLogger());
+		mCurrentScene = new SplashScene();
+		return mCurrentScene;
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>BaseActivity_1</h6>
+            <pre class="prettyprint">
+	protected Scene onCreateScene() {
+		mEngine.registerUpdateHandler(new FPSLogger());
+		mCurrentScene = new SplashScene();
+		return mCurrentScene;
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AntiFrogActivity</h6>
+            <pre class="prettyprint">
+	@Override
+	public Scene onCreateScene() {	
+		mEngine.registerUpdateHandler(new FPSLogger());
+		mCurrentScene = new SplashScene();
+		return mCurrentScene;
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_37 (1 partitions, 5 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.andengine.entity.primitive.Rectangle.&lt;init&gt;, org.andengine.entity.primitive.Rectangle.setColor
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (5 files, similarity: 0.5934363999999999)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Enemy</h6>
+            <pre class="prettyprint">
+	public Enemy() {
+		sprite = new Rectangle(0, 0, 30, 30, BaseActivity.getSharedInstance()
+				.getVertexBufferObjectManager());
+		sprite.setColor(0.09904f, 0.8574f, 0.1786f);
+		init();
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Brick</h6>
+            <pre class="prettyprint">
+	public Brick() {
+		sprite = new Rectangle(0, 0, 60, 30, BaseActivity.getSharedInstance().getVertexBufferObjectManager());
+		sprite.setColor(0f, 0f, 0f);
+		init();
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Balloon</h6>
+            <pre class="prettyprint">
+	public Balloon() {
+		sprite = new Rectangle(0, 0, 30, 30, BaseActivity.getSharedInstance()
+				.getVertexBufferObjectManager());
+		sprite.setColor(0.09904f, 0.8574f, 0.1786f);
+		init();
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (1 partitions, 9 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.andengine.extension.physics.box2d.util.Vector2Pool.recycle
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (9 files, similarity: 0.5707051111111112)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>EntityVelocityModifier</h6>
+            <pre class="prettyprint">
+	private float getAcceleration(Entity boosted, float duration, float multiplier) {
+		Vector2 initialVelocity = boosted.getLinearVelocity();
+		float initialSpeed = initialVelocity.len();
+		Vector2Pool.recycle(initialVelocity);
+		float newSpeed = initialSpeed * multiplier;
+		return (newSpeed - initialSpeed) / duration;
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Comet</h6>
+            <pre class="prettyprint">
+	private void changeDirection(float directionDelta) {
+		Vector2 direction = getLinearVelocity();
+		Utilities.rotateVector(direction, directionDelta);
+		setLinearVelocity(direction.x, direction.y);
+		Vector2Pool.recycle(direction);
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Dizzy</h6>
+            <pre class="prettyprint">
+	public void GoLeft(Vector2 velocity){		
+		this.DizzyBody.setLinearVelocity(velocity);	
+		Vector2Pool.recycle(velocity);
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_68 (1 partitions, 7 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.andengine.input.touch.TouchEvent.getX
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (7 files, similarity: 0.5559369523809524)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Game_Scene</h6>
+            <pre class="prettyprint">
+						if(finger == 0) {
+							GlobalX = curTouchEvent.getX();
+						}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>MainActivity</h6>
+            <pre class="prettyprint">
+			if(pSceneTouchEvent.isActionDown()) {
+				this.addFace(pSceneTouchEvent.getX(), pSceneTouchEvent.getY());
+				return true;
+			}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TetraTouchHandler</h6>
+            <pre class="prettyprint">
+		if (pSceneTouchEvent.isActionDown()) {
+			touchDown(pSceneTouchEvent.getX(), pSceneTouchEvent.getY());
+		}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (1 partitions, 7 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">org.andengine.util.debug.Debug.e
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (7 files, similarity: 1.0)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TetraActivity</h6>
+            <pre class="prettyprint">
+		} catch (final TextureAtlasBuilderException e) {
+			Debug.e(e);
+		}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TMXIsometricExampleActivity</h6>
+            <pre class="prettyprint">
+		} catch (final IOException e) {
+			Debug.e(e);
+		}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>QServer</h6>
+            <pre class="prettyprint">
+					} catch (IOException e) {
+						Debug.e(e);
+					}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+	

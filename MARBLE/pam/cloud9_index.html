@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">cloud9</h1>
+    </div>
+    
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (1 partitions, 6 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">edu.umd.cloud9.debug.MemoryUsageUtils.getUsedMemory, edu.umd.cloud9.debug.MemoryUsageUtils.getUsedMemory
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (6 files, similarity: 0.6380067999999999)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>TermDocVectorsForwardIndex</h6>
+            <pre class="prettyprint">
+  public static void main(String[] args) throws Exception {
+    if (args.length != 1) {
+      System.out.println("usage: [indexPath]");
+      System.exit(-1);
+    }
+
+    long startingMemoryUse = MemoryUsageUtils.getUsedMemory();
+    Configuration conf = new Configuration();
+    TermDocVectorsForwardIndex index = new TermDocVectorsForwardIndex(args[0], FileSystem.get(conf));
+    long endingMemoryUse = MemoryUsageUtils.getUsedMemory();
+
+    System.out.println("Memory usage: " + (endingMemoryUse - startingMemoryUse) + " bytes\n");
+
+    String term = null;
+    BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+    System.out.print("Look up postings of doc > ");
+    while ((term = stdin.readLine()) != null) {
+      int docno = Integer.parseInt(term);
+      System.out.println(docno + ": " + index.getDocVector(docno));
+      System.out.print("Look up postings of doc > ");
+    }
+  }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>IntDocVectorsForwardIndex</h6>
+            <pre class="prettyprint">
+  public static void main(String[] args) throws Exception {
+    if (args.length != 1) {
+      System.out.println("usage: [indexPath]");
+      System.exit(-1);
+    }
+
+    long startingMemoryUse = MemoryUsageUtils.getUsedMemory();
+    Configuration conf = new Configuration();
+    IntDocVectorsForwardIndex index = new IntDocVectorsForwardIndex(args[0], FileSystem.get(conf));
+    long endingMemoryUse = MemoryUsageUtils.getUsedMemory();
+
+    System.out.println("Memory usage: " + (endingMemoryUse - startingMemoryUse) + " bytes\n");
+
+    String term = null;
+    BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+    System.out.print("Look up postings of doc > ");
+    while ((term = stdin.readLine()) != null) {
+      int docno = Integer.parseInt(term);
+      System.out.println(docno + ": " + index.getDocVector(docno));
+      System.out.print("Look up postings of doc > ");
+    }
+  }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>SpamPercentileScore</h6>
+            <pre class="prettyprint">
+  public static void main(String[] args) throws Exception {
+    if (args.length != 1) {
+      System.out.println("usage: [index-path]");
+      System.exit(-1);
+    }
+
+    long startingMemoryUse = MemoryUsageUtils.getUsedMemory();
+
+    DocScoreTable scores = new SpamPercentileScore();
+    scores.initialize(args[0], FileSystem.get(new Configuration()));
+    long endingMemoryUse = MemoryUsageUtils.getUsedMemory();
+
+    System.out.println("Memory usage: " + (endingMemoryUse - startingMemoryUse) + " bytes\n");
+
+    String docno = null;
+    BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+    System.out.print("Look up postings of term> ");
+    while ((docno = stdin.readLine()) != null) {
+      System.out.println(scores.getScore(Integer.parseInt(docno)));
+      System.out.print("Look up postings of term> ");
+    }
+  }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_267 (1 partitions, 8 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">edu.umd.cloud9.io.pair.PairOfInts.set
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (8 files, similarity: 0.5232209285714288)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>DocumentMapper</h6>
+            <pre class="prettyprint">
+            for (int i = 0; i < numberOfTopics; i++) {
+              outputValue.set(phi[i]);
+
+              // a *positive* topic index indicates the output is a phi values
+              outputKey.set(i + 1, termID);
+              output.collect(outputKey, outputValue);
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ParseCorpus</h6>
+            <pre class="prettyprint">
+      while (itr.hasNext()) {
+        temp = itr.next();
+        term.set(temp);
+        counts.set(1, docContent.get(temp));
+        output.collect(term, counts);
+      }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CLSlidingWindowPwsim</h6>
+            <pre class="prettyprint">
+            if (hammingDistance <= maxDist) {
+              reporter.incrCounter(mapoutput.EMITTEDPAIRS, 1);
+
+              // If filtering results by a sample set (i.e., samplesMap!=null), change output format
+              // outValue.set(docNos[i]);
+              // outKey.set(hammingDistance, docNos[j]); //pair format: english docno first, then
+              // german docno
+              // output.collect(outValue, outKey);
+
+              outValue.set(hammingDistance);
+              outKey.set(docNos[j], docNos[i]); // pair format: english docno first, then german
+                                                // docno
+              output.collect(outKey, outValue);
+            }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+	
