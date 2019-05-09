@@ -119,12 +119,11 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>CameloeAnthony_____Ant_____ZhihuDailyDetailActivity</h6>
             <pre class="prettyprint">
+    public static void start(Context context, View view, int id) {
         Intent starter = new Intent(context, ZhihuDailyDetailActivity.class);
         starter.putExtra(ARG_DAILY_ID, id);
         ActivityCompat.startActivity((Activity) context, starter, ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, view, TRANSLATE_VIEW).toBundle());
     }
-}
-
             </pre>
           </div>
 
@@ -223,19 +222,11 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>woxingxiao_____GracefulMovies_____LocationService</h6>
             <pre class="prettyprint">
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-
-        mLocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        if (mLocationManager == null)
-            return;
-
-        List<String> providers = mLocationManager.getProviders(true);
-
-        String locationProvider;
-        /**
-         * 如果首选GPS定位，会存在这种情况，上次GPS启动采集数据在A地，本次在B地需要定位，但用户恰好在室内无
             </pre>
           </div>
 

@@ -553,7 +553,7 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_1 (3 partitions, 474 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_1 (3 partitions, 459 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">android.app.ProgressDialog.show
 </h4>
@@ -563,273 +563,47 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (134 files, similarity: 0.7612914781731376)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (105 files, similarity: 0.7008253630036713)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>meganz_____android_____FileInfoActivityLollipop</h6>
+            <h6>WritingMinds_____ffmpeg-android-java_____Home</h6>
             <pre class="prettyprint">
-		switch (v.getId()) {
-			case R.id.file_properties_text_number_versions:{
-                Intent i = new Intent(this, VersionsFileActivity.class);
-                i.putExtra("handle", node.getHandle());
-                startActivity(i);
-				break;
-			}
-			case R.id.file_properties_link_button:{
-				log("copy link button");
-				if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-					android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-					clipboard.setText(node.getPublicLink());
-				} else {
-					android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-					android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Text", node.getPublicLink());
-					clipboard.setPrimaryClip(clip);
-				}
-				Snackbar.make(fragmentContainer, getString(R.string.file_properties_get_link), Snackbar.LENGTH_LONG).show();
-				break;
-			}
-			case R.id.file_properties_shared_layout:
-			case R.id.file_properties_shared_info_button:{
-                sharedContactClicked();
-				break;
-			}
-            case R.id.more_button:
-                Intent i = new Intent(this, FileContactListActivityLollipop.class);
-                i.putExtra("name", node.getHandle());
-                startActivity(i);
-                break;
-			case R.id.file_properties_switch:{
-				boolean isChecked = offlineSwitch.isChecked();
+                @Override
+                public void onStart() {
+                    outputLayout.removeAllViews();
 
-				if(owner){
-					log("Owner: me");
-					if (!isChecked){
-						log("isChecked");
-                        isRemoveOffline = true;
-                        handle = node.getHandle();
-						availableOfflineBoolean = false;
-						offlineSwitch.setChecked(false);
-						mOffDelete = dbH.findByHandle(handle);
-                        OfflineUtils.removeOffline(mOffDelete, dbH, this, from);
-						supportInvalidateOptionsMenu();
-					}
-					else{
-                        log("NOT Checked");
-                        isRemoveOffline = false;
-                        handle = -1;
-						availableOfflineBoolean = true;
-						offlineSwitch.setChecked(true);
-
-						File destination = null;
-						if (from == Constants.FROM_INCOMING_SHARES) {
-							log("FROM_INCOMING_SHARES");
-							//Find in the filesystem
-							if (Environment.getExternalStorageDirectory() != null) {
-								long handleIncoming = OfflineUtils.findIncomingParentHandle(node, megaApi);
-								destination = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Util.offlineDIR + "/" + Long.toString(handleIncoming) + "/" + MegaApiUtils.createStringTree(node, this));
-								log("offline File INCOMING: " + destination.getAbsolutePath());
-							} else {
-								destination = this.getFilesDir();
-							}
-
-						}
-						else if(from==Constants.FROM_INBOX){
-							log("FROM_INBOX");
-							if (Environment.getExternalStorageDirectory() != null) {
-								destination = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Util.offlineDIR + "/in/" + MegaApiUtils.createStringTree(node, this));
-								log("offline File INBOX: " + destination.getAbsolutePath());
-							} else {
-								destination = this.getFilesDir();
-							}
-						}
-						else {
-							log("NOT INCOMING NOT INBOX");
-							//Find in the filesystem
-
-							if (Environment.getExternalStorageDirectory() != null){
-								destination = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Util.offlineDIR + "/"+MegaApiUtils.createStringTree(node, this));
-							}
-							else{
-								destination = getFilesDir();
-							}
-						}
-
-						log("Path destination: "+destination);
-
-						if (destination.exists() && destination.isDirectory()){
-							File offlineFile = new File(destination, node.getName());
-							if (offlineFile.exists() && node.getSize() == offlineFile.length() && offlineFile.getName().equals(node.getName())){ //This means that is already available offline
-								return;
-							}
-						}
-
-						log("Handle to save for offline : "+node.getHandle());
-                        OfflineUtils.saveOffline(destination, node, this, fileInfoActivity, megaApi);
-
-						supportInvalidateOptionsMenu();
-					}
-				}
-				else{
-
-					log("not owner");
-
-					if (!isChecked){
-						availableOfflineBoolean = false;
-						offlineSwitch.setChecked(false);
-						mOffDelete = dbH.findByHandle(node.getHandle());
-                        OfflineUtils.removeOffline(mOffDelete, dbH, this, from);
-						supportInvalidateOptionsMenu();
-					}
-					else{
-						availableOfflineBoolean = true;
-						offlineSwitch.setChecked(true);
-
-						supportInvalidateOptionsMenu();
-
-						log("Comprobando el node"+node.getName());
-
-						//check the parent
-						long result = -1;
-						result=OfflineUtils.findIncomingParentHandle(node, megaApi);
-						log("IncomingParentHandle: "+result);
-						if(result!=-1){
-							MegaNode megaNode = megaApi.getNodeByHandle(result);
-							if(megaNode!=null){
-								log("ParentHandleIncoming: "+megaNode.getName());
-							}
-							String handleString = Long.toString(result);
-							String destinationPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Util.offlineDIR + "/" + handleString + "/"+MegaApiUtils.createStringTree(node, this);
-							log("Not owner path destination: "+destinationPath);
-
-							File destination = null;
-							if (Environment.getExternalStorageDirectory() != null){
-								destination = new File(destinationPath);
-							}
-							else{
-								destination = getFilesDir();
-							}
-
-							if (destination.exists() && destination.isDirectory()){
-								File offlineFile = new File(destination, node.getName());
-								if (offlineFile.exists() && node.getSize() == offlineFile.length() && offlineFile.getName().equals(node.getName())){ //This means that is already available offline
-									return;
-								}
-							}
-							OfflineUtils.saveOffline(destination, node, this, fileInfoActivity, megaApi);
-						}
-						else{
-							log("result=findIncomingParentHandle NOT result!");
-						}
-					}
-				}
-				break;
-			}
-            case R.id.file_properties_info_data_location:{
-
-                Intent intent = new Intent(this, ManagerActivityLollipop.class);
-                intent.setAction(Constants.ACTION_OPEN_FOLDER);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                intent.putExtra("locationFileInfo", true);
-                if (adapterType == Constants.OFFLINE_ADAPTER){
-                    intent.putExtra("offline_adapter", true);
-                    if (path != null){
-                        intent.putExtra("path", path);
-                        intent.putExtra("pathNavigation", pathNavigation);
-                    }
+                    Log.d(TAG, "Started command : ffmpeg " + command);
+                    progressDialog.setMessage("Processing...");
+                    progressDialog.show();
                 }
-                else {
-                    if (megaApi.getParentNode(node) != null){
-                        intent.putExtra("PARENT_HANDLE", megaApi.getParentNode(node).getHandle());
-                    }
-                    intent.putExtra("fragmentHandle", fragmentHandle);
-                }
-                startActivity(intent);
-                this.finish();
-                break;
-            }
-		}
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>SummerRC_____BiLiBiLi_____CropImage</h6>
+            <h6>awslabs_____aws-sdk-android-samples_____GlobalRecordActivity</h6>
             <pre class="prettyprint">
-				protected void onPreExecute() {
-					dialog.show();
-				}
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>naman14_____Timber_____LastFmLoginDialog</h6>
-            <pre class="prettyprint">
-                            @Override
-                            public void userInfoFailed() {
-                                progressDialog.dismiss();
-                                Toast.makeText(getTargetFragment().getActivity(), getString(R.string.lastfm_login_failture), Toast.LENGTH_SHORT).show();
-                            }
-            </pre>
-          </div>
-
-        </div>
-        
-	
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (114 files, similarity: 0.6380882414221348)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>thedracle_____cordova-android-chromeview_____CordovaActivity</h6>
-            <pre class="prettyprint">
-    /**
-     * Show the spinner.  Must be called from the UI thread.
-     *
-     * @param title         Title of the dialog
-     * @param message       The message of the dialog
-     */
-    public void spinnerStart(final String title, final String message) {
-        if (this.spinnerDialog != null) {
-            this.spinnerDialog.dismiss();
-            this.spinnerDialog = null;
+        @Override
+        protected void onPreExecute() {
+            dialog = ProgressDialog.show(GlobalRecordActivity.this,
+                    getApplicationContext().getString(R.string.loading),
+                    getApplicationContext().getString(R.string.please_wait));
         }
-        final CordovaActivity me = this;
-        this.spinnerDialog = ProgressDialog.show(CordovaActivity.this, title, message, true, true,
-                new DialogInterface.OnCancelListener() {
-                    public void onCancel(DialogInterface dialog) {
-                        me.spinnerDialog = null;
-                    }
-                });
-    }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>leancloud_____leanchat-android_____BaseFragment</h6>
+            <h6>TeamAmaze_____AmazeFileManager_____GetSshHostFingerprintTask</h6>
             <pre class="prettyprint">
-    if (!getActivity().isFinishing()) {
-      dialog.show();
+    @Override
+    protected void onPreExecute() {
+        progressDialog = ProgressDialog.show(AppConfig.getInstance().getMainActivityContext(),
+                "", AppConfig.getInstance().getResources().getString(R.string.processing));
     }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>osmandapp_____Osmand_____MeasurementToolFragment</h6>
-            <pre class="prettyprint">
-				if (editingCtx.getPointsCount() > 0) {
-					addToGpx(mapActivity);
-				} else {
-					Toast.makeText(mapActivity, getString(R.string.none_point_error), Toast.LENGTH_SHORT).show();
-				}
             </pre>
           </div>
 
         </div>
-        
-	
-      </div>
-    </div>
 
 	
 <hr class="col-lg-12 col-md-12 mb-12">
