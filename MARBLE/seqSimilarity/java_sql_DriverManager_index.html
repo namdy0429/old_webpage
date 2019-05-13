@@ -29,56 +29,6 @@
       <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">java_sql_DriverManager</h1>
     </div>
     
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (3 partitions, 650 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">java.sql.DriverManager.getConnection
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (190 files, similarity: 0.611839935282793)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>apache_____derby_____RestrictedTableVTI</h6>
-            <pre class="prettyprint">
-    private static  Connection  getDerbyConnection() throws SQLException
-    {
-        return DriverManager.getConnection( "jdbc:default:connection" );
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>qos-ch_____logback_____DBAppenderHSQLTestFixture</h6>
-            <pre class="prettyprint">
-    Connection newConnection() throws SQLException {
-        return DriverManager.getConnection(url, user, password);
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>apache_____nifi_____CaptureChangeMySQL</h6>
-            <pre class="prettyprint">
-    protected Connection getJdbcConnection() throws SQLException {
-        return jdbcConnectionHolder.getConnection();
-    }
-            </pre>
-          </div>
-
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
   </div>
   <!-- /.container -->
 

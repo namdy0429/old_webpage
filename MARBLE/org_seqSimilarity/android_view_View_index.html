@@ -1,0 +1,1122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">android_view_View</h1>
+    </div>
+    
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_6 (3 partitions, 217 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.findViewById, android.view.View.findViewById, android.view.View.findViewById
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (50 files, similarity: 0.536293507755094)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>open-keychain_____open-keychain_____ReceivedSecretKeyList</h6>
+            <pre class="prettyprint">
+        ReceivedKeyViewHolder(View itemView) {
+            super(itemView);
+
+            vName = itemView.findViewById(R.id.key_list_item_name);
+            vEmail = itemView.findViewById(R.id.key_list_item_email);
+            vCreation = itemView.findViewById(R.id.key_list_item_creation);
+
+            vImportButton = itemView.findViewById(R.id.button_import);
+            vState = itemView.findViewById(R.id.transfer_state);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>huangfangyi_____FanXin3.0_____PreVideoCallFragment</h6>
+            <pre class="prettyprint">
+        list = (ListView) videoCallView.findViewById(R.id.list);
+        ll_videList1 = (LinearLayout) videoCallView.findViewById(R.id.ll_videList1);
+        ll_videList2 = (LinearLayout) videoCallView.findViewById(R.id.ll_videList2);
+    }
+
+    @Override
+    public String getGroupId() {
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>chthai64_____SwipeRevealLayout_____RecyclerAdapter</h6>
+            <pre class="prettyprint">
+        public ViewHolder(View itemView) {
+            super(itemView);
+            swipeLayout = (SwipeRevealLayout) itemView.findViewById(R.id.swipe_layout);
+            frontLayout = itemView.findViewById(R.id.front_layout);
+            deleteLayout = itemView.findViewById(R.id.delete_layout);
+            textView = (TextView) itemView.findViewById(R.id.text);
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (33 files, similarity: 0.4516383465909108)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Coding_____Coding-Android_____PickUserActivity</h6>
+            <pre class="prettyprint">
+            if (convertView == null) {
+                convertView = mInflater.inflate(R.layout.activity_users_list_item, parent, false);
+                holder = new ViewHolder();
+                holder.name = (TextView) convertView.findViewById(R.id.name);
+                holder.icon = (ImageView) convertView.findViewById(R.id.icon);
+                holder.divideTitle = (TextView) convertView.findViewById(R.id.divideTitle);
+                holder.divideLine = convertView.findViewById(R.id.divide_line);
+                convertView.setTag(holder);
+            } else {
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CraftsmenTech_____AndBase_____ArticleListAdapter</h6>
+            <pre class="prettyprint">
+	          convertView = LayoutInflater.from(mContext).inflate(R.layout.item_list, parent, false);
+	          //使用减少findView的次数
+			  holder = new ViewHolder();
+			  holder.itemsIcon = ((ImageView) convertView.findViewById(R.id.itemsIcon)) ;
+			  holder.itemsTitle = ((TextView) convertView.findViewById(R.id.itemsTitle));
+			  holder.itemsText = ((TextView) convertView.findViewById(R.id.itemsText));
+			  //设置标记
+			  convertView.setTag(holder);
+          }else{
+        	  holder = (ViewHolder) convertView.getTag();
+          }
+          
+          //获取该行数据
+          Article mArticle = (Article)mList.get(position);
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>rtoshiro_____FullscreenVideoView_____FullscreenVideoLayout</h6>
+            <pre class="prettyprint">
+        if (videoControlsView != null) {
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.FILL_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            params.addRule(ALIGN_PARENT_BOTTOM);
+            addView(videoControlsView, params);
+
+            this.seekBar = (SeekBar) this.videoControlsView.findViewById(R.id.vcv_seekbar);
+            this.imgfullscreen = (ImageButton) this.videoControlsView.findViewById(R.id.vcv_img_fullscreen);
+            this.imgplay = (ImageButton) this.videoControlsView.findViewById(R.id.vcv_img_play);
+            this.textTotal = (TextView) this.videoControlsView.findViewById(R.id.vcv_txt_total);
+            this.textElapsed = (TextView) this.videoControlsView.findViewById(R.id.vcv_txt_elapsed);
+        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_25 (3 partitions, 69 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.ViewGroup.addView
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (22 files, similarity: 0.594068965367965)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AOKP_____frameworks_base_____RecentsView</h6>
+            <pre class="prettyprint">
+                if (parent != null) {
+                    parent.removeView(mClearRecents);
+                    parent.addView(mClearRecents);
+                }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>codbking_____PickTime_____UIAdjuster</h6>
+            <pre class="prettyprint">
+		if (view != null) {
+			group.addView(view);
+		}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Prototik_____HoloEverywhere_____LayoutInflater</h6>
+            <pre class="prettyprint">
+                    if (root != null && attachToRoot) {
+                        root.addView(temp, params);
+                    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_9 (3 partitions, 95 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.setOnClickListener
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (22 files, similarity: 0.5536847878787877)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>daCapricorn_____ArcMenu_____RayMenu</h6>
+            <pre class="prettyprint">
+	public void addItem(View item, OnClickListener listener) {
+		mRayLayout.addView(item);
+		item.setOnClickListener(getItemClickListener(listener));
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>shouldit_____android-proxy_____IabSkuRecyclerViewAdapter</h6>
+            <pre class="prettyprint">
+        public IabSkuViewHolder(View itemView)
+        {
+            super(itemView);
+            ButterKnife.inject(this, itemView);
+            itemView.setOnClickListener(this);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>cymcsg_____UltimateAndroid_____RayMenu</h6>
+            <pre class="prettyprint">
+	public void addItem(View item, OnClickListener listener) {
+		mRayLayout.addView(item);
+		item.setOnClickListener(getItemClickListener(listener));
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_21 (2 partitions, 57 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.setTag, android.view.View.getTag
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (26 files, similarity: 0.47071181230769243)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>pragma-_____networklog_____GraphActivity</h6>
+            <pre class="prettyprint">
+        if(convertView == null) {
+          convertView = mInflater.inflate(R.layout.graph_legend_item, null);
+          holder = new ViewHolder(convertView);
+          convertView.setTag(holder);
+        } else {
+          holder = (ViewHolder) convertView.getTag();
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CharonChui_____CyberLink4Android_____MainActivity</h6>
+            <pre class="prettyprint">
+			if (convertView == null) {
+				convertView = View.inflate(getApplicationContext(),
+						R.layout.item_lv_main, null);
+				holder = new ViewHolder();
+				convertView.setTag(holder);
+			} else {
+				holder = (ViewHolder) convertView.getTag();
+			}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>lidong1665_____AndroidRapidLibrary_____WeixinNewsActivity</h6>
+            <pre class="prettyprint">
+                convertView = inflater.inflate(R.layout.item_listview_weixin_data, parent, false);
+                viewHolder = new ViewHolder(convertView);
+                convertView.setTag(viewHolder);
+            } else {
+                viewHolder = (ViewHolder) convertView.getTag();
+            }
+            WinXinData.ResultBean.ListBean listBean = datas.get(position);
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (3 partitions, 137 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.getId
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (9 files, similarity: 0.8466582500000002)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>boredream_____DesignResCollection_____RegisterStep1Activity</h6>
+            <pre class="prettyprint">
+        switch (v.getId()) {
+            case R.id.btn_next:
+                next();
+                break;
+        }
+    }
+
+    @Override
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>wangjiegulu_____RapidFloatingActionButton_____RapidFloatingActionContentCardListView</h6>
+            <pre class="prettyprint">
+        switch (v.getId()) {
+            case R.id.content_card_list_item_root_view:
+                onRapidFloatingActionContentCardListViewListener.onRFACCardListItemClick(position);
+                break;
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>diguachaoren_____RxLearn_____H7_Fragment</h6>
+            <pre class="prettyprint">
+        switch (view.getId()) {
+            case R.id.sum:
+                sample1();
+                break;
+        }
+    }
+
+    private void sample1() {
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_5 (3 partitions, 110 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.getLayoutParams
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (39 files, similarity: 0.5943273009446668)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>FrozenFreeFall_____Android-tv-widget_____BaseEffectBridgeWrapper</h6>
+            <pre class="prettyprint">
+
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>xamarin_____XobotOS_____AbsSpinner</h6>
+            <pre class="prettyprint">
+                if (view.getLayoutParams() == null) {
+                    mBlockLayoutRequests = true;
+                    view.setLayoutParams(generateDefaultLayoutParams());
+                    mBlockLayoutRequests = false;
+                }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>rickdynasty_____TwsPluginFramework_____ActionBarContextView</h6>
+            <pre class="prettyprint">
+		if (mClose != null) {
+			// if (mCloseButton != null && mCloseButton.getVisibility() == GONE)
+			// {
+			// mClose.removeView(mCloseButton);
+			// }
+			availableWidth = measureChildView(mClose, availableWidth, childSpecHeight, 0);
+			MarginLayoutParams lp = (MarginLayoutParams) mClose.getLayoutParams();
+			availableWidth -= lp.leftMargin + lp.rightMargin;
+		}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_18 (3 partitions, 55 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.getParent
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (18 files, similarity: 0.7719477189542502)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>HomHomLin_____Android-PullToRefreshRecyclerView_____PullToRefreshRecyclerView</h6>
+            <pre class="prettyprint">
+                    if(mEmptyView.getParent() != mRootRelativeLayout) {
+                        mRootRelativeLayout.addView(mEmptyView);
+                    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>googlesamples_____android-play-places_____CardStreamLinearLayout</h6>
+            <pre class="prettyprint">
+        if (child.getParent() == null) {
+            initCard(child, true);
+            super.addView(child, index, params);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>XavierSAndroid_____MagicHeaderViewPager_____DemoPullToRefreshListFragment</h6>
+            <pre class="prettyprint">
+            if (viewThis.getParent() != null) {
+                ((ViewGroup) viewThis.getParent()).removeView(viewThis);
+            }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_15 (2 partitions, 53 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.getWidth, android.view.View.getHeight
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (20 files, similarity: 0.7315209473684235)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>aosp-mirror_____platform_frameworks_support_____AbstractMediaItemPresenter</h6>
+            <pre class="prettyprint">
+            sTempRect.set(0, 0, focusChangedView.getWidth(), focusChangedView.getHeight());
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>jpush_____jchat-android_____StickyGridHeadersGridView</h6>
+            <pre class="prettyprint">
+        if (mHeaderBottomPosition != headerHeight) {
+            canvas.saveLayerAlpha(0, 0, canvas.getWidth(), canvas.getHeight(), 255
+                    * mHeaderBottomPosition / headerHeight, Canvas.ALL_SAVE_FLAG);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>enricocid_____LaunchEnr_____Launcher</h6>
+            <pre class="prettyprint">
+        return new Rect(pos[0], pos[1], pos[0] + v.getWidth(), pos[1] + v.getHeight());
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_34 (3 partitions, 55 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.setLayoutParams
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (18 files, similarity: 0.729846248366014)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>UweTrottmann_____SeriesGuide_____StickyGridHeadersBaseAdapterWrapper</h6>
+            <pre class="prettyprint">
+            if (params == null) {
+                params = generateDefaultLayoutParams();
+                v.setLayoutParams(params);
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>xamarin_____XobotOS_____AbsSpinner</h6>
+            <pre class="prettyprint">
+                if (view.getLayoutParams() == null) {
+                    mBlockLayoutRequests = true;
+                    view.setLayoutParams(generateDefaultLayoutParams());
+                    mBlockLayoutRequests = false;
+                }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Swati4star_____Travel-Mate_____NestedListView</h6>
+            <pre class="prettyprint">
+                    if (listItem instanceof ViewGroup) {
+                        listItem.setLayoutParams(
+                                new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                                        ViewGroup.LayoutParams.WRAP_CONTENT));
+                    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (13 files, similarity: 0.7027707435897427)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>wqandroid_____wqgallery_____PhotoAdapter</h6>
+            <pre class="prettyprint">
+            alpha_view = itemView.findViewById(R.id.alpha_view);
+            checkBox = (ImageButton) itemView.findViewById(R.id.checkimages);
+        }
+    }
+
+    public static class CameraViewHolder extends RecyclerView.ViewHolder {
+        public LinearLayout camera_lin;
+
+        public CameraViewHolder(View itemView) {
+            super(itemView);
+            itemView.setLayoutParams(params);
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>limedroid_____ARecyclerView_____XHeadFootViewHolder</h6>
+            <pre class="prettyprint">
+    public XHeadFootViewHolder(View itemView) {
+        super(itemView);
+        itemView.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
+        itemView.setTag(this);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>guerwan_____TransitionsBackport_____MainActivity</h6>
+            <pre class="prettyprint">
+    private void setNewSize(int id, int width, int height) {
+        View view = findViewById(id);
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        params.width = width;
+        params.height = height;
+        view.setLayoutParams(params);
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_7 (2 partitions, 77 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.getContext
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (32 files, similarity: 0.6861585443548402)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>mtotschnig_____MyExpenses_____ConsecutiveTapsGestureDetector</h6>
+            <pre class="prettyprint">
+    /**
+     * @param listener The listener that responds to the gesture.
+     * @param view  The target view that associated with consecutive-tap gesture.
+     */
+    public ConsecutiveTapsGestureDetector(
+            OnConsecutiveTapsListener listener,
+            View view) {
+        mListener = listener;
+        mView = view;
+        int doubleTapSlop = ViewConfiguration.get(mView.getContext()).getScaledDoubleTapSlop();
+        mConsecutiveTapTouchSlopSquare = doubleTapSlop * doubleTapSlop;
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>applidium_____PokemonGo_Android_RE_____ConsoleAdapter</h6>
+            <pre class="prettyprint">
+        protected Context getContext()
+        {
+            return itemView.getContext();
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>CraftsmenTech_____AndBase_____AbWheelUtil</h6>
+            <pre class="prettyprint">
+                        @Override
+                        public void onClick(View v) {
+                                AbDialogUtil.removeDialog(v.getContext());
+                        }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_16 (3 partitions, 62 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.getTop
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (22 files, similarity: 0.6131394848484847)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>mopub_____mopub-android-sdk_____MoPubRecyclerAdapter</h6>
+            <pre class="prettyprint">
+            if (linearLayoutManager.getStackFromEnd()) {
+                offset = view.getBottom();
+            } else {
+                offset = view.getTop();
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>aosp-mirror_____platform_frameworks_base_____MainInteractionSession</h6>
+            <pre class="prettyprint">
+        if (mState != STATE_IDLE) {
+            outInsets.contentInsets.top = mBottomContent.getTop();
+            outInsets.touchableInsets = Insets.TOUCHABLE_INSETS_CONTENT;
+        } else if ((mShowFlags & SHOW_SOURCE_ACTIVITY) != 0) {
+            outInsets.touchableInsets = Insets.TOUCHABLE_INSETS_CONTENT;
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>wenmingvs_____WeiBo_____BaseDetailSwipeActivity</h6>
+            <pre class="prettyprint">
+                lastOffset = topView.getTop();                                         //获取与该view的顶部的偏移量
+                lastPosition = recyclerView.getLayoutManager().getPosition(topView);  //得到该View的数组位置
+            }
+        }
+
+        @Override
+        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_13 (3 partitions, 101 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.getWidth
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (37 files, similarity: 0.6281122432432399)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>dodyg_____AndroidRivers_____CustomViewBehind</h6>
+            <pre class="prettyprint">
+	public int getBehindWidth() {
+		return mContent.getWidth();
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>pragma-_____networklog_____TabPageIndicator</h6>
+            <pre class="prettyprint">
+            public void run() {
+                final int scrollPos = tabView.getLeft() - (getWidth() - tabView.getWidth()) / 2;
+                smoothScrollTo(scrollPos, 0);
+                mTabSelector = null;
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>surespot_____android_____TabPageIndicator</h6>
+            <pre class="prettyprint">
+            public void run() {
+                final int scrollPos = tabView.getLeft() - (getWidth() - tabView.getWidth()) / 2;
+                smoothScrollTo(scrollPos, 0);
+                mTabSelector = null;
+            }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_70 (4 partitions, 62 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.measure
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (24 files, similarity: 0.5921321086956531)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>rickdynasty_____TwsPluginFramework_____ActionBarContextView</h6>
+            <pre class="prettyprint">
+		if (mMulti != null) {
+			mMulti.measure(MeasureSpec.makeMeasureSpec(LayoutParams.WRAP_CONTENT, MeasureSpec.UNSPECIFIED),
+					MeasureSpec.makeMeasureSpec(mContentHeight, MeasureSpec.EXACTLY));
+		}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>kamegami13_____MonsterHunter4UDatabase_____MHUtils</h6>
+            <pre class="prettyprint">
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>juliome10_____DoubleViewPager_____HorizontalViewPager</h6>
+            <pre class="prettyprint">
+                if (lp == null || !lp.isDecor) {
+                    final int widthSpec = MeasureSpec.makeMeasureSpec(
+                            (int) (childWidthSize * lp.widthFactor), MeasureSpec.EXACTLY);
+                    child.measure(widthSpec, mChildHeightMeasureSpec);
+                }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_3 (3 partitions, 137 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.View.setVisibility
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (44 files, similarity: 0.7560778583509448)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>XunMengWinter_____CircularAnim_____FragmentTestActivity</h6>
+            <pre class="prettyprint">
+                                @Override
+                                public void run() {
+                                    mFullView.setVisibility(View.GONE);
+                                    mFullView.setAlpha(1);
+                                }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>yiyuanliu_____FlipGank_____CategoryActivity</h6>
+            <pre class="prettyprint">
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    scrim.setVisibility(View.INVISIBLE);
+                }
+
+                @Override public void onAnimationStart(Animator animation) { }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>guoyoujin_____MySnackBar_____TSnackbar</h6>
+            <pre class="prettyprint">
+                    @Override
+                    public void onDismiss(View view) {
+                        view.setVisibility(View.GONE);
+                        dispatchDismiss(Callback.DISMISS_EVENT_SWIPE);
+                    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (50 files, similarity: 0.6631369502040781)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>huangwm1984_____AndroidBase_____FlipPageTransformer</h6>
+            <pre class="prettyprint">
+            view.setVisibility(View.VISIBLE);
+        } else {
+            view.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    @Override
+    public void handleRightPage(View view, float position) {
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>alexstyl_____Memento-Calendar_____AvatarLayout</h6>
+            <pre class="prettyprint">
+            if (width < childrenSize) {
+                childrenSize -= childSize;
+                view.setVisibility(View.GONE);
+            } else {
+                childrenSize += view.getPaddingLeft() + layoutParams.leftMargin;
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>westnordost_____StreetComplete_____AddOpeningHoursAdapter</h6>
+            <pre class="prettyprint">
+			if (isVisible)
+			{
+				param.height = LinearLayout.LayoutParams.WRAP_CONTENT;
+				param.width = LinearLayout.LayoutParams.MATCH_PARENT;
+				itemView.setVisibility(View.VISIBLE);
+			}
+			else
+			{
+				itemView.setVisibility(View.GONE);
+				param.height = 0;
+				param.width = 0;
+			}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_4 (2 partitions, 113 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.ViewGroup.getContext
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (57 files, similarity: 0.866022385964928)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>NicodeLee_____Beautyacticle_____MainRecyclerViewAdapter</h6>
+            <pre class="prettyprint">
+  @Override public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_main, parent, false);
+
+    return new ViewHolder(view);
+  }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>siwangqishiq_____ImageEditor-Android_____StickerAdapter</h6>
+            <pre class="prettyprint">
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewtype) {
+        View v = null;
+        v = LayoutInflater.from(parent.getContext()).inflate(
+                R.layout.view_sticker_item, parent, false);
+        ImageHolder holer = new ImageHolder(v);
+        return holer;
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>wangdan_____AisenWeiBo_____SearchsSuggestAdapter</h6>
+            <pre class="prettyprint">
+    @Override
+    public ResultViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
+        final LayoutInflater mInflater = LayoutInflater.from(parent.getContext());
+        final View sView = mInflater.inflate(com.lapism.searchview.R.layout.search_item, parent, false);
+        return new ResultViewHolder(sView);
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_24 (2 partitions, 54 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.view.ViewGroup.removeView
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (34 files, similarity: 0.8178381907308351)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>kercer_____kerkee_android_____KCJSBridge</h6>
+            <pre class="prettyprint">
+            if (vg != null)
+                vg.removeView(aWebview);
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>rickdynasty_____TwsPluginFramework_____ActionBarContextView</h6>
+            <pre class="prettyprint">
+					if (oldParent != null)
+						oldParent.removeView(mMenuView);
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>motianhuo_____wechat_____Fragment_Msg</h6>
+            <pre class="prettyprint">
+			if (parent != null) {
+				parent.removeView(layout);
+			}
+		}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (20 files, similarity: 0.7026294421052651)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>AlanCheen_____PracticeDemo_____ViewPagerActivity</h6>
+            <pre class="prettyprint">
+            @Override
+            public void destroyItem(ViewGroup container, int position, Object object) {
+                container.removeView((View) object);
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>square_____mortar_____SimplePathContainer</h6>
+            <pre class="prettyprint">
+      @Override public void onAnimationEnd(Animator animation) {
+        container.removeView(from);
+        callback.onTraversalCompleted();
+      }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>wenhuaijun_____SearchPictureTool_____ShowDownloadLargeImgAdapter</h6>
+            <pre class="prettyprint">
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        //  super.destroyItem(container, position, object);
+        container.removeView((View)object);
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+	

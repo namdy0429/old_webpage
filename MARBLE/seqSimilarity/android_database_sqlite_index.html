@@ -31,6 +31,86 @@
     
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_12 (3 partitions, 41 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteQueryBuilder.query
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (6 files, similarity: 0.7184007333333333)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>googlesamples_____io2015-codelabs_____RecipeContentProvider</h6>
+            <pre class="prettyprint">
+    public Cursor getRecipe(Uri uri) {
+        SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
+        queryBuilder.setTables(RecipeTable.TABLE);
+        String[] projection = { RecipeTable.ID, RecipeTable.TITLE,
+                RecipeTable.DESCRIPTION, RecipeTable.PHOTO,
+                RecipeTable.PREP_TIME};
+        SQLiteDatabase db = database.getReadableDatabase();
+        queryBuilder.appendWhere(RecipeTable.ID + "='"
+                + uri.getLastPathSegment() + "'");
+        Cursor cursor = queryBuilder.query(db, projection, null,
+                null, null, null, null);
+        cursor.setNotificationUri(getContext().getContentResolver(), uri);
+
+        return cursor;
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>tiann_____understand-plugin-framework_____TestContentProvider</h6>
+            <pre class="prettyprint">
+    @Nullable
+    @Override
+    public Cursor query(@NonNull Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+        SQLiteDatabase db = mDb.getReadableDatabase();
+        qb.setTables(TABLE_NAME);
+        Cursor c = qb.query(db, projection, selection, null, null, null, sortOrder);
+        c.setNotificationUri(getContext().getContentResolver(), uri);
+        return c;
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Deletescape-Media_____Lawnchair_____LauncherProvider</h6>
+            <pre class="prettyprint">
+    @Override
+    public Cursor query(@NonNull Uri uri, String[] projection, String selection,
+                        String[] selectionArgs, String sortOrder) {
+        createDbIfNotExists();
+
+        SqlArguments args = new SqlArguments(uri, selection, selectionArgs);
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+        qb.setTables(args.table);
+
+        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        Cursor result = qb.query(db, projection, args.where, args.args, null, null, sortOrder);
+        result.setNotificationUri(getContext().getContentResolver(), uri);
+
+        return result;
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
         <h3 class="col-lg-12 col-md-12 mb-12">pattern_6 (3 partitions, 97 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteDatabase.beginTransaction, android.database.sqlite.SQLiteDatabase.setTransactionSuccessful, android.database.sqlite.SQLiteDatabase.endTransaction
@@ -41,7 +121,7 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (30 files, similarity: 0.4752785218390816)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (30 files, similarity: 0.47527852183908076)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -101,273 +181,7 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_12 (3 partitions, 55 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteQueryBuilder.query
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (14 files, similarity: 0.8005778681318682)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>AOKP_____frameworks_base_____SQLiteDatabase</h6>
-            <pre class="prettyprint">
-    /**
-     * Query the given table, returning a {@link Cursor} over the result set.
-     *
-     * @param table The table name to compile the query against.
-     * @param columns A list of which columns to return. Passing null will
-     *            return all columns, which is discouraged to prevent reading
-     *            data from storage that isn't going to be used.
-     * @param selection A filter declaring which rows to return, formatted as an
-     *            SQL WHERE clause (excluding the WHERE itself). Passing null
-     *            will return all rows for the given table.
-     * @param selectionArgs You may include ?s in selection, which will be
-     *         replaced by the values from selectionArgs, in order that they
-     *         appear in the selection. The values will be bound as Strings.
-     * @param groupBy A filter declaring how to group rows, formatted as an SQL
-     *            GROUP BY clause (excluding the GROUP BY itself). Passing null
-     *            will cause the rows to not be grouped.
-     * @param having A filter declare which row groups to include in the cursor,
-     *            if row grouping is being used, formatted as an SQL HAVING
-     *            clause (excluding the HAVING itself). Passing null will cause
-     *            all row groups to be included, and is required when row
-     *            grouping is not being used.
-     * @param orderBy How to order the rows, formatted as an SQL ORDER BY clause
-     *            (excluding the ORDER BY itself). Passing null will use the
-     *            default sort order, which may be unordered.
-     * @param limit Limits the number of rows returned by the query,
-     *            formatted as LIMIT clause. Passing null denotes no LIMIT clause.
-     * @return A {@link Cursor} object, which is positioned before the first entry. Note that
-     * {@link Cursor}s are not synchronized, see the documentation for more details.
-     * @see Cursor
-     */
-    public Cursor query(String table, String[] columns, String selection,
-            String[] selectionArgs, String groupBy, String having,
-            String orderBy, String limit) {
-
-        return query(false, table, columns, selection, selectionArgs, groupBy,
-                having, orderBy, limit);
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>jeasonlzy_____okhttp-OkGo_____BaseDao</h6>
-            <pre class="prettyprint">
-    public List<T> query(String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy, String limit) {
-        long start = System.currentTimeMillis();
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>mcxiaoke_____fanfouapp-opensource_____Database</h6>
-            <pre class="prettyprint">
-        final SQLiteDatabase db = this.mSQLiteHelper.getWritableDatabase();
-        final String selection = BasicColumns.ID + "=?";
-        final String[] selectionArgs = new String[] { id };
-        final Cursor c = db.query(DirectMessageInfo.TABLE_NAME,
-                DirectMessageInfo.COLUMNS, selection, selectionArgs, null,
-            </pre>
-          </div>
-
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_11 (2 partitions, 41 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteOpenHelper.getReadableDatabase
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (14 files, similarity: 0.6144835824175822)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>ParsePlatform_____Parse-SDK-Android_____ParseSQLiteDatabase</h6>
-            <pre class="prettyprint">
-                @Override
-                public SQLiteDatabase then(Task<Void> task) {
-                    // get*Database() is synchronous and calls through SQLiteOpenHelper#onCreate, onUpdate,
-                    // etc.
-                    return (openFlags & SQLiteDatabase.OPEN_READONLY) == SQLiteDatabase.OPEN_READONLY
-                            ? helper.getReadableDatabase()
-                            : helper.getWritableDatabase();
-                }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>jeasonlzy_____okhttp-OkGo_____BaseDao</h6>
-            <pre class="prettyprint">
-        return helper.getReadableDatabase();
-    }
-
-    public SQLiteDatabase openWriter() {
-        return helper.getWritableDatabase();
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>kabouzeid_____Phonograph_____SongPlayCountStore</h6>
-            <pre class="prettyprint">
-    /**
-     * Gets a cursor containing the top songs played.  Note this only returns songs that have been
-     * played at least once in the past NUM_WEEKS
-     *
-     * @param numResults number of results to limit by.  If <= 0 it returns all results
-     * @return the top tracks
-     */
-    public Cursor getTopPlayedResults(int numResults) {
-        updateResults();
-
-        final SQLiteDatabase database = getReadableDatabase();
-        return database.query(SongPlayCountColumns.NAME, new String[]{SongPlayCountColumns.ID},
-                null, null, null, null, SongPlayCountColumns.PLAY_COUNT_SCORE + " DESC",
-                (numResults <= 0 ? null : String.valueOf(numResults)));
-    }
-            </pre>
-          </div>
-
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_2 (2 partitions, 148 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteDatabase.rawQuery
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (50 files, similarity: 0.5502667738775509)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>infinum_____android_dbinspector_____DatabaseHelper</h6>
-            <pre class="prettyprint">
-            @Override
-            public Cursor provideCursor(SQLiteDatabase database) {
-                return database.rawQuery("PRAGMA user_version", null);
-            }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>MummyDing_____Leisure_____BaseCollectionCache</h6>
-            <pre class="prettyprint">
-    protected Cursor query(String sql){
-        return mHelper.getReadableDatabase().rawQuery(sql,null);
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>fookwood_____Launcher3_____RestoreDbTaskTest</h6>
-            <pre class="prettyprint">
-        try (Cursor c = db.rawQuery(sql, null)) {
-            return c.getCount();
-        }
-            </pre>
-          </div>
-
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_7 (4 partitions, 132 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteDatabase.update
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (36 files, similarity: 0.6044300111111071)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>openproject_____world_____FavoriteEditActivity</h6>
-            <pre class="prettyprint">
-                for (int i = 0; i < mListData.size(); i++) {
-                    WishInfo wishInfo = mListData.get(i);
-                    ContentValues contentValue = new ContentValues();
-                    contentValue.put("sort", i * 100);
-                    String where = "_id = " + wishInfo._id;
-                    db.update(AppSQLiteHelper.TABLE_WISH, contentValue, where, null);
-                }
-                db.setTransactionSuccessful();
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>dacer_____SimplePomodoro-android_____TaskRecorder</h6>
-            <pre class="prettyprint">
-	public boolean setUpdateTime(String time, String identifier){
-		int id = getIdByIdentifier(identifier);
-		db = mSQLHelper.getWritableDatabase();
-		ContentValues args = new ContentValues();
-		args.put(KEY_UPDATE_TIME, time);
-		Boolean resultBoolean = db.update(TASKS_TABLE_NAME,
-				args, KEY_ID + "=" + id, null) > 0;	
-		return resultBoolean;
-	}
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>MirakelX_____mirakel-android_____DatabaseHelper</h6>
-            <pre class="prettyprint">
-            if (!idsToHide.toString().isEmpty()) {
-                cv = new ContentValues();
-                cv.put("is_shown_recurring", false);
-                db.update("tasks", cv, "_id IN (?)",
-                          new String[] { idsToHide.toString() });
-            }
-        case 40:
-            </pre>
-          </div>
-
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_5 (3 partitions, 113 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_5 (2 partitions, 93 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteDatabase.close
 </h4>
@@ -377,74 +191,35 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (29 files, similarity: 0.9272611428571425)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (29 files, similarity: 0.9272611428571423)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>wyouflf_____xUtils_____DbUtils</h6>
+            <h6>AriaLyy_____Aria_____DbUtil</h6>
             <pre class="prettyprint">
-        if (daoMap.containsKey(dbName)) {
-            daoMap.remove(dbName);
-            this.database.close();
-        }
+    Cursor cursor = mDb.rawQuery("SELECT rowid, * FROM " + CommonUtil.getClassName(clazz), null);
+    int[] ids = new int[cursor.getCount()];
+    int i = 0;
+    while (cursor.moveToNext()) {
+      ids[i] = cursor.getInt(cursor.getColumnIndex("rowid"));
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>eoecn_____android-app_____DBHelper</h6>
+            <h6>osmandapp_____Osmand_____BaseLocationIndexRepository</h6>
             <pre class="prettyprint">
-		if (db != null) {
+		if(db != null){
+			// close previous db
 			db.close();
-			db = null;
 		}
-	}
-
-}
-
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>android_____platform_frameworks_base_____SQLiteOpenHelper</h6>
+            <h6>firebase_____firebase-android-sdk_____EncodedPathTest</h6>
             <pre class="prettyprint">
-            if (db != null && db != mDatabase) {
-                db.close();
-            }
-            </pre>
-          </div>
-
-        </div>
-        
-	
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (32 files, similarity: 0.8702711008064495)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>dacer_____SimplePomodoro-android_____TaskRecorder</h6>
-            <pre class="prettyprint">
-	public void closeDB(){
-		db.close();
-	}
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>cping_____LGame_____RecordStoreSqlLite</h6>
-            <pre class="prettyprint">
-    public synchronized void destroy() {
-            database.close();
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>aosp-mirror_____platform_frameworks_base_____DatabaseLocaleTest</h6>
-            <pre class="prettyprint">
-    @Override
-    protected void tearDown() throws Exception {
-        mDatabase.close();
-        super.tearDown();
+    if (db != null) {
+      db.close();
     }
             </pre>
           </div>
@@ -458,9 +233,9 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_8 (3 partitions, 73 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_15 (2 partitions, 74 files)</h3>
         <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteOpenHelper.getWritableDatabase
+        <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteDatabase.execSQL, android.database.sqlite.SQLiteDatabase.execSQL, android.database.sqlite.SQLiteDatabase.execSQL
 </h4>
     </div>
     <hr class="col-lg-12 col-md-12 mb-12">
@@ -468,92 +243,41 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (27 files, similarity: 0.8018109230769258)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (36 files, similarity: 0.8132789920634892)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>jeasonlzy_____okhttp-OkGo_____BaseDao</h6>
+            <h6>ankidroid_____Anki-Android_____MetaDB</h6>
             <pre class="prettyprint">
-        return helper.getWritableDatabase();
+        if (mMetaDb.getVersion() < 4) {
+            mMetaDb.execSQL("DROP TABLE IF EXISTS languages;");
+            mMetaDb.execSQL("DROP TABLE IF EXISTS customDictionary;");
+            mMetaDb.execSQL("DROP TABLE IF EXISTS whiteboardState;");
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>yiyuanliu_____FlipGank_____GankDbHelper</h6>
+            <pre class="prettyprint">
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(Contract.CREATE_TABLE_DATA);
+        db.execSQL(Contract.CREATE_TABLE_CATEGORY);
+        db.execSQL(Contract.CREATE_TABLE_HISTORY);
     }
-
-    protected final void closeDatabase(SQLiteDatabase database, Cursor cursor) {
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>vanilla-music_____vanilla_____MediaLibraryBackend</h6>
+            <h6>k9mail_____k-9_____MigrationTo62</h6>
             <pre class="prettyprint">
-	/**
-	 * Wrapper for SQLiteDatabse.delete() function
-	 *
-	 * @param table the table to delete data from
-	 * @param whereClause the selection
-	 * @param whereArgs arguments to selection
-	 * @return the number of affected rows
-	 */
-	int delete(String table, String whereClause, String[] whereArgs) {
-		SQLiteDatabase dbh = getWritableDatabase();
-		return dbh.delete(table, whereClause, whereArgs);
-	}
-            </pre>
-          </div>
+    public static void addServerIdColumnToFoldersTable(SQLiteDatabase db) {
+        db.execSQL("ALTER TABLE folders ADD server_id TEXT");
+        db.execSQL("UPDATE folders SET server_id = name");
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>westnordost_____StreetComplete_____RelationDao</h6>
-            <pre class="prettyprint">
-	@Inject public RelationDao(SQLiteOpenHelper dbHelper, Serializer serializer)
-	{
-		super(dbHelper);
-		this.serializer = serializer;
-
-		String sql = "INSERT OR REPLACE INTO " + RelationTable.NAME + " ("+
-				RelationTable.Columns.ID+","+
-				RelationTable.Columns.VERSION+","+
-				RelationTable.Columns.MEMBERS+","+
-				RelationTable.Columns.TAGS+
-				") values (?,?,?,?);";
-		SQLiteDatabase db = dbHelper.getWritableDatabase();
-		insert = db.compileStatement(sql);
-	}
-            </pre>
-          </div>
-
-        </div>
-        
-	
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (13 files, similarity: 0.6692325384615382)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>saulmm_____Material-Movies_____DbHelper</h6>
-            <pre class="prettyprint">
-        if (db.isReadOnly()) {
-            db = getWritableDatabase();
-        }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>anthonycr_____Lightning-Browser_____BookmarkDatabase</h6>
-            <pre class="prettyprint">
-        if (mDatabase == null || !mDatabase.isOpen()) {
-            mDatabase = getWritableDatabase();
-        }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>mjdenham_____and-bible_____MyNoteDBAdapter</h6>
-            <pre class="prettyprint">
-		try {
-			Log.d(TAG, "about to getWritableDatabase");
-			db = dbHelper.getWritableDatabase();
-		} catch (SQLiteException ex) {
-			Log.d(TAG, "about to getReadableDatabase");
-			db = dbHelper.getReadableDatabase();
-		}
+        db.execSQL("DROP INDEX IF EXISTS folder_name");
+        db.execSQL("CREATE INDEX folder_server_id ON folders (server_id)");
+    }
             </pre>
           </div>
 
@@ -566,7 +290,7 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_4 (3 partitions, 167 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_4 (3 partitions, 128 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteDatabase.delete
 </h4>
@@ -576,15 +300,17 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (85 files, similarity: 0.7910149593838154)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (51 files, similarity: 0.6808599513725435)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>dmfs_____opentasks_____WidgetConfigurationDatabaseHelper</h6>
+            <h6>fire3_____sailorcast_____HistoryDbHelper</h6>
             <pre class="prettyprint">
-    public static void deleteConfiguration(SQLiteDatabase db, int widgetId)
-    {
-        db.delete(WIDGET_CONFIGURATION_TABLE, WidgetConfigurationColumns.WIDGET_ID + " = " + widgetId, null);
+    public void deleteAlbum(String albumID, int siteID) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_HISTORY, KEY_ALBUM_ID + " = ? AND " + KEY_ALBUM_SITE  + " = ?",
+                new String[] { String.valueOf(albumID), String.valueOf(siteID) });
+        db.close();
     }
             </pre>
           </div>
@@ -601,106 +327,17 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>Marlinski_____Rumble_____StatusContactDatabase</h6>
+            <h6>stormzhang_____9GAG_____FeedsDataHelper</h6>
             <pre class="prettyprint">
-    public void deleteEntriesMatchingStatusDBID(long statusDBID){
-        SQLiteDatabase db = databaseHelper.getWritableDatabase();
-        db.delete(TABLE_NAME, STATUS_DBID + " = ?" , new String[] {statusDBID + ""});
-    }
-            </pre>
-          </div>
-
-        </div>
-        
-	
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (9 files, similarity: 0.7437453888888892)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>AOKP_____frameworks_base_____SoundTriggerDbHelper</h6>
-            <pre class="prettyprint">
-            try {
-                return db.delete(GenericSoundModelContract.TABLE, soundModelClause, null) != 0;
-            } finally {
-                db.close();
-            }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>Pushjet_____Pushjet-Android_____DatabaseHandler</h6>
-            <pre class="prettyprint">
-            try {
-                db.delete(TABLE_MESSAGE, String.format(fmt, KEY_MESSAGE_SERVICE, service.getToken()), null);
-            } finally {
-                db.close();
-            }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>naman14_____Timber_____MusicPlaybackState</h6>
-            <pre class="prettyprint">
-        try {
-            database.delete(PlaybackQueueColumns.NAME, null, null);
-            database.delete(PlaybackHistoryColumns.NAME, null, null);
-            database.setTransactionSuccessful();
-        } finally {
-            database.endTransaction();
+    public int deleteAll() {
+        synchronized (DataProvider.DBLock) {
+            DBHelper mDBHelper = DataProvider.getDBHelper();
+            SQLiteDatabase db = mDBHelper.getWritableDatabase();
+            int row = db.delete(FeedsDBInfo.TABLE_NAME, FeedsDBInfo.CATEGORY + "=?", new String[] {
+                    String.valueOf(mCategory.ordinal())
+            });
+            return row;
         }
-            </pre>
-          </div>
-
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (2 partitions, 308 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteDatabase.execSQL
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (154 files, similarity: 0.9338141955691279)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>dmfs_____opentasks_____WidgetConfigurationDatabaseHelper</h6>
-            <pre class="prettyprint">
-    @Override
-    public void onCreate(SQLiteDatabase db)
-    {
-        db.execSQL(SQL_CREATE_WIDGET_CONFIGURATION_TABLE);
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>dkim0419_____SoundRecorder_____DBHelper</h6>
-            <pre class="prettyprint">
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL(SQL_CREATE_ENTRIES);
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>jensstein_____oandbackup_____BlacklistsDBHelper</h6>
-            <pre class="prettyprint">
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL(BlacklistContract.CREATE_DB);
     }
             </pre>
           </div>
@@ -714,7 +351,7 @@
 	
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_9 (3 partitions, 99 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_9 (3 partitions, 68 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">android.database.sqlite.SQLiteOpenHelper.onCreate
 </h4>
@@ -724,47 +361,42 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (50 files, similarity: 0.9128241469387884)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (11 files, similarity: 0.967042)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>shrikanth7698_____ChatView_____DBHandler</h6>
+            <h6>oubowu_____OuNews_____DaoMaster</h6>
             <pre class="prettyprint">
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME1);
-        onCreate(db);
-
-
-    }
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+            Log.i("greenDAO", "Upgrading schema from version " + oldVersion + " to " + newVersion + " by dropping all tables");
+            dropAllTables(db, true);
+            onCreate(db);
+        }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>fire3_____sailorcast_____HistoryDbHelper</h6>
+            <h6>zubinxiong_____Bgm38_____DaoMaster</h6>
             <pre class="prettyprint">
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_HISTORY);
-        // Create tables again
-        onCreate(db);
-    }
+        @Override
+        public void onUpgrade(Database db, int oldVersion, int newVersion) {
+            Log.i("greenDAO", "Upgrading schema from version " + oldVersion + " to " + newVersion + " by dropping all tables");
+            dropAllTables(db, true);
+            onCreate(db);
+        }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>TommyLemon_____Android-ZBLibrary_____SQLHelper</h6>
+            <h6>ZhaoKaiQiang_____JianDan_____DaoMaster</h6>
             <pre class="prettyprint">
-	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-		onCreate(db);
-	}
-
-
-
-	/**根据Cursor获取内容
-	 * @param cursor
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+            Log.i("greenDAO", "Upgrading schema from version " + oldVersion + " to " + newVersion + " by dropping all tables");
+            dropAllTables(db, true);
+            onCreate(db);
+        }
             </pre>
           </div>
 
@@ -772,60 +404,61 @@
         
 	
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (22 files, similarity: 0.7248398658008661)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (30 files, similarity: 0.7275048988505742)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>mcxiaoke_____fanfouapp-opensource_____SQLiteHelper</h6>
+            <h6>JakeWharton_____ActionBarSherlock_____LoaderThrottleSupport</h6>
+            <pre class="prettyprint">
+       /**
+        *
+        * Demonstrates that the provider must consider what happens when the
+        * underlying datastore is changed. In this sample, the database is upgraded the database
+        * by destroying the existing data.
+        * A real application should upgrade the database in place.
+        */
+       @Override
+       public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+           // Logs that the database is being upgraded
+           Log.w(TAG, "Upgrading database from version " + oldVersion + " to "
+                   + newVersion + ", which will destroy all old data");
+
+           // Kills the table and existing data
+           db.execSQL("DROP TABLE IF EXISTS notes");
+
+           // Recreates the database with a new version
+           onCreate(db);
+       }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ParanoidAndroid_____android_frameworks_base_____LocalProvider</h6>
+            <pre class="prettyprint">
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int currentVersion) {
+            Log.w(TAG, "Upgrading test database from version " +
+                  oldVersion + " to " + currentVersion +
+                  ", which will destroy all old data");
+            db.execSQL("DROP TABLE IF EXISTS data");
+            onCreate(db);
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>mcxiaoke_____minicat_____SQLiteHelper</h6>
             <pre class="prettyprint">
     @Override
-    public void onUpgrade(final SQLiteDatabase db, final int oldVersion,
-            final int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + StatusInfo.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS " + UserInfo.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS " + DirectMessageInfo.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS " + DraftInfo.TABLE_NAME);
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + StatusColumns.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + UserColumns.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + DirectMessageColumns.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + StatusUpdateInfoColumns.TABLE_NAME);
         onCreate(db);
 
     }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>bishopmatthew_____HackerNews_____DbHelperSingleton</h6>
-            <pre class="prettyprint">
-	@Override
-	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		db.execSQL("DROP TABLE IF EXISTS " + new Story().getTableName());
-		db.execSQL("DROP TABLE IF EXISTS " + new Comment().getTableName());
-		db.execSQL("DROP TABLE IF EXISTS " + new StoryTimestamp().getTableName());
-		db.execSQL("DROP TABLE IF EXISTS " + new CommentsTimestamp().getTableName());
-		db.execSQL("DROP TABLE IF EXISTS " + new Vote().getTableName());
-
-		onCreate(db);
-	}
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>felixb_____callmeter_____DataProvider</h6>
-            <pre class="prettyprint">
-        /**
-         * Create table in {@link SQLiteDatabase}.
-         *
-         * @param db {@link SQLiteDatabase}
-         */
-        public static void onCreate(final SQLiteDatabase db) {
-            Log.i(TAG, "create table: " + TABLE);
-            db.execSQL("DROP TABLE IF EXISTS " + TABLE);
-            db.execSQL("CREATE TABLE " + TABLE + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + PLAN_ID + " LONG, " + RULE_ID + " LONG, " + TYPE + " INTEGER, " + DIRECTION
-                    + " INTEGER, " + DATE + " LONG, " + AMOUNT + " LONG, " + BILL_AMOUNT
-                    + " FLOAT, " + REMOTE + " TEXT, " + ROAMED + " INTEGER, " + COST + " FLOAT, "
-                    + FREE + " FLOAT," + MYNUMBER + " TEXT" + ");");
-            db.execSQL("CREATE INDEX " + TABLE + "_idx on " + TABLE + " (" + ID + "," + PLAN_ID
-                    + "," + DATE + ")");
-        }
             </pre>
           </div>
 

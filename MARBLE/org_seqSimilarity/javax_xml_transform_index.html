@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">javax_xml_transform</h1>
+    </div>
+    
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_15 (2 partitions, 15 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">javax.xml.transform.TransformerFactory.newInstance, javax.xml.transform.Transformer.setOutputProperty, javax.xml.transform.dom.DOMSource.&lt;init&gt;, javax.xml.transform.stream.StreamResult.&lt;init&gt;, javax.xml.transform.Transformer.transform
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (6 files, similarity: 0.28226519999999994)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>geoserver_____geoserver_____CatalogWriter</h6>
+            <pre class="prettyprint">
+    public void write(File file) throws IOException {
+        try (FileOutputStream os = new FileOutputStream(file)) {
+            Transformer tx = TransformerFactory.newInstance().newTransformer();
+            tx.setOutputProperty(OutputKeys.INDENT, "yes");
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult(os);
+
+            tx.transform(source, result);
+        } catch (Exception e) {
+            String msg = "Could not write catalog to " + file;
+            throw (IOException) new IOException(msg).initCause(e);
+        }
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>Catrobat_____Catroid_____BackwardCompatibleCatrobatLanguageXStream</h6>
+            <pre class="prettyprint">
+	private void saveDocument(Document doc, File file) {
+		try {
+			Transformer serializer = TransformerFactory.newInstance().newTransformer();
+			serializer.setOutputProperty(OutputKeys.INDENT, "yes");
+			serializer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+
+			DOMSource source = new DOMSource(doc);
+			StreamResult result = new StreamResult(file.getPath());
+			serializer.transform(source, result);
+		} catch (Exception exception) {
+			Log.e(TAG, "Failed to save document to file", exception);
+		}
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>reds-heig_____logisim-evolution_____BoardWriterClass</h6>
+            <pre class="prettyprint">
+	public void PrintXml(String filename) {
+		try {
+			TransformerFactory tranFactory = TransformerFactory.newInstance();
+			tranFactory.setAttribute("indent-number", 3);
+			Transformer aTransformer = tranFactory.newTransformer();
+			aTransformer.setOutputProperty(OutputKeys.INDENT, "yes");
+			Source src = new DOMSource(boardInfo);
+			File file = new File(filename);
+			Result dest = new StreamResult(file);
+			aTransformer.transform(src, dest);
+		} catch (Exception e) {
+			logger.error(
+					"Exceptions not handled yet in PrintXml(), but got an exception: {}",
+					e.getMessage());
+		}
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_32 (3 partitions, 30 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">javax.xml.transform.TransformerFactory.newInstance, javax.xml.transform.TransformerFactory.newTransformer, javax.xml.transform.Transformer.setOutputProperty, javax.xml.transform.stream.StreamResult.&lt;init&gt;, javax.xml.transform.Transformer.transform
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (10 files, similarity: 0.334050888888889)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>tada_____pljava_____SQLXMLImpl</h6>
+            <pre class="prettyprint">
+			try
+			{
+				TransformerFactory tf = TransformerFactory.newInstance();
+				Transformer t = tf.newTransformer();
+				t.setOutputProperty(ENCODING, m_serverCS.name());
+				os = new DeclCheckedOutputStream(os, m_serverCS);
+				StreamResult rlt = new StreamResult(os);
+				t.transform(src, rlt);
+				os.close();
+			}
+			catch ( Exception e )
+			{
+				throw normalizedException(e);
+			}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>igvteam_____igv_____Utilities</h6>
+            <pre class="prettyprint">
+        try {
+
+            TransformerFactory factory = TransformerFactory.newInstance();
+            Transformer transformer = factory.newTransformer();
+
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+
+            streamResult = new StreamResult(new StringWriter());
+            DOMSource source = new DOMSource(document);
+            transformer.transform(source, streamResult);
+        } catch (TransformerException e) {
+            return null;
+        }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>dourgulf_____CameraStreaming_____XMLUtils</h6>
+            <pre class="prettyprint">
+	public static String docToString2(Document domDoc) throws IOException {
+		try {
+			TransformerFactory transFact = TransformerFactory.newInstance();
+			Transformer trans = transFact.newTransformer();
+			trans.setOutputProperty(OutputKeys.INDENT, "no");
+			StringWriter sw = new StringWriter();
+			Result result = new StreamResult(sw);
+			trans.transform(new DOMSource(domDoc), result);
+			return sw.toString();
+		} catch (Exception ex) {
+			throw new IOException(String.format("Error converting from doc to string %s", ex.getMessage()));
+		}
+	}
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_5 (2 partitions, 56 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">javax.xml.transform.TransformerException.&lt;init&gt;
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 0 (31 files, similarity: 0.9675577806451571)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>bugvm_____bugvm_____SystemIDResolver</h6>
+            <pre class="prettyprint">
+    catch (MalformedURIException mue)
+    {
+      throw new TransformerException(mue);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>apache_____ofbiz_____XslTransform</h6>
+            <pre class="prettyprint">
+            } catch (Exception e) {
+                throw new TransformerException("Error creating SAX parser/reader", e);
+            }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>MobiVM_____robovm_____SystemIDResolver</h6>
+            <pre class="prettyprint">
+    catch (MalformedURIException mue)
+    {
+      throw new TransformerException(mue);
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+	

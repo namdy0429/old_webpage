@@ -31,7 +31,71 @@
     
 <hr class="col-lg-12 col-md-12 mb-12">
     <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_8 (2 partitions, 40 files)</h3>
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_9 (2 partitions, 45 files)</h3>
+        <br>
+        <h4 class="col-lg-12 col-md-12 mb-12">javax.xml.parsers.SAXParserFactory.newInstance, javax.xml.parsers.SAXParserFactory.newSAXParser, javax.xml.parsers.SAXParser.parse
+</h4>
+    </div>
+    <hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+      <div class="col-lg-12">
+      
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (16 files, similarity: 0.500357191666666)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>ParanoidAndroid_____android_frameworks_base_____AccessPointParserHelper</h6>
+            <pre class="prettyprint">
+    public AccessPointParserHelper(InputStream in) throws Exception {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        SAXParser saxParser = factory.newSAXParser();
+        saxParser.parse(in, mHandler);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>unofficial-openjdk_____openjdk_____VmIdentifierCreateResolve</h6>
+            <pre class="prettyprint">
+    public static void main(String args[]) throws Exception {
+        File testcases =
+                new File(System.getProperty("test.src", "."), "testcases");
+
+        SAXParserFactory spf = SAXParserFactory.newInstance();
+        SAXParser sp = spf.newSAXParser();
+        DefaultHandler dh = new VmIdentifierTestHandler();
+        sp.parse(testcases, dh);
+    }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>serge-rider_____dbeaver_____ShowTipOfTheDayHandler</h6>
+            <pre class="prettyprint">
+        try (InputStream tipsInputStream = FileLocator.find(new URL(pathToTipsFile)).openConnection().getInputStream()) {
+
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser = factory.newSAXParser();
+
+            TipsXmlHandler handler = new TipsXmlHandler();
+            saxParser.parse(tipsInputStream, handler);
+            result.addAll(handler.getTips());
+
+        } catch (SAXException | ParserConfigurationException e) {
+            </pre>
+          </div>
+
+        </div>
+        
+	
+      </div>
+    </div>
+
+	
+<hr class="col-lg-12 col-md-12 mb-12">
+    <div class="row">
+        <h3 class="col-lg-12 col-md-12 mb-12">pattern_8 (3 partitions, 46 files)</h3>
         <br>
         <h4 class="col-lg-12 col-md-12 mb-12">javax.xml.parsers.DocumentBuilderFactory.newInstance, javax.xml.parsers.DocumentBuilderFactory.newDocumentBuilder, javax.xml.parsers.DocumentBuilder.newDocument
 </h4>
@@ -41,7 +105,55 @@
       <div class="col-lg-12">
       
 <div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 3 (13 files, similarity: 0.4642206410256409)</h4>
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (10 files, similarity: 0.672076133333333)</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>JetBrains_____intellij-community_____az</h6>
+            <pre class="prettyprint">
+   public az(ay var1, String var2, String var3, Attributes var4) throws ParserConfigurationException {
+      this.d = var1;
+      DocumentBuilderFactory var5 = DocumentBuilderFactory.newInstance();
+      DocumentBuilder var6 = var5.newDocumentBuilder();
+      this.a = var6.newDocument();
+      this.a(var3, var4);
+   }
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>liferay_____liferay-portal_____XMLUtil</h6>
+            <pre class="prettyprint">
+	public static Document createDocument() throws Exception {
+		DocumentBuilderFactory documentBuilderFactory =
+			DocumentBuilderFactory.newInstance();
+
+		DocumentBuilder documentBuilder =
+			documentBuilderFactory.newDocumentBuilder();
+
+		return documentBuilder.newDocument();
+	}
+            </pre>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h6>x-stream_____xstream_____DomWriterTest</h6>
+            <pre class="prettyprint">
+    protected void setUp() throws Exception {
+        super.setUp();
+        final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+        document = documentBuilder.newDocument();
+        writer = new DomWriter(document);
+    }
+            </pre>
+          </div>
+
+        </div>
+        
+	
+<div class="row">
+          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (13 files, similarity: 0.46422064102564103)</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -85,215 +197,23 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
-            <h6>mangstadt_____biweekly_____XmlUtils</h6>
+            <h6>hunterhacker_____jdom_____JAXPDOMAdapter</h6>
             <pre class="prettyprint">
-	public static Document createDocument() {
-		try {
-			DocumentBuilderFactory fact = DocumentBuilderFactory.newInstance();
-			fact.setNamespaceAware(true);
-			DocumentBuilder db = fact.newDocumentBuilder();
-			return db.newDocument();
-		} catch (ParserConfigurationException e) {
-			//will probably never be thrown because we're not doing anything fancy with the configuration
-			throw new RuntimeException(e);
+			throws JDOMException {
+
+		DocumentBuilder db = localbuilder.get();
+		if (db == null) {
+			try {
+				DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+				db = dbf.newDocumentBuilder();
+				localbuilder.set(db);
+			} catch (ParserConfigurationException e) {
+				throw new JDOMException("Unable to obtain a DOM parser. See cause:", e); 
+			}
 		}
+		return db.newDocument();
+		
 	}
-            </pre>
-          </div>
-
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_9 (2 partitions, 44 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">javax.xml.parsers.SAXParserFactory.newInstance, javax.xml.parsers.SAXParserFactory.newSAXParser, javax.xml.parsers.SAXParser.parse
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 1 (16 files, similarity: 0.4437684166666674)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>unofficial-openjdk_____openjdk_____VmIdentifierCreateResolve</h6>
-            <pre class="prettyprint">
-    public static void main(String args[]) throws Exception {
-        File testcases =
-                new File(System.getProperty("test.src", "."), "testcases");
-
-        SAXParserFactory spf = SAXParserFactory.newInstance();
-        SAXParser sp = spf.newSAXParser();
-        DefaultHandler dh = new VmIdentifierTestHandler();
-        sp.parse(testcases, dh);
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>dmlloyd_____openjdk_____VmIdentifierCreateResolve</h6>
-            <pre class="prettyprint">
-    public static void main(String args[]) throws Exception {
-        File testcases =
-                new File(System.getProperty("test.src", "."), "testcases");
-
-        SAXParserFactory spf = SAXParserFactory.newInstance();
-        SAXParser sp = spf.newSAXParser();
-        DefaultHandler dh = new VmIdentifierTestHandler();
-        sp.parse(testcases, dh);
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>sismics_____reader_____OpmlReader</h6>
-            <pre class="prettyprint">
-    public void read(InputStream is) throws Exception {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        factory.setNamespaceAware(true);
-        factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
-        SAXParser parser = factory.newSAXParser();
-
-        parser.parse(is, this);
-    }
-            </pre>
-          </div>
-
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_0 (3 partitions, 185 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">javax.xml.parsers.DocumentBuilderFactory.newInstance, javax.xml.parsers.DocumentBuilderFactory.newDocumentBuilder, javax.xml.parsers.DocumentBuilder.parse
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (48 files, similarity: 0.3987026329787275)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>VoltDB_____voltdb_____TestPlansCommonTableExpression</h6>
-            <pre class="prettyprint">
-    private static Document parse(String xml) throws Exception {
-        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-        documentBuilderFactory.setNamespaceAware(false);
-        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-        return documentBuilder.parse(new ByteArrayInputStream(xml.getBytes()));
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>google_____j2objc_____Support_Xml</h6>
-            <pre class="prettyprint">
-    public static Document domOf(String xml) throws Exception {
-        // DocumentBuilderTest assumes we're using DocumentBuilder to do this parsing!
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        dbf.setCoalescing(true);
-        dbf.setExpandEntityReferences(true);
-
-        ByteArrayInputStream stream = new ByteArrayInputStream(xml.getBytes());
-        DocumentBuilder builder = dbf.newDocumentBuilder();
-
-        return builder.parse(stream);
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>ceylon_____ceylon_____XmlDependencyResolver</h6>
-            <pre class="prettyprint">
-    protected static Document parseXml(InputStream inputStream) throws ParserConfigurationException, SAXException, IOException {
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        Document doc = dBuilder.parse(inputStream);
-        doc.getDocumentElement().normalize();
-        return doc;
-    }
-            </pre>
-          </div>
-
-        </div>
-        
-	
-      </div>
-    </div>
-
-	
-<hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-        <h3 class="col-lg-12 col-md-12 mb-12">pattern_7 (3 partitions, 81 files)</h3>
-        <br>
-        <h4 class="col-lg-12 col-md-12 mb-12">javax.xml.parsers.SAXParserFactory.newInstance, javax.xml.parsers.SAXParserFactory.newSAXParser
-</h4>
-    </div>
-    <hr class="col-lg-12 col-md-12 mb-12">
-    <div class="row">
-      <div class="col-lg-12">
-      
-<div class="row">
-          <h4 class="col-lg-12 col-md-12 mb-12">Cluster 2 (23 files, similarity: 0.4708186166007913)</h4>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>unofficial-openjdk_____openjdk_____VmIdentifierCreateResolve</h6>
-            <pre class="prettyprint">
-    public static void main(String args[]) throws Exception {
-        File testcases =
-                new File(System.getProperty("test.src", "."), "testcases");
-
-        SAXParserFactory spf = SAXParserFactory.newInstance();
-        SAXParser sp = spf.newSAXParser();
-        DefaultHandler dh = new VmIdentifierTestHandler();
-        sp.parse(testcases, dh);
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>dmlloyd_____openjdk_____VmIdentifierCreateResolve</h6>
-            <pre class="prettyprint">
-    public static void main(String args[]) throws Exception {
-        File testcases =
-                new File(System.getProperty("test.src", "."), "testcases");
-
-        SAXParserFactory spf = SAXParserFactory.newInstance();
-        SAXParser sp = spf.newSAXParser();
-        DefaultHandler dh = new VmIdentifierTestHandler();
-        sp.parse(testcases, dh);
-    }
-            </pre>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <h6>sismics_____reader_____OpmlReader</h6>
-            <pre class="prettyprint">
-    public void read(InputStream is) throws Exception {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        factory.setNamespaceAware(true);
-        factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
-        SAXParser parser = factory.newSAXParser();
-
-        parser.parse(is, this);
-    }
             </pre>
           </div>
 
