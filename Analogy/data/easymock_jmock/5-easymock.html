@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+	 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="col-lg-12 col-md-12 mb-12" style="height: 100%;">
+<h6>EasyMock</h6>
+<pre class="prettyprint">
+@Test
+public void partialMocking() {
+    UserForm userForm = new UserForm();
+    userForm.username = "foo";
+    // use partial mock
+    LoginService loginServicePartial = EasyMock.partialMockBuilder(LoginService.class)
+      .addMockedMethod("setCurrentUser").createMock();
+    loginServicePartial.setCurrentUser("foo");
+    // let service's login use implementation so let's mock DAO call
+    EasyMock.expect(loginDao.login(userForm)).andReturn(1);
+ 
+    loginServicePartial.setLoginDao(loginDao);
+    loginController.loginService = loginServicePartial;
+     
+    EasyMock.replay(loginDao);
+    EasyMock.replay(loginServicePartial);
+ 
+    String login = loginController.login(userForm);
+ 
+    Assert.assertEquals("OK", login);
+    // verify mocked call
+    EasyMock.verify(loginServicePartial);
+    EasyMock.verify(loginDao);
+}
+</pre>
+</div>
+</body>
+</html>
+

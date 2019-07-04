@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+	 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="col-lg-12 col-md-12 mb-12" style="height: 100%;">
+<h6>JMock</h6>
+<pre class="prettyprint">
+@Test
+public void partialMocking() {
+    // use partial mock
+    LoginService partialLoginService = new LoginService();
+    partialLoginService.setLoginDao(loginDao);
+    loginController.loginService = partialLoginService;
+ 
+    UserForm userForm = new UserForm();
+    userForm.username = "foo";
+    // let service's login use implementation so let's mock DAO call
+    new Expectations() {{
+        loginDao.login(userForm); result = 1;
+        // no expectation for loginService.login
+        partialLoginService.setCurrentUser("foo");
+    }};
+ 
+    String login = loginController.login(userForm);
+ 
+    Assert.assertEquals("OK", login);
+    // verify mocked call
+    new FullVerifications(partialLoginService) {};
+    new FullVerifications(loginDao) {};
+}
+</pre>
+</div>
+</body>
+</html>
+
