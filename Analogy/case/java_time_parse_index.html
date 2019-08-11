@@ -1,0 +1,980 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">java_time</h1>
+      <br>
+      <h4 class="col-lg-12 col-md-12 mb-12">parse</h4>
+    </div>
+    
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>EvoSuite_____evosuite_____MockLocalDateTime_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/EvoSuite_____evosuite_____MockLocalDateTime.java
+
+java.time.LocalDateTime.parse
+
+
+    public static LocalDateTime <mark>parse</mark>(CharSequence text) {
+        return LocalDateTime.<mark>parse</mark>(text);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>hprose_____hprose-java_____LocalDateTimeConverter_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/hprose_____hprose-java_____LocalDateTimeConverter.java
+
+java.time.LocalDateTime.parse
+java.time.LocalDateTime.parse
+
+
+    public LocalDateTime convertTo(String str) {
+        return LocalDateTime.<mark>parse</mark>(str);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>super-csv_____super-csv_____ParseLocalDateTime_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/super-csv_____super-csv_____ParseLocalDateTime.java
+
+java.time.LocalDateTime.parse
+
+/**
+	 * {@inheritDoc}
+	 */	@Override
+	protected LocalDateTime <mark>parse</mark>(final String string) {
+		return LocalDateTime.<mark>parse</mark>(string);
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dmlloyd_____openjdk_____TCKLocalDateTime_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/dmlloyd_____openjdk_____TCKLocalDateTime.java
+
+java.time.LocalDateTime.parse
+
+    @Test(expectedExceptions=DateTimeParseException.class)
+    public void factory_parse_illegalValue() {
+        LocalDateTime.<mark>parse</mark>("2008-06-32T11:15");
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dmlloyd_____openjdk_____TCKLocalDateTime_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/dmlloyd_____openjdk_____TCKLocalDateTime.java
+
+java.time.LocalDateTime.parse
+
+    @Test(expectedExceptions=DateTimeParseException.class)
+    public void factory_parse_invalidValue() {
+        LocalDateTime.<mark>parse</mark>("2008-06-31T11:15");
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dmlloyd_____openjdk_____TCKLocalDateTime_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/dmlloyd_____openjdk_____TCKLocalDateTime.java
+
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalDateTime.parse
+java.time.LocalDateTime.of
+
+    @Test(expectedExceptions=NullPointerException.class)
+    public void factory_parse_nullText() {
+        LocalDateTime.<mark>parse</mark>((String) null);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dmlloyd_____openjdk_____TCKLocalDateTime_7.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/dmlloyd_____openjdk_____TCKLocalDateTime.java
+
+java.time.LocalDateTime.parse
+
+    @Test(expectedExceptions=NullPointerException.class)
+    public void factory_parse_formatter_nullText() {
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("y M d H m s");
+        LocalDateTime.<mark>parse</mark>((String) null, f);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>JFXtras_____jfxtras_____LocalDateTimePickerBuilder_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/JFXtras_____jfxtras_____LocalDateTimePickerBuilder.java
+
+java.time.LocalDateTime.parse
+
+/** AllowNull */	public String getDisplayedLocalDateTime() { return null; } // dummy, just to make it Java Bean compatible
+	public void setDisplayedLocalDateTime(String value) { 
+		this.displayedLocalDateTime = LocalDateTime.<mark>parse</mark>(value, YMDHMSDateTimeFormatter);
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dmlloyd_____openjdk_____TCKLocalDateTime_6.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/dmlloyd_____openjdk_____TCKLocalDateTime.java
+
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalDateTime.parse
+
+    @Test
+    public void factory_parse_formatter() {
+        DateTimeFormatter f = DateTimeFormatter.<mark>ofPattern</mark>("y M d H m s");
+        LocalDateTime test = LocalDateTime.<mark>parse</mark>("2010 12 3 11 30 45", f);
+        assertEquals(test, LocalDateTime.of(2010, 12, 3, 11, 30, 45));
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dremio_____dremio-oss_____ValueExpressions_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/dremio_____dremio-oss_____ValueExpressions.java
+
+java.time.LocalDateTime.parse
+java.time.LocalDateTime.toInstant
+
+
+  public static LogicalExpression getTimeStamp(TimestampString timestamp) {
+    LocalDateTime localDateTime = LocalDateTime.<mark>parse</mark>(timestamp.toString(), DateTimes.CALCITE_LOCAL_DATETIME_FORMATTER);
+    return new TimeStampExpression(localDateTime.<mark>toInstant</mark>(ZoneOffset.UTC).toEpochMilli());
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>jtablesaw_____tablesaw_____DateTimeParser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/jtablesaw_____tablesaw_____DateTimeParser.java
+
+java.time.LocalDateTime.parse
+
+    @Override
+    public boolean canParse(String s) {
+        if (isMissing(s)) {
+            return true;
+        }
+        try {
+            LocalDateTime.<mark>parse</mark>(s, formatter.withLocale(locale));
+            return true;
+        } catch (DateTimeParseException e) {
+            // it's all part of the plan
+            return false;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dmlloyd_____openjdk_____TCKDateTimeFormatterBuilder_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/dmlloyd_____openjdk_____TCKDateTimeFormatterBuilder.java
+
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalDateTime.parse
+
+    @Test(dataProvider="dayOfYearFieldAdjacentParsingValues")
+    public void test_dayOfYearFieldAdjacentValueParsing(String input, LocalDateTime expected) {
+        DateTimeFormatter df = new DateTimeFormatterBuilder().appendPattern("yyyyDDDHHmm").toFormatter();
+        LocalDateTime actual = LocalDateTime.<mark>parse</mark>(input, df);
+        assertEquals(actual, expected);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dmlloyd_____openjdk_____TCKLocalDateTime_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/dmlloyd_____openjdk_____TCKLocalDateTime.java
+
+java.time.LocalDateTime.parse
+
+    @Test(dataProvider="sampleToString")
+    public void test_<mark>parse</mark>(int y, int month, int d, int h, int m, int s, int n, String text) {
+        LocalDateTime t = LocalDateTime.<mark>parse</mark>(text);
+        assertEquals(t.getYear(), y);
+        assertEquals(t.getMonth().getValue(), month);
+        assertEquals(t.getDayOfMonth(), d);
+        assertEquals(t.getHour(), h);
+        assertEquals(t.getMinute(), m);
+        assertEquals(t.getSecond(), s);
+        assertEquals(t.getNano(), n);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>streamsets_____datacollector_____DateTimeColumnHandler_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/streamsets_____datacollector_____DateTimeColumnHandler.java
+
+java.time.LocalDateTime.parse
+
+
+  public Field getTimestampWithLocalTimezone(String columnValue) {
+    if (columnValue == null) {
+      return Field.createZonedDateTime(null);
+    }
+    Matcher m = toTimeStampTzPatternLocalTz.matcher(columnValue);
+    if (m.find()) {
+      if (timestampAsString) {
+        return Field.create(Field.Type.STRING, m.group(1));
+      }
+      // Zoned Timestamp can maintain fractional seconds precision
+      return Field.createZonedDateTime(ZonedDateTime.of(LocalDateTime.<mark>parse</mark>(m.group(1), localDtFormatter), zoneId));
+    }
+    return Field.createZonedDateTime(null);
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>xipki_____xipki_____DateUtil_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/xipki_____xipki_____DateUtil.java
+
+java.time.LocalDateTime.parse
+java.time.LocalDateTime.atZone
+java.time.format.DateTimeParseException.getMessage
+
+
+  public static Date parseUtcTimeyyyyMMddhhmmss(String utcTime) {
+    String coreUtcTime = utcTime;
+    if (StringUtil.isNotBlank(utcTime)) {
+      char ch = utcTime.charAt(utcTime.length() - 1);
+      if (ch == 'z' || ch == 'Z') {
+        coreUtcTime = utcTime.substring(0, utcTime.length() - 1);
+      }
+    }
+
+    if (coreUtcTime == null || coreUtcTime.length() != 14) {
+      throw new IllegalArgumentException("invalid utcTime '" + utcTime + "'");
+    }
+
+    try {
+      LocalDateTime localDate = LocalDateTime.<mark>parse</mark>(coreUtcTime, SDF1);
+      Instant instant = localDate.<mark>atZone</mark>(ZONE_UTC).toInstant();
+      return Date.from(instant);
+    } catch (DateTimeParseException ex) {
+      throw new IllegalArgumentException("invalid utcTime '" + utcTime + "': " + ex.<mark>getMessage</mark>());
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>codelibs_____fess_____SearchLogService_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/codelibs_____fess_____SearchLogService.java
+
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalDateTime.parse
+java.time.LocalDateTime.parse
+
+
+    private void createUserInfoCondition(final SearchLogPager pager, final UserInfoCB cb) {
+        if (StringUtil.isNotBlank(pager.userSessionId)) {
+            cb.query().setId_Equal(pager.userSessionId);
+        }
+        if (StringUtil.isNotBlank(pager.requestedTimeRange)) {
+            final String[] values = pager.requestedTimeRange.split(" - ");
+            final DateTimeFormatter formatter = DateTimeFormatter.<mark>ofPattern</mark>("yyyy-MM-dd HH:mm");
+            try {
+                if (values.length > 0) {
+                    cb.query().setUpdatedAt_GreaterEqual(LocalDateTime.<mark>parse</mark>(values[0], formatter));
+                }
+                if (values.length > 1) {
+                    cb.query().setUpdatedAt_LessEqual(LocalDateTime.<mark>parse</mark>(values[1], formatter));
+                }
+            } catch (final Exception e) {
+                if (logger.isDebugEnabled()) {
+                    logger.debug("Failed to parse " + pager.requestedTimeRange, e);
+                }
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>codelibs_____fess_____SearchLogService_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/codelibs_____fess_____SearchLogService.java
+
+java.time.LocalDateTime.parse
+java.time.ZoneId.systemDefault
+
+
+    private void createClickLogCondition(final SearchLogPager pager, final ClickLogCB cb) {
+        if (StringUtil.isNotBlank(pager.queryId)) {
+            cb.query().setQueryId_Term(pager.queryId);
+        }
+        if (StringUtil.isNotBlank(pager.userSessionId)) {
+            cb.query().setUserSessionId_Term(pager.userSessionId);
+        }
+        if (StringUtil.isNotBlank(pager.requestedTimeRange)) {
+            final String[] values = pager.requestedTimeRange.split(" - ");
+            final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+            try {
+                if (values.length > 0) {
+                    cb.query().setRequestedAt_GreaterEqual(LocalDateTime.<mark>parse</mark>(values[0], formatter));
+                }
+                if (values.length > 1) {
+                    cb.query().setRequestedAt_LessEqual(LocalDateTime.<mark>parse</mark>(values[1], formatter));
+                }
+            } catch (final Exception e) {
+                if (logger.isDebugEnabled()) {
+                    logger.debug("Failed to parse " + pager.requestedTimeRange, e);
+                }
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>codelibs_____fess_____SearchLogService_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/codelibs_____fess_____SearchLogService.java
+
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalDateTime.parse
+java.time.LocalDateTime.parse
+
+
+    private void createFavoriteLogCondition(final SearchLogPager pager, final FavoriteLogCB cb) {
+        if (StringUtil.isNotBlank(pager.queryId)) {
+            cb.query().setQueryId_Term(pager.queryId);
+        }
+        if (StringUtil.isNotBlank(pager.userSessionId)) {
+            cb.query().setUserInfoId_Term(pager.userSessionId);
+        }
+        if (StringUtil.isNotBlank(pager.requestedTimeRange)) {
+            final String[] values = pager.requestedTimeRange.split(" - ");
+            final DateTimeFormatter formatter = DateTimeFormatter.<mark>ofPattern</mark>("yyyy-MM-dd HH:mm");
+            try {
+                if (values.length > 0) {
+                    cb.query().setCreatedAt_GreaterEqual(LocalDateTime.<mark>parse</mark>(values[0], formatter));
+                }
+                if (values.length > 1) {
+                    cb.query().setCreatedAt_LessEqual(parseDateTime(values[1], formatter));
+                }
+            } catch (final Exception e) {
+                if (logger.isDebugEnabled()) {
+                    logger.debug("Failed to parse " + pager.requestedTimeRange, e);
+                }
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>hibernate_____hibernate-search_____JavaUtilCalendarPropertyTypeDescriptor_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/hibernate_____hibernate-search_____JavaUtilCalendarPropertyTypeDescriptor.java
+
+java.time.LocalDateTime.parse
+java.time.ZoneId.of
+
+			@Override
+			public List<Calendar> getEntityPropertyValues() {
+				return Arrays.asList(
+						calendar( 1930, 1, 1, 0, 0, 0, 0, "GMT+18:00" ),
+						calendar( 1970, 1, 1, 0, 0, 0, 0, "Europe/Paris" ),
+						calendar( 1970, 1, 9, 13, 28, 59, 0, "Europe/Paris" ),
+						calendar( 2017, 11, 6, 19, 19, 0, 540, "Europe/Paris" ),
+						calendar( 2017, 11, 6, 19, 19, 0, 540, "America/Chicago" ),
+						calendar( Long.MAX_VALUE, "UTC" ),
+						calendar( Long.MAX_VALUE, "GMT-18:00" ),
+
+						// A february 29th on a leap year
+						calendar( 2000, 2, 29, 12, 0, 0, 0, "UTC" ),
+						// A february 29th on a leap year in the Julian calendar (java.util), but not the Gregorian calendar (java.time)
+						calendar( 1500, 2, 29, 12, 0, 0, 0, "UTC" ),
+
+						// Two date/times that could be ambiguous due to a daylight saving time switch
+						calendar(
+								LocalDateTime.<mark>parse</mark>( "2011-10-30T02:50:00.00" ).atZone( ZoneId.<mark>of</mark>( "CET" ) )
+										.withEarlierOffsetAtOverlap().toInstant().toEpochMilli(),
+								"CET"
+						),
+						calendar(
+								LocalDateTime.<mark>parse</mark>( "2011-10-30T02:50:00.00" ).atZone( ZoneId.<mark>of</mark>( "CET" ) )
+										.withLaterOffsetAtOverlap().toInstant().toEpochMilli(),
+								"CET"
+						)
+				);
+			}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>codelibs_____fess_____SearchLogService_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/codelibs_____fess_____SearchLogService.java
+
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalDateTime.parse
+
+
+    private void createSearchLogCondition(final SearchLogPager pager, final SearchLogCB cb) {
+        if (StringUtil.isNotBlank(pager.queryId)) {
+            cb.query().setQueryId_Term(pager.queryId);
+        }
+        if (StringUtil.isNotBlank(pager.userSessionId)) {
+            cb.query().setUserSessionId_Term(pager.userSessionId);
+        }
+        if (StringUtil.isNotBlank(pager.accessType)) {
+            cb.query().setAccessType_Term(pager.accessType);
+        }
+        if (StringUtil.isNotBlank(pager.requestedTimeRange)) {
+            final String[] values = pager.requestedTimeRange.split(" - ");
+            final DateTimeFormatter formatter = DateTimeFormatter.<mark>ofPattern</mark>("yyyy-MM-dd HH:mm");
+            try {
+                if (values.length > 0) {
+                    cb.query().setRequestedAt_GreaterEqual(parseDateTime(values[0], formatter));
+                }
+                if (values.length > 1) {
+                    cb.query().setRequestedAt_LessEqual(LocalDateTime.<mark>parse</mark>(values[1], formatter));
+                }
+            } catch (final Exception e) {
+                if (logger.isDebugEnabled()) {
+                    logger.debug("Failed to parse " + pager.requestedTimeRange, e);
+                }
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>graphhopper_____graphhopper_____RealtimeIT_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/graphhopper_____graphhopper_____RealtimeIT.java
+
+java.time.LocalDate.of
+java.time.LocalTime.of
+java.time.ZonedDateTime.of
+java.time.LocalDateTime.of
+java.time.LocalDateTime.parse
+
+    @Test
+    public void testDelayFromBeginningWithoutTransfer() {
+        final double FROM_LAT = 36.914893, FROM_LON = -116.76821; // NADAV stop
+        final double TO_LAT = 36.914944, TO_LON = -116.761472; // NANAA stop
+        Request ghRequest = new Request(
+                FROM_LAT, FROM_LON,
+                TO_LAT, TO_LON
+        );
+
+        // I want to go at 6:44
+        Instant initialTime = LocalDateTime.<mark>of</mark>(2007, 1, 1, 6, 44).atZone(zoneId).toInstant();
+        ghRequest.setEarliestDepartureTime(initialTime);
+        ghRequest.setIgnoreTransfers(true);
+        ghRequest.setMaxWalkDistancePerLeg(30);
+
+        // The 6:00 departure of my line is going to be "late" by 0 minutes
+        final GtfsRealtime.FeedMessage.Builder feedMessageBuilder = GtfsRealtime.FeedMessage.newBuilder();
+        feedMessageBuilder.setHeader(header());
+
+
+        feedMessageBuilder.addEntityBuilder()
+                .setId("1")
+                .getTripUpdateBuilder()
+                .setTrip(GtfsRealtime.TripDescriptor.newBuilder().setTripId("CITY2").setStartTime("06:00:00"))
+                .addStopTimeUpdateBuilder()
+                .setStopSequence(1)
+                .setScheduleRelationship(SCHEDULED)
+                .setDeparture(GtfsRealtime.TripUpdate.StopTimeEvent.newBuilder().setDelay(180).build());
+
+        GHResponse response = graphHopperFactory.createWith(feedMessageBuilder.build()).route(ghRequest);
+        assertEquals(1, response.getAll().size());
+
+        Trip.PtLeg ptLeg = ((Trip.PtLeg) response.getBest().getLegs().get(0));
+        assertEquals("My line run is 3 minutes late.", LocalDateTime.<mark>parse</mark>("2007-01-01T06:52:00").atZone(zoneId).toInstant(), ptLeg.getArrivalTime().toInstant());
+        assertEquals("It is still reporting its original, scheduled time.", LocalDateTime.<mark>parse</mark>("2007-01-01T06:49:00").atZone(zoneId).toInstant(), ptLeg.stops.get(ptLeg.stops.size()-1).plannedArrivalTime.toInstant());
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>JFXtras_____jfxtras_____DateTimeUtilities_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/JFXtras_____jfxtras_____DateTimeUtilities.java
+
+java.time.LocalDate.parse
+java.time.LocalDateTime.parse
+java.time.ZonedDateTime.parse
+java.time.LocalDateTime.parse
+java.time.LocalDateTime.atZone
+
+     */ 
+    public static Temporal temporalFromString(String string)
+    {
+        List<Pair<String, String>> list = ICalendarUtilities.parseInlineElementsToListPair(string);
+        Map<String, String> map = list.stream().collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
+//        Map<String, String> map = ICalendarUtilities.propertyLineToParameterMap(string);
+        StringBuilder builder = new StringBuilder(50);
+        String value = map.get(ICalendarUtilities.PROPERTY_VALUE_KEY);
+        if (map.get(VParameterElement.TIME_ZONE_IDENTIFIER.toString()) != null)
+        {
+            if (value.charAt(value.length()-1) != 'Z')
+            {
+                builder.append("[");
+                builder.append(map.get(VParameterElement.TIME_ZONE_IDENTIFIER.toString()));
+                builder.append("]");
+            }
+        }
+        builder.append(value);
+        String string2 = builder.toString();
+
+        final String form0 = "^[0-9]{8}";
+        final String form1 = "^[0-9]{8}T([0-9]{6})";
+        final String form2 = "^[0-9]{8}T([0-9]{6})Z";
+        final String form3 = "^(\\[.*/.*\\])[0-9]{8}T([0-9]{6}Z?)";
+        if (string2.matches(form0))
+        {
+            return LocalDate.<mark>parse</mark>(string2, DateTimeUtilities.LOCAL_DATE_FORMATTER);                                                
+        } else if (string2.matches(form1))
+        {
+            return LocalDateTime.<mark>parse</mark>(string2, DateTimeUtilities.LOCAL_DATE_TIME_FORMATTER);                                                
+        } else if (string2.matches(form2))
+        {
+            return ZonedDateTime.<mark>parse</mark>(string2, DateTimeUtilities.ZONED_DATE_TIME_UTC_FORMATTER);                                                
+        } else if (string2.matches(form3))
+        {
+            return ZonedDateTime.<mark>parse</mark>(string2, DateTimeUtilities.ZONED_DATE_TIME_FORMATTER);                                                
+        } else
+        {
+            throw new DateTimeException("Can't parse date-time string:" + string);                        
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>graphhopper_____graphhopper_____RealtimeIT_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/graphhopper_____graphhopper_____RealtimeIT.java
+
+java.time.LocalDateTime.of
+java.time.LocalDateTime.parse
+java.time.LocalDateTime.parse
+
+    @Test
+    public void testZeroDelay() {
+        final double FROM_LAT = 36.914893, FROM_LON = -116.76821; // NADAV stop
+        final double TO_LAT = 36.914944, TO_LON = -116.761472; // NANAA stop
+        Request ghRequest = new Request(
+                FROM_LAT, FROM_LON,
+                TO_LAT, TO_LON
+        );
+
+        // I want to go at 6:44
+        ghRequest.setEarliestDepartureTime(LocalDateTime.<mark>of</mark>(2007,1,1,6,44).atZone(zoneId).toInstant());
+        ghRequest.setIgnoreTransfers(true);
+        ghRequest.setMaxWalkDistancePerLeg(30);
+
+        GHResponse responseWithoutRealtimeUpdate = graphHopperFactory.createWithoutRealtimeFeed().route(ghRequest);
+
+        // The 6:00 departure of my line is going to be "late" by 0 minutes
+        final GtfsRealtime.FeedMessage.Builder feedMessageBuilder = GtfsRealtime.FeedMessage.newBuilder();
+        feedMessageBuilder.setHeader(header());
+        feedMessageBuilder.addEntityBuilder()
+                .setId("1")
+                .getTripUpdateBuilder()
+                .setTrip(GtfsRealtime.TripDescriptor.newBuilder().setTripId("CITY2").setStartTime("06:00:00"))
+                .addStopTimeUpdateBuilder()
+                .setStopSequence(5)
+                .setScheduleRelationship(SCHEDULED)
+                .setDeparture(GtfsRealtime.TripUpdate.StopTimeEvent.newBuilder().setDelay(0).build());
+
+        GHResponse responseWithRealtimeUpdate = graphHopperFactory.createWith(feedMessageBuilder.build()).route(ghRequest);
+        assertEquals(1, responseWithRealtimeUpdate.getAll().size());
+
+        Trip.PtLeg responseWithRealtimeUpdateBest = (Trip.PtLeg) responseWithRealtimeUpdate.getBest().getLegs().get(0);
+        Trip.PtLeg responseWithoutRealtimeUpdateBest = (Trip.PtLeg) responseWithoutRealtimeUpdate.getBest().getLegs().get(0);
+        assertEquals("My planned arrival time is correct.", LocalDateTime.<mark>parse</mark>("2007-01-01T06:49:00").atZone(zoneId).toInstant(), responseWithRealtimeUpdateBest.stops.get(responseWithRealtimeUpdateBest.stops.size()-1).plannedArrivalTime.toInstant());
+        assertEquals("My expected arrival time is the same.", LocalDateTime.<mark>parse</mark>("2007-01-01T06:49:00").atZone(zoneId).toInstant(), responseWithRealtimeUpdateBest.stops.get(responseWithRealtimeUpdateBest.stops.size()-1).predictedArrivalTime.toInstant());
+        assertEquals("The trip without realtime update does not have an expected arrival time.", null, responseWithoutRealtimeUpdateBest.stops.get(responseWithoutRealtimeUpdateBest.stops.size()-1).predictedArrivalTime);
+
+//        assertEquals(responseWithoutRealtimeUpdateBest.toString(), responseWithRealtimeUpdateBest.toString());
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>graphhopper_____graphhopper_____RealtimeIT_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/graphhopper_____graphhopper_____RealtimeIT.java
+
+java.time.LocalDateTime.of
+java.time.LocalDateTime.parse
+java.time.LocalDateTime.parse
+
+    @Test
+    public void testHeavyDelayWhereWeShouldTakeOtherTripInstead() {
+        final double FROM_LAT = 36.914893, FROM_LON = -116.76821; // NADAV stop
+        final double TO_LAT = 36.914944, TO_LON = -116.761472; // NANAA stop
+        Request ghRequest = new Request(
+                FROM_LAT, FROM_LON,
+                TO_LAT, TO_LON
+        );
+
+        // I want to go at 6:44
+        ghRequest.setEarliestDepartureTime(LocalDateTime.<mark>of</mark>(2007,1,1,6,44).atZone(zoneId).toInstant());
+        ghRequest.setMaxWalkDistancePerLeg(30);
+
+        // But the 6:00 departure of my line is going to be super-late :-(
+        final GtfsRealtime.FeedMessage.Builder feedMessageBuilder = GtfsRealtime.FeedMessage.newBuilder();
+        feedMessageBuilder.setHeader(GtfsRealtime.FeedHeader.newBuilder()
+                .setGtfsRealtimeVersion("1")
+                .setTimestamp(ZonedDateTime.<mark>of</mark>(LocalDate.<mark>of</mark>(2007,1,1), LocalTime.<mark>of</mark>(0,0), zoneId).toEpochSecond()));
+        feedMessageBuilder.addEntityBuilder()
+                .setId("1")
+                .getTripUpdateBuilder()
+                .setTrip(GtfsRealtime.TripDescriptor.newBuilder().setTripId("CITY2").setStartTime("06:00:00"))
+                .addStopTimeUpdateBuilder()
+                .setScheduleRelationship(SCHEDULED)
+                .setStopSequence(3)
+                .setArrival(GtfsRealtime.TripUpdate.StopTimeEvent.newBuilder().setDelay(3600).build());
+
+        GHResponse response = graphHopperFactory.createWith(feedMessageBuilder.build()).route(ghRequest);
+        assertEquals(2, response.getAll().size());
+
+        PathWrapper best = response.getBest();
+        Trip.PtLeg bestPtLeg = (Trip.PtLeg) best.getLegs().get(0);
+        assertEquals("It's better to wait half an hour for the next one (and ride 5 minutes).", LocalDateTime.<mark>parse</mark>("2007-01-01T07:19:00").atZone(zoneId).toInstant(), bestPtLeg.stops.get(bestPtLeg.stops.size()-1).plannedArrivalTime.toInstant());
+        assertEquals("There is no predicted arrival time.", null, bestPtLeg.stops.get(bestPtLeg.stops.size()-1).predictedArrivalTime);
+
+        PathWrapper impossibleAlternative = response.getAll().get(1);
+        assertTrue(impossibleAlternative.isImpossible());
+        Trip.PtLeg impossiblePtLeg = (Trip.PtLeg) impossibleAlternative.getLegs().get(0);
+        assertEquals("The impossible alternative is my planned 5-minute-trip", LocalDateTime.<mark>parse</mark>("2007-01-01T06:49:00").atZone(zoneId).toInstant(), impossiblePtLeg.stops.get(impossiblePtLeg.stops.size()-1).plannedArrivalTime.toInstant());
+        assertEquals("..which is very late today", LocalDateTime.<mark>parse</mark>("2007-01-01T07:49:00").atZone(zoneId).toInstant(), impossiblePtLeg.stops.get(impossiblePtLeg.stops.size()-1).predictedArrivalTime.toInstant());
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>espertechinc_____esper_____ExecExprCast_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/espertechinc_____esper_____ExecExprCast.java
+
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalDateTime.parse
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalDate.parse
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalTime.parse
+java.time.format.DateTimeFormatter.ofPattern
+java.time.ZonedDateTime.parse
+
+
+    private void runAssertionISO8601Date(EPServiceProvider epService) {
+        String epl = "select " +
+                "cast('1997-07-16T19:20:30Z',calendar,dateformat:'iso') as c0," +
+                "cast('1997-07-16T19:20:30+01:00',calendar,dateformat:'iso') as c1," +
+                "cast('1997-07-16T19:20:30',calendar,dateformat:'iso') as c2," +
+                "cast('1997-07-16T19:20:30.45Z',calendar,dateformat:'iso') as c3," +
+                "cast('1997-07-16T19:20:30.45+01:00',calendar,dateformat:'iso') as c4," +
+                "cast('1997-07-16T19:20:30.45',calendar,dateformat:'iso') as c5," +
+                "cast('1997-07-16T19:20:30.45',long,dateformat:'iso') as c6," +
+                "cast('1997-07-16T19:20:30.45',date,dateformat:'iso') as c7," +
+                "cast(theString,calendar,dateformat:'iso') as c8," +
+                "cast(theString,long,dateformat:'iso') as c9," +
+                "cast(theString,date,dateformat:'iso') as c10," +
+                "cast('1997-07-16T19:20:30.45',localdatetime,dateformat:'iso') as c11," +
+                "cast('1997-07-16T19:20:30+01:00',zoneddatetime,dateformat:'iso') as c12," +
+                "cast('1997-07-16',localdate,dateformat:'iso') as c13," +
+                "cast('19:20:30',localtime,dateformat:'iso') as c14" +
+                " from SupportBean";
+        EPStatement stmt = epService.getEPAdministrator().createEPL(epl);
+        SupportUpdateListener listener = new SupportUpdateListener();
+        stmt.addListener(listener);
+
+        epService.getEPRuntime().sendEvent(new SupportBean());
+        EventBean event = listener.assertOneGetNewAndReset();
+        SupportDateTimeUtil.compareDate((Calendar) event.get("c0"), 1997, 6, 16, 19, 20, 30, 0, "GMT+00:00");
+        SupportDateTimeUtil.compareDate((Calendar) event.get("c1"), 1997, 6, 16, 19, 20, 30, 0, "GMT+01:00");
+        SupportDateTimeUtil.compareDate((Calendar) event.get("c2"), 1997, 6, 16, 19, 20, 30, 0, TimeZone.getDefault().getID());
+        SupportDateTimeUtil.compareDate((Calendar) event.get("c3"), 1997, 6, 16, 19, 20, 30, 450, "GMT+00:00");
+        SupportDateTimeUtil.compareDate((Calendar) event.get("c4"), 1997, 6, 16, 19, 20, 30, 450, "GMT+01:00");
+        SupportDateTimeUtil.compareDate((Calendar) event.get("c5"), 1997, 6, 16, 19, 20, 30, 450, TimeZone.getDefault().getID());
+        assertEquals(Long.class, event.get("c6").getClass());
+        assertEquals(Date.class, event.get("c7").getClass());
+        for (String prop : "c8,c9,c10".split(",")) {
+            assertNull(event.get(prop));
+        }
+        assertEquals(LocalDateTime.<mark>parse</mark>("1997-07-16T19:20:30.45", DateTimeFormatter.ISO_DATE_TIME), event.get("c11"));
+        assertEquals(ZonedDateTime.<mark>parse</mark>("1997-07-16T19:20:30+01:00", DateTimeFormatter.ISO_ZONED_DATE_TIME), event.get("c12"));
+        assertEquals(LocalDate.<mark>parse</mark>("1997-07-16", DateTimeFormatter.ISO_DATE), event.get("c13"));
+        assertEquals(LocalTime.<mark>parse</mark>("19:20:30", DateTimeFormatter.ISO_TIME), event.get("c14"));
+
+        stmt.destroy();
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>espertechinc_____esper_____ExecExprCast_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_time/espertechinc_____esper_____ExecExprCast.java
+
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalDate.parse
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalDateTime.parse
+java.time.format.DateTimeFormatter.ofPattern
+java.time.LocalTime.parse
+java.time.format.DateTimeFormatter.ofPattern
+java.time.ZonedDateTime.parse
+
+
+    private void runAssertionDynamicDateFormat(EPServiceProvider epService) throws Exception {
+
+        // try legacy date types
+        String epl = "select " +
+                "cast(a,date,dateformat:b) as c0," +
+                "cast(a,long,dateformat:b) as c1," +
+                "cast(a,calendar,dateformat:b) as c2" +
+                " from SupportBean_StringAlphabetic";
+        EPStatement stmt = epService.getEPAdministrator().createEPL(epl);
+        SupportUpdateListener listener = new SupportUpdateListener();
+        stmt.addListener(listener);
+
+        runAssertionDynamicDateFormat(epService, listener, "20100502", "yyyyMMdd");
+        runAssertionDynamicDateFormat(epService, listener, "20100502101112", "yyyyMMddhhmmss");
+        runAssertionDynamicDateFormat(epService, listener, null, "yyyyMMdd");
+
+        // invalid date
+        try {
+            epService.getEPRuntime().sendEvent(new SupportBean_StringAlphabetic("x", "yyyyMMddhhmmss"));
+        } catch (EPException ex) {
+            SupportMessageAssertUtil.assertMessageContains(ex, "Exception parsing date 'x' format 'yyyyMMddhhmmss': Unparseable date: \"x\"");
+        }
+
+        // invalid format
+        try {
+            epService.getEPRuntime().sendEvent(new SupportBean_StringAlphabetic("20100502", "UUHHYY"));
+        } catch (EPException ex) {
+            SupportMessageAssertUtil.assertMessageContains(ex, "Illegal pattern character 'U'");
+        }
+
+        stmt.destroy();
+
+        // try java 8 types
+        epService.getEPAdministrator().createEPL("create schema ValuesAndFormats(" +
+                "ldt string, ldtf string," +
+                "ld string, ldf string," +
+                "lt string, ltf string," +
+                "zdt string, zdtf string)");
+        String eplExtended = "select " +
+                "cast(ldt,localdatetime,dateformat:ldtf) as c0," +
+                "cast(ld,localdate,dateformat:ldf) as c1," +
+                "cast(lt,localtime,dateformat:ltf) as c2," +
+                "cast(zdt,zoneddatetime,dateformat:zdtf) as c3 " +
+                " from ValuesAndFormats";
+        Map<String, Object> event = new HashMap<>();
+        event.put("ldtf", "yyyyMMddHHmmss");
+        event.put("ldt", "19990102030405");
+        event.put("ldf", "yyyyMMdd");
+        event.put("ld", "19990102");
+        event.put("ltf", "HHmmss");
+        event.put("lt", "030405");
+        event.put("zdtf", "yyyyMMddHHmmssVV");
+        event.put("zdt", "20100510141516America/Los_Angeles");
+        EPStatement stmtExtended = epService.getEPAdministrator().createEPL(eplExtended);
+        stmtExtended.addListener(listener);
+        epService.getEPRuntime().sendEvent(event, "ValuesAndFormats");
+        EPAssertionUtil.assertProps(listener.assertOneGetNewAndReset(), "c0,c1,c2,c3".split(","), new Object[]{
+                LocalDateTime.<mark>parse</mark>("19990102030405", DateTimeFormatter.<mark>ofPattern</mark>("yyyyMMddHHmmss")),
+                LocalDate.<mark>parse</mark>("19990102", DateTimeFormatter.<mark>ofPattern</mark>("yyyyMMdd")),
+                LocalTime.<mark>parse</mark>("030405", DateTimeFormatter.<mark>ofPattern</mark>("HHmmss")),
+                ZonedDateTime.<mark>parse</mark>("20100510141516America/Los_Angeles", DateTimeFormatter.<mark>ofPattern</mark>("yyyyMMddHHmmssVV")),
+        });
+        stmtExtended.destroy();
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+        

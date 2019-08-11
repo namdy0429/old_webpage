@@ -1,0 +1,4733 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">java_text_SimpleDateFormat</h1>
+      <br>
+      <h4 class="col-lg-12 col-md-12 mb-12">parse</h4>
+    </div>
+    
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>BotLibre_____BotLibre_____Utils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/BotLibre_____BotLibre_____Utils.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Parse the date of the form, "yyyy-MM-dd HH:mm:ss.N".
+	 */	 */
+	public static java.sql.Date parseDate(String value) {
+		try {
+			return new java.sql.Date(<mark>new SimpleDateFormat</mark>("yyyy-MM-dd").<mark>parse</mark>(value).getTime());
+		} catch (Exception exception) {
+			return null;
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____calcite_____DruidConnectionImpl_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____calcite_____DruidConnectionImpl.java
+
+java.text.SimpleDateFormat.parse
+
+/** Executes a request and returns the resulting rows as an
+   * {@link Enumerable}, running the parser in a thread provided by
+   * {@code service}. */
+  private void parseFieldForName(List<String> fieldNames, List<ColumnMetaData.Rep> fieldTypes,
+      int posTimestampField, Row.RowBuilder rowBuilder, JsonParser parser, String fieldName)
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>geotools_____geotools_____VPFDate_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/geotools_____geotools_____VPFDate.java
+
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.getCalendar
+
+/**
+     * Describe <code>getCalendar</code> method here.
+     *
+     * @return a <code>Calendar</code> value
+     */     */
+    public Date getDate() {
+        try {
+            return sdf.<mark>parse</mark>(toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>naver_____ngrinder_____DateUtils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/naver_____ngrinder_____DateUtils.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Add days on date.
+	 * 
+	 * @param date	base date
+	 * @param days	days to be added.
+	 * @return added Date
+	 */	 */
+	public static Date toSimpleDate(String strDate) throws ParseException {
+		SimpleDateFormat simpleDateFormat = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd", Locale.getDefault());
+		return simpleDateFormat.<mark>parse</mark>(strDate);
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>metasfresh_____metasfresh_____VDate_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/metasfresh_____metasfresh_____VDate.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Return Editor value (timestamp)
+	 * 
+	 * @return value as timestamp
+	 */	 */
+	private Timestamp toTimestamp(final String value)
+	{
+		if (Check.isEmpty(value, true))
+		{
+			return null;
+		}
+		
+		//
+		try
+		{
+			final java.util.Date date = m_format.<mark>parse</mark>(value.trim());
+			return TimeUtil.asTimestamp(date);
+		}
+		catch (ParseException pe)
+		{
+			log.debug(pe.getMessage(), pe);
+		}
+		
+		return null;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____ambari_____DateUtils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____ambari_____DateUtils.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+   * Convert Date to allowed format
+   * @param date
+   * @return
+   * @throws ParseException
+   */   */
+  public static Long convertToTimestamp(String time, String format) {
+    SimpleDateFormat dateFormat = <mark>new SimpleDateFormat</mark>(format);
+    try {
+      Date date = dateFormat.<mark>parse</mark>(time);
+      return date.getTime();
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>stratosphere_____stratosphere_____TPCHQuery4_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/stratosphere_____stratosphere_____TPCHQuery4.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+		 * Calculates the {@link Date} which is three months after the given one.
+		 * @param paramDate of type {@link Date}.
+		 * @return a {@link Date} three month later.
+		 */		@Override
+		public void open(Configuration parameters) {				
+			try {
+				this.paramDate = sdf.<mark>parse</mark>(this.dateParamString);
+				this.plusThreeMonths = getPlusThreeMonths(paramDate);
+				
+			} catch (ParseException e) {
+				throw new RuntimeException(e);
+			}
+		}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>JFXtras_____jfxtras_____CalendarPickerBuilder_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/JFXtras_____jfxtras_____CalendarPickerBuilder.java
+
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Implementation of BuilderService interface
+	 */	public String getDisplayedCalendar() { return null; } // dummy, just to make it Java Bean compatible
+	public void setDisplayedCalendar(String value) { 
+		try {
+			this.displayedCalendar = Calendar.getInstance();
+			this.displayedCalendar.setTime( YMDSimpleDateFormat.<mark>parse</mark>(value) );
+		}
+		catch (ParseException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>BotLibre_____BotLibre_____Utils_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/BotLibre_____BotLibre_____Utils.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Print the date in the form, "yyyy-MM-dd HH:mm:ss.S".
+	 */	 */
+	public static Timestamp parseTimestamp(String value) {
+		try {
+			return new Timestamp(<mark>new SimpleDateFormat</mark>("yyyy-MM-dd HH:mm:ss.N").<mark>parse</mark>(value).getTime());
+		} catch (Exception exception) {
+			try {
+				return new Timestamp(<mark>new SimpleDateFormat</mark>("yyyy-MM-dd HH:mm:ss").<mark>parse</mark>(value).getTime());
+			} catch (Exception exception2) {
+				return null;
+			}
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>rcarz_____jira-client_____Field_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/rcarz_____jira-client_____Field.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Gets an floating-point number from the given object.
+     *
+     * @param i an Double instance
+     *
+     * @return an floating-point number or null if i isn't a Double instance
+     */     */
+    public static Date getDate(Object d) {
+        Date result = null;
+
+        if (d instanceof String) {
+            SimpleDateFormat df = <mark>new SimpleDateFormat</mark>(DATE_FORMAT);
+            result = df.<mark>parse</mark>((String)d, new ParsePosition(0));
+        }
+
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>OpenClinica_____OpenClinica_____FormProcessor_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/OpenClinica_____OpenClinica_____FormProcessor.java
+
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+     * @return true if the form was submitted; false otherwise.
+     */     */
+    public Date getDateTimeFromString(String dateTime) {
+        Date answer;
+        //Locale locale = ResourceBundleProvider.getLocale();
+        try {
+            SimpleDateFormat f = I18nFormatUtil.getDateFormat(locale);
+            f.<mark>setLenient</mark>(false);
+            answer = f.<mark>parse</mark>(dateTime);
+        } catch (Exception e) {
+            answer = DEFAULT_DATE;
+        }
+
+        return answer;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>jpos_____jPOS_____ISODate_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/jpos_____jPOS_____ISODate.java
+
+java.text.SimpleDateFormat.setTimeZone
+java.text.SimpleDateFormat.parse
+
+/**
+     * converts a string in DD/MM/YY HH:MM:SS format to a Date object
+     * Warning: return null on invalid dates (prints Exception to console)
+     * @param s string in DD/MM/YY HH:MM:SS format recorded in timeZone
+     * @param timeZone for GMT for example, use TimeZone.getTimeZone("GMT")
+     *        and for Uruguay use TimeZone.getTimeZone("GMT-03:00")
+     * @return parsed Date (or null)
+     */     */
+    public static Date <mark>parse</mark>(String s) {
+        return <mark>parse</mark>(s, TimeZone.getDefault());
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>CogComp_____cogcomp-nlp_____TemporalChunkerAnnotator_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/CogComp_____cogcomp-nlp_____TemporalChunkerAnnotator.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Normalize temporal Phrase
+     * @param temporal_phrase
+     * @return
+     * @throws Exception
+     */     */
+    public String normalizeSinglePhrase(String phrase, String date) throws Exception {
+        SimpleDateFormat f = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd");
+        Date dct = f.<mark>parse</mark>(date);
+        if (this.useHeidelTime) {
+            return this.heidelTime.process(phrase, dct);
+        }
+        else {
+            return this.timexNormalizer.normalize(phrase, dct).toString();
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____ant_____DateUtils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____ant_____DateUtils.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Parse a string as a date using the either the ISO8601_DATETIME
+     * or ISO8601_DATE formats.
+     *
+     * @param datestr string to be parsed
+     *
+     * @return a java.util.Date object as parsed by the formats.
+     * @exception ParseException if the supplied string cannot be parsed by
+     * either of these patterns.
+     * @since Ant 1.6
+     */     */
+    public static Date parseIso8601DateTime(String datestr)
+        throws ParseException {
+        return <mark>new SimpleDateFormat</mark>(ISO8601_DATETIME_PATTERN).<mark>parse</mark>(datestr);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>pentaho_____pentaho-kettle_____Const_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/pentaho_____pentaho-kettle_____Const.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setTimeZone
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+   * Get the number of occurrences of searchFor in string.
+   *
+   * @param string
+   *          String to be searched
+   * @param searchFor
+   *          to be counted string
+   * @return number of occurrences
+   */   */
+  public static Date toDate( String str, Date def ) {
+    SimpleDateFormat df = <mark>new SimpleDateFormat</mark>( "yyyy/MM/dd HH:mm:ss.SSS", Locale.US );
+    try {
+      return df.<mark>parse</mark>( str );
+    } catch ( ParseException e ) {
+      return def;
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>linkedin_____gobblin_____TimestampWatermark_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/linkedin_____gobblin_____TimestampWatermark.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.format
+
+/**
+   * Adjust the given watermark by diff
+   *
+   * @param baseWatermark the original watermark
+   * @param diff the amount to change
+   * @return the adjusted watermark value
+   */
+  synchronized private static long toEpoch(String dateTime) {
+    Date date = null;
+    final SimpleDateFormat inputFormat = <mark>new SimpleDateFormat</mark>(INPUTFORMAT);
+    try {
+      date = inputFormat.<mark>parse</mark>(dateTime);
+    } catch (ParseException e) {
+      throw new RuntimeException(e.getMessage(), e);
+    }
+    return date.getTime();
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>knowm_____XChange_____DateUtils_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/knowm_____XChange_____DateUtils.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/** Convert java time long to unix time long, simply by dividing by 1000 */   */
+  public static Date fromRfc1123DateString(String rfc1123FormattedDate, Locale locale)
+      throws com.fasterxml.jackson.databind.exc.InvalidFormatException {
+
+    SimpleDateFormat rfc1123DateFormat =
+        <mark>new SimpleDateFormat</mark>("EEE, dd MMM yyyy HH:mm:ss zzz", locale);
+    try {
+      return rfc1123DateFormat.<mark>parse</mark>(rfc1123FormattedDate);
+    } catch (ParseException e) {
+      throw new InvalidFormatException("Error parsing as date", rfc1123FormattedDate, Date.class);
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>HeidelTime_____heideltime_____DateCalculator_8.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/HeidelTime_____heideltime_____DateCalculator.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * takes a desired locale input string, iterates through available locales, returns a locale object
+	 * @param locale String to grab a locale for, i.e. en_US, en_GB, de_DE
+	 * @return Locale to represent the input String
+	 */	 */
+	public static int getWeekdayOfDate(String date) {
+		SimpleDateFormat formatter = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd");
+		int weekday = 0;
+		Calendar c = Calendar.getInstance();
+		try {
+			c.setTime(formatter.<mark>parse</mark>(date));
+			weekday = c.get(Calendar.DAY_OF_WEEK);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return weekday;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>rcarz_____jira-client_____Field_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/rcarz_____jira-client_____Field.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Converts an iterable type to a JSON array.
+     *
+     * @param iter Iterable type containing field values
+     * @param type Name of the item type
+     * @param custom Name of the custom type
+     *
+     * @return a JSON-encoded array of items
+     */     */
+    public static Date getDateTime(Object d) {
+        Date result = null;
+
+        if (d instanceof String) {
+            SimpleDateFormat df = <mark>new SimpleDateFormat</mark>(DATETIME_FORMAT);
+            result = df.<mark>parse</mark>((String)d, new ParsePosition(0));
+        }
+
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>geoserver_____geoserver_____ReaderDimensionsAccessor_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/geoserver_____geoserver_____ReaderDimensionsAccessor.java
+
+java.text.SimpleDateFormat.parse
+
+/** Returns a {@link SimpleDateFormat} using the UTC_PATTERN and the UTC time zone */     */
+    public Date getMaxTime() throws IOException {
+        if (!hasTime()) {
+            return null;
+        }
+        final String currentTime =
+                reader.getMetadataValue(AbstractGridCoverage2DReader.TIME_DOMAIN_MAXIMUM);
+        if (currentTime == null) {
+            return null;
+        }
+        try {
+            return getTimeFormat().<mark>parse</mark>(currentTime);
+        } catch (ParseException e) {
+            throw new RuntimeException("Failed to get CURRENT time from coverage reader", e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>OpenClinica_____OpenClinica_____StringUtil_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/OpenClinica_____OpenClinica_____StringUtil.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+     * The year can only between 1000 and 9999.
+     *
+     * @param s
+     * @param yearMonthFormat
+     * @return
+     */    //ywang (Oct., 2011)
+    public static boolean isDateFormatString(String s, String dateFormat, Locale locale) {
+        String dateformat = parseDateFormat(dateFormat);
+        SimpleDateFormat f = <mark>new SimpleDateFormat</mark>(dateformat, locale);
+        f.<mark>setLenient</mark>(false);
+        try {
+            f.<mark>parse</mark>(s);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>SteveyO_____Hue-Emulator_____Utils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/SteveyO_____Hue-Emulator_____Utils.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+  * This method is used for Schedules.  When the schedule time occurs, a http call is sent to the bridge passing the JSON Command.
+  * 
+  * @param httpMethod
+  * @param url
+  * @param httpBody
+  * @throws IOException
+  */  */
+ public static boolean isDateValid(String dateString) {                                                     
+    
+     
+     Date parsedDate;
+     try {
+             parsedDate = dateFormat.<mark>parse</mark>(dateString);
+        } catch (ParseException e) {
+             return false;
+        }
+
+     
+     Date todaysDate = new Date();
+     
+     if (parsedDate.before(todaysDate)) {
+         return false;
+     }
+     
+     return true;
+ }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____accumulo_____TimestampFilter_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____accumulo_____TimestampFilter.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+   * A convenience method for setting the range of timestamps accepted by the timestamp filter.
+   *
+   * @param is
+   *          the iterator setting object to configure
+   * @param start
+   *          the start timestamp, inclusive
+   * @param end
+   *          the end timestamp, inclusive
+   */   */
+  public static void setStart(IteratorSetting is, String start, boolean startInclusive) {
+    SimpleDateFormat dateParser = initDateParser();
+    try {
+      long startTS = dateParser.<mark>parse</mark>(start).getTime();
+      setStart(is, startTS, startInclusive);
+    } catch (ParseException e) {
+      throw new IllegalArgumentException("couldn't parse " + start);
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>spacewalkproject_____spacewalk_____SystemEventDto_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/spacewalkproject_____spacewalk_____SystemEventDto.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * @return Returns event summary
+     */     */
+    public void setPickedUp(String pickedUpIn) {
+        if (pickedUpIn == null) {
+            this.pickedUp = null;
+        }
+        else {
+            try {
+                this.pickedUp = <mark>new SimpleDateFormat</mark>(
+                        LocalizationService.RHN_DB_DATEFORMAT).<mark>parse</mark>(pickedUpIn);
+            }
+            catch (ParseException e) {
+                throw new IllegalArgumentException("lastCheckin must be of the: [" +
+                        LocalizationService.RHN_DB_DATEFORMAT + "] it was: " +
+                        pickedUpIn);
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>spacewalkproject_____spacewalk_____SystemEventDto_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/spacewalkproject_____spacewalk_____SystemEventDto.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * @return Date of completion of the event
+     */     */
+    public void setCreated(String createdIn) {
+        if (createdIn == null) {
+            this.created = null;
+        }
+        else {
+            try {
+                this.created = <mark>new SimpleDateFormat</mark>(
+                        LocalizationService.RHN_DB_DATEFORMAT).<mark>parse</mark>(createdIn);
+            }
+            catch (ParseException e) {
+                throw new IllegalArgumentException("lastCheckin must be of the: [" +
+                        LocalizationService.RHN_DB_DATEFORMAT + "] it was: " +
+                        createdIn);
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>clun_____ff4j_____AbstractController_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/clun_____ff4j_____AbstractController.java
+
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Getter accessor for attribute 'ff4j'.
+	 *
+	 * @return
+	 *       current value of 'ff4j'
+	 */     */
+    protected EventQueryDefinition parseQuery(HttpServletRequest req) {
+        EventQueryDefinition def = new EventQueryDefinition();
+        try {
+            if (isValidParam(req, WebConstants.START_DATE)) {
+                def.setFrom(SDF.<mark>parse</mark>(req.getParameter(WebConstants.START_DATE)).getTime());
+            }
+            if (isValidParam(req, WebConstants.END_DATE)) {
+                def.setTo(SDF.<mark>parse</mark>(req.getParameter(WebConstants.END_DATE)).getTime());
+            }
+        } catch(ParseException pe) {}
+        return def;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twitter_____hraven_____ProcessRecordService_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/twitter_____hraven_____ProcessRecordService.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+   * @param cluster the cluster on which the batch of jobs ran.
+   * @param batch indicating which batch this is. Used to make the filename
+   *          unique.
+   * @return Path to a processFile in the /tmp directory on the filesystem.
+   */   */
+  long getEndOfDayMillis(String year, String month, String day) {
+    // Assemble string in this format: yyyy-MM-dd HH:mm:ss.SSS
+    String endOfDay = year + "-" + month + "-" + day + " 23:59:59.999";
+    try {
+      Date endOfDayDate = MILLISECOND_TIMSTAMP_FORMAT.<mark>parse</mark>(endOfDay);
+      return endOfDayDate.getTime();
+    } catch (java.text.ParseException e) {
+      throw new IllegalArgumentException("Cannot parse: " + endOfDay);
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>OpenClinica_____OpenClinica_____StringUtil_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/OpenClinica_____OpenClinica_____StringUtil.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+     * Allow only 4 digits, no more, no less. SimpleDateFormat uses the default locale.
+     *
+     * @param s
+     * @param yearFormat
+     * @return
+     */
+    public static boolean isValidDate(String s) {
+        SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>("yyyy-mm-dd");
+        sdf.<mark>setLenient</mark>(false);
+        try {
+            java.util.Date date = sdf.<mark>parse</mark>(s);
+            if (date.after(new java.util.Date())) {
+                return false; // not a date in the past,for date of birth
+            }
+        } catch (ParseException fe) {
+            return false; // format is wrong
+        }
+
+        return true;
+
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>HeidelTime_____heideltime_____DateCalculator_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/HeidelTime_____heideltime_____DateCalculator.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.format
+java.text.SimpleDateFormat.format
+
+/**
+	 * get the x-next week of date
+	 * @param date current date
+	 * @param x amount of weeks to go forward
+	 * @return new week
+	 */	 */
+	public static String getXNextDay(String date, Integer x) {
+		SimpleDateFormat formatter = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd");
+		String newDate = "";
+		Calendar c = Calendar.getInstance();
+		try {
+			c.setTime(formatter.<mark>parse</mark>(date));
+			c.add(Calendar.DAY_OF_MONTH, x);
+			c.getTime();
+			newDate = formatter.<mark>format</mark>(c.getTime());
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return newDate;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DateUtil_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/capitalone_____Hygieia_____DateUtil.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Evaluates whether a sprint length appears to be kanban or scrum
+	 * 
+	 * @param startDate
+	 *            The start date of a sprint in ISO format
+	 * @param endDate
+	 *            The end date of a sprint in ISO format
+	 * @return True indicates a scrum sprint; False indicates a Kanban sprint
+	 */
+	public static Date fromISODateTimeFormat(String isoString) {
+		String iString = isoString;
+		int charIndex = iString.indexOf(".");
+		if (charIndex != -1) {
+			iString = iString.substring(0, charIndex);
+		}
+		try {
+			return <mark>new SimpleDateFormat</mark>(ISO_DATE_TIME_FORMAT).<mark>parse</mark>(iString);
+		} catch (ParseException e) {
+			LOGGER.error("Parse error of: " + iString, e);
+			return null;
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>matt-allen_____repay-android_____DatabaseHandler_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/matt-allen_____repay-android_____DatabaseHandler.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * @param debtID
+	 * @return The debt stored against the two given attributes
+	 * @throws android.database.SQLException
+	 * @throws IndexOutOfBoundsException
+	 * @throws java.text.ParseException
+	 */	 */
+	public Debt getMostRecentDebt() throws ParseException, NullPointerException, SQLiteException,
+			CursorIndexOutOfBoundsException{
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor c;
+		c = db.query(Names.D_TABLENAME, null, null, null, null, null, null);
+		c.moveToLast();
+		SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(DATE_FORMAT);
+		db.close();
+		return new Debt(c.getInt(0), c.getString(1), sdf.<mark>parse</mark>(c.getString(2)),
+				new BigDecimal(c.getString(2)), c.getString(3));
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>HeidelTime_____heideltime_____DateCalculator_7.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/HeidelTime_____heideltime_____DateCalculator.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Get the week of date
+	 * 
+	 * @param date current date
+	 * @return week of year
+	 */	 */
+	public static String getXNextWeek(String date, Integer x, Language language) {
+		NormalizationManager nm = NormalizationManager.getInstance(language, false);
+		String date_no_W = date.replace("W", "");
+		SimpleDateFormat formatter = <mark>new SimpleDateFormat</mark>("yyyy-w");
+		String newDate = "";
+		Calendar c = Calendar.getInstance();
+		try {
+			c.setTime(formatter.<mark>parse</mark>(date_no_W));
+			c.add(Calendar.WEEK_OF_YEAR, x);
+			c.getTime();
+			newDate = formatter.format(c.getTime());
+			newDate = newDate.substring(0,4)+"-W"+nm.getFromNormNumber(newDate.substring(5));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return newDate;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>OpenClinica_____OpenClinica_____FormProcessor_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/OpenClinica_____OpenClinica_____FormProcessor.java
+
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+     * Return datetime value. If no input for "Hour" and "Minute" and "am/pm",
+     * default time will be 12:00pm. In another word,
+     * <p>
+     * Precondition:Before calling this method, it should make sure that field
+     * has been entered valid datetime data.
+     *
+     * @param prefix
+     * @return
+     */
+    public static Date parseDate(String date, Locale locale) {
+        Date answer;
+        //Locale locale = ResourceBundleProvider.getLocale();
+        try {
+            SimpleDateFormat f = I18nFormatUtil.getDateFormat(locale);
+            f.<mark>setLenient</mark>(false);
+            answer = f.<mark>parse</mark>(date);
+        } catch (Exception e) {
+            //answer = DEFAULT_DATE;
+            answer = null;
+        }
+
+        return answer;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>groovy_____groovy-core_____DefaultGroovyStaticMethods_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/groovy_____groovy-core_____DefaultGroovyStaticMethods.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Works exactly like ResourceBundle.getBundle(String).  This is needed
+     * because the java method depends on a particular stack configuration that
+     * is not guaranteed in Groovy when calling the Java method.
+     *
+     * @param self       placeholder variable used by Groovy categories; ignored for default static methods
+     * @param bundleName the name of the bundle.
+     * @return the resource bundle
+     * @see java.util.ResourceBundle#getBundle(java.lang.String)
+     * @since 1.6.0
+     */     */
+    public static Date <mark>parse</mark>(Date self, String format, String input, TimeZone zone) throws ParseException {
+        SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(format);
+        sdf.setTimeZone(zone);
+        return sdf.<mark>parse</mark>(input);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>DSpace_____DSpace_____ReceiptGenerator_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/DSpace_____DSpace_____ReceiptGenerator.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Add the date that this item was last updated
+     *
+     * @param item    target item
+     * @param receipt deposit receipt
+     */     */
+    protected void addPublishDate(Item item, DepositReceipt receipt) {
+        List<MetadataValue> dcv = itemService.getMetadataByMetadataString(
+            item, "dc.date.issued");
+        if (dcv != null && dcv.size() == 1) {
+            try {
+                SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd");
+                Date published = sdf.<mark>parse</mark>(dcv.get(0).getValue());
+                receipt.getWrappedEntry().setPublished(published);
+            } catch (ParseException e) {
+                // we tried, but never mind
+                log.warn("Couldn't add published date", e);
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____groovy_____DefaultGroovyStaticMethods_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____groovy_____DefaultGroovyStaticMethods.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Works exactly like ResourceBundle.getBundle(String).  This is needed
+     * because the java method depends on a particular stack configuration that
+     * is not guaranteed in Groovy when calling the Java method.
+     *
+     * @param self       placeholder variable used by Groovy categories; ignored for default static methods
+     * @param bundleName the name of the bundle.
+     * @return the resource bundle
+     * @see java.util.ResourceBundle#getBundle(java.lang.String)
+     * @since 1.6.0
+     */    @Deprecated
+    public static Date <mark>parse</mark>(Date self, String format, String input, TimeZone zone) throws ParseException {
+        SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(format);
+        sdf.setTimeZone(zone);
+        return sdf.<mark>parse</mark>(input);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>structr_____structr_____DatePropertyParser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/structr_____structr_____DatePropertyParser.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Central method to format a date into a string.
+	 *
+	 * If no format is given, use the (old) default format.
+	 *
+	 * @param date
+	 * @param format optional SimpleDateFormat pattern
+	 * @return
+	 */	 */
+	public static Date <mark>parse</mark>(String source, final String pattern) {
+
+		if (StringUtils.isBlank(pattern)) {
+
+			return parseISO8601DateString(source);
+
+		} else {
+
+			try {
+				// SimpleDateFormat is not fully ISO8601 compatible, so we replace 'Z' by +0000
+				if (StringUtils.contains(source, "Z")) {
+
+					source = StringUtils.replace(source, "Z", "+0000");
+				}
+
+				return <mark>new SimpleDateFormat</mark>(pattern).<mark>parse</mark>(source);
+
+			} catch (ParseException ignore) { }
+
+			// try to parse as ISO8601 date (supports multiple formats)
+			return parseISO8601DateString(source);
+
+		}
+
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hydrograph_____DateFunctions_6.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/capitalone_____Hydrograph_____DateFunctions.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+     * Returns an integer value which holds the day value retrieved from {@code date} parameter
+     *
+     * @param date the date from which the day value is to be retrieved
+     * @return the day value from {@code date} parameter
+     */     */
+    public static Date getDateFromString(String inputDateInStringFormat, String dateFormat){
+        if (inputDateInStringFormat == null || dateFormat == null)
+            return null;
+
+        SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(dateFormat);
+        sdf.<mark>setLenient</mark>(false);
+        Date date = null;
+        try {
+            date = sdf.<mark>parse</mark>(inputDateInStringFormat);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        return date;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>HuaweiBigData_____carbondata_____CarbonUpdateUtil_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/HuaweiBigData_____carbondata_____CarbonUpdateUtil.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+   * Handling of the clean up of old carbondata files, index files , delte delta,
+   * update status files.
+   * @param table clean up will be handled on this table.
+   * @param forceDelete if true then max query execution timeout will not be considered.
+   */   */
+  public static String convertTimeStampToString(String factTimeStamp) {
+    SimpleDateFormat parser = <mark>new SimpleDateFormat</mark>(CarbonCommonConstants.CARBON_TIMESTAMP);
+    Date dateToStr = null;
+    try {
+      dateToStr = parser.<mark>parse</mark>(factTimeStamp);
+      return Long.toString(dateToStr.getTime());
+    } catch (ParseException e) {
+      LOGGER.error("Cannot convert" + factTimeStamp + " to Time/Long type value" + e.getMessage());
+      return null;
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>knowm_____XChange_____DateUtils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/knowm_____XChange_____DateUtils.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setTimeZone
+java.text.SimpleDateFormat.parse
+
+/**
+   * Converts an rfc1123 formatted Date String to a Java Date rfc1123 format: EEE, dd MMM yyyy
+   * HH:mm:ss zzz
+   *
+   * @param rfc1123FormattedDate
+   * @return Date
+   * @throws com.fasterxml.jackson.databind.exc.InvalidFormatException
+   */   */
+  public static Date fromISODateString(String isoFormattedDate)
+      throws com.fasterxml.jackson.databind.exc.InvalidFormatException {
+
+    SimpleDateFormat isoDateFormat = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+    // set UTC time zone - 'Z' indicates it
+    isoDateFormat.<mark>setTimeZone</mark>(TimeZone.getTimeZone("UTC"));
+    try {
+      return isoDateFormat.<mark>parse</mark>(isoFormattedDate);
+    } catch (ParseException e) {
+      throw new InvalidFormatException("Error parsing as date", isoFormattedDate, Date.class);
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>DSpace_____DSpace_____ReceiptGenerator_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/DSpace_____DSpace_____ReceiptGenerator.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Add the date that this item was last updated
+     *
+     * @param result  represents the results of a deposit request
+     * @param receipt deposit receipt
+     */     */
+    protected void addPublishDate(DepositResult result, DepositReceipt receipt) {
+        List<MetadataValue> dcv = itemService.getMetadataByMetadataString(
+            result.getItem(), "dc.date.issued");
+        if (dcv != null && !dcv.isEmpty()) {
+            try {
+                SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd");
+                Date published = sdf.<mark>parse</mark>(dcv.get(0).getValue());
+                receipt.getWrappedEntry().setPublished(published);
+            } catch (ParseException e) {
+                // we tried, but never mind
+                log.warn("Couldn't add published date", e);
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>geoserver_____geoserver_____ReaderDimensionsAccessor_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/geoserver_____geoserver_____ReaderDimensionsAccessor.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+     * Returns the min value for the time
+     *
+     * @throws IOException
+     */     */
+    private Object parseTimeOrRange(SimpleDateFormat df, String timeOrRange) throws ParseException {
+        if (timeOrRange.contains("/")) {
+            String[] splitted = timeOrRange.split("/");
+            final String strStart = splitted[0];
+            final String strEnd = splitted[1];
+            if (strStart == null || strEnd == null) {
+                throw new IllegalArgumentException("Invalid date range " + timeOrRange);
+            }
+            if (strStart != null && strStart.equals(strEnd)) {
+                return df.<mark>parse</mark>(strStart);
+            } else {
+                Date start = df.<mark>parse</mark>(strStart);
+                Date end = df.<mark>parse</mark>(strEnd);
+                return new DateRange(start, end);
+            }
+        } else {
+            return df.<mark>parse</mark>(timeOrRange);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>knowm_____XChange_____DateUtils_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/knowm_____XChange_____DateUtils.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+   * Converts an RFC3339 formatted Date String to a Java Date RFC3339 format: yyyy-MM-dd HH:mm:ss
+   *
+   * @param rfc3339FormattedDate RFC3339 formatted Date
+   * @return an {@link Date} object
+   * @throws InvalidFormatException the RFC3339 formatted Date is invalid or cannot be parsed.
+   * @see <a href="https://tools.ietf.org/html/rfc3339">The Internet Society - RFC 3339</a>
+   */   */
+  public static Date fromISO8601DateString(String iso8601FormattedDate)
+      throws com.fasterxml.jackson.databind.exc.InvalidFormatException {
+
+    SimpleDateFormat iso8601Format = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd'T'HH:mm:ss");
+    // set UTC time zone
+    iso8601Format.setTimeZone(TimeZone.getTimeZone("UTC"));
+    try {
+      return iso8601Format.<mark>parse</mark>(iso8601FormattedDate);
+    } catch (ParseException e) {
+      throw new InvalidFormatException("Error parsing as date", iso8601FormattedDate, Date.class);
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>DSpace_____DSpace_____ReceiptGenerator_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/DSpace_____DSpace_____ReceiptGenerator.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Add the date that this item was last updated
+     *
+     * @param item    target item
+     * @param receipt deposit receipt
+     */     */
+    protected void addLastUpdatedDate(DepositResult result,
+                                      DepositReceipt receipt) {
+        String config = ConfigurationManager.getProperty(
+            "swordv2-server", "updated.field");
+        List<MetadataValue> dcv = itemService.getMetadataByMetadataString(
+            result.getItem(), config);
+        if (dcv != null && dcv.size() == 1) {
+            try {
+                SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd");
+                Date updated = sdf.<mark>parse</mark>(dcv.get(0).getValue());
+                receipt.getWrappedEntry().setUpdated(updated);
+            } catch (ParseException e) {
+                // we tried, but never mind
+                log.warn("Couldn't add last updated date", e);
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>OpenRock_____OpenAM_____Locale_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/OpenRock_____OpenAM_____Locale.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+     * Gets Date object from date string with specified locale. Syntax of date
+     * string is defined in amUser_&lt;locale> properties file.
+     * 
+     * @param dateString
+     *            date string
+     * @param locale
+     *            Locale object
+     * 
+     * @return Date object. null will be returned if error happens
+     */     */
+    public static Date parseNormalizedDateString(String dateString) {
+        if (dateString == null)
+            return null;
+
+        ParsePosition pos = new ParsePosition(0);
+        Date date = normalizedDateFormat.<mark>parse</mark>(dateString, pos);
+        if (date == null) {
+            debug.error("Locale.parseNormalizedDateString: "
+                    + "Unable to parse date string");
+        }
+        if (debug.messageEnabled()) {
+            debug.message("Locale.parseNormalizedDateString(" + dateString
+                    + ")=" + date);
+        }
+        return date;
+
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>eBay_____Eagle_____DateTimeUtil_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/eBay_____Eagle_____DateTimeUtil.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setTimeZone
+java.text.SimpleDateFormat.parse
+
+/**
+	 * this could be accurate only when timezone is UTC
+	 * for the timezones other than UTC, there is possibly issue, for example
+	 * assume timezone is GMT+8 in China
+	 * When user time is "2014-07-15 05:00:00", it will be converted to timestamp first, internally it would be  "2014-07-14 21:00:00" in UTC timezone. When rounded down to day, the internal time would 
+	 * be changed to "2014-07-14 00:00:00", and that means the user time is "2014-07-14 08:00:00". But originally user wants to round it to "2014-07-15 00:00:00"
+	 * 
+	 * @param field
+	 * @param timeInMillis the seconds elapsed since 1970-01-01 00:00:00
+	 * @return
+	 */	
+	public static long humanDateToMillisecondsWithoutException(String date){
+		try{
+			SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd HH:mm:ss,SSS");
+            sdf.<mark>setTimeZone</mark>(CURRENT_TIME_ZONE);
+			Date d = sdf.<mark>parse</mark>(date);
+			return d.getTime();
+		}catch(ParseException ex){
+			return 0L;
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hydrograph_____DateFunctions_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/capitalone_____Hydrograph_____DateFunctions.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+     * Returns a string value of the date
+     *
+     * @param inputDate
+     *            the date to fetch the string value
+     * @param dateFormat
+     *            the date format of the date value passed in {@code inputDate}
+     * @return a string value of the date
+     *         <p>
+     *         the method returns null if any parameter is null
+     *
+     * @throws ParseException
+     *             if the date value passed in {@code inputDate} does not match
+     *             the {@code dateFormat}
+     */    @Deprecated
+    public static <T> Date getDateFromString(T inputDateInStringFormat, String dateFormat) throws ParseException {
+        if (inputDateInStringFormat == null || dateFormat == null)
+            return null;
+
+        SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(dateFormat);
+        sdf.<mark>setLenient</mark>(false);
+        Date date = sdf.<mark>parse</mark>((String) inputDateInStringFormat);
+        return date;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>groovy_____groovy-core_____DefaultGroovyStaticMethods_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/groovy_____groovy-core_____DefaultGroovyStaticMethods.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setTimeZone
+java.text.SimpleDateFormat.parse
+
+/**
+     * Parse a String matching the pattern EEE MMM dd HH:mm:ss zzz yyyy
+     * containing US-locale-constants only (e.g. Sat for Saturdays).
+     * Such a string is generated by the toString method of {@link java.util.Date}
+     * <p>
+     * Note that a new SimpleDateFormat instance is created for every
+     * invocation of this method (for thread safety).
+     *
+     * @param self          placeholder variable used by Groovy categories; ignored for default static methods
+     * @param dateToString  String to be parsed to create the date instance. Must match the pattern EEE MMM dd HH:mm:ss zzz yyyy with US-locale symbols
+     * @return a new Date instance representing the parsed input string
+     * @throws ParseException if there is a parse error
+     */     */
+    public static Date <mark>parse</mark>(Date self, String format, String input) throws ParseException {
+        return <mark>new SimpleDateFormat</mark>(format).<mark>parse</mark>(input);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>OpenClinica_____OpenClinica_____Validator_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/OpenClinica_____OpenClinica_____Validator.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+     * @param fieldName
+     *            The name of a field containing some text string.
+     * @return <code>true</code> if the field contains a valid date in
+     *         "MM/dd/yyyy" format and is in the past; <code>false</code>
+     *         otherwise.
+     */     */
+    protected boolean isDate(String fieldName) {
+        String fieldValue = getFieldValue(fieldName);
+        if (StringUtil.isBlank(fieldValue)) {
+            return false;
+        }
+        if (!StringUtil.isDateFormatString(fieldValue, resformat.getString("date_format_string"), locale)) {
+            return false;
+        }
+        SimpleDateFormat sdf = I18nFormatUtil.getDateFormat(locale);
+        sdf.<mark>setLenient</mark>(false);
+        try {
+            java.util.Date date = sdf.<mark>parse</mark>(fieldValue);
+            String s = date.toString();
+            return isYearNotFourDigits(date);
+        } catch (ParseException fe) {
+            return false;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>devnied_____EMV-NFC-Paycard-Enrollment_____TrackUtils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/devnied_____EMV-NFC-Paycard-Enrollment_____TrackUtils.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Extract track 1 data
+	 *
+	 * @param pRawTrack1
+	 *            track1 raw data
+	 * @return EmvTrack1 object
+	 */	 */
+	public static EmvTrack2 extractTrack2EquivalentData(final byte[] pRawTrack2) {
+		EmvTrack2 ret = null;
+
+		if (pRawTrack2 != null) {
+			EmvTrack2 track2 = new EmvTrack2();
+			track2.setRaw(pRawTrack2);
+			String data = BytesUtils.bytesToStringNoSpace(pRawTrack2);
+			Matcher m = TRACK2_EQUIVALENT_PATTERN.matcher(data);
+			// Check pattern
+			if (m.find()) {
+				// read card number
+				track2.setCardNumber(m.group(1));
+				// Read expire date
+				SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>("yyMM", Locale.getDefault());
+				try {
+					track2.setExpireDate(DateUtils.truncate(sdf.<mark>parse</mark>(m.group(2)), Calendar.MONTH));
+				} catch (ParseException e) {
+					LOGGER.error("Unparsable expire card date : {}", e.getMessage());
+					return ret;
+				}
+				// Read service
+				track2.setService(new Service(m.group(3)));
+				ret = track2;
+			}
+		}
+		return ret;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____groovy_____DateUtilStaticExtensions_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____groovy_____DateUtilStaticExtensions.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setTimeZone
+java.text.SimpleDateFormat.parse
+
+/**
+     * Parse a String matching the pattern EEE MMM dd HH:mm:ss zzz yyyy
+     * containing US-locale-constants only (e.g. Sat for Saturdays).
+     * Such a string is generated by the toString method of {@link java.util.Date}
+     * <p>
+     * Note that a new SimpleDateFormat instance is created for every
+     * invocation of this method (for thread safety).
+     *
+     * @param self          placeholder variable used by Groovy categories; ignored for default static methods
+     * @param dateToString  String to be parsed to create the date instance. Must match the pattern EEE MMM dd HH:mm:ss zzz yyyy with US-locale symbols
+     * @return a new Date instance representing the parsed input string
+     * @throws ParseException if there is a parse error
+     * @since 1.8.4
+     */     */
+    public static Date <mark>parse</mark>(Date self, String format, String input) throws ParseException {
+        return <mark>new SimpleDateFormat</mark>(format).<mark>parse</mark>(input);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>HeidelTime_____heideltime_____DateCalculator_6.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/HeidelTime_____heideltime_____DateCalculator.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.format
+
+/**
+	 * Get the weekday of date
+	 * 
+	 * @param date current date
+	 * @return day of week
+	 */	 */
+	public static String getXNextMonth(String date, Integer x) {
+
+		// two formatters depending if BC or not
+		SimpleDateFormat formatter   = <mark>new SimpleDateFormat</mark>("yyyy-MM");
+		SimpleDateFormat formatterBC = <mark>new SimpleDateFormat</mark>("GGyyyy-MM");
+		String newDate = "";
+		Calendar c = Calendar.getInstance();
+
+		try {
+			// read the original date
+			if (date.matches("^\\d.*")){
+				c.setTime(formatter.<mark>parse</mark>(date));
+			}
+			else{
+				c.setTime(formatterBC.<mark>parse</mark>(date));
+			}
+			// make calucaltion
+			c.add(Calendar.MONTH, x);
+			c.getTime();
+			
+			// check if new date is BC or AD for choosing formatter or formatterBC
+			int newEra = c.get(Calendar.ERA);
+			if (newEra > 0){
+				newDate = formatter.<mark>format</mark>(c.getTime());
+			}
+			else{
+				newDate = formatterBC.<mark>format</mark>(c.getTime());
+			}
+			
+		}
+		catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return newDate;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dmlloyd_____openjdk_____ExsltDatetime_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/dmlloyd_____openjdk_____ExsltDatetime.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+     * Parse the input string and return the corresponding calendar field
+     * number.
+     */     */
+    private static int getZoneStart (String datetime)
+    {
+      if (datetime.indexOf("Z") == datetime.length()-1)
+        return datetime.length()-1;
+      else if (datetime.length() >=6
+                && datetime.charAt(datetime.length()-3) == ':'
+                && (datetime.charAt(datetime.length()-6) == '+'
+                    || datetime.charAt(datetime.length()-6) == '-'))
+      {
+        try
+        {
+          SimpleDateFormat dateFormat = <mark>new SimpleDateFormat</mark>("HH:mm");
+          dateFormat.<mark>setLenient</mark>(false);
+          Date d = dateFormat.<mark>parse</mark>(datetime.substring(datetime.length() -5));
+          return datetime.length()-6;
+        }
+        catch (ParseException pe)
+        {
+          System.out.println("ParseException " + pe.getErrorOffset());
+          return -2; // Invalid.
+        }
+
+      }
+        return -1; // No zone information.
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____groovy_____DateUtilStaticExtensions_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____groovy_____DateUtilStaticExtensions.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Parse a String matching the pattern EEE MMM dd HH:mm:ss zzz yyyy
+     * containing US-locale-constants only (e.g. Sat for Saturdays).
+     * Such a string is generated by the toString method of {@link java.util.Date}
+     * <p>
+     * Note that a new SimpleDateFormat instance is created for every
+     * invocation of this method (for thread safety).
+     *
+     * @param self          placeholder variable used by Groovy categories; ignored for default static methods
+     * @param dateToString  String to be parsed to create the date instance. Must match the pattern EEE MMM dd HH:mm:ss zzz yyyy with US-locale symbols
+     * @return a new Date instance representing the parsed input string
+     * @throws ParseException if there is a parse error
+     * @since 1.8.4
+     */     */
+    public static Date <mark>parse</mark>(Date self, String format, String input, TimeZone zone) throws ParseException {
+        SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(format);
+        sdf.setTimeZone(zone);
+        return sdf.<mark>parse</mark>(input);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____eagle_____DateTimeUtil_7.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____eagle_____DateTimeUtil.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setTimeZone
+java.text.SimpleDateFormat.parse
+
+/**
+     * this could be accurate only when timezone is UTC
+     * for the timezones other than UTC, there is possibly issue, for example
+     * assume timezone is GMT+8 in China
+     * When user time is "2014-07-15 05:00:00", it will be converted to timestamp first,
+     * internally it would be  "2014-07-14 21:00:00" in UTC timezone. When rounded down to day, the internal time would
+     * be changed to "2014-07-14 00:00:00", and that means the user time is "2014-07-14 08:00:00".
+     * But originally user wants to round it to "2014-07-15 00:00:00"
+     *
+     * @param timeInMillis the seconds elapsed since 1970-01-01 00:00:00
+     */
+    public static long humanDateToMillisecondsWithoutException(String date) {
+        try {
+            SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd HH:mm:ss,SSS");
+            sdf.<mark>setTimeZone</mark>(CURRENT_TIME_ZONE);
+            Date d = sdf.<mark>parse</mark>(date);
+            return d.getTime();
+        } catch (ParseException ex) {
+            return 0L;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>pentaho_____pentaho-kettle_____MVSFileParser_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/pentaho_____pentaho-kettle_____MVSFileParser.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+   * @return true if listing is a PDS
+   */   */
+  protected boolean checkDateFormat( String dateStr ) {
+    try {
+      dateFormat.<mark>parse</mark>( dateStr );
+    } catch ( ParseException ex ) {
+      if ( log.isDebug() ) {
+        if ( log.isDebug() ) {
+          log.logDebug( BaseMessages.getString( PKG, "MVSFileParser.DEBUG.Date.Parse.Error" ) );
+        }
+      }
+      if ( ( alternateFormatString != null ) ) {
+        if ( log.isDebug() ) {
+          if ( log.isDebug() ) {
+            log.logDebug( BaseMessages.getString( PKG, "MVSFileParser.DEBUG.Date.Parse.Choose.Alt" ) );
+          }
+        }
+        dateFormatString = alternateFormatString;
+        dateFormat = <mark>new SimpleDateFormat</mark>( dateFormatString );
+        alternateFormatString = null;
+        try {
+          dateFormat.<mark>parse</mark>( dateStr );
+        } catch ( ParseException ex2 ) {
+          return false;
+        }
+      } else {
+        log.logError( BaseMessages.getString( PKG, "MVSFileParser.ERROR.Date.Parse.Fail", dateStr ) );
+        return false;
+      }
+    }
+    return true;
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>HeidelTime_____heideltime_____HolidayProcessor_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/HeidelTime_____heideltime_____HolidayProcessor.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.format
+
+/**
+     * Get the date of Eastersunday in a given year
+     *
+     * @author Elena Klyachko
+     * @param year
+     * @return date
+     */	 */
+	public String getEasterSunday(int year, int days) {
+		int K = year / 100;
+		int M = 15 + ( ( 3 * K + 3 ) / 4 ) - ( ( 8 * K + 13 ) / 25 );
+		int S = 2 - ( (3 * K + 3) / 4 );
+		int A = year % 19;
+		int D = ( 19 * A + M ) % 30;
+		int R = ( D / 29) + ( ( D / 28 ) - ( D / 29 ) * ( A / 11 ) );
+		int OG = 21 + D - R;
+		int SZ = 7 - ( year + ( year / 4 ) + S ) % 7;
+		int OE = 7 - ( OG - SZ ) % 7;
+		int OS = OG + OE;
+		
+		SimpleDateFormat formatter = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd");
+		Calendar c = Calendar.getInstance();
+		String date;
+		
+		if( OS <= 31 ) {
+			date = String.<mark>format</mark>("%04d-03-%02d", year, OS);
+		}
+		else{
+			date = String.<mark>format</mark>("%04d-04-%02d", year, ( OS - 31 ) );
+		}		
+		try{
+			c.setTime(formatter.<mark>parse</mark>(date));
+			c.add(Calendar.DAY_OF_MONTH, days);
+			date = formatter.<mark>format</mark>(c.getTime());
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return date;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>HeidelTime_____heideltime_____HolidayProcessor_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/HeidelTime_____heideltime_____HolidayProcessor.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.format
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.format
+
+/**
+	 * Get the date of a the first, second, third etc. weekday in a month
+	 * 
+	 * @author Hans-Peter Pfeiffer
+	 * @param number
+	 * @param weekday
+	 * @param month
+	 * @param year
+	 * @return date
+	 */
+    public String getShroveTideWeekOrthodox(int year){
+        String easterOrthodox = getEasterSundayOrthodox(year);
+        SimpleDateFormat formatter = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd");
+        try{
+            Calendar calendar = Calendar.getInstance();
+            Date date = formatter.<mark>parse</mark>(easterOrthodox);
+            calendar.setTime(date);
+            calendar.add(Calendar.DAY_OF_MONTH, -49);
+            int shroveTideWeek =  calendar.get(Calendar.WEEK_OF_YEAR);
+            if(shroveTideWeek<10){
+                return year+"-W0"+shroveTideWeek;
+            }
+            return year+"-W"+shroveTideWeek;
+        }
+        catch (ParseException pe){
+            Logger.printError("ParseException:"+pe.getMessage());
+            return "unknown";
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>openstreetmap_____osmosis_____TaskManagerFactory_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/openstreetmap_____osmosis_____TaskManagerFactory.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setTimeZone
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Utility method for retrieving a boolean argument value from a Map of task
+	 * arguments.
+	 * 
+	 * @param taskConfig
+	 *            Contains all information required to instantiate and configure
+	 *            the task.
+	 * @param argName
+	 *            The name of the argument.
+	 * @param defaultValue
+	 *            The default value of the argument if not value is available.
+	 * @return The value of the argument.
+	 */	 */
+	protected Date getDateArgument(TaskConfiguration taskConfig, 
+			String argName, Date defaultValue) {
+		Map<String, String> configArgs;
+		
+		accessedTaskOptions.get().add(argName);
+		
+		configArgs = taskConfig.getConfigArgs();
+		
+		if (configArgs.containsKey(argName)) {
+			try {
+				SimpleDateFormat dateFormat;
+				
+				dateFormat = <mark>new SimpleDateFormat</mark>(DATE_FORMAT, DATE_LOCALE);
+				
+				return dateFormat.<mark>parse</mark>(configArgs.get(argName));
+				
+			} catch (ParseException e) {
+				throw new OsmosisRuntimeException(
+					"Argument " + argName + " for task " + taskConfig.getId()
+					+ " must be a date in format " + DATE_FORMAT + ".", e);
+			}
+		} else {
+			return defaultValue;
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____carbondata_____LoadMetadataDetails_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____carbondata_____LoadMetadataDetails.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+   * @param loadStartTime
+   */   */
+  private long convertTimeStampToLong(String factTimeStamp) {
+    try {
+      return Long.parseLong(factTimeStamp);
+    } catch (NumberFormatException nf) {
+      SimpleDateFormat parser = new SimpleDateFormat(CarbonCommonConstants.CARBON_TIMESTAMP_MILLIS);
+      // it is the processing for existing table before carbon 1.3
+      Date dateToStr = null;
+      try {
+        dateToStr = parser.<mark>parse</mark>(factTimeStamp);
+        return dateToStr.getTime();
+      } catch (ParseException e) {
+        LOGGER.error("Cannot convert" + factTimeStamp + " to Time/Long type value"
+            + e.getMessage(), e);
+        parser = new SimpleDateFormat(CarbonCommonConstants.CARBON_TIMESTAMP);
+        try {
+          // if the load is in progress, factTimeStamp will be null, so use current time
+          if (null == factTimeStamp) {
+            return System.currentTimeMillis();
+          }
+          dateToStr = parser.<mark>parse</mark>(factTimeStamp);
+          return dateToStr.getTime();
+        } catch (ParseException e1) {
+          LOGGER.error(
+              "Cannot convert" + factTimeStamp + " to Time/Long type value" + e1.getMessage());
+          return 0;
+        }
+      }
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>pentaho_____pentaho-kettle_____MVSFileParser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/pentaho_____pentaho-kettle_____MVSFileParser.java
+
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+   * This method will look at the incoming date string and try to figure out the format of the date. Googling on the
+   * internet showed several possible looks to the date:
+   *
+   * dd/MM/yy yy/MM/dd MM/dd/yy yyyy/MM/dd yyyy/dd/MM
+   *
+   * I never saw samples showing dd/MM/yyyy but I suppose it's possible. Not happy with this algorithm because it feels
+   * clumsy. It works, but it's not very elegant (time crunch).
+   *
+   * @param dateStr
+   */   */
+  protected FTPFile parsePDSLine( String[] aLine, String raw ) throws ParseException {
+    FTPFile rtn = null;
+    if ( aLine[0].equals( HEADER_NAME ) ) {
+      if ( log.isDebug() ) {
+        log.logDebug( BaseMessages.getString( PKG, "MVSFileParser.DEBUG.Skip.Header" ) );
+      }
+      return null;
+    }
+    rtn = new FTPFile( raw );
+    rtn.setName( aLine[0] );
+    if ( dateTimeFormat == null ) {
+      dateTimeFormat = <mark>new SimpleDateFormat</mark>( dateFormatString + " HH:mm" );
+    }
+    rtn.setCreated( dateFormat.<mark>parse</mark>( aLine[2] ) );
+    String modDateTime = aLine[3] + ' ' + aLine[4];
+    rtn.setLastModified( dateTimeFormat.<mark>parse</mark>( modDateTime ) );
+    rtn.setDir( false );
+    return rtn;
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>exoplatform_____platform_____LoginHistoryRestService_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/exoplatform_____platform_____LoginHistoryRestService.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Get login count statistic in a year
+     * <br>
+     * REST service URL: /loginhistory/yearstats/{userId}/{year}
+     *
+     * @return: List of login count per months in year {year} (in JSON data format) of user {userId}
+     */    @Produces(MediaType.APPLICATION_JSON)
+    public Response weekstats(@PathParam("userId") String userId, @PathParam("week") String week) throws Exception {
+        try {
+
+            SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd");
+            List<LoginCounterBean> loginCounts = loginHistoryService.getLoginCountPerDaysInWeek(userId, sdf.<mark>parse</mark>(week).getTime());
+
+            List<Object> loginCountsData = new ArrayList<Object>();
+
+            loginCountsData.add(loginCounts.size());
+            loginCountsData.add(loginCounts);
+
+            MessageBean data = new MessageBean();
+            data.setData(loginCountsData);
+            return Response.ok(data, MediaType.APPLICATION_JSON).cacheControl(cacheControl).build();
+        } catch (Exception e) {
+            LOG.debug("Error in weekstats REST service: " + e.getMessage(), e);
+            return Response.status(HTTPStatus.INTERNAL_ERROR).cacheControl(cacheControl).build();
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>HeidelTime_____heideltime_____DateCalculator_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/HeidelTime_____heideltime_____DateCalculator.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.format
+java.text.SimpleDateFormat.format
+
+/**
+	 * get the x-next day of date.
+	 * 
+	 * @param date given date to get new date from
+	 * @param x type of temporal event to search for
+	 * @return
+	 */	
+	public static String getXNextDecade(String date, Integer x) {
+		date = date + "0"; // deal with years not with centuries
+		
+		// two formatters depending if BC or not
+		SimpleDateFormat formatter   = <mark>new SimpleDateFormat</mark>("yyyy");
+		SimpleDateFormat formatterBC = <mark>new SimpleDateFormat</mark>("GGyyyy");
+		
+		String newDate = "";
+		Calendar c = Calendar.getInstance();
+		
+		try {
+			// read the original date
+			if (date.matches("^\\d.*")){
+				c.setTime(formatter.<mark>parse</mark>(date));
+			}
+			else{
+				c.setTime(formatterBC.<mark>parse</mark>(date));
+			}
+			
+			// make calucaltion
+			c.add(Calendar.YEAR, x*10);
+			c.getTime();
+			
+			// check if new date is BC or AD for choosing formatter or formatterBC
+			int newEra = c.get(Calendar.ERA);
+			if (newEra > 0){
+				newDate = formatter.<mark>format</mark>(c.getTime()).substring(0, 3);
+			}
+			else{
+				newDate = formatterBC.<mark>format</mark>(c.getTime()).substring(0, 5);
+			}
+			
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return newDate;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hydrograph_____DateFunctions_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/capitalone_____Hydrograph_____DateFunctions.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+     * Returns a date object from a string date value
+     *
+     * @param inputDateInStringFormat
+     *            the date value in string
+     * @param dateFormat
+     *            the date format of the date value passed in
+     *            {@code inputDateInStringFormat}
+     * @return a date object of the corresponding date value
+     *         <p>
+     *         the method returns null if any parameter is null
+     * @throws ParseException
+     *             if the date value passed in {@code inputDateInStringFormat}
+     *             does not match the {@code dateFormat}
+     */     */
+    public static String dateFormatter(String inputValue, String oldFormat, String newFormat) {
+        if (inputValue == null || oldFormat == null || newFormat == null)
+            return null;
+        String newDateString = null;
+        try {
+            SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(oldFormat);
+            sdf.<mark>setLenient</mark>(false);
+            Date date = null;
+
+            date = sdf.<mark>parse</mark>(inputValue);
+
+            sdf.applyPattern(newFormat);
+            newDateString = sdf.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return newDateString;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>matt-allen_____repay-android_____DatabaseHandler_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/matt-allen_____repay-android_____DatabaseHandler.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * @param debtID
+	 * @return The debt stored against the two given attributes
+	 * @throws android.database.SQLException
+	 * @throws IndexOutOfBoundsException
+	 * @throws java.text.ParseException
+	 */	 */
+	public ArrayList<Debt> getDebtsByRepayID(final String repayID) throws SQLException, ParseException,
+			CursorIndexOutOfBoundsException, NullPointerException {
+		ArrayList<Debt> debts = null;
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor c = db.query(Names.D_TABLENAME, new String[]{Names.D_DEBTID, Names.D_DATE, Names.D_AMOUNT, Names.D_DESCRIPTION},
+				Names.D_REPAYID+"=?", new String[]{repayID}, null, null, null);
+
+		if(c != null && c.getCount() > 0){
+			c.moveToFirst();
+			debts = new ArrayList<Debt>();
+			do{
+				SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(DATE_FORMAT);
+				String description, dateString;
+				Date date;
+				// Try and catch errors to stop this failing silently
+				try{
+					dateString = c.getString(1);
+					date = sdf.<mark>parse</mark>(dateString);
+				} catch (Exception e){
+					date = new Date();
+				}
+				try{
+					description = c.getString(3);
+				} catch (Exception e){
+					description = "";
+				}
+				debts.add(new Debt(c.getInt(0), repayID, date, new BigDecimal(c.getString(2)), description));
+			} while(c.moveToNext());
+		}
+		db.close();
+		return debts;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>exoplatform_____platform_____LoginHistoryRestService_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/exoplatform_____platform_____LoginHistoryRestService.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+     * Get last {numItems} login history entries
+     * <br>
+     * REST service URL: /loginhistory/lastlogins/{numItems}/{userIdFilter}
+     *
+     * @return: The list of last {numItems} login history entries (filtered by {userIdFilter}) in JSON data format
+     */    @Produces(MediaType.APPLICATION_JSON)
+    public Response monthstats(@PathParam("userId") String userId, @PathParam("fromMonth") String fromMonth, @PathParam("numOfMonths") int numOfMonths) throws Exception {
+        try {
+
+            SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd");
+            List<LoginCounterBean> loginCounts = loginHistoryService.getLoginCountPerWeeksInMonths(userId, sdf.<mark>parse</mark>(fromMonth).getTime(), numOfMonths);
+
+            List<Object> loginCountsData = new ArrayList<Object>();
+
+            loginCountsData.add(loginCounts.size());
+            loginCountsData.add(loginCounts);
+
+            MessageBean data = new MessageBean();
+            data.setData(loginCountsData);
+            return Response.ok(data, MediaType.APPLICATION_JSON).cacheControl(cacheControl).build();
+        } catch (Exception e) {
+            LOG.debug("Error in monthstats REST service: " + e.getMessage(), e);
+            return Response.status(HTTPStatus.INTERNAL_ERROR).cacheControl(cacheControl).build();
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hydrograph_____DateFunctions_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/capitalone_____Hydrograph_____DateFunctions.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.applyPattern
+java.text.SimpleDateFormat.format
+
+/**
+     * Formats and converts a date value into string representation in the
+     * desired new date format
+     *
+     * @param inputValue
+     *            the date value in old format
+     * @param oldFormat
+     *            the date format of the date passed in {@code inputValue}
+     * @param newFormat
+     *            the desired date format
+     * @return string representation of date in new date format
+     *         <p>
+     *         the method returns null if any parameter is null
+     * @throws ParseException
+     *             if the date value passed in {@code inputValue} does not match
+     *             the {@code oldFormat}
+     */     */
+    public static <T> Integer today() {
+        int date = 0;
+        try {
+            SimpleDateFormat formatter = <mark>new SimpleDateFormat</mark>("dd MM yyyy");
+            Date d1 = formatter.<mark>parse</mark>("1 01 1900");
+            Date d2 = new Date();
+            int DateFraction = (1000 * 60 * 60 * 24);
+            date = (int) ((d2.getTime() - d1.getTime()) / DateFraction);
+        } catch (Exception e) {
+            // since we are parsing static date value, parse function will never
+            // throw exception
+        }
+        return date;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>osmandapp_____Osmand_____OpeningHoursParser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/osmandapp_____Osmand_____OpeningHoursParser.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * test if the calculated opening hours are what you expect
+	 *
+	 * @param time        the time to test in the format "dd.MM.yyyy HH:mm"
+	 * @param hours       the OpeningHours object
+	 * @param expected    the expected string in format:
+	 *                         "Open from HH:mm"     - open in 5 hours
+	 *                         "Will open at HH:mm"  - open in 2 hours
+	 *                         "Open till HH:mm"     - close in 5 hours
+	 *                         "Will close at HH:mm" - close in 2 hours
+	 *                         "Will open on HH:mm (Mo,Tu,We,Th,Fr,Sa,Su)" - open in >5 hours
+	 *                         "Will open tomorrow at HH:mm" - open in >5 hours tomorrow
+	 *                         "Open 24/7"           - open 24/7
+	 * @param sequenceIndex sequence index of rules separated by ||
+	 */	 */
+	private static void testOpened(String time, OpeningHours hours, boolean expected) throws ParseException {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(<mark>new SimpleDateFormat</mark>("dd.MM.yyyy HH:mm", Locale.US).<mark>parse</mark>(time));
+		boolean calculated = hours.isOpenedForTimeV2(cal, OpeningHours.ALL_SEQUENCES);
+		System.out.printf("  %sok: Expected %s: %b = %b (rule %s)\n",
+				((calculated != expected) ? "NOT " : ""), time, expected, calculated, hours.getCurrentRuleTime(cal, OpeningHours.ALL_SEQUENCES));
+		if (calculated != expected) {
+			throw new IllegalArgumentException("BUG!!!");
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____accumulo_____TimestampFilter_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____accumulo_____TimestampFilter.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+   * A convenience method for setting the end timestamp accepted by the timestamp filter.
+   *
+   * @param is
+   *          the iterator setting object to configure
+   * @param end
+   *          the end timestamp (yyyyMMddHHmmssz)
+   * @param endInclusive
+   *          boolean indicating whether the end is inclusive
+   */  @Override
+  public boolean validateOptions(Map<String,String> options) {
+    if (!super.validateOptions(options))
+      return false;
+    boolean hasStart = false;
+    boolean hasEnd = false;
+    try {
+      if (options.containsKey(START)) {
+        hasStart = true;
+        String s = options.get(START);
+        if (s.startsWith(LONG_PREFIX))
+          Long.valueOf(s.substring(LONG_PREFIX.length()));
+        else
+          dateParser.<mark>parse</mark>(s);
+      }
+      if (options.containsKey(END)) {
+        hasEnd = true;
+        String s = options.get(END);
+        if (s.startsWith(LONG_PREFIX))
+          Long.valueOf(s.substring(LONG_PREFIX.length()));
+        else
+          dateParser.<mark>parse</mark>(s);
+      }
+      if (!hasStart && !hasEnd)
+        throw new IllegalArgumentException(START + " or " + END + " must be specified");
+      if (options.get(START_INCL) != null)
+        Boolean.parseBoolean(options.get(START_INCL));
+      if (options.get(END_INCL) != null)
+        Boolean.parseBoolean(options.get(END_INCL));
+    } catch (Exception e) {
+      throw new IllegalArgumentException("invalid options", e);
+    }
+    return true;
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>devnied_____EMV-NFC-Paycard-Enrollment_____GeldKarteParser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/devnied_____EMV-NFC-Paycard-Enrollment_____GeldKarteParser.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Method used to extract Ef_iD record
+	 *
+	 * @param pApplication EMV application
+	 *
+	 * @throws CommunicationException communication error
+	 */	 */
+	protected void readEF_BLOG(final Application pApplication) throws CommunicationException{
+		List<EmvTransactionRecord> list = new ArrayList<EmvTransactionRecord>();
+		SimpleDateFormat dateFormat = <mark>new SimpleDateFormat</mark>("dd.MM.yyyy");
+		SimpleDateFormat timeFormat = <mark>new SimpleDateFormat</mark>("HH:mm:ss");
+		// Read each records
+		for (int i = 1; i < 16 ; i++) {
+			byte[] data = template.get().getProvider().transceive(new CommandApdu(CommandEnum.READ_RECORD, i, 0xEC, 0).toBytes());
+			// Check response
+			if (ResponseUtils.isSucceed(data)) {
+				if (data.length < 35){
+					continue;
+				}
+				EmvTransactionRecord record = new EmvTransactionRecord();
+				record.setCurrency(CurrencyEnum.EUR);
+				record.setTransactionType(getType(data[0]));
+				record.setAmount(Float.parseFloat(BytesUtils.bytesToStringNoSpace(Arrays.copyOfRange(data, 21, 24))) / 100L);
+
+				try {
+					record.setDate(dateFormat.<mark>parse</mark>(String.format("%02x.%02x.%02x%02x", data[32], data[31], data[29], data[30])));
+					record.setTime(timeFormat.<mark>parse</mark>(String.format("%02x:%02x:%02x", data[33], data[34], data[35])));
+				} catch (ParseException e) {
+					LOGGER.error(e.getMessage(), e);
+				}
+				list.add(record);
+			} else {
+				break;
+			}
+		}
+		pApplication.setListTransactions(list);
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>HeidelTime_____heideltime_____DateCalculator_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/HeidelTime_____heideltime_____DateCalculator.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.format
+
+/**
+	 * get the x-next month of date
+	 * 
+	 * @param date current date
+	 * @param x amount of months to go forward 
+	 * @return new month
+	 */	
+	public static String getXNextCentury(String date, Integer x) {
+		date = date + "00"; // deal with years not with centuries
+		int oldEra = 0;     // 0 if BC date, 1 if AD date
+		
+		// two formatters depending if BC or not
+		SimpleDateFormat formatter   = <mark>new SimpleDateFormat</mark>("yyyy");
+		SimpleDateFormat formatterBC = <mark>new SimpleDateFormat</mark>("GGyyyy");
+		
+		String newDate = "";
+		Calendar c = Calendar.getInstance();
+		
+		try {
+			// read the original date
+			if (date.matches("^\\d.*")){
+				c.setTime(formatter.<mark>parse</mark>(date));
+				oldEra = 1;
+			}
+			else{
+				c.setTime(formatterBC.<mark>parse</mark>(date));
+			}
+			
+			// make calucaltion
+			c.add(Calendar.YEAR, x*100);
+			c.getTime();
+			
+			// check if new date is BC or AD for choosing formatter or formatterBC
+			int newEra = c.get(Calendar.ERA);
+			if (newEra > 0){
+				if (oldEra == 0){
+					// -100 if from BC to AD
+					c.add(Calendar.YEAR, -100);
+					c.getTime();
+				}
+				newDate = formatter.<mark>format</mark>(c.getTime()).substring(0, 2);
+			}
+			else{
+				if (oldEra > 0){
+					// +100 if from AD to BC
+					c.add(Calendar.YEAR, 100);
+					c.getTime();
+				}
+				newDate = formatterBC.<mark>format</mark>(c.getTime()).substring(0, 4);
+			}
+			
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return newDate;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>HeidelTime_____heideltime_____HolidayProcessor_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/HeidelTime_____heideltime_____HolidayProcessor.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Get the date of a weekday relative to a date, e.g. first Wednesday before 11-23
+	 * 
+	 * @author Hans-Peter Pfeiffer
+	 * @param date
+	 * @param weekday
+	 * @param number
+	 * @param count_itself
+	 * @return
+	 */     */
+    public String getEasterSundayOrthodox(int year, int days) {
+        int A = year%4;
+        int B = year%7;
+        int C = year%19;
+        int D = (19*C+15)%30;
+        int E = ((2*A + 4*B -D + 34))%7;
+        int Month = (int)(Math.floor ((D + E + 114) / 31));
+        int Day = ((D + E + 114)% 31) +1;
+
+        /*
+
+        int K = year / 100;
+        int M = 15 + ( ( 3 * K + 3 ) / 4 ) - ( ( 8 * K + 13 ) / 25 );
+        int S = 2 - ( (3 * K + 3) / 4 );
+        int A = year % 19;
+        int D = ( 19 * A + M ) % 30;
+        int R = ( D / 29) + ( ( D / 28 ) - ( D / 29 ) * ( A / 11 ) );
+        int OG = 21 + D - R;
+        int SZ = 7 - ( year + ( year / 4 ) + S ) % 7;
+        int OE = 7 - ( OG - SZ ) % 7;
+        int OS = OG + OE; */
+
+        SimpleDateFormat formatter = <mark>new SimpleDateFormat</mark>("yyyy-MM-dd");
+        Calendar c = Calendar.getInstance();
+        String date;
+
+
+        date = String.format("%04d-%02d-%02d", year, Month, Day );
+
+        try{
+            c.setTime(formatter.<mark>parse</mark>(date));
+            c.add(Calendar.DAY_OF_MONTH, days);
+            c.add(Calendar.DAY_OF_MONTH, getJulianDifference(year));
+            date = formatter.format(c.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hydrograph_____DateFunctions_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/capitalone_____Hydrograph_____DateFunctions.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.applyPattern
+java.text.SimpleDateFormat.format
+
+/**
+     * Formats and converts a date value into string representation in the
+     * desired new date format
+     *
+     * @param inputValue
+     *            the date value in old format
+     * @param oldFormat
+     *            the date format of the date passed in {@code inputValue}
+     * @param newFormat
+     *            the desired date format
+     * @return string representation of date in new date format
+     *         <p>
+     *         the method returns null if any parameter is null
+     * @throws ParseException
+     *             if the date value passed in {@code inputValue} does not match
+     *             the {@code oldFormat}
+     */    @Deprecated
+    public static <T> String dateFormatter(T inputValue, String oldFormat, String newFormat) {
+        if (inputValue == null || oldFormat == null || newFormat == null)
+            return null;
+        String newDateString = null;
+        try {
+            String oldDateString = String.valueOf(StandardFunctionHelper.convertComparableObjectToString(inputValue));
+            SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(oldFormat);
+            sdf.<mark>setLenient</mark>(false);
+            Date date = null;
+            date = sdf.<mark>parse</mark>(oldDateString);
+            sdf.<mark>applyPattern</mark>(newFormat);
+            newDateString = sdf.<mark>format</mark>(date);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        return newDateString;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>payara_____Payara_____ResourceAttributes_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/payara_____Payara_____ResourceAttributes.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+     * Creation date mutator.
+     * 
+     * @param creationDate New creation date
+     */     */
+    public long getCreation() {
+        if (creation != -1L)
+            return creation;
+        if (creationDate != null)
+            return creationDate.getTime();
+        if (attributes != null) {
+            Attribute attribute = attributes.get(CREATION_DATE);
+            if (attribute != null) {
+                try {
+                    Object value = attribute.get();
+                    if (value instanceof Long) {
+                        creation = ((Long) value).longValue();
+                    } else if (value instanceof Date) {
+                        creation = ((Date) value).getTime();
+                        creationDate = (Date) value;
+                    } else {
+                        String creationDateValue = value.toString();
+                        Date result = null;
+                        // Parsing the HTTP Date
+                        SimpleDateFormat[] formats = (SimpleDateFormat[])FORMATS.get();
+                        for (int i = 0; (result == null) && 
+                                 (i < formats.length); i++) {
+                            try {
+                                result = formats[i].<mark>parse</mark>(creationDateValue);
+                            } catch (ParseException e) {
+                                // Ignore
+                            }
+                        }
+                        if (result != null) {
+                            creation = result.getTime();
+                            creationDate = result;
+                        }
+                    }
+                } catch (NamingException e) {
+                    // No value for the attribute
+                }
+            }
+        }
+        return creation;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____accumulo_____TimestampFilter_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____accumulo_____TimestampFilter.java
+
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.parse
+
+/**
+   * A convenience method for setting the range of timestamps accepted by the timestamp filter.
+   *
+   * @param is
+   *          the iterator setting object to configure
+   * @param start
+   *          the start timestamp, inclusive (yyyyMMddHHmmssz)
+   * @param end
+   *          the end timestamp, inclusive (yyyyMMddHHmmssz)
+   */  @Override
+  public void init(SortedKeyValueIterator<Key,Value> source, Map<String,String> options,
+      IteratorEnvironment env) throws IOException {
+    if (options == null)
+      throw new IllegalArgumentException(
+          "start and/or end must be set for " + TimestampFilter.class.getName());
+
+    super.init(source, options, env);
+
+    hasStart = false;
+    hasEnd = false;
+    startInclusive = true;
+    endInclusive = true;
+
+    if (options.containsKey(START))
+      hasStart = true;
+    if (options.containsKey(END))
+      hasEnd = true;
+    if (!hasStart && !hasEnd)
+      throw new IllegalArgumentException(
+          "must have either start or end for " + TimestampFilter.class.getName());
+
+    try {
+      if (hasStart) {
+        String s = options.get(START);
+        if (s.startsWith(LONG_PREFIX))
+          start = Long.parseLong(s.substring(LONG_PREFIX.length()));
+        else
+          start = dateParser.<mark>parse</mark>(s).getTime();
+      }
+      if (hasEnd) {
+        String s = options.get(END);
+        if (s.startsWith(LONG_PREFIX))
+          end = Long.parseLong(s.substring(LONG_PREFIX.length()));
+        else
+          end = dateParser.<mark>parse</mark>(s).getTime();
+      }
+    } catch (Exception e) {
+      throw new IllegalArgumentException(e);
+    }
+    if (options.get(START_INCL) != null)
+      startInclusive = Boolean.parseBoolean(options.get(START_INCL));
+    if (options.get(END_INCL) != null)
+      endInclusive = Boolean.parseBoolean(options.get(END_INCL));
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>datastax_____java-driver_____ParseUtils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/datastax_____java-driver_____ParseUtils.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.setTimeZone
+java.text.SimpleDateFormat.applyPattern
+java.text.SimpleDateFormat.parse
+
+/**
+     * Parse the given string as a time, using the following time pattern: {@code hh:mm:ss[.fffffffff]}.
+     * <p/>
+     * This method is loosely based on {@code java.sql.Timestamp}.
+     *
+     * @param str The string to parse.
+     * @return A long value representing the number of nanoseconds since midnight.
+     * @throws ParseException if the string cannot be parsed.
+     * @see <a href="https://cassandra.apache.org/doc/cql3/CQL-2.2.html#usingtime">'Working with time' section of CQL specification</a>
+     */     */
+    public static Date parseDate(String str) throws ParseException {
+        SimpleDateFormat parser = <mark>new SimpleDateFormat</mark>();
+        parser.<mark>setLenient</mark>(false);
+        // set a default timezone for patterns that do not provide one
+        parser.<mark>setTimeZone</mark>(TimeZone.getTimeZone("UTC"));
+        // Java 6 has very limited support for ISO-8601 time zone formats,
+        // so we need to transform the string first
+        // so that accepted patterns are correctly handled,
+        // such as Z for UTC, or "+00:00" instead of "+0000".
+        // Note: we cannot use the X letter in the pattern
+        // because it has been introduced in Java 7.
+        str = str.replaceAll("(\\+|\\-)(\\d\\d):(\\d\\d)$", "$1$2$3");
+        str = str.replaceAll("Z$", "+0000");
+        ParsePosition pos = new ParsePosition(0);
+        for (String parsePattern : iso8601Patterns) {
+            parser.<mark>applyPattern</mark>(parsePattern);
+            pos.setIndex(0);
+            Date date = parser.<mark>parse</mark>(str, pos);
+            if (date != null && pos.getIndex() == str.length()) {
+                return date;
+            }
+        }
+        throw new ParseException("Unable to parse the date: " + str, -1);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>payara_____Payara_____ResourceAttributes_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/payara_____Payara_____ResourceAttributes.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+     * Last modified date mutator.
+     * 
+     * @param lastModifiedDate New last modified date
+     */     */
+    public long getLastModified() {
+        if (lastModified != -1L)
+            return lastModified;
+        if (lastModifiedDate != null)
+            return lastModifiedDate.getTime();
+        if (attributes != null) {
+            Attribute attribute = attributes.get(LAST_MODIFIED);
+            if (attribute != null) {
+                try {
+                    Object value = attribute.get();
+                    if (value instanceof Long) {
+                        lastModified = ((Long) value).longValue();
+                    } else if (value instanceof Date) {
+                        lastModified = ((Date) value).getTime();
+                        lastModifiedDate = (Date) value;
+                    } else {
+                        String lastModifiedDateValue = value.toString();
+                        Date result = null;
+                        // Parsing the HTTP Date
+                        SimpleDateFormat[] formats = (SimpleDateFormat[])FORMATS.get();
+                        for (int i = 0; (result == null) && 
+                                 (i < formats.length); i++) {
+                            try {
+                                result = 
+                                    formats[i].<mark>parse</mark>(lastModifiedDateValue);
+                            } catch (ParseException e) {
+                                // Ignore
+                            }
+                        }
+                        if (result != null) {
+                            lastModified = result.getTime();
+                            lastModifiedDate = result;
+                        }
+                    }
+                } catch (NamingException e) {
+                    // No value for the attribute
+                }
+            }
+        }
+        return lastModified;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>payara_____Payara_____ResourceAttributes_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/payara_____Payara_____ResourceAttributes.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+     * Set last modified.
+     * 
+     * @param lastModified New last modified value
+     */     */
+    public Date getCreationDate() {
+        if (creationDate != null)
+            return creationDate;
+        if (creation != -1L) {
+            creationDate = new Date(creation);
+            return creationDate;
+        }
+        if (attributes != null) {
+            Attribute attribute = attributes.get(CREATION_DATE);
+            if (attribute != null) {
+                try {
+                    Object value = attribute.get();
+                    if (value instanceof Long) {
+                        creation = ((Long) value).longValue();
+                        creationDate = new Date(creation);
+                    } else if (value instanceof Date) {
+                        creation = ((Date) value).getTime();
+                        creationDate = (Date) value;
+                    } else {
+                        String creationDateValue = value.toString();
+                        Date result = null;
+                        // Parsing the HTTP Date
+                        SimpleDateFormat[] formats = (SimpleDateFormat[])FORMATS.get();
+                        for (int i = 0; (result == null) && 
+                                 (i < formats.length); i++) {
+                            try {
+                                result = formats[i].<mark>parse</mark>(creationDateValue);
+                            } catch (ParseException e) {
+                                // Ignore
+                            }
+                        }
+                        if (result != null) {
+                            creation = result.getTime();
+                            creationDate = result;
+                        }
+                    }
+                } catch (NamingException e) {
+                    // No value for the attribute
+                }
+            }
+        }
+        return creationDate;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>matt-allen_____repay-android_____DatabaseHandler_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/matt-allen_____repay-android_____DatabaseHandler.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Get information on friend by passing in their RepayID
+	 * @param repayID
+	 * @return Friend object representation of person
+	 * @throws IndexOutOfBoundsException
+	 * @throws android.database.SQLException
+	 */	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		if (oldVersion==1 && newVersion==2){
+			// Change to include a debtID
+			try{
+				ArrayList<Debt> debts = new ArrayList<Debt>();
+				Cursor c;
+				// Get all current debts from database
+				c = db.query(Names.D_TABLENAME, new String[]{Names.D_REPAYID, Names.D_DATE, Names.D_AMOUNT, Names.D_DESCRIPTION},
+						null, null, null, null, null);
+				c.moveToFirst();
+				SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(DATE_FORMAT);
+				do{
+					// Entering 0 for debtID since it isn't put into the database
+					debts.add(new Debt(0, c.getString(0), sdf.<mark>parse</mark>(c.getString(1)), new BigDecimal(c.getString(2)), c.getString(3)));
+				} while (c.moveToNext());
+
+				// Drop old table and create new one
+				db.execSQL(String.format("ALTER TABLE %s RENAME TO oldDebts", Names.D_TABLENAME));
+				db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT NOT NULL, "
+								+ "%s TEXT, %s TEXT, %s TEXT, FOREIGN KEY(%s) REFERENCES %s(%s))", Names.D_TABLENAME,
+						Names.D_DEBTID, Names.D_REPAYID, Names.D_DATE, Names.D_AMOUNT,
+						Names.D_DESCRIPTION, Names.D_REPAYID, Names.F_TABLENAME, Names.F_REPAYID));
+
+				// Add data back in new format
+				ContentValues values;
+				for(int i=0;i<=debts.size()-1;i++){
+					values = new ContentValues();
+					values.put(Names.D_REPAYID, debts.get(i).getRepayID());
+					values.put(Names.D_AMOUNT, debts.get(i).getAmount().toString());
+					values.put(Names.D_DATE, debts.get(i).getDate().toString());
+					values.put(Names.D_DESCRIPTION, debts.get(i).getDescription());
+					db.insert(Names.D_TABLENAME, null, values);
+				}
+			} catch (Exception e){
+				Log.e(TAG, e.getMessage());
+				e.printStackTrace();
+			}
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>BroadleafCommerce_____BroadleafCommerce_____FileSystemSolrIndexStatusProviderImpl_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/BroadleafCommerce_____BroadleafCommerce_____FileSystemSolrIndexStatusProviderImpl.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+     * Periodically purges the dead events based on solr.index.status.dead.event.purge.seconds - populating the deadEvents map in the IndexStatusInfo when it does.
+     * @param document
+     * @param status
+     * @throws XPathExpressionException
+     * @throws ParseException
+     */     */
+    protected void updateIndexSegment(Document document, Element rootElement, IndexStatusInfo status) throws XPathExpressionException, ParseException {
+        Element indexElement;
+        NodeList indexNodeList = (NodeList) xPath.evaluate("/status/index", document, XPathConstants.NODESET);
+        if (indexNodeList.getLength() > 0) {
+            indexElement = (Element) indexNodeList.item(0);
+        } else {
+            indexElement = document.createElement("index");
+            indexElement.setAttribute("dateProcessed", "");
+            rootElement.appendChild(indexElement);
+        }
+        String lastProcessed = indexElement.getAttribute("dateProcessed");
+        //if we have a last processed from file and the new status index date is newer, update it.
+        if (lastProcessed != null && ! lastProcessed.equals("")) {
+            Date lastProcessedDate = format.<mark>parse</mark>(lastProcessed);
+            if (status.getLastIndexDate().compareTo(lastProcessedDate) > 0) {
+                indexElement.setAttribute("dateProcessed", format.format(status.getLastIndexDate()));
+                clearNode(indexElement, "info");
+            }
+        } else {
+            indexElement.setAttribute("dateProcessed", format.format(status.getLastIndexDate()));
+        }
+        for (Map.Entry<String, String> entry : status.getAdditionalInfo().entrySet()) {
+            NodeList infos = (NodeList) xPath.evaluate("info[@key='" + entry.getKey() + "']", indexElement, XPathConstants.NODESET);
+            if (infos.getLength() == 0) {
+                Element addlInfo = document.createElement("info");
+                addlInfo.setAttribute("key", entry.getKey());
+                addlInfo.setAttribute("val", entry.getValue());
+                indexElement.appendChild(addlInfo);
+                LOG.debug(String.format("Adding new solr index entry %s", entry.getValue()));
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>openmrs_____openmrs-core_____HL7Util_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/openmrs_____openmrs-core_____HL7Util.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Gets the destination directory for hl7 archives.
+	 *
+	 * @return The destination directory for the hl7 in archive
+	 */	 */
+	public static Date parseHL7Timestamp(String s) throws HL7Exception {
+		
+		// HL7 dates must at least contain year and cannot exceed 24 bytes
+		if (s == null || s.length() < 4 || s.length() > 24) {
+			throw new HL7Exception("Invalid date '" + s + "'");
+		}
+		
+		StringBuilder dateString = new StringBuilder();
+		dateString.append(s.substring(0, 4)); // year
+		if (s.length() >= 6) {
+			dateString.append(s.substring(4, 6)); // month
+		} else {
+			dateString.append("01");
+		}
+		if (s.length() >= 8) {
+			dateString.append(s.substring(6, 8)); //day
+		} else {
+			dateString.append("01");
+		}
+		
+		// Parse timezone (optional in HL7 format)
+		String timeZoneOffset;
+		try {
+			Date parsedDay = <mark>new SimpleDateFormat</mark>("yyyyMMdd").<mark>parse</mark>(s.substring(0, 8));
+			timeZoneOffset = getTimeZoneOffset(s, parsedDay);
+		}
+		catch (ParseException e) {
+			throw new HL7Exception("Error parsing date: '" + s.substring(0, 8) + "' for time zone offset'" + s + "'", e);
+		}
+		s = s.replace(timeZoneOffset, ""); // remove the timezone from the string
+		
+		if (s.length() >= 10) {
+			dateString.append(s.substring(8, 10)); // hour
+		} else {
+			dateString.append("00");
+		}
+		if (s.length() >= 12) {
+			dateString.append(s.substring(10, 12)); // minute
+		} else {
+			dateString.append("00");
+		}
+		if (s.length() >= 14) {
+			dateString.append(s.substring(12, 14)); // seconds
+		} else {
+			dateString.append("00");
+		}
+		if (s.length() >= 15 && s.charAt(14) != '.') {
+			// decimal point
+			throw new HL7Exception("Invalid date format '" + s + "'");
+		} else {
+			dateString.append(".");
+		}
+		if (s.length() >= 16) {
+			dateString.append(s.substring(15, 16)); // tenths
+		} else {
+			dateString.append("0");
+		}
+		if (s.length() >= 17) {
+			dateString.append(s.substring(16, 17)); // hundredths
+		} else {
+			dateString.append("0");
+		}
+		if (s.length() >= 18) {
+			dateString.append(s.subSequence(17, 18)); // milliseconds
+		} else {
+			dateString.append("0");
+		}
+		
+		dateString.append(timeZoneOffset);
+		
+		Date date;
+		try {
+			date = <mark>new SimpleDateFormat</mark>(TIMESTAMP_FORMAT).<mark>parse</mark>(dateString.toString());
+		}
+		catch (ParseException e) {
+			throw new HL7Exception("Error parsing date '" + s + "'");
+		}
+		return date;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>sakaiproject_____sakai_____CourseSectionImpl_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/sakaiproject_____sakai_____CourseSectionImpl.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.getTimeZone
+
+/**
+     * Decorates the framework's section (group) with metadata from this CourseSection.
+     * 
+     * @param group The framework group
+     */
+    public static final Time convertStringToTime(String str) {
+    	if(StringUtils.trimToNull(str) == null) {
+    		return null;
+    	}
+    	try {
+    		SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(CourseSectionImpl.TIME_FORMAT_LONG);
+        	return new Time(sdf.<mark>parse</mark>(str).getTime());
+    	} catch (Exception e) {
+    		
+    		// Stored in other format, with date and time zone. 
+    		try {
+    			SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>(CourseSectionImpl.TIME_FORMAT_DATE_TZ);
+    			
+    			Calendar src = new GregorianCalendar();
+    			src.setTime(sdf.<mark>parse</mark>(str));
+    			src.setTimeInMillis(src.getTimeInMillis());
+    			
+    			TimeZone srcTz = sdf.<mark>getTimeZone</mark>();
+    			TimeZone userTz = timeService.getLocalTimeZone();
+    			TimeZone serverTz = TimeZone.getDefault();
+    			
+    			Calendar now = new GregorianCalendar(userTz);
+    			
+    			// STORED IN DAYLIGHT SAVING TIME and NOW IS STANDARD
+    			if (srcTz.inDaylightTime(src.getTime()) && !srcTz.inDaylightTime(now.getTime())) 
+    			{
+    				src.setTimeInMillis(src.getTimeInMillis()+srcTz.getDSTSavings());
+    			}
+    			
+    			// STORED IN STANDAR TIME and NOW IS DAYLIGHT SAVING TIME
+    			if (srcTz.inDaylightTime(now.getTime()) && !srcTz.inDaylightTime(src.getTime())) 
+    			{
+    				src.setTimeInMillis(src.getTimeInMillis()-srcTz.getDSTSavings());
+    			}
+    			
+    			// DO THE SAME IN SERVER TIMEZONE
+    			if (serverTz.inDaylightTime(src.getTime()) && !serverTz.inDaylightTime(now.getTime())) 
+    			{
+    				src.setTimeInMillis(src.getTimeInMillis()-serverTz.getDSTSavings());
+    			}
+    			
+    			if (serverTz.inDaylightTime(now.getTime()) && !serverTz.inDaylightTime(src.getTime())) 
+    			{
+    				src.setTimeInMillis(src.getTimeInMillis()+serverTz.getDSTSavings());
+    			}
+    			 
+    			src.set(Calendar.DAY_OF_MONTH, now.get(Calendar.DAY_OF_MONTH));
+    			src.set(Calendar.YEAR, now.get(Calendar.YEAR));
+    			src.set(Calendar.MONTH, now.get(Calendar.MONTH));
+
+    			return new Time(src.getTimeInMillis()+userTz.getOffset(now.getTimeInMillis())-serverTz.getOffset(now.getTimeInMillis()));
+    	    	
+    		} catch (Exception ex) {	
+    			if(log.isDebugEnabled()) log.debug("Unable to parse " + str);
+    			return null;
+    		}
+    	}
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>gjtorikian_____Shelves_____ComicsStore_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/gjtorikian_____Shelves_____ComicsStore.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Creates an instance of
+	 * {@link com.miadzin.shelves.provider.comics.ComicsStore.Comic} with this
+	 * comic store's name.
+	 * 
+	 * @return A new instance of Comic.
+	 */
+		public static Comic fromCursor(Cursor c) {
+			final Comic comic = new Comic();
+
+			comic.mInternalId = c.getString(
+					c.getColumnIndexOrThrow(INTERNAL_ID)).substring(
+					CVInfo.NAME.length());
+			comic.mEan = c.getString(c.getColumnIndexOrThrow(EAN));
+			comic.mTitle = c.getString(c.getColumnIndexOrThrow(TITLE));
+
+			comic.mAuthors = c.getString(c.getColumnIndexOrThrow(AUTHORS));
+
+			comic.mDescriptions = c.getString(c.getColumnIndexOrThrow(REVIEWS));
+
+			final Calendar calendar = Calendar.getInstance();
+			calendar.setTimeInMillis(c.getLong(c
+					.getColumnIndexOrThrow(LAST_MODIFIED)));
+			comic.mLastModified = calendar;
+
+			try {
+				Collections.addAll(comic.mTags,
+						c.getString(c.getColumnIndexOrThrow(TAGS)).split(", "));
+			} catch (Exception e) {
+				// GJT: Ignore, probably null
+			}
+
+			final SimpleDateFormat format = <mark>new SimpleDateFormat</mark>("MMMM yyyy");
+			try {
+				comic.mPublicationDate = format.<mark>parse</mark>(c.getString(c
+						.getColumnIndexOrThrow(PUBLICATION)));
+			} catch (ParseException e) {
+				// Ignore
+			}
+
+			comic.mDetailsUrl = c.getString(c
+					.getColumnIndexOrThrow(DETAILS_URL));
+
+			String tiny_url = c.getString(c.getColumnIndexOrThrow(TINY_URL));
+
+			if (tiny_url != null) {
+				tiny_url = TextUtilities.unprotectString(c.getString(c
+						.getColumnIndexOrThrow(TINY_URL)));
+
+				final int density = Preferences.getDPI();
+
+				switch (density) {
+				case 320:
+					comic.mImages.put(ImageSize.LARGE, tiny_url);
+					break;
+				case 240:
+					comic.mImages.put(ImageSize.MEDIUM, tiny_url);
+					break;
+				case 120:
+					comic.mImages.put(ImageSize.THUMBNAIL, tiny_url);
+					break;
+				case 160:
+				default:
+					comic.mImages.put(ImageSize.TINY, tiny_url);
+					break;
+				}
+			}
+
+			Collections.addAll(comic.mCharacters,
+					c.getString(c.getColumnIndexOrThrow(CHARACTERS))
+							.split(", "));
+			Collections.addAll(comic.mArtists,
+					c.getString(c.getColumnIndexOrThrow(ARTISTS)).split(", "));
+
+			comic.mIssueNumber = c.getString(c.getColumnIndex(ISSUE_NUMBER));
+
+			comic.mRetailPrice = c.getString(c
+					.getColumnIndexOrThrow(RETAIL_PRICE));
+			comic.mRating = c.getInt(c.getColumnIndexOrThrow(RATING));
+
+			comic.mLoanedTo = c.getString(c.getColumnIndex(LOANED_TO));
+
+			String loanDate = c.getString(c.getColumnIndexOrThrow(LOAN_DATE));
+			if (loanDate != null) {
+				try {
+					comic.mLoanDate = Preferences.getDateFormat().<mark>parse</mark>(
+							loanDate);
+				} catch (ParseException e) {
+					// Ignore
+				}
+			}
+
+			String wishlistDate = c.getString(c
+					.getColumnIndexOrThrow(WISHLIST_DATE));
+			if (wishlistDate != null) {
+				try {
+					comic.mWishlistDate = Preferences.getDateFormat().<mark>parse</mark>(
+							wishlistDate);
+				} catch (ParseException e) {
+					// Ignore
+				}
+			}
+
+			comic.mEventId = c.getInt(c.getColumnIndexOrThrow(EVENT_ID));
+			comic.mNotes = c.getString(c.getColumnIndexOrThrow(NOTES));
+
+			comic.mQuantity = c.getString(c.getColumnIndex(QUANTITY));
+
+			return comic;
+		}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>openimaj_____openimaj_____Readability_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/openimaj_____openimaj_____Readability.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+
+/**
+	 * Get the article title.
+	 *
+	 * @return void
+	 **/
+	protected void findArticleDate() {
+		// <meta name="OriginalPublicationDate" content="2010/07/12 14:08:02"/>
+		// <meta name="DC.date.issued" content="2010-07-12">
+		NodeList nl = document.getElementsByTagName("meta");
+		for (int j = 0; j < nl.getLength(); j++) {
+			if (((Element) nl.item(j)).getAttribute("name").equals("OriginalPublicationDate")) {
+				article_date_string = ((Element) nl.item(j)).getAttribute("content");
+				article_date = DateTime.<mark>parse</mark>(article_date_string).toDate();
+				return;
+			}
+			if (((Element) nl.item(j)).getAttribute("name").equals("DC.date.issued")) {
+				article_date_string = ((Element) nl.item(j)).getAttribute("content");
+				article_date = DateTime.<mark>parse</mark>(article_date_string).toDate();
+				return;
+			}
+		}
+
+		// <time datetime="2010-07-12T10:26BST" pubdate>Monday 12 July 2010
+		// 10.26 BST</time>
+		nl = document.getElementsByTagName("time");
+		for (int j = 0; j < nl.getLength(); j++) {
+			if (((Element) nl.item(j)).getAttributeNode("pubdate") != null) {
+				article_date_string = ((Element) nl.item(j)).getAttribute("datetime");
+				article_date = DateTime.<mark>parse</mark>(article_date_string).toDate();
+				return;
+			}
+		}
+
+		// <span class="date">14:08 GMT, Monday, 12 July 2010 15:08 UK</span>
+		// <p class="date">09.07.2010 @ 17:49 CET</p>
+		// <p class="date">Today @ 09:29 CET</p>
+		nl = document.getElementsByTagName("*");
+		for (int j = 0; j < nl.getLength(); j++) {
+			if ((((Element) nl.item(j)).getAttribute("class").contains("date") ||
+					((Element) nl.item(j)).getAttribute("class").contains("Date")) &&
+					!(((Element) nl.item(j)).getAttribute("class").contains("update") ||
+							((Element) nl.item(j)).getAttribute("class").contains("Update")))
+			{
+				article_date_string = getInnerTextSep(nl.item(j)).trim();
+				parseDate();
+				return;
+			}
+		}
+		for (int j = 0; j < nl.getLength(); j++) {
+			if ((((Element) nl.item(j)).getAttribute("id").contains("date") ||
+					((Element) nl.item(j)).getAttribute("id").contains("Date")) &&
+					!(((Element) nl.item(j)).getAttribute("id").contains("update") ||
+							((Element) nl.item(j)).getAttribute("id").contains("Update")))
+			{
+				article_date_string = getInnerTextSep(nl.item(j)).trim();
+				parseDate();
+				return;
+			}
+		}
+
+		// Last updated at 3:05 PM on 12th July 2010
+		nl = document.getElementsByTagName("*");
+		for (int j = 0; j < nl.getLength(); j++) {
+			final String text = nl.item(j).getTextContent();
+
+			if (text == null)
+				continue;
+
+			final Pattern p = Pattern.compile("Last updated at (\\d+:\\d\\d [AP]M on \\d+[thsndr]+ \\w+ \\d\\d\\d\\d)");
+			final Matcher m = p.matcher(text);
+			if (m.find()) {
+				article_date_string = m.group(1);
+
+				String cpy = article_date_string.replaceAll("th", "");
+				cpy = cpy.replaceAll("st", "");
+				cpy = cpy.replaceAll("nd", "");
+				cpy = cpy.replaceAll("rd", "");
+
+				final SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>("h:mm a 'on' dd MMMM yyyy");
+				try {
+					article_date = sdf.<mark>parse</mark>(cpy);
+				} catch (final ParseException e) {
+				}
+				return;
+			}
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>OpenLiberty_____open-liberty_____LocaleUtils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/OpenLiberty_____open-liberty_____LocaleUtils.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.setLenient
+java.text.SimpleDateFormat.parse
+
+/**
+     * This utility method is used to create a date String in proper format based on the Locale so that it can be parsed using DateFormat.
+     *
+     * @param string
+     * @return
+     */     */
+    public static String getLocaleBasedMaxDate() throws ParseException {
+
+        DateFormat zoneFormat = FormatSet.customizeDateFormat(DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM));
+        Calendar cal = zoneFormat.getCalendar();
+        String timeZone = cal.getTimeZone().getDisplayName(false, TimeZone.SHORT);
+        System.out.println(" Timezone : " + timeZone);
+        String currentLocale = Locale.getDefault().toString();
+
+        // In java 9 the default locale changes to have a comma ',' separate the date and time
+        String dateSep = System.getProperty("java.specification.version").startsWith("1.") ? "" : ",";
+
+        if (currentLocale.equalsIgnoreCase("en_US") && isMac(OS)) {
+            return "24/02/13" + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("en_US")) {
+            return "2/24/13" + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("cs_CZ")) {
+            return "24.2.13" + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("de_DE")) {
+            return "24.02.13" + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("es_ES")) {
+            return "24/02/13" + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("fr_FR")) {
+            return "24/02/13" + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("hu_HU")) {
+            return "2013.02.24." + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("it_IT")) {
+            return "24/02/13" + dateSep + " 23.59.59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("ja_JP")) {
+            return "13/02/24" + dateSep + " 23:59:59:999 " + timeZone;
+        } else if (currentLocale.equalsIgnoreCase("ko_KR")) {
+            return "13. 2. 24" + dateSep + "   23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("pl_PL")) {
+            return "24.02.13" + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("pt_BR")) {
+            return "24/02/13" + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("ro_RO")) {
+            return "24.02.2013" + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("ru_RU")) {
+            return "24.02.13" + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("zh")) {
+            return "13-2-24" + dateSep + " 23:59:59:999 " + timeZone;
+
+        } else if (currentLocale.equalsIgnoreCase("zh_TW")) {
+            return "2013/2/24" + dateSep + "   23:59:59:999 " + timeZone;
+        } else {
+
+            DateFormat dateTimeFormat = FormatSet.customizeDateFormat(DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM));
+            dateTimeFormat.<mark>setLenient</mark>(false);
+            SimpleDateFormat sdf = <mark>new SimpleDateFormat</mark>("dd/M/yyyy" + dateSep + " HH:mm:ss:SSS");
+            sdf.<mark>setLenient</mark>(false);
+            Date dt = sdf.<mark>parse</mark>("24/2/2013" + dateSep + " 23:59:59:999");
+            return dateTimeFormat.format(dt);
+
+        }
+
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>HuaweiBigData_____carbondata_____CarbonDataMergerUtil_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/HuaweiBigData_____carbondata_____CarbonDataMergerUtil.java
+
+java.text.SimpleDateFormat.format
+java.text.SimpleDateFormat.parse
+
+/**
+   * Method to check if the load dates are complied to the configured dates.
+   *
+   * @param segDate1
+   * @param segDate2
+   * @return
+   */   */
+  private static List<LoadMetadataDetails> identifySegmentsToBeMergedBasedOnLoadedDate(
+      List<LoadMetadataDetails> listOfSegmentsBelowThresholdSize) {
+
+    List<LoadMetadataDetails> loadsOfSameDate =
+        new ArrayList<>(CarbonCommonConstants.DEFAULT_COLLECTION_SIZE);
+
+    long numberOfDaysAllowedToMerge = 0;
+    try {
+      numberOfDaysAllowedToMerge = Long.parseLong(CarbonProperties.getInstance()
+          .getProperty(CarbonCommonConstants.DAYS_ALLOWED_TO_COMPACT,
+              CarbonCommonConstants.DEFAULT_DAYS_ALLOWED_TO_COMPACT));
+      if (numberOfDaysAllowedToMerge < 0 || numberOfDaysAllowedToMerge > 100) {
+        LOGGER.error(
+            "The specified value for property " + CarbonCommonConstants.DAYS_ALLOWED_TO_COMPACT
+                + " is incorrect."
+                + " Correct value should be in range of 0 -100. Taking the default value.");
+        numberOfDaysAllowedToMerge =
+            Long.parseLong(CarbonCommonConstants.DEFAULT_DAYS_ALLOWED_TO_COMPACT);
+      }
+
+    } catch (NumberFormatException e) {
+      numberOfDaysAllowedToMerge =
+          Long.parseLong(CarbonCommonConstants.DEFAULT_DAYS_ALLOWED_TO_COMPACT);
+    }
+    // if true then process loads according to the load date.
+    if (numberOfDaysAllowedToMerge > 0) {
+
+      // filter loads based on the loaded date
+      boolean first = true;
+      Date segDate1 = null;
+      SimpleDateFormat sdf = new SimpleDateFormat(CarbonCommonConstants.CARBON_TIMESTAMP);
+      for (LoadMetadataDetails segment : listOfSegmentsBelowThresholdSize) {
+        // compaction should skip streaming segments
+        if (CarbonCommonConstants.STORE_LOADSTATUS_STREAMING.equals(segment.getLoadStatus()) ||
+            CarbonCommonConstants.STORE_LOADSTATUS_STREAMING_FINISH.equals(
+                segment.getLoadStatus())) {
+          continue;
+        }
+
+        if (first) {
+          segDate1 = initializeFirstSegment(loadsOfSameDate, segment, sdf);
+          first = false;
+          continue;
+        }
+        long segmentDate = segment.getLoadStartTime();
+        Date segDate2 = null;
+        try {
+          segDate2 = sdf.<mark>parse</mark>(sdf.<mark>format</mark>(segmentDate));
+        } catch (ParseException e) {
+          LOGGER.error("Error while parsing segment start time" + e.getMessage());
+        }
+
+        if (isTwoDatesPresentInRequiredRange(segDate1, segDate2, numberOfDaysAllowedToMerge)) {
+          loadsOfSameDate.add(segment);
+        }
+        // if the load is beyond merged date.
+        // then reset everything and continue search for loads.
+        else if (loadsOfSameDate.size() < 2) {
+          loadsOfSameDate.clear();
+          // need to add the next segment as first and  to check further
+          segDate1 = initializeFirstSegment(loadsOfSameDate, segment, sdf);
+        } else { // case where a load is beyond merge date and there is at least 2 loads to merge.
+          break;
+        }
+      }
+    } else {
+      for (LoadMetadataDetails segment : listOfSegmentsBelowThresholdSize) {
+        // compaction should skip streaming segments
+        if (CarbonCommonConstants.STORE_LOADSTATUS_STREAMING.equals(segment.getLoadStatus()) ||
+            CarbonCommonConstants.STORE_LOADSTATUS_STREAMING_FINISH.equals(
+                segment.getLoadStatus())) {
+          continue;
+        }
+        loadsOfSameDate.add(segment);
+      }
+    }
+
+    return loadsOfSameDate;
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____carbondata_____CarbonDataMergerUtil_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/apache_____carbondata_____CarbonDataMergerUtil.java
+
+java.text.SimpleDateFormat.format
+java.text.SimpleDateFormat.parse
+
+/**
+   * Method to check if the load dates are complied to the configured dates.
+   *
+   * @param segDate1
+   * @param segDate2
+   * @return
+   */   */
+  private static List<LoadMetadataDetails> identifySegmentsToBeMergedBasedOnLoadedDate(
+      List<LoadMetadataDetails> listOfSegmentsBelowThresholdSize, Map<String, String> tblProps) {
+
+    List<LoadMetadataDetails> loadsOfSameDate =
+        new ArrayList<>(CarbonCommonConstants.DEFAULT_COLLECTION_SIZE);
+
+    long numberOfDaysAllowedToMerge = 0;
+    try {
+      // overwrite system level option by table level option if exists
+      numberOfDaysAllowedToMerge = Long.parseLong(CarbonProperties.getInstance()
+              .getProperty(CarbonCommonConstants.DAYS_ALLOWED_TO_COMPACT,
+                      CarbonCommonConstants.DEFAULT_DAYS_ALLOWED_TO_COMPACT));
+      if (tblProps.containsKey(CarbonCommonConstants.TABLE_ALLOWED_COMPACTION_DAYS)) {
+        numberOfDaysAllowedToMerge = Long.parseLong(
+                tblProps.get(CarbonCommonConstants.TABLE_ALLOWED_COMPACTION_DAYS));
+      }
+
+      if (numberOfDaysAllowedToMerge < 0 || numberOfDaysAllowedToMerge > 100) {
+        LOGGER.error(
+            "The specified value for property " + CarbonCommonConstants.DAYS_ALLOWED_TO_COMPACT
+                + " is incorrect."
+                + " Correct value should be in range of 0 -100. Taking the default value.");
+        numberOfDaysAllowedToMerge =
+            Long.parseLong(CarbonCommonConstants.DEFAULT_DAYS_ALLOWED_TO_COMPACT);
+      }
+
+    } catch (NumberFormatException e) {
+      numberOfDaysAllowedToMerge =
+          Long.parseLong(CarbonCommonConstants.DEFAULT_DAYS_ALLOWED_TO_COMPACT);
+    }
+    // if true then process loads according to the load date.
+    if (numberOfDaysAllowedToMerge > 0) {
+
+      // filter loads based on the loaded date
+      boolean first = true;
+      Date segDate1 = null;
+      SimpleDateFormat sdf = new SimpleDateFormat(CarbonCommonConstants.CARBON_TIMESTAMP);
+      for (LoadMetadataDetails segment : listOfSegmentsBelowThresholdSize) {
+        // compaction should skip streaming segments
+        if (segment.getSegmentStatus() == SegmentStatus.STREAMING ||
+            segment.getSegmentStatus() == SegmentStatus.STREAMING_FINISH) {
+          continue;
+        }
+
+        if (first) {
+          segDate1 = initializeFirstSegment(loadsOfSameDate, segment, sdf);
+          first = false;
+          continue;
+        }
+        long segmentDate = segment.getLoadStartTime();
+        Date segDate2 = null;
+        try {
+          segDate2 = sdf.<mark>parse</mark>(sdf.<mark>format</mark>(segmentDate));
+        } catch (ParseException e) {
+          LOGGER.error("Error while parsing segment start time" + e.getMessage(), e);
+        }
+
+        if (isTwoDatesPresentInRequiredRange(segDate1, segDate2, numberOfDaysAllowedToMerge)) {
+          loadsOfSameDate.add(segment);
+        }
+        // if the load is beyond merged date.
+        // then reset everything and continue search for loads.
+        else if (loadsOfSameDate.size() < 2) {
+          loadsOfSameDate.clear();
+          // need to add the next segment as first and  to check further
+          segDate1 = initializeFirstSegment(loadsOfSameDate, segment, sdf);
+        } else { // case where a load is beyond merge date and there is at least 2 loads to merge.
+          break;
+        }
+      }
+    } else {
+      for (LoadMetadataDetails segment : listOfSegmentsBelowThresholdSize) {
+        // compaction should skip streaming segments
+        if (segment.getSegmentStatus() == SegmentStatus.STREAMING ||
+            segment.getSegmentStatus() == SegmentStatus.STREAMING_FINISH) {
+          continue;
+        }
+        loadsOfSameDate.add(segment);
+      }
+    }
+
+    return loadsOfSameDate;
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>OpenClinica_____OpenClinica_____StudyController_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/OpenClinica_____OpenClinica_____StudyController.java
+
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.format
+java.text.SimpleDateFormat.&ltinit&gt
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.format
+
+/**
+     * @api {post} /pages/auth/api/v1/studies/:studyEnvUuid/sites Create a site
+     * @apiName createNewSite
+     * @apiPermission Authenticate using api-key. admin
+     * @apiVersion 3.8.0
+     * @apiParam {String} studyEnvUuid Study environment uuid.
+     * @apiParam {String} briefTitle Brief Title .
+     * @apiParam {String} principalInvestigator Principal Investigator Name.
+     * @apiParam {Integer} expectedTotalEnrollment Expected Total Enrollment number
+     * @apiParam {String} secondaryStudyID Site Secondary Study Id  (Optional)
+     * @apiParam {Date} startDate Start date
+     * @apiParam {Date} studyDateVerification study Verification date
+     * @apiParam {Array} assignUserRoles Assign Users to Roles for this Study.
+     * @apiGroup Site
+     * @apiHeader {String} api_key Users unique access-key.
+     * @apiDescription Create a Site
+     * @apiParamExample {json} Request-Example:
+     * {
+     * "briefTitle": "Site Study ID Name",
+     * "principalInvestigator": "Principal Investigator Name",
+     * "expectedTotalEnrollment": "10",
+     * "assignUserRoles": [
+     * { "username" : "userc", "role" : "Investigator"},
+     * { "username" : "userb", "role" : "Clinical Research Coordinator"},
+     * { "username" : "dm_normal", "role" : "Monitor"},
+     * { "username" : "sd_root", "role" : "Data Entry Person"}
+     * ],
+     * "uniqueStudyID": "Site Study ID",
+     * "startDate": "2011-11-11",
+     * "secondaryStudyID" : "Secondary Study ID 1" ,
+     * "studyDateVerification" : "2011-10-14"
+     * }
+     * @apiErrorExample {json} Error-Response:
+     * HTTP/1.1 400 Bad Request
+     * {
+     * "message": "VALIDATION FAILED",
+     * "studyDateVerification": "2011-10-14",
+     * "principalInvestigator": "Principal Investigator Name",
+     * "expectedTotalEnrollment": "10",
+     * "errors": [
+     * { "field": "studyEnvUuid", "resource": "Site Object","code": "Unique Study Id exist in the System" }
+     * ],
+     * "secondaryProId": "Secondary Study ID 1",
+     * "siteOid": null,
+     * "briefTitle": "Site Study ID Name",
+     * "assignUserRoles": [
+     * { "role": "Investigator", "username": "userc"},
+     * { "role": "Clinical Research Coordinator", "username": "userb"},
+     * { "role": "Monitor","username": "dm_normal"},
+     * { "role": "Data Entry Person","username": "sd_root"}
+     * ],
+     * "studyEnvUuid": "Site Study ID",
+     * "startDate": "2011-11-11"
+     * }
+     * @apiSuccessExample {json} Success-Response:
+     * HTTP/1.1 200 OK
+     * {
+     * "message": "SUCCESS",
+     * "siteOid": "S_SITEPROT",
+     * "uniqueSiteStudyID": "Site Study IDqq"
+     * }
+     */
+    private Date formatDateString(String dateStr, String fieldName, List<ErrorObj> errorObjects) throws ParseException {
+        String format = "yyyy-MM-dd";
+        SimpleDateFormat formatter = null;
+        Date formattedDate = null;
+        if (dateStr != "" && dateStr != null) {
+            try {
+                formatter = <mark>new SimpleDateFormat</mark>(format);
+                formattedDate = formatter.<mark>parse</mark>(dateStr);
+            } catch (ParseException e) {
+                ErrorObj errorObject = createErrorObject("Study Object",
+                        "The StartDate format is not a valid 'yyyy-MM-dd' format", "fieldName");
+                errorObjects.add(errorObject);
+            }
+            if (formattedDate != null) {
+                if (!dateStr.equals(formatter.<mark>format</mark>(formattedDate))) {
+                    ErrorObj errorObject = createErrorObject("Study Object",
+                            "The StartDate format is not a valid 'yyyy-MM-dd' format", fieldName);
+                    errorObjects.add(errorObject);
+                }
+            }
+        }
+        return formattedDate;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dmlloyd_____openjdk_____FtpClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/dmlloyd_____openjdk_____FtpClient.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+     * Sets the parser used to handle the directory output to the specified
+     * one. By default the parser is set to one that can handle most FTP
+     * servers output (Unix base mostly). However it may be necessary for
+     * and application to provide its own parser due to some uncommon
+     * output format.
+     *
+     * @param p The <code>FtpDirParser</code> to use.
+     * @see #listFiles(String)
+     */
+        public FtpDirEntry parseLine(String line) {
+            String fdate = null;
+            String fsize = null;
+            String time = null;
+            String filename = null;
+            String permstring = null;
+            String username = null;
+            String groupname = null;
+            boolean dir = false;
+            Calendar now = Calendar.getInstance();
+            int year = now.get(Calendar.YEAR);
+
+            Matcher m = null;
+            for (int j = 0; j < patterns.length; j++) {
+                m = patterns[j].matcher(line);
+                if (m.find()) {
+                    // 0 - file, 1 - size, 2 - date, 3 - time, 4 - year,
+                    // 5 - permissions, 6 - user, 7 - group
+                    filename = m.group(patternGroups[j][0]);
+                    fsize = m.group(patternGroups[j][1]);
+                    fdate = m.group(patternGroups[j][2]);
+                    if (patternGroups[j][4] > 0) {
+                        fdate += (", " + m.group(patternGroups[j][4]));
+                    } else if (patternGroups[j][3] > 0) {
+                        fdate += (", " + String.valueOf(year));
+                    }
+                    if (patternGroups[j][3] > 0) {
+                        time = m.group(patternGroups[j][3]);
+                    }
+                    if (patternGroups[j][5] > 0) {
+                        permstring = m.group(patternGroups[j][5]);
+                        dir = permstring.startsWith("d");
+                    }
+                    if (patternGroups[j][6] > 0) {
+                        username = m.group(patternGroups[j][6]);
+                    }
+                    if (patternGroups[j][7] > 0) {
+                        groupname = m.group(patternGroups[j][7]);
+                    }
+                    // Old DOS format
+                    if ("<DIR>".equals(fsize)) {
+                        dir = true;
+                        fsize = null;
+                    }
+                }
+            }
+
+            if (filename != null) {
+                Date d;
+                try {
+                    d = df.<mark>parse</mark>(fdate);
+                } catch (Exception e) {
+                    d = null;
+                }
+                if (d != null && time != null) {
+                    int c = time.indexOf(':');
+                    now.setTime(d);
+                    now.set(Calendar.HOUR, Integer.parseInt(time, 0, c, 10));
+                    now.set(Calendar.MINUTE, Integer.parseInt(time, c + 1, time.length(), 10));
+                    d = now.getTime();
+                }
+                // see if it's a symbolic link, i.e. the name if followed
+                // by a -> and a path
+                Matcher m2 = linkp.matcher(filename);
+                if (m2.find()) {
+                    // Keep only the name then
+                    filename = m2.group(1);
+                }
+                boolean[][] perms = new boolean[3][3];
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        perms[i][j] = (permstring.charAt((i * 3) + j) != '-');
+                    }
+                }
+                FtpDirEntry file = new FtpDirEntry(filename);
+                file.setUser(username).setGroup(groupname);
+                file.setSize(Long.parseLong(fsize)).setLastModified(d);
+                file.setPermissions(perms);
+                file.setType(dir ? FtpDirEntry.Type.DIR : (line.charAt(0) == 'l' ? FtpDirEntry.Type.LINK : FtpDirEntry.Type.FILE));
+                return file;
+            }
+            return null;
+        }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>openjdk-mirror_____jdk7u-jdk_____FtpClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/openjdk-mirror_____jdk7u-jdk_____FtpClient.java
+
+java.text.SimpleDateFormat.parse
+
+/**
+     * Sets the parser used to handle the directory output to the specified
+     * one. By default the parser is set to one that can handle most FTP
+     * servers output (Unix base mostly). However it may be necessary for
+     * and application to provide its own parser due to some uncommon
+     * output format.
+     *
+     * @param p The <code>FtpDirParser</code> to use.
+     * @see #listFiles(String)
+     */
+        public FtpDirEntry parseLine(String line) {
+            String fdate = null;
+            String fsize = null;
+            String time = null;
+            String filename = null;
+            String permstring = null;
+            String username = null;
+            String groupname = null;
+            boolean dir = false;
+            Calendar now = Calendar.getInstance();
+            int year = now.get(Calendar.YEAR);
+
+            Matcher m = null;
+            for (int j = 0; j < patterns.length; j++) {
+                m = patterns[j].matcher(line);
+                if (m.find()) {
+                    // 0 - file, 1 - size, 2 - date, 3 - time, 4 - year,
+                    // 5 - permissions, 6 - user, 7 - group
+                    filename = m.group(patternGroups[j][0]);
+                    fsize = m.group(patternGroups[j][1]);
+                    fdate = m.group(patternGroups[j][2]);
+                    if (patternGroups[j][4] > 0) {
+                        fdate += (", " + m.group(patternGroups[j][4]));
+                    } else if (patternGroups[j][3] > 0) {
+                        fdate += (", " + String.valueOf(year));
+                    }
+                    if (patternGroups[j][3] > 0) {
+                        time = m.group(patternGroups[j][3]);
+                    }
+                    if (patternGroups[j][5] > 0) {
+                        permstring = m.group(patternGroups[j][5]);
+                        dir = permstring.startsWith("d");
+                    }
+                    if (patternGroups[j][6] > 0) {
+                        username = m.group(patternGroups[j][6]);
+                    }
+                    if (patternGroups[j][7] > 0) {
+                        groupname = m.group(patternGroups[j][7]);
+                    }
+                    // Old DOS format
+                    if ("<DIR>".equals(fsize)) {
+                        dir = true;
+                        fsize = null;
+                    }
+                }
+            }
+
+            if (filename != null) {
+                Date d;
+                try {
+                    d = df.<mark>parse</mark>(fdate);
+                } catch (Exception e) {
+                    d = null;
+                }
+                if (d != null && time != null) {
+                    int c = time.indexOf(":");
+                    now.setTime(d);
+                    now.set(Calendar.HOUR, Integer.parseInt(time.substring(0, c)));
+                    now.set(Calendar.MINUTE, Integer.parseInt(time.substring(c + 1)));
+                    d = now.getTime();
+                }
+                // see if it's a symbolic link, i.e. the name if followed
+                // by a -> and a path
+                Matcher m2 = linkp.matcher(filename);
+                if (m2.find()) {
+                    // Keep only the name then
+                    filename = m2.group(1);
+                }
+                boolean[][] perms = new boolean[3][3];
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        perms[i][j] = (permstring.charAt((i * 3) + j) != '-');
+                    }
+                }
+                FtpDirEntry file = new FtpDirEntry(filename);
+                file.setUser(username).setGroup(groupname);
+                file.setSize(Long.parseLong(fsize)).setLastModified(d);
+                file.setPermissions(perms);
+                file.setType(dir ? FtpDirEntry.Type.DIR : (line.charAt(0) == 'l' ? FtpDirEntry.Type.LINK : FtpDirEntry.Type.FILE));
+                return file;
+            }
+            return null;
+        }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>treygrainger_____solr-in-action_____IndexUfoSightings_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/treygrainger_____solr-in-action_____IndexUfoSightings.java
+
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.parse
+
+/**
+     * Create a fictitious sighting to experiment with highlighting multi-valued
+     * fields in Solr.
+     */     */
+    protected SolrInputDocument parseNextDoc(String line, int lineNum) {
+        Map jsonObj = null;
+        try {
+            jsonObj = (Map)ObjectBuilder.fromJSON(line);
+        } catch (Exception jsonErr) {
+            if (beVerbose) {
+                log.warn("Skipped invalid sighting at line "+lineNum+
+                    "; Failed to parse ["+line+"] into JSON due to: "+jsonErr);
+            }
+            return null;
+        }
+
+        String sighted_at = readField(jsonObj, "sighted_at");
+        String location = readField(jsonObj, "location");
+        String description = readField(jsonObj, "description");
+
+        // ignore rows that don't have valid data
+        if (sighted_at == null || location == null || description == null) {
+            if (beVerbose) {
+                log.warn("Skipped incomplete sighting at line "+lineNum+"; "+line);
+            }
+            return null;
+        }
+
+        // require the sighted_at date to be valid
+        Date sighted_at_dt = null;
+        try {
+            sighted_at_dt = DATE_FORMATTER.<mark>parse</mark>(sighted_at);
+        } catch (java.text.ParseException pe) {
+            if (beVerbose) {
+                log.warn("Skipped sighting at line "+lineNum+
+                    " due to invalid sighted_at date ("+sighted_at+") caused by: "+pe);
+            }
+            return null;
+        }
+
+        // Verify the location matches the pattern of US City and State
+        Matcher matcher = MATCH_US_CITY_AND_STATE.matcher(location);
+        if (!matcher.matches()) {
+            if (beVerbose) {
+                log.warn("Skipped sighting at line "+lineNum+
+                    " because location ["+location+"] does not look like a US city and state.");
+            }
+            return null;
+        }
+
+        // split the cit and state into separate fields
+        String city = matcher.group(1);
+        String state = matcher.group(2);
+
+        // Clean-up the sighting description, mostly for display purposes
+
+        // description has some XML escape sequences ... convert back to chars
+        description = description.replace("&quot;", "\"").replace("&amp;", "&").replace("&apos;", "'");
+        description = description.replaceAll("\\s+", " "); // collapse all whitespace down to 1 space
+        description = description.replaceAll("([a-z])([\\.\\?!,;])([A-Z])", "$1$2 $3"); // fix missing space at end of sentence
+        description = description.replaceAll("([a-z])([A-Z])", "$1 $2"); // fix missing space between end of word and new word
+
+        String reported_at = readField(jsonObj, "reported_at");
+        String shape = readField(jsonObj, "shape");
+        String duration = readField(jsonObj, "duration");
+
+        // every doc needs a unique id - create a composite key based on sighting data
+        String docId = String.format("%s/%s/%s/%s/%s/%s",
+            sighted_at,
+            (reported_at != null ? reported_at : "?"),
+            city.replaceAll("\\s+",""),
+            state,
+            (shape != null ? shape : "?"),
+            ExampleDriver.getMD5Hash(description)).toLowerCase();
+
+        SolrInputDocument doc = new SolrInputDocument();
+        doc.setField("id", docId);
+        doc.setField("sighted_at_dt", sighted_at_dt);
+        // another field to facet on
+        doc.setField("month_s", MONTH_NAME_FMT.format(sighted_at_dt));
+
+        if (reported_at != null) {
+            try {
+                doc.setField("reported_at_dt", DATE_FORMATTER.<mark>parse</mark>(reported_at));
+            } catch (java.text.ParseException pe) {
+                // not fatal - just ignore this invalid field
+            }
+        }
+
+        doc.setField("city_s", city);
+        doc.setField("state_s", state);
+        doc.setField("location_s", location); // keep this field around for faceting on the full location
+
+        if (shape != null) {
+            doc.setField("shape_s", shape);
+        }
+
+        if (duration != null) {
+            doc.setField("duration_s", duration);
+        }
+
+        doc.setField("sighting_en", description);
+
+        return doc;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>Fleker_____CumulusTV_____CumulusXmlParser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/Fleker_____CumulusTV_____CumulusXmlParser.java
+
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.parse
+
+/**
+         * @return All channels found by the XmlTvParser.
+         */
+    private static Program parseProgram(XmlPullParser parser)
+            throws IOException, XmlPullParserException, ParseException {
+        String channelId = null;
+        Long startTimeUtcMillis = null;
+        Long endTimeUtcMillis = null;
+        String videoSrc = null;
+        int videoType = TvContractUtils.SOURCE_TYPE_HTTP_PROGRESSIVE;
+        for (int i = 0; i < parser.getAttributeCount(); ++i) {
+            String attr = parser.getAttributeName(i);
+            String value = parser.getAttributeValue(i);
+            if (ATTR_CHANNEL.equalsIgnoreCase(attr)) {
+                channelId = value;
+            } else if (ATTR_START.equalsIgnoreCase(attr)) {
+                startTimeUtcMillis = DATE_FORMAT.<mark>parse</mark>(value).getTime();
+            } else if (ATTR_STOP.equalsIgnoreCase(attr)) {
+                endTimeUtcMillis = DATE_FORMAT.<mark>parse</mark>(value).getTime();
+            } else if (ATTR_VIDEO_SRC.equalsIgnoreCase(attr)) {
+                videoSrc = value;
+            } else if (ATTR_VIDEO_TYPE.equalsIgnoreCase(attr)) {
+                if (VALUE_VIDEO_TYPE_HTTP_PROGRESSIVE.equals(value)) {
+                    videoType = TvContractUtils.SOURCE_TYPE_HTTP_PROGRESSIVE;
+                } else if (VALUE_VIDEO_TYPE_HLS.equals(value)) {
+                    videoType = TvContractUtils.SOURCE_TYPE_HLS;
+                } else if (VALUE_VIDEO_TYPE_MPEG_DASH.equals(value)) {
+                    videoType = TvContractUtils.SOURCE_TYPE_MPEG_DASH;
+                }
+            }
+        }
+        String title = null;
+        String description = null;
+        XmlTvIcon icon = null;
+        List<String> category = new ArrayList<>();
+        List<TvContentRating> rating = new ArrayList<>();
+        List<Advertisement> ads = new ArrayList<>();
+        while (parser.next() != XmlPullParser.END_DOCUMENT) {
+            String tagName = parser.getName();
+            if (parser.getEventType() == XmlPullParser.START_TAG) {
+                if (TAG_TITLE.equalsIgnoreCase(parser.getName())) {
+                    title = parser.nextText();
+                } else if (TAG_DESC.equalsIgnoreCase(tagName)) {
+                    description = parser.nextText();
+                } else if (TAG_ICON.equalsIgnoreCase(tagName)) {
+                    icon = parseIcon(parser);
+                } else if (TAG_CATEGORY.equalsIgnoreCase(tagName)) {
+                    category.add(parser.nextText());
+                } else if (TAG_RATING.equalsIgnoreCase(tagName)) {
+                    TvContentRating xmlTvRating = xmlTvRatingToTvContentRating(parseRating(parser));
+                    if (xmlTvRating != null)
+                        rating.add(xmlTvRating);
+                } else if (TAG_AD.equalsIgnoreCase(tagName)) {
+                    ads.add(parseAd(parser, TAG_PROGRAM));
+                }
+            } else if (TAG_PROGRAM.equalsIgnoreCase(tagName)
+                    && parser.getEventType() == XmlPullParser.END_TAG) {
+                break;
+            }
+        }
+        if (TextUtils.isEmpty(channelId) || startTimeUtcMillis == null
+                || endTimeUtcMillis == null) {
+            throw new IllegalArgumentException("channel, start, and end can not be null.");
+        }
+        InternalProviderData internalProviderData = new InternalProviderData();
+        internalProviderData.setVideoType(videoType);
+        internalProviderData.setVideoUrl(videoSrc);
+        internalProviderData.setAds(ads);
+        return new Program.Builder()
+                .setChannelId(channelId.hashCode())
+                .setTitle(title)
+                .setDescription(description)
+                .setPosterArtUri(icon != null ? icon.src : null)
+                .setCanonicalGenres(category.toArray(new String[category.size()]))
+                .setStartTimeUtcMillis(startTimeUtcMillis)
+                .setEndTimeUtcMillis(endTimeUtcMillis)
+                .setContentRatings(rating.toArray(new TvContentRating[rating.size()]))
+                // NOTE: {@code COLUMN_INTERNAL_PROVIDER_DATA} is a private field
+                // where TvInputService can store anything it wants. Here, we store
+                // video type and video URL so that TvInputService can play the
+                // video later with this field.
+                .setInternalProviderData(internalProviderData)
+                .build();
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>googlesamples_____androidtv-sample-inputs_____XmlTvParser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_text_SimpleDateFormat/googlesamples_____androidtv-sample-inputs_____XmlTvParser.java
+
+java.text.SimpleDateFormat.parse
+java.text.SimpleDateFormat.parse
+
+/** @return All channels found by the XmlTvParser. */
+    private static Program parseProgram(XmlPullParser parser)
+            throws IOException, XmlPullParserException, ParseException {
+        String channelId = null;
+        Long startTimeUtcMillis = null;
+        Long endTimeUtcMillis = null;
+        String videoSrc = null;
+        int videoType = TvContractUtils.SOURCE_TYPE_HTTP_PROGRESSIVE;
+        for (int i = 0; i < parser.getAttributeCount(); ++i) {
+            String attr = parser.getAttributeName(i);
+            String value = parser.getAttributeValue(i);
+            if (ATTR_CHANNEL.equalsIgnoreCase(attr)) {
+                channelId = value;
+            } else if (ATTR_START.equalsIgnoreCase(attr)) {
+                startTimeUtcMillis = DATE_FORMAT.<mark>parse</mark>(value).getTime();
+            } else if (ATTR_STOP.equalsIgnoreCase(attr)) {
+                endTimeUtcMillis = DATE_FORMAT.<mark>parse</mark>(value).getTime();
+            } else if (ATTR_VIDEO_SRC.equalsIgnoreCase(attr)) {
+                videoSrc = value;
+            } else if (ATTR_VIDEO_TYPE.equalsIgnoreCase(attr)) {
+                if (VALUE_VIDEO_TYPE_HTTP_PROGRESSIVE.equals(value)) {
+                    videoType = TvContractUtils.SOURCE_TYPE_HTTP_PROGRESSIVE;
+                } else if (VALUE_VIDEO_TYPE_HLS.equals(value)) {
+                    videoType = TvContractUtils.SOURCE_TYPE_HLS;
+                } else if (VALUE_VIDEO_TYPE_MPEG_DASH.equals(value)) {
+                    videoType = TvContractUtils.SOURCE_TYPE_MPEG_DASH;
+                }
+            }
+        }
+        String title = null;
+        String description = null;
+        XmlTvIcon icon = null;
+        List<String> category = new ArrayList<>();
+        List<TvContentRating> rating = new ArrayList<>();
+        List<Advertisement> ads = new ArrayList<>();
+        while (parser.next() != XmlPullParser.END_DOCUMENT) {
+            String tagName = parser.getName();
+            if (parser.getEventType() == XmlPullParser.START_TAG) {
+                if (TAG_TITLE.equalsIgnoreCase(parser.getName())) {
+                    title = parser.nextText();
+                } else if (TAG_DESC.equalsIgnoreCase(tagName)) {
+                    description = parser.nextText();
+                } else if (TAG_ICON.equalsIgnoreCase(tagName)) {
+                    icon = parseIcon(parser);
+                } else if (TAG_CATEGORY.equalsIgnoreCase(tagName)) {
+                    category.add(parser.nextText());
+                } else if (TAG_RATING.equalsIgnoreCase(tagName)) {
+                    TvContentRating xmlTvRating = xmlTvRatingToTvContentRating(parseRating(parser));
+                    if (xmlTvRating != null) {
+                        rating.add(xmlTvRating);
+                    }
+                } else if (TAG_AD.equalsIgnoreCase(tagName)) {
+                    ads.add(parseAd(parser, TAG_PROGRAM));
+                }
+            } else if (TAG_PROGRAM.equalsIgnoreCase(tagName)
+                    && parser.getEventType() == XmlPullParser.END_TAG) {
+                break;
+            }
+        }
+        if (TextUtils.isEmpty(channelId)
+                || startTimeUtcMillis == null
+                || endTimeUtcMillis == null) {
+            throw new IllegalArgumentException("channel, start, and end can not be null.");
+        }
+        InternalProviderData internalProviderData = new InternalProviderData();
+        internalProviderData.setVideoType(videoType);
+        internalProviderData.setVideoUrl(videoSrc);
+        internalProviderData.setAds(ads);
+        return new Program.Builder()
+                .setChannelId(channelId.hashCode())
+                .setTitle(title)
+                .setDescription(description)
+                .setPosterArtUri(icon.src)
+                .setCanonicalGenres(category.toArray(new String[category.size()]))
+                .setStartTimeUtcMillis(startTimeUtcMillis)
+                .setEndTimeUtcMillis(endTimeUtcMillis)
+                .setContentRatings(rating.toArray(new TvContentRating[rating.size()]))
+                // NOTE: {@code COLUMN_INTERNAL_PROVIDER_DATA} is a private field
+                // where TvInputService can store anything it wants. Here, we store
+                // video type and video URL so that TvInputService can play the
+                // video later with this field.
+                .setInternalProviderData(internalProviderData)
+                .build();
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+        

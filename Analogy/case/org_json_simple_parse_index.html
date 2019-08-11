@@ -1,0 +1,4655 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">org_json_simple</h1>
+      <br>
+      <h4 class="col-lg-12 col-md-12 mb-12">parse</h4>
+    </div>
+    
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>geoserver_____geoserver_____PagedUniqueProcessPPIO_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/geoserver_____geoserver_____PagedUniqueProcessPPIO.java
+
+org.json.simple.parser.JSONParser.parse
+
+    @Override
+    public Object decode(String input) throws Exception {
+        return parser.<mark>parse</mark>(input);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>eishay_____jvm-serializers_____JsonSimpleManualTree_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/eishay_____jvm-serializers_____JsonSimpleManualTree.java
+
+org.json.simple.parser.JSONParser.parse
+
+
+    static Image readImage(JSONParser parser, String imageJsonInput) throws Exception
+    {
+      JSONObject imageJsonObject = (JSONObject) parser.<mark>parse</mark>(imageJsonInput);
+      return readImage(parser, imageJsonObject);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>eishay_____jvm-serializers_____JsonSimpleManualTree_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/eishay_____jvm-serializers_____JsonSimpleManualTree.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+
+    static Media readMedia(JSONParser parser, String mediaJsonInput) throws Exception
+    {
+      JSONObject mediaJsonObject = (JSONObject) parser.<mark>parse</mark>(mediaJsonInput);
+      return readMedia(parser, mediaJsonObject);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultNexusIQClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultNexusIQClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+
+
+    private JSONArray parseAsArray(String url) throws ParseException {
+        ResponseEntity<String> response = rest.exchange(url, HttpMethod.GET, createHeaders(url), String.class);
+        return (JSONArray) <mark>new JSONParser</mark>().<mark>parse</mark>(response.getBody());
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>pulse00_____Symfony-2-Eclipse-Plugin_____JsonUtils_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/pulse00_____Symfony-2-Eclipse-Plugin_____JsonUtils.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+
+    public static JSONArray parseArray(String defaults) {
+
+        try {
+            return (JSONArray) parser.<mark>parse</mark>(defaults);
+        } catch (Exception e) {
+            Logger.logException(e);
+            return new JSONArray();
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>wso2_____product-is_____SCIM2CommonClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/wso2_____product-is_____SCIM2CommonClient.java
+
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Get file path.
+     *
+     * @param fileName File name.
+     * @return File path.
+     * @throws Exception Exception.
+     */     */
+    public JSONObject getUserJSON(String fileName) throws Exception {
+
+        return (JSONObject) parser.<mark>parse</mark>(new FileReader(getFilePath(fileName, SCIM2_USERS_LOCATION)));
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultSonarClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultSonarClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+
+    protected JSONArray parseAsArray(String url) throws ParseException {
+        ResponseEntity<String> response = rest.exchange(url, HttpMethod.GET, this.httpHeaders, String.class);
+        return (JSONArray) <mark>new JSONParser</mark>().<mark>parse</mark>(response.getBody());
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>pulse00_____Symfony-2-Eclipse-Plugin_____JsonUtils_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/pulse00_____Symfony-2-Eclipse-Plugin_____JsonUtils.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.&ltinit&gt
+
+
+    public static JSONObject getReferenceData(String metadata) {
+
+        try {
+            JSONObject header = (JSONObject) parser.<mark>parse</mark>(metadata);
+            return (JSONObject) header.get("data");
+        } catch (ParseException e) {
+
+            Logger.logException(e);
+        }
+        return null;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>pulse00_____Symfony-2-Eclipse-Plugin_____JsonUtils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/pulse00_____Symfony-2-Eclipse-Plugin_____JsonUtils.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+
+    public static String getElementType(String metadata) {
+
+        try {
+
+            JSONObject json = (JSONObject) parser.<mark>parse</mark>(metadata);
+            String type = (String) json.<mark>get</mark>("type");
+            return type;
+        } catch (ParseException e) {
+            Logger.logException(e);
+        }
+
+        return null;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>usc-isi-i2_____Web-Karma_____JSONLDUtilSimple_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/usc-isi-i2_____Web-Karma_____JSONLDUtilSimple.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.JSONObject.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+
+	
+	public static JSONObject mergeJSONObjects(String left, String right, Map<String, String> provenanceProperties) throws ParseException
+	{
+
+		JSONParser parser = <mark>new JSONParser</mark>();
+		return mergeJSONObjects((JSONObject)parser.<mark>parse</mark>(left), (JSONObject)parser.<mark>parse</mark>(right), provenanceProperties);
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>pulse00_____Symfony-2-Eclipse-Plugin_____JsonUtils_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/pulse00_____Symfony-2-Eclipse-Plugin_____JsonUtils.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+
+    public static Bundle unpackBundle(String metadata) {
+
+        try {
+            JSONObject json = (JSONObject) parser.<mark>parse</mark>(metadata);
+            Bundle bundle = new Bundle(null, (String) json.<mark>get</mark>(Bundle.NAME));
+            bundle.setPath((String) json.<mark>get</mark>(Bundle.PATH));
+
+            return bundle;
+        } catch (ParseException e) {
+
+            Logger.logException(e);
+
+        }
+
+        return null;
+
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>t-oster_____VisiCut_____FacebookManager_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/t-oster_____VisiCut_____FacebookManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+   */
+  public String getUserName()
+  {
+    try
+    {
+      String json = client.user();
+      
+      JSONParser parser = <mark>new JSONParser</mark>();
+      JSONObject obj = (JSONObject)parser.<mark>parse</mark>(json);
+      return obj.<mark>get</mark>("name").toString();
+    }
+    catch(ParseException ex)
+    {
+      ex.printStackTrace();
+      return "USER NAME";
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>eishay_____jvm-serializers_____JsonSimpleManualTree_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/eishay_____jvm-serializers_____JsonSimpleManualTree.java
+
+org.json.simple.parser.JSONParser.parse
+
+
+    static MediaContent readMediaContent(JSONParser parser, String mediaContentJsonInput) throws Exception
+    {
+      JSONObject mediaContentJsonObject = (JSONObject) parser.<mark>parse</mark>(mediaContentJsonInput);
+      MediaContent mediaContent = new MediaContent();
+      mediaContent.images = readImages(parser, (JSONArray) mediaContentJsonObject.get("images"));
+      mediaContent.media = readMedia(parser, (JSONObject) mediaContentJsonObject.get("media"));
+      return mediaContent;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>t-oster_____VisiCut_____ThingiverseManager_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/t-oster_____VisiCut_____ThingiverseManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+/**
+   * Gets the list of "my things" from the thingiverse api.
+   * @return List of things
+   */   */
+  public String getUserName()
+  {
+    try
+    {
+      String json = client.user("me");
+      
+      JSONParser parser = <mark>new JSONParser</mark>();
+      JSONObject obj = (JSONObject)parser.<mark>parse</mark>(json);
+      return obj.<mark>get</mark>("name").toString();
+    }
+    catch(ParseException ex)
+    {
+      ex.printStackTrace();
+      return "USER NAME";
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____WebsocketManager_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____WebsocketManager.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+/**
+     * Parses the "follow_sets" message from the server and updates the emotes
+     * accordingly, but only if the emotesets have changed.
+     * 
+     * @param json 
+     */    
+    private void parseDoAuthorize(String json) {
+        try {
+            String code = (String) parser.<mark>parse</mark>(json);
+            listener.authorizeUser(code);
+        } catch (Exception ex) {
+            LOGGER.warning(String.format("[FFZ-WS] Error parsing 'do_authorize' response: %s [%s]", ex, json));
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>t-oster_____VisiCut_____FacebookManager_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/t-oster_____VisiCut_____FacebookManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+   */
+  public String getUserImage()
+  {
+    try
+    {
+      String json = client.userPicture();
+      
+      
+      JSONParser parser = <mark>new JSONParser</mark>();
+      JSONObject dataObj = (JSONObject)parser.<mark>parse</mark>(json);
+      String data = dataObj.<mark>get</mark>("data") .toString();
+      JSONObject urlObject = (JSONObject)parser.<mark>parse</mark>(data);
+      String url = urlObject.<mark>get</mark>("url").toString();
+      
+      return url;
+    }
+    catch(Exception ex)
+    {
+      ex.printStackTrace();
+      return "";
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____Parsing_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____Parsing.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+    
+    public static long followGetTime(String json) {
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject root = (JSONObject) parser.<mark>parse</mark>(json);
+            long time = DateTime.parseDatetime((String)root.<mark>get</mark>("created_at"));
+            return time;
+        } catch (Exception ex) {
+            return -1;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dboissier_____jenkins-control-plugin_____JenkinsJsonParser_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/dboissier_____jenkins-control-plugin_____JenkinsJsonParser.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+
+    @Override
+    public Job createJob(String jsonData) {
+        checkJsonDataAndThrowExceptionIfNecessary(jsonData);
+
+        JSONParser parser = <mark>new JSONParser</mark>();
+        try {
+            JSONObject jsonObject = (JSONObject) parser.<mark>parse</mark>(jsonData);
+
+            return getJob(jsonObject);
+
+        } catch (ParseException e) {
+            String message = String.format("Error during parsing JSON data : %s", jsonData);
+            LOG.error(message, e);
+            throw new RuntimeException(e);
+        }
+
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dboissier_____jenkins-control-plugin_____JenkinsJsonParser_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/dboissier_____jenkins-control-plugin_____JenkinsJsonParser.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+
+    public Build createBuild(String jsonData) {
+        checkJsonDataAndThrowExceptionIfNecessary(jsonData);
+
+        JSONParser parser = <mark>new JSONParser</mark>();
+        try {
+            JSONObject jsonObject = (JSONObject) parser.<mark>parse</mark>(jsonData);
+
+            return getBuild(jsonObject);
+
+        } catch (ParseException e) {
+            String message = String.format("Error during parsing JSON data : %s", jsonData);
+            LOG.error(message, e);
+            throw new RuntimeException(e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>geotools_____geotools_____MBStyleParser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/geotools_____geotools_____MBStyleParser.java
+
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Parse the provided json into MBStyle.
+     *
+     * <p>Please be aware that {@link MBStyle}.is a thin wrapper around the provided json and will
+     * lazily parse map box style contents as required.
+     *
+     * @param json InputStream
+     * @return MBStyle
+     * @throws ParseException If JSON is not well formed
+     * @throws IOException If json input stream cannot be read
+     * @throws MBFormatException If MapBox Style is obviously not well formed
+     */     */
+    public MBStyle <mark>parse</mark>(String json) throws ParseException, MBFormatException {
+        return MBStyle.create(jsonParser.<mark>parse</mark>(json));
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____WebsocketManager_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____WebsocketManager.java
+
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Parses the response to the "/ffz following" command.
+     * 
+     * @param json 
+     */    
+    private void parseHelloResponse(String json) {
+        try {
+            JSONArray data = (JSONArray) parser.<mark>parse</mark>(json);
+            String clientId = (String)data.get(0);
+            long serverTime = ((Number)data.get(1)).longValue();
+            serverTimeOffset = System.currentTimeMillis() - serverTime;
+            LOGGER.info("[FFZ-WS] Server Time Offset: "+serverTimeOffset);
+        } catch (Exception ex) {
+            LOGGER.warning(String.format("[FFZ-WS] Error parsing 'hello' response: %s [%s]", ex, json));
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dboissier_____jenkins-control-plugin_____JenkinsJsonParser_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/dboissier_____jenkins-control-plugin_____JenkinsJsonParser.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+    @Override
+    public List<Build> createBuilds(String jsonData) {
+        checkJsonDataAndThrowExceptionIfNecessary(jsonData);
+
+        JSONParser parser = <mark>new JSONParser</mark>();
+        try {
+            JSONObject jsonObject = (JSONObject) parser.<mark>parse</mark>(jsonData);
+            JSONArray buildsObject = (JSONArray) jsonObject.<mark>get</mark>(BUILDS);
+            return getBuilds(buildsObject);
+
+        } catch (ParseException e) {
+            String message = String.format("Error during parsing JSON data : %s", jsonData);
+            LOG.error(message, e);
+            throw new RuntimeException(e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>geotools_____geotools_____MBStyleParser_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/geotools_____geotools_____MBStyleParser.java
+
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Parse the provided json into MBStyle.
+     *
+     * <p>Please be aware that {@link MBStyle}.is a thin wrapper around the provided json and will
+     * lazily parse map box style contents as required.
+     *
+     * @param json InputStream
+     * @return MBStyle
+     * @throws ParseException If JSON is not well formed
+     * @throws IOException If json input stream cannot be read
+     * @throws MBFormatException If MapBox Style is obviously not well formed
+     */     */
+    public MBStyle <mark>parse</mark>(Reader json) throws ParseException, IOException, MBFormatException {
+        try {
+            return MBStyle.create(jsonParser.<mark>parse</mark>(json));
+        } finally {
+            json.close();
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>ngageoint_____geowave_____ConfigServicesIT_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/ngageoint_____geowave_____ConfigServicesIT.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+  @Test
+  public void testSet() throws ParseException {
+    // Should always return 200
+    final Response set = configServiceClient.set("Property", "Value");
+    TestUtils.assertStatusCode("Should Set Property", 200, set);
+    final String list = configServiceClient.list().readEntity(String.class);
+    final JSONParser parser = <mark>new JSONParser</mark>();
+    final JSONObject json = (JSONObject) parser.<mark>parse</mark>(list);
+    final JSONObject values = (JSONObject) json.<mark>get</mark>("data");
+
+    // check to make sure that property was actually set
+    assertEquals("The property was not set correctly", "Value", values.<mark>get</mark>("Property"));
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____FrankerFaceZParsing_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____FrankerFaceZParsing.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+     */
+    public static Set<Emoticon> parseSetEmotes(String json, Emoticon.SubType subType,
+            String room) {
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject root = (JSONObject)parser.<mark>parse</mark>(json);
+            JSONObject setData = (JSONObject)root.<mark>get</mark>("set");
+            return parseEmoteSet(setData, room, subType);
+        } catch (ParseException | ClassCastException | NullPointerException ex) {
+            LOGGER.warning("Error parsing FFZ emotes: "+ex);
+        }
+        return new HashSet<>();
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____metron_____SettingsLoader_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/apache_____metron_____SettingsLoader.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.get
+
+
+	public static Map<String, JSONObject> loadRegexAlerts(String config_path)
+			throws ConfigurationException, ParseException {
+		XMLConfiguration alert_rules = new XMLConfiguration();
+		alert_rules.setDelimiterParsingDisabled(true);
+		alert_rules.load(config_path);
+
+		//int number_of_rules = alert_rules.getList("rule.pattern").size();
+
+		String[] patterns = alert_rules.getStringArray("rule.pattern");
+		String[] alerts = alert_rules.getStringArray("rule.alert");
+
+		JSONParser pr = <mark>new JSONParser</mark>();
+		Map<String, JSONObject> rules = new HashMap<String, JSONObject>();
+
+		for (int i = 0; i < patterns.length; i++)
+			rules.put(patterns[i], (JSONObject) pr.<mark>parse</mark>(alerts[i]));
+
+		return rules;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>pentaho_____pentaho-kettle_____RepositoryBrowserController_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/pentaho_____pentaho-kettle_____RepositoryBrowserController.java
+
+org.json.simple.JSONArray.contains
+org.json.simple.JSONArray.add
+org.json.simple.JSONArray.size
+org.json.simple.JSONArray.remove
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.&ltinit&gt
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.toJSONString
+
+
+  public JSONArray getRecentSearches() {
+    try {
+      PropsUI props = PropsUI.getInstance();
+      String jsonString = props.getRecentSearches();
+      if ( jsonString != null ) {
+        JSONParser jsonParser = <mark>new JSONParser</mark>();
+        JSONObject jsonObject = (JSONObject) jsonParser.<mark>parse</mark>( jsonString );
+        return (JSONArray) jsonObject.get( getLogin() );
+      }
+    } catch ( Exception e ) {
+      // Log error in console
+    }
+    return new JSONArray();
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>CogComp_____cogcomp-nlp_____QueryMQL_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/CogComp_____cogcomp-nlp_____QueryMQL.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+
+
+	public JSONObject getCursorAndResponse(String mqlQuery, String cursor)
+			throws IOException, ParseException {
+		HttpTransport httpTransport = new NetHttpTransport();
+		HttpRequestFactory requestFactory = httpTransport
+				.createRequestFactory();
+		JSONParser parser = <mark>new JSONParser</mark>();
+
+		GenericUrl url = new GenericUrl(
+				"https://www.googleapis.com/freebase/v1/mqlread");
+		url.put("query", mqlQuery);
+		url.put("key", apikey);
+		url.put("cursor", cursor);
+		logger.debug("QUERY URL: " + url.toString());
+		HttpRequest request = requestFactory.buildGetRequest(url);
+		HttpResponse httpResponse = request.execute();
+		JSONObject response = (JSONObject) parser.<mark>parse</mark>(httpResponse
+				.parseAsString());
+		return response;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>alecgorge_____jsonapi_____ConfigObject_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/alecgorge_____jsonapi_____ConfigObject.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+	
+	protected Location getLocation(String json) throws Exception {
+		JSONObject data = (JSONObject) <mark>new JSONParser</mark>().<mark>parse</mark>(json);
+		// world
+		World world = Bukkit.getWorld((String) data.<mark>get</mark>("world"));
+		// x, y, z
+		double x = Double.parseDouble((String) data.<mark>get</mark>("x"));
+		double y = Double.parseDouble((String) data.<mark>get</mark>("y"));
+		double z = Double.parseDouble((String) data.<mark>get</mark>("z"));
+		// pitch, yaw
+		float pitch = Float.parseFloat((String) data.<mark>get</mark>("pitch"));
+		float yaw = Float.parseFloat((String) data.<mark>get</mark>("yaw"));
+		// generate Location
+		Location loc = new Location(world, x, y, z);
+		loc.setPitch(pitch);
+		loc.setYaw(yaw);
+		return loc;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>larsgeorge_____hbase-book_____BulkImportJobExample_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/larsgeorge_____hbase-book_____BulkImportJobExample.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.parser.ParseException.getMessage
+
+    @Override
+    public boolean nextKeyValue() throws IOException, InterruptedException {
+      boolean next = lineRecordReader.nextKeyValue();
+      if (next) {
+        String line = lineRecordReader.getCurrentValue().toString();
+        try {
+          JSONObject json = (JSONObject) parser.<mark>parse</mark>(line);
+          String author = (String) json.get("author");
+          String link = (String) json.get("link");
+
+        } catch (ParseException e) {
+          if (skipBadLines) {
+            System.err.println("Bad line at offset: " +
+              lineRecordReader.getCurrentKey().get() +
+              ":\n" + e.<mark>getMessage</mark>());
+            badLineCount++;
+          } else {
+            throw new IOException(e);
+          }
+        }
+      }
+      return next;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____WebsocketManager_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____WebsocketManager.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.keySet
+org.json.simple.JSONObject.get
+
+/**
+     * Fetches all emotes of the given emotesets, useable in the given room and
+     * sends them to the listener (removing previous EVENT emotes in that room).
+     * 
+     * @param room The room the emotes will be useable in
+     * @param emotesets The set of FFZ emotesets
+     */     */
+    private void parseFollowingResponse(String json) {
+        try {
+            JSONObject root = (JSONObject) parser.<mark>parse</mark>(json);
+            int updatedClients = ((Number)root.<mark>get</mark>("updated_clients")).intValue();
+            listener.wsUserInfo("Updated following buttons for "+updatedClients+" users.");
+        } catch (Exception ex) {
+            LOGGER.warning(String.format("[FFZ-WS] Error parsing 'update_follow_buttons' response: %s [%s]", ex, json));
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultHygieiaService_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultHygieiaService.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+
+    public Set<String> getDeploymentEnvironments(String appName) {
+        Set<String> list = new HashSet<>();
+        JSONParser parser = <mark>new JSONParser</mark>();
+        try {
+            JSONObject json = (JSONObject) parser.<mark>parse</mark>(getDeploymentDetailsJSON(appName));
+            if (json != null) {
+                JSONArray itemArray = (JSONArray) json.<mark>get</mark>("result");
+                if (!CollectionUtils.isEmpty(itemArray)) {
+                    for (Object o : itemArray) {
+                        list.add((String) ((JSONObject) o).<mark>get</mark>("name"));
+                    }
+                }
+            }
+        } catch (ParseException e) {
+            logger.log(Level.WARNING, "Hygieia fill deployment environments failed: Parsing JSON error.");
+        }
+        return list;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultJiraClient_6.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultJiraClient.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+    @Override
+    public Epic getEpic(String epicKey, Map<String, Epic> epicMap) {
+        try {
+            String url = featureSettings.getJiraBaseUrl() + (featureSettings.getJiraBaseUrl().endsWith("/") ? "" : "/") + String.format(EPIC_REST_SUFFIX, epicKey);
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String responseBody = responseEntity.getBody();
+            JSONObject issue = (JSONObject) parser.<mark>parse</mark>(responseBody);
+
+            if (issue == null) {
+                return null;
+            }
+
+            return saveEpic(issue, epicMap, false);
+        } catch (ParseException pe) {
+            LOGGER.error("Parser exception when parsing teams", pe);
+        } catch (HygieiaException e) {
+            LOGGER.error("Error in calling JIRA API", e);
+        }
+        return null;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultJiraClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultJiraClient.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Get all the teams using Jira Rest API
+     *
+     * @return List of Teams
+     */    @Override
+    public Set<Scope> getProjects() {
+
+        try {
+            String url = featureSettings.getJiraBaseUrl() + (featureSettings.getJiraBaseUrl().endsWith("/") ? "" : "/")
+                    + PROJECT_REST_SUFFIX;
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String responseBody = responseEntity.getBody();
+
+            JSONArray projects = (JSONArray) parser.<mark>parse</mark>(responseBody);
+
+            return parseAsScopes(projects);
+
+        } catch (ParseException pe) {
+            LOGGER.error("Parser exception when parsing teams", pe);
+        } catch (HygieiaException e) {
+            LOGGER.error("Error in calling JIRA API", e);
+        }
+        return Collections.EMPTY_SET;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____SonarBuilder_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____SonarBuilder.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONArray.get
+
+
+    private String getSonarProjectID_PRE6_3(String project, String sonarServer, boolean useProxy) throws ParseException {
+        String url = String.format(sonarServer + URL_PROJECT_ID_FRAGMENT_PRE6_3, project);
+        RestCall restCall = new RestCall(useProxy);
+        RestCall.RestCallResponse callResponse = restCall.makeRestCallGet(url);
+        int responseCode = callResponse.getResponseCode();
+        if (responseCode == HttpStatus.SC_OK) {
+            String resp = callResponse.getResponseString();
+            JSONArray arr = (JSONArray) <mark>new JSONParser</mark>().<mark>parse</mark>(resp);
+            JSONObject obj = (JSONObject) arr.<mark>get</mark>(0);
+            return str(obj, "id");
+        }
+        logger.log(Level.WARNING, "Hygieia getSonarProjectID Failed. Response: " + responseCode);
+        return "";
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultJenkinsClient_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultJenkinsClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+    @Override
+    public Build getLastSuccessfulBuild(String buildUrl) {
+        Build build = new Build();
+        try {
+            // Get Build info
+            JSONObject buildJson = (JSONObject) <mark>new JSONParser</mark>().<mark>parse</mark>(getJson(buildUrl, LAST_SUCCESSFUL_BUILD_SUFFIX));
+            build.setBuildUrl(getString(buildJson, "url"));
+            build.setNumber(buildJson.<mark>get</mark>("number").toString());
+            build.setTimestamp(getLong(buildJson, "timestamp"));
+
+        } catch (ParseException e) {
+            LOG.error("Parsing jobs on instance: " + buildUrl, e);
+        } catch (HttpClientErrorException hce) {
+            if (hce.getStatusCode() != HttpStatus.NOT_FOUND) {
+                LOG.error("HTTP Client Exception for: " + buildUrl, hce);
+            }
+        }
+        return build;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultAppdynamicsClient_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultAppdynamicsClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+     */
+    private Map<String,Object> getViolations(AppdynamicsApplication application, String instanceUrl ) {
+        Map<String,Object> violationObjects = new HashMap<>();
+
+        try {
+            String url = joinURL(instanceUrl, String.format(HEALTH_VIOLATIONS_PATH, application.getAppID()));
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String returnJSON = responseEntity.getBody();
+            JSONParser parser = <mark>new JSONParser</mark>();
+
+            JSONArray array = (JSONArray) parser.<mark>parse</mark>(returnJSON);
+
+            violationObjects.put(VIOLATION_OBJECT,array);
+        } catch (MalformedURLException e) {
+            LOG.error("client exception loading applications", e);
+        } catch (ParseException e) {
+            LOG.error("client exception loading applications", e);
+        }
+
+        return violationObjects;
+
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dboissier_____jenkins-control-plugin_____JenkinsJsonParser_6.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/dboissier_____jenkins-control-plugin_____JenkinsJsonParser.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONArray.isEmpty
+org.json.simple.JSONArray.get
+org.json.simple.JSONObject.get
+
+    @Override
+    public List<Job> createViewJobs(String jsonData) {
+        checkJsonDataAndThrowExceptionIfNecessary(jsonData);
+
+        JSONParser parser = <mark>new JSONParser</mark>();
+
+        try {
+            List<Job> jobs = new LinkedList<Job>();
+            JSONObject jsonObject = (JSONObject) parser.<mark>parse</mark>(jsonData);
+            JSONArray jobObjects = (JSONArray) jsonObject.<mark>get</mark>(JOBS);
+            for (Object object : jobObjects) {
+                JSONObject jobObject = (JSONObject) object;
+                jobs.add(getJob(jobObject));
+            }
+
+            return jobs;
+        } catch (ParseException e) {
+            String message = String.format("Error during parsing JSON data : %s", jsonData);
+            LOG.error(message, e);
+            throw new RuntimeException(e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>t-oster_____VisiCut_____ThingiverseManager_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/t-oster_____VisiCut_____ThingiverseManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+   * Gets a filtered list of "my things" from the thingiverse api.
+   * @param filterExtensions Set to true if you want to filter for supported
+   * file extensions. Note that this will be relatively slow. The list of file
+   * extensions can be set as application preferences.
+   * @param filterTags Set to true if you want to filter for certain tags.
+   * Note that this will be relatively slow. The list of tags can be set as
+   * application preferences.
+   * @return List of things
+   */   */
+  public String getUserImage()
+  {
+    try
+    {
+      String json = client.user("me");
+      
+      JSONParser parser = <mark>new JSONParser</mark>();
+      JSONObject obj = (JSONObject)parser.<mark>parse</mark>(json);
+      String url = obj.<mark>get</mark>("thumbnail").toString();
+      
+      return url;
+    }
+    catch(Exception ex)
+    {
+      ex.printStackTrace();
+      return "";
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>dboissier_____jenkins-control-plugin_____JenkinsJsonParser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/dboissier_____jenkins-control-plugin_____JenkinsJsonParser.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+
+    @Override
+    public Jenkins createWorkspace(String jsonData, String serverUrl) {
+        checkJsonDataAndThrowExceptionIfNecessary(jsonData);
+
+        JSONParser parser = <mark>new JSONParser</mark>();
+        Jenkins jenkins = new Jenkins("", serverUrl);
+
+        try {
+            JSONObject jsonObject = (JSONObject) parser.<mark>parse</mark>(jsonData);
+            JSONObject primaryViewObject = (JSONObject) jsonObject.get(PRIMARY_VIEW);
+            if (primaryViewObject != null) {
+                jenkins.setPrimaryView(getView(primaryViewObject));
+            }
+
+            JSONArray viewsObject = (JSONArray) jsonObject.get(VIEWS);
+            if (viewsObject != null) {
+                jenkins.setViews(getViews(viewsObject));
+            }
+
+        } catch (ParseException e) {
+            String message = String.format("Error during parsing JSON data : %s", jsonData);
+            LOG.error(message, e);
+            throw new RuntimeException(e);
+        }
+        return jenkins;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____BTTVEmotes_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____BTTVEmotes.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Parse a single emote from the given JSONObject.
+     * 
+     * @param o The object containing the emote info
+     * @param urlTemplate The URL Template to use for this emote
+     * @param channelRestriction The channel restriction to use
+     * @return 
+     */     */
+    private static Set<String> parseBots(String json) {
+        Set<String> result = new HashSet<>();
+        if (json == null) {
+            return result;
+        }
+        JSONParser parser = <mark>new JSONParser</mark>();
+        try {
+            JSONObject root = (JSONObject)parser.<mark>parse</mark>(json);
+            JSONArray botsArray = (JSONArray)root.<mark>get</mark>("bots");
+            if (botsArray == null) {
+                // No bots for this channel
+                return result;
+            }
+            for (Object o : botsArray) {
+                result.add((String)o);
+            }
+        } catch (ParseException | ClassCastException ex) {
+            LOGGER.warning("|[BTTV] Error parsing bots: "+ex);
+        }
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>Netflix_____Priam_____MetaData_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/Netflix_____Priam_____MetaData.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.size
+org.json.simple.JSONArray.get
+
+
+    public List<AbstractBackupPath> <mark>get</mark>(final AbstractBackupPath meta)
+    {
+        List<AbstractBackupPath> files = Lists.newArrayList();
+        try
+        {
+            new RetryableCallable<Void>()
+            {
+                @Override
+                public Void retriableCall() throws Exception
+                {
+                    fs.download(meta, new FileOutputStream(meta.newRestoreFile()));
+                    return null;
+                }
+            }.call();
+
+            File file = meta.newRestoreFile();
+            JSONArray jsonObj = (JSONArray) <mark>new JSONParser</mark>().<mark>parse</mark>(new FileReader(file));
+            for (int i = 0; i < jsonObj.<mark>size</mark>(); i++)
+            {
+                AbstractBackupPath p = pathFactory.<mark>get</mark>();
+                p.parseRemote((String) jsonObj.<mark>get</mark>(i));
+                files.add(p);
+            }
+        }
+        catch (Exception ex)
+        {
+            logger.error("Error downloading the Meta data try with a diffrent date...", ex);
+        }
+        return files;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____FrankerFaceZParsing_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____FrankerFaceZParsing.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Parses the emotes of the set request.
+     * 
+     * Request: /set/:id
+     * 
+     * @param json The JSON to parse
+     * @param subType
+     * @return 
+     */     */
+    public static Set<Emoticon> parseGlobalEmotes(String json) {
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject o = (JSONObject)parser.<mark>parse</mark>(json);
+            JSONArray defaultSets = (JSONArray)o.<mark>get</mark>("default_sets");
+            JSONObject sets = (JSONObject)o.<mark>get</mark>("sets");
+            for (Object setObject : defaultSets) {
+                int set = ((Number)setObject).intValue();
+                JSONObject setData = (JSONObject)sets.<mark>get</mark>(String.valueOf(set));
+                return parseEmoteSet(setData, null, null);
+            }
+        } catch (ParseException | ClassCastException | NullPointerException ex) {
+            LOGGER.warning("Error parsing global FFZ emotes: "+ex);
+        }
+        return new HashSet<>();
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____FrankerFaceZParsing_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____FrankerFaceZParsing.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Parse the result of a request for a single room.
+     * 
+     * Request: /room/:room
+     * 
+     * @param json The JSON to parse
+     * @param stream
+     * @return Set of emotes, can be empty if there are no emotes or an error
+     * occured
+     */     */
+    public static Usericon parseModIcon(String json, String stream) {
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject o = (JSONObject)parser.<mark>parse</mark>(json);
+            JSONObject room = (JSONObject)o.<mark>get</mark>("room");
+            // Room ID (name) may not be correct if name changed
+            String roomId = (String)room.<mark>get</mark>("id");
+            String modBadgeUrl = (String)room.<mark>get</mark>("moderator_badge");
+            if (modBadgeUrl == null) {
+                return null;
+            }
+            return UsericonFactory.createTwitchLikeIcon(Usericon.Type.MOD,
+                            stream, modBadgeUrl, Usericon.SOURCE_FFZ, "Moderator (FFZ)");
+        } catch (ParseException | ClassCastException | NullPointerException ex) {
+            
+        }
+        return null;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>CogComp_____cogcomp-nlp_____QueryMQL_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/CogComp_____cogcomp-nlp_____QueryMQL.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.toString
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+	 * returns the mid for a wiki title
+	 * 
+	 * @param mql
+	 * @return
+	 * @throws Exception
+	 */
+	public String lookupMidFromTitle(MQLQueryWrapper mql)
+			throws Exception {
+		JSONObject response;
+		String mqlQuery = mql.MQLquery;
+		logger.debug("QUERY IS " + mqlQuery);
+		String title = mql.value;
+		String checksum = getMD5Checksum(title);
+		// first check mid in cache
+		if (IOUtils.exists(typeCacheLocation + "/" + checksum + ".cached")) {
+			found++;
+			logger.info("Found! "+found);
+			JSONParser jsonParser = <mark>new JSONParser</mark>();
+			response = (JSONObject) jsonParser.<mark>parse</mark>(FileUtils
+					.readFileToString(new File(typeCacheLocation + "/"
+							+ checksum + ".cached"), "UTF-8"));
+		} else {
+			response = getResponse(mqlQuery);
+			if (response == null)
+				return null;
+			cacheMiss++;
+			logger.info("Caching "+cacheMiss);
+			FileUtils.writeStringToFile(new File(typeCacheLocation + "/"
+					+ checksum + ".cached"), response.<mark>toString</mark>(), "UTF-8");
+		}
+
+		JSONObject result = (JSONObject) response.<mark>get</mark>("result");
+
+		if (result != null) {
+			return (String) result.<mark>get</mark>("mid");
+		}
+		return null;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____Parsing_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____Parsing.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+     */
+    public static TokenInfo parseVerifyToken(String json) {
+        if (json == null) {
+            LOGGER.warning("Error parsing verify token result (null)");
+            return null;
+        }
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject root = (JSONObject) parser.<mark>parse</mark>(json);
+            
+            JSONObject token = (JSONObject) root.<mark>get</mark>("token");
+            
+            if (token == null) {
+                return null;
+            }
+            
+            boolean valid = (Boolean)token.<mark>get</mark>("valid");
+            
+            if (!valid) {
+                return new TokenInfo();
+            }
+            
+            String username = (String)token.<mark>get</mark>("user_name");
+            String id = (String)token.<mark>get</mark>("user_id");
+            JSONObject authorization = (JSONObject)token.<mark>get</mark>("authorization");
+            JSONArray scopes = (JSONArray)authorization.<mark>get</mark>("scopes");
+            return new TokenInfo(username, id, scopes);
+        }
+        catch (Exception e) {
+            return null;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>CogComp_____cogcomp-nlp_____QueryMQL_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/CogComp_____cogcomp-nlp_____QueryMQL.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.toString
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+
+	public List<String> lookupTypeFromTitle(MQLQueryWrapper mql)
+			throws Exception {
+		List<String> ans = new ArrayList<String>();
+		JSONObject response;
+		String mqlQuery = mql.MQLquery;
+		logger.debug("QUERY IS " + mqlQuery);
+		String title = mql.value;
+		String checksum = getMD5Checksum(title);
+		// first check mid in cache
+		if (IOUtils.exists(typeCacheLocation + "/" + checksum + ".cached")) {
+			found++;
+			logger.info("Found! "+found);
+			JSONParser jsonParser = <mark>new JSONParser</mark>();
+			response = (JSONObject) jsonParser.<mark>parse</mark>(FileUtils
+					.readFileToString(new File(typeCacheLocation + "/"
+							+ checksum + ".cached"), "UTF-8"));
+		} else {
+			response = getResponse(mqlQuery);
+			if (response == null)
+				return ans;
+			cacheMiss++;
+			logger.info("Caching "+cacheMiss);
+			FileUtils.writeStringToFile(new File(typeCacheLocation + "/"
+					+ checksum + ".cached"), response.<mark>toString</mark>(), "UTF-8");
+		}
+
+		JSONObject result = (JSONObject) response.<mark>get</mark>("result");
+
+		if (result != null) {
+			JSONArray types = (JSONArray) result.<mark>get</mark>("type");
+			for (Object value : types) {
+				ans.add(value.<mark>toString</mark>());
+			}
+		}
+		return ans;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>CogComp_____cogcomp-nlp_____QueryMQL_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/CogComp_____cogcomp-nlp_____QueryMQL.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.toString
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+
+	public JSONObject getResponse(String mqlQuery) throws IOException,
+			ParseException {
+		HttpTransport httpTransport = new NetHttpTransport();
+		HttpRequestFactory requestFactory = httpTransport
+				.createRequestFactory();
+		JSONParser parser = <mark>new JSONParser</mark>();
+
+		GenericUrl url = new GenericUrl(
+				"https://www.googleapis.com/freebase/v1/mqlread");
+		url.put("query", mqlQuery);
+		url.put("key", apikey);
+		logger.debug("Querying Freebase QUERY URL: " + url.<mark>toString</mark>());
+		HttpRequest request = requestFactory.buildGetRequest(url);
+		HttpResponse httpResponse;
+		try {
+			httpResponse = request.execute();
+		} catch (HttpResponseException e) {
+			e.printStackTrace();
+			
+			int statusCode = e.getStatusCode();
+			logger.error("StatusCode "+statusCode);
+			logger.error("Query URL was "+url.<mark>toString</mark>());
+			logger.error("Query was "+mqlQuery);
+			
+			if(statusCode==403)	// max limit reached for a day
+			{
+				System.exit(-1);
+			}
+			return null;
+		} 
+		catch(SocketTimeoutException e)
+		{
+			e.printStackTrace();
+			return null;
+		}
+		JSONObject response = (JSONObject) parser.<mark>parse</mark>(httpResponse
+				.parseAsString());
+		return response;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultHudsonClient_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultHudsonClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+     */
+    private int getJobsCount(String instanceUrl) {
+    	int result = 0;
+    	
+    	try {
+            String url = joinURL(instanceUrl, new String[]{JOBS_URL_SUFFIX});
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            if (responseEntity == null) {
+            	return result;
+            }
+            String returnJSON = responseEntity.getBody();
+            if (StringUtils.isEmpty(returnJSON)) {
+            	return result;	            	
+            }
+            JSONParser parser = <mark>new JSONParser</mark>();           
+            try {
+                JSONObject object = (JSONObject) parser.<mark>parse</mark>(returnJSON);
+                JSONArray jobs = getJsonArray(object, "jobs");
+                result = jobs.size();
+            } catch (ParseException e) {
+                LOG.error("Parsing jobs on instance: " + instanceUrl, e);
+            }
+        } catch (RestClientException rce) {
+            LOG.error("client exception loading jobs", rce);
+            throw rce;
+        } catch (URISyntaxException e1) {
+        	LOG.error("wrong syntax url for loading jobs", e1);
+		}
+    	return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultJiraClient_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultJiraClient.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONArray.forEach
+
+    @Override
+    public List<Team> getTeams() {
+        List<Team> result = new ArrayList<>();
+        try {
+            String url = featureSettings.getJiraBaseUrl() + (featureSettings.getJiraBaseUrl().endsWith("/") ? "" : "/")
+                    + TEMPO_TEAMS_REST_SUFFIX;
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String responseBody = responseEntity.getBody();
+            JSONArray teamsJson = (JSONArray) parser.<mark>parse</mark>(responseBody);
+            if (teamsJson != null) {
+                for (Object obj : teamsJson) {
+                    JSONObject jo = (JSONObject) obj;
+                    String teamId = getString(jo, "id");
+                    String teamName = getString(jo, "name");
+                    Team team = new Team(teamId, teamName);
+                    team.setChangeDate("");
+                    team.setTeamType("");
+                    team.setAssetState("Active");
+                    team.setIsDeleted("False");
+                    result.add(team);
+                }
+            }
+        } catch (ParseException pe) {
+            LOGGER.error("Parser exception when parsing teams", pe);
+        } catch (HygieiaException e) {
+            LOGGER.error("Error in calling JIRA API", e);
+        }
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>rsksmart_____rskj_____JSONReader_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/rsksmart_____rskj_____JSONReader.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.parser.ParseException.printStackTrace
+
+
+    public static String getTestBlobForTreeSha(String shacommit, String testcase){
+
+        String result = getFromUrl("https://api.github.com/repos/ethereum/tests/git/trees/" + shacommit);
+
+        JSONParser parser = <mark>new JSONParser</mark>();
+        JSONObject testSuiteObj = null;
+
+        List<String> fileNames = new ArrayList<String>();
+        try {
+            testSuiteObj = (JSONObject) parser.<mark>parse</mark>(result);
+            JSONArray tree = (JSONArray)testSuiteObj.<mark>get</mark>("tree");
+
+            for (Object oEntry : tree) {
+                JSONObject entry = (JSONObject) oEntry;
+                String testName = (String) entry.<mark>get</mark>("path");
+                if ( testName.equals(testcase) ) {
+                    String blobresult = getFromUrl( (String) entry.<mark>get</mark>("url") );
+
+                    testSuiteObj = (JSONObject) parser.<mark>parse</mark>(blobresult);
+                    String blob  = (String) testSuiteObj.<mark>get</mark>("content");
+                    byte[] valueDecoded= Base64.decodeBase64(blob.getBytes() );
+                    //System.out.println("Decoded value is " + new String(valueDecoded));
+                    return new String(valueDecoded);
+                }
+            }
+        } catch (ParseException e) {e.<mark>printStackTrace</mark>();}
+
+        return "";
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____FrankerFaceZParsing_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____FrankerFaceZParsing.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+/**
+     * Parses a single emote set. Emote set in this context is a set of emotes
+     * that users have access to either globally or in a single room.
+     * 
+     * @param setData The set JSONObject, containing the list of emotes and meta
+     * information
+     * @param streamRestriction The stream this emote set should be restricted
+     * to or null for no restriction
+     * @param subType The subType to be set for the Emoticons
+     * @return The set of parsed emotes, can be empty if no emotes were found or
+     * an error occured
+     */     */
+    public static Set<Emoticon> parseRoomEmotes(String json, String stream) {
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject o = (JSONObject)parser.<mark>parse</mark>(json);
+            JSONObject room = (JSONObject)o.<mark>get</mark>("room");
+            // Room ID (name) may not be correct if name changed
+            String roomId = (String)room.<mark>get</mark>("id");
+            int set = ((Number)room.<mark>get</mark>("set")).intValue();
+            JSONObject sets = (JSONObject)o.<mark>get</mark>("sets");
+            JSONObject setData = (JSONObject)sets.<mark>get</mark>(String.valueOf(set));
+            return parseEmoteSet(setData, stream, null);
+        } catch (ParseException | ClassCastException | NullPointerException ex) {
+            LOGGER.warning("Error parsing FFZ emotes: "+ex);
+        }
+        return new HashSet<>();
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____Parsing_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____Parsing.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+/**
+     * Parses the JSON returned from the TwitchAPI that contains the token
+     * info into a TokenInfo object.
+     * 
+     * @param json
+     * @return The TokenInfo or null if an error occured.
+     */     */
+    public static Set<String> parseGameSearch(String json) {
+        Set<String> result = new HashSet<>();
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject root = (JSONObject)parser.<mark>parse</mark>(json);
+            
+            Object games = root.<mark>get</mark>("games");
+            
+            if (!(games instanceof JSONArray)) {
+                LOGGER.warning("Error parsing game search: Should be array");
+                return null;
+            }
+            Iterator it = ((JSONArray)games).iterator();
+            while (it.hasNext()) {
+                Object obj = it.next();
+                if (obj instanceof JSONObject) {
+                    String name = (String)((JSONObject)obj).<mark>get</mark>("name");
+                    result.add(name);
+                }
+            }
+            return result;
+            
+        } catch (ParseException ex) {
+            LOGGER.warning("Error parsing game search.");
+            return null;
+        } catch (NullPointerException ex) {
+            LOGGER.warning("Error parsing game search: Unexpected null");
+            return null;
+        } catch (ClassCastException ex) {
+            LOGGER.warning("Error parsing game search: Unexpected type");
+            return null;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultJenkinsClient_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultJenkinsClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+
+    @Override
+    public boolean buildHasCucumberResults(String buildUrl) {
+
+        JSONObject buildJson;
+        try {
+            // Get Build info
+            buildJson = (JSONObject) <mark>new JSONParser</mark>().<mark>parse</mark>(getJson(buildUrl, LAST_SUCCESSFUL_BUILD_ARTIFACT_SUFFIX));
+
+            Boolean building = (Boolean) buildJson.get("building");
+
+            if (building != null && !building) {
+                for (Object artifactObj : (JSONArray) buildJson.get("artifacts")) {
+                    JSONObject artifact = (JSONObject) artifactObj;
+
+                    // return true if we find an archived file that matches the naming of the regex config
+                    if (cucumberJsonFilePattern.matcher(getString(artifact, "fileName")).matches()) {
+                        return true;
+	                        // TODO: maybe we want to validate that we can parse the json
+	                        //String cucumberJson = getCucumberJson(buildUrl, getString(artifact, "relativePath"));
+	                        //suites.addAll(cucumberTransformer.transformer(cucumberJson));
+                    }
+                }
+            }
+            return false;
+
+        } catch (ParseException e) {
+            LOG.error("Parsing jobs on instance: " + buildUrl, e);
+        } catch (HttpClientErrorException hce) {
+            if (hce.getStatusCode() != HttpStatus.NOT_FOUND) {
+                LOG.error("HTTP Client Exception for: " + buildUrl, hce);
+            }
+        }
+
+        return false;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____StreamInfoManager_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____StreamInfoManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONArray.size
+org.json.simple.parser.ParseException.getLocalizedMessage
+
+/**
+     * Parse a stream object into a StreamInfo object. This gets the name of the
+     * stream and gets the appropriate StreamInfo object, in which it then loads
+     * the other extracted data like status, game, viewercount.
+     * 
+     * This is used for both the response from /streams/:channel/ as well as
+     * /streams?channel=[..]
+     *
+     * @param stream The JSONObject containing the stream object.
+     * @return The StreamInfo object or null if an error occured.
+     */     */
+    private void parseStream(StreamInfo streamInfo, String json) {
+        
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject root = (JSONObject) parser.<mark>parse</mark>(json);
+
+            JSONObject stream = (JSONObject) root.<mark>get</mark>("stream");
+
+            if (stream == null) {
+                streamInfo.setOffline();
+            } else {
+                StreamInfo result = parseStream(stream, false);
+                if (result == null || result != streamInfo) {
+                    LOGGER.warning("Error parsing stream ("
+                            +streamInfo.getStream()+"): "+json);
+                    streamInfo.setUpdateFailed();
+                }
+            }
+        }
+        catch (ParseException ex) {
+            streamInfo.setUpdateFailed();
+            LOGGER.warning("Error parsing stream info: "+ex.<mark>getLocalizedMessage</mark>());
+        }
+        
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>t-oster_____VisiCut_____ThingiverseManager_6.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/t-oster_____VisiCut_____ThingiverseManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+   * Gets the list of things belonging to a certain collection.
+   * @param collection
+   * @param filterExtensions Set to true if you want to filter for supported
+   * file extensions. Note that this will be relatively slow. The list of file
+   * extensions can be set as application preferences.
+   * @param filterTags Set to true if you want to filter for certain tags.
+   * Note that this will be relatively slow. The list of tags can be set as
+   * application preferences.
+   * @return List of things
+   */   */
+  public List<ThingCollection> getMyCollections()
+  {
+    List<ThingCollection> collections = new LinkedList<ThingCollection>();
+    
+    try
+    {
+      String json = client.collectionsByUser("me");
+      
+      JSONParser parser = <mark>new JSONParser</mark>();
+      JSONArray array = (JSONArray)parser.<mark>parse</mark>(json);
+      for (Object obj : array)
+      {
+        JSONObject jsonCollection = (JSONObject)obj;
+        String collectionId = jsonCollection.<mark>get</mark>("id").toString();
+        String collectionName = jsonCollection.<mark>get</mark>("name").toString();
+        String imageUrl = jsonCollection.<mark>get</mark>("thumbnail").toString();
+        collections.add(new ThingCollection(collectionId, collectionName, imageUrl));
+      }
+    }
+    catch(ClassCastException ex)
+    {
+      // Result empty or something wrong with the json response.
+    }
+    catch(Exception ex)
+    {
+      ex.printStackTrace();
+    }
+    
+    return collections;
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____EmoticonManager_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____EmoticonManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.keySet
+org.json.simple.JSONObject.get
+
+/**
+     * Parses an Emoticon from the given JSONObject.
+     * 
+     * @param emote The JSONObject containing the emoticon data
+     * @return The Emoticon object or null if an error occured
+     */     */
+    private static Set<Emoticon> parseEmoticons(String json) {
+        Set<Emoticon> result = new HashSet<>();
+        if (json == null) {
+            return null;
+        }
+        JSONParser parser = <mark>new JSONParser</mark>();
+        int errors = 0;
+        try {
+            JSONObject root = (JSONObject)parser.<mark>parse</mark>(json);
+            JSONArray emoticons = (JSONArray)root.<mark>get</mark>("emoticons");
+            for (Object obj : emoticons) {
+                if (obj instanceof JSONObject) {
+                    JSONObject emote_json = (JSONObject)obj;
+                    Emoticon emote = parseEmoticon(emote_json, Emoticon.SET_UNDEFINED);
+                    if (emote == null) {
+                        if (errors < 10) {
+                            LOGGER.warning("Error loading emote: "+emote_json);
+                        }
+                        errors++;
+                    } else {
+                        result.add(emote);
+                    }
+                }
+            }
+            if (errors > 0) {
+                LOGGER.warning(errors+" emotes couldn't be loaded");
+            }
+            if (errors > 100) {
+                return null;
+            }
+            return result;
+        } catch (ParseException | NullPointerException | ClassCastException ex) {
+            LOGGER.warning("Error parsing emoticons: "+ex);
+            return null;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>internetarchive_____heritrix3_____TroughClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/internetarchive_____heritrix3_____TroughClient.java
+
+org.json.simple.JSONObject.&ltinit&gt
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.toJSONString
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+    @SuppressWarnings("unchecked")
+    public List<Map<String, Object>> read(String segmentId, String sqlTmpl, Object[] values) throws IOException {
+        String readUrl = readUrl(segmentId);
+
+        String[] sqlValues = new String[values.length];
+        for (int i = 0; i < values.length; i++) {
+            sqlValues[i] = sqlValue(values[i]);
+        }
+        String sql = String.format(sqlTmpl, (Object[]) sqlValues);
+
+        HttpURLConnection connection;
+        try {
+            connection = httpRequest("POST", readUrl, SQL_MIMETYPE, sql, TEN_MINUTES_MS);
+
+            if (connection.getResponseCode() != 200) {
+                throw new TroughException(
+                        "unexpected response " + connection.getResponseCode() + " "
+                                + connection.getResponseMessage() + ": " + responsePayload(connection)
+                                + " from " + readUrl + " to query: " + sql);
+            }
+
+            Object result = <mark>new JSONParser</mark>().<mark>parse</mark>(new InputStreamReader(connection.getInputStream(), "UTF-8"));
+            return (List<Map<String, Object>>) result;
+        } catch (IOException e) {
+            synchronized (readUrlCache) {
+                readUrlCache.remove(segmentId);
+            }
+            throw e;
+        } catch (ParseException e) {
+            synchronized (readUrlCache) {
+                readUrlCache.remove(segmentId);
+            }
+            throw new TroughException("problem parsing json response from " + readUrl, e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultJenkinsClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultJenkinsClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+    @Override
+    public Map<JenkinsJob, Set<Build>> getInstanceJobs(String instanceUrl) {
+        Map<JenkinsJob, Set<Build>> result = new LinkedHashMap<>();
+        try {
+            JSONObject object = (JSONObject) <mark>new JSONParser</mark>().<mark>parse</mark>(getJson(instanceUrl, JOBS_URL_SUFFIX));
+
+            for (Object job : getJsonArray(object, "jobs")) {
+                JSONObject jsonJob = (JSONObject) job;
+                JSONObject lastSuccessful = (JSONObject) jsonJob.<mark>get</mark>("lastSuccessfulBuild");
+                if (lastSuccessful != null) {
+                    JenkinsJob jenkinsJob = new JenkinsJob();
+                    jenkinsJob.setInstanceUrl(instanceUrl);
+                    jenkinsJob.setJobName(getString(jsonJob, "name"));
+                    jenkinsJob.setJobUrl(getString(jsonJob, "url"));
+
+                    Set<Build> builds = new LinkedHashSet<>();
+                    result.put(jenkinsJob, builds);
+
+                    for (Object build : getJsonArray(jsonJob, "builds")) {
+                        JSONObject jsonBuild = (JSONObject) build;
+
+                        // A basic Build object. This will be fleshed out later if this is a new Build.
+                        Build hudsonBuild = new Build();
+                        hudsonBuild.setNumber(jsonBuild.<mark>get</mark>("number").toString());
+                        hudsonBuild.setBuildUrl(getString(jsonBuild, "url"));
+                        builds.add(hudsonBuild);
+                    }
+                }
+            }
+        } catch (ParseException e) {
+            LOG.error("Parsing jobs on instance: " + instanceUrl, e);
+        } catch (RestClientException rce) {
+            LOG.error(rce);
+        }
+
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____FollowerManager_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____FollowerManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+/**
+     * Creates a new Follower item with the given values, also adding
+     * information about whether it is a refollow/new follower in this request.
+     * 
+     * @param stream
+     * @param name
+     * @param time
+     * @return 
+     */
+    private FollowerInfo parseFollowers(String stream, String json) {
+        List<Follower> result = new ArrayList<>();
+        int total = -1;
+        if (json == null) {
+            LOGGER.warning(type+" data null.");
+            return null;
+        }
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            Object root = parser.<mark>parse</mark>(json);
+            if (!(root instanceof JSONObject)) {
+                LOGGER.warning("Error parsing "+type+": root should be object");
+                return null;
+            }
+            JSONObject data = (JSONObject)root;
+            
+            Object follows = data.<mark>get</mark>("follows");
+            if (type == Follower.Type.SUBSCRIBER) {
+                follows = data.<mark>get</mark>("subscriptions");
+            }
+            if (!(follows instanceof JSONArray)) {
+                LOGGER.warning("Error parsing "+type+": follows/subs should be object");
+                return null;
+            }
+            for (Object o : (JSONArray)follows) {
+                Follower follower = parseFollower(stream, o);
+                if (follower != null) {
+                    result.add(follower);
+                }
+            }
+            Object totalObject = data.<mark>get</mark>("_total");
+            if (totalObject instanceof Number) {
+                total = ((Number)totalObject).intValue();
+            }
+        } catch (ParseException ex) {
+            LOGGER.warning("Error parsing "+type+": "+ex);
+            return null;
+        }
+        return new FollowerInfo(type, stream, result, total);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>vmware_____tungsten-replicator_____NetworkClientFilter_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/vmware_____tungsten-replicator_____NetworkClientFilter.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Protocol safety checks for the server returned message.
+     */     */
+    private void doHandshake(String contextService) throws ReplicatorException
+    {
+        try
+        {
+            // Send prepare message.
+            toServer.print(messageGenerator.prepare());
+            toServer.flush();
+
+            // Receive & check acknowledged message.
+            String header = fromServer.readLine();
+            if (logger.isDebugEnabled())
+                logger.debug("Received header: " + header);
+
+            JSONObject obj = (JSONObject) parser.<mark>parse</mark>(header);
+            long payloadLen = (Long) obj.<mark>get</mark>("payload");
+            if (logger.isDebugEnabled())
+                logger.debug("Payload length: " + payloadLen);
+
+            String payload = NetworkClientFilter.Protocol.readPayload(
+                    fromServer, (int) payloadLen);
+            if (logger.isDebugEnabled())
+                logger.debug("Received payload: " + payload);
+
+            String type = (String) obj.<mark>get</mark>("type");
+            String service = (String) obj.<mark>get</mark>("service");
+            long returnCode = (Long) obj.<mark>get</mark>("return");
+
+            validateMessage(Protocol.TYPE_ACKNOWLEDGED, type, returnCode,
+                    service, payload);
+
+            logger.info("Server: " + payload);
+        }
+        catch (ParseException e)
+        {
+            throw new ReplicatorException(
+                    "Server returned an invalid message during prepare-acknowledged message handshake: "
+                            + e, e);
+        }
+        catch (IOException e)
+        {
+            throw new ReplicatorException(
+                    "prepare-acknowledged message handshake failed: " + e, e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultAppdynamicsClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultAppdynamicsClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.isEmpty
+org.json.simple.JSONArray.get
+
+/**
+     * Some metrics are not immediately available (e.g. Total Calls, Total Errors). We need to calculate them.
+     *
+     * @param metrics the already-populated list of metrics. We use this data to calculate new values.
+     * @return List of PerformanceMetrics used to populate the performance database
+     */    @Override
+    public Set<AppdynamicsApplication> getApplications(String instanceUrl) {
+        Set<AppdynamicsApplication> returnSet = new HashSet<>();
+        try {
+            String url = joinURL(instanceUrl, APPLICATION_LIST_PATH);
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String returnJSON = responseEntity.getBody();
+            JSONParser parser = <mark>new JSONParser</mark>();
+
+            try {
+                JSONArray array = (JSONArray) parser.<mark>parse</mark>(returnJSON);
+
+                for (Object entry : array) {
+                    JSONObject jsonEntry = (JSONObject) entry;
+
+                    String appName = getString(jsonEntry, "name");
+                    String appId = String.valueOf(getLong(jsonEntry, "id"));
+                    String desc = getString(jsonEntry, "description");
+                    if (StringUtils.<mark>isEmpty</mark>(desc)) {
+                        desc = appName;
+                    }
+                    AppdynamicsApplication app = new AppdynamicsApplication();
+                    app.setAppID(appId);
+                    app.setAppName(appName);
+                    app.setAppDesc(desc);
+                    app.setDescription(desc);
+                    returnSet.add(app);
+                }
+            } catch (ParseException e) {
+                LOG.error("Parsing applications on instance: " + instanceUrl, e);
+            }
+        } catch (RestClientException rce) {
+            LOG.error("client exception loading applications", rce);
+            throw rce;
+        } catch (MalformedURLException mfe) {
+            LOG.error("malformed url for loading applications", mfe);
+        }
+        return returnSet;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultJiraClient_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultJiraClient.java
+
+org.json.simple.parser.JSONParser.parse
+
+
+    private IssueResult getFeaturesFromQueryURL(String url, Map<String, Epic> epicMap, Team board) throws HygieiaException, ParseException {
+        IssueResult result = new IssueResult();
+        try {
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String responseBody = responseEntity.getBody();
+            JSONObject bodyObject = (JSONObject) parser.<mark>parse</mark>(responseBody);
+
+            if (bodyObject != null) {
+                long pageSize = getLong(bodyObject, "maxResults");
+                long total = getLong(bodyObject, "total");
+                result.setPageSize(pageSize);
+                result.setTotal(total);
+                JSONArray issueArray = (JSONArray) bodyObject.get("issues");
+                if (CollectionUtils.isEmpty(issueArray)) {
+                    return result;
+                }
+
+                issueArray.forEach(issue -> {
+                    JSONObject issueJson = (JSONObject) issue;
+                    String type = getIssueType(issueJson);
+
+                    if (!StringUtils.isEmpty(featureSettings.getJiraEpicId()) && featureSettings.getJiraEpicId().equals(type)) {
+                        saveEpic(issueJson, epicMap, true);
+                        return;
+                    }
+
+                    if (featureSettings.getJiraStoryIds().length > 0 && Arrays.asList(featureSettings.getJiraStoryIds()).contains(type)) {
+                        Feature feature = getFeature((JSONObject) issue, board);
+                        String epicId = feature.getsEpicID();
+                        if (!StringUtils.isEmpty(epicId)) {
+                            Epic epic = epicMap.containsKey(epicId) ? epicMap.get(epicId) : getEpic(epicId, epicMap);
+                            processEpicData(feature, epic);
+                        }
+                        result.getFeatures().add(feature);
+                    }
+                });
+            }
+        } catch (HttpClientErrorException | HttpServerErrorException he) {
+            LOGGER.error("ERROR collecting issues. " + he.getResponseBodyAsString() + ". Url = " + url);
+        }
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>bitquest_____bitquest_____Wallet_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/bitquest_____bitquest_____Wallet.java
+
+org.json.simple.JSONObject.get
+org.json.simple.JSONArray.&ltinit&gt
+org.json.simple.JSONArray.&ltinit&gt
+org.json.simple.JSONArray.size
+org.json.simple.JSONArray.get
+org.json.simple.JSONArray.add
+org.json.simple.JSONArray.add
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.toString
+org.json.simple.JSONObject.toString
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+
+
+  JSONObject txSkeleton(String _address, Long sat) throws IOException, ParseException {
+    // inputs
+    final JSONArray inputs = <mark>new JSONArray</mark>();
+    final JSONArray input_addresses = <mark>new JSONArray</mark>();
+    final JSONObject input = new JSONObject();
+    input_addresses.<mark>add</mark>(address);
+    input.<mark>put</mark>("addresses", input_addresses);
+    inputs.<mark>add</mark>(input);
+
+    // outputs
+    final JSONArray outputs = <mark>new JSONArray</mark>();
+    final JSONArray output_addresses = <mark>new JSONArray</mark>();
+    final JSONObject output = new JSONObject();
+    output_addresses.<mark>add</mark>(_address);
+    ;
+    output.<mark>put</mark>("addresses", output_addresses);
+    output.<mark>put</mark>("value", sat);
+    outputs.<mark>add</mark>(output);
+
+    // parameters to be sent to API
+    final JSONObject blockcypher_params = new JSONObject();
+    blockcypher_params.<mark>put</mark>("inputs", inputs);
+    blockcypher_params.<mark>put</mark>("outputs", outputs);
+    blockcypher_params.<mark>put</mark>("fees", BitQuest.MINER_FEE);
+
+    URL url = new URL("https://api.blockcypher.com/v1/" + BitQuest.BLOCKCYPHER_CHAIN + "/txs/new");
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    con.setConnectTimeout(5000);
+    con.setDoOut<mark>put</mark>(true);
+    OutputStreamWriter out = new OutputStreamWriter(con.getOutputStream());
+    out.write(blockcypher_params.<mark>toString</mark>());
+    System.out.println(url.<mark>toString</mark>() + " --> " + blockcypher_params.<mark>toString</mark>());
+    out.close();
+
+    int responseCode = con.getResponseCode();
+
+    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+    String inputLine;
+    StringBuffer response = new StringBuffer();
+
+    while ((inputLine = in.readLine()) != null) {
+      response.append(inputLine);
+    }
+    in.close();
+    JSONParser parser = <mark>new JSONParser</mark>();
+
+    return (JSONObject) parser.<mark>parse</mark>(response.<mark>toString</mark>());
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>vmware_____tungsten-replicator_____NetworkClientFilter_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/vmware_____tungsten-replicator_____NetworkClientFilter.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Converts underlying data type value to string. Exception is thrown if
+     * type is unsupported.
+     */     */
+    private void initDefinitionsFile() throws ReplicatorException
+    {
+        try
+        {
+            logger.info("Using: " + definitionsFile);
+
+            String jsonText = readDefinitionsFile(definitionsFile);
+            Object obj = parser.<mark>parse</mark>(jsonText);
+            @SuppressWarnings("unchecked")
+            Map<String, JSONArray> map = (Map<String, JSONArray>) obj;
+            definitions = map;
+
+            Iterator<String> it = definitions.keySet().iterator();
+            while (it.hasNext())
+            {
+                String transformation = it.next();
+                logger.info("Transformation: " + transformation);
+
+                JSONArray array = definitions.<mark>get</mark>(transformation);
+                for (Object o : array)
+                {
+                    JSONObject jo = (JSONObject) o;
+                    String schema = (String) jo.<mark>get</mark>("schema");
+                    String table = (String) jo.<mark>get</mark>("table");
+                    JSONArray columns = (JSONArray) jo.<mark>get</mark>("columns");
+                    logger.info("  In " + schema + "." + table + ": ");
+                    for (Object c : columns)
+                    {
+                        String column = (String) c;
+                        definedColumnEntries++;
+                        logger.info("    " + column);
+                    }
+                }
+            }
+        }
+        catch (ClassCastException e)
+        {
+            throw new ReplicatorException(
+                    "Unable to read definitions file (is JSON structure correct?): "
+                            + e, e);
+        }
+        catch (ParseException e)
+        {
+            throw new ReplicatorException(
+                    "Unable to read definitions file (error parsing JSON): "
+                            + e, e);
+        }
+        catch (IOException e)
+        {
+            throw new ReplicatorException(e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>bitquest_____bitquest_____LegacyWallet_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/bitquest_____bitquest_____LegacyWallet.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.JSONObject.&ltinit&gt
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+org.json.simple.JSONArray.&ltinit&gt
+org.json.simple.JSONArray.add
+org.json.simple.JSONArray.add
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.toString
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+
+  public String getAccountAddress() throws IOException, ParseException {
+
+    JSONParser parser = <mark>new JSONParser</mark>();
+
+    final JSONObject jsonObject = <mark>new JSONObject</mark>();
+    jsonObject.<mark>put</mark>("jsonrpc", "1.0");
+    jsonObject.<mark>put</mark>("id", "bitquest");
+    jsonObject.<mark>put</mark>("method", "getaccountaddress");
+    JSONArray params = <mark>new JSONArray</mark>();
+    params.<mark>add</mark>(account_id);
+    if (BitQuest.BITQUEST_ENV == "development")
+      System.out.println("[getaccountaddress] " + account_id);
+    jsonObject.<mark>put</mark>("params", params);
+    URL url = new URL("http://" + BitQuest.BITCOIN_NODE_HOST + ":" + BitQuest.BITCOIN_NODE_PORT);
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    String userPassword = BitQuest.BITCOIN_NODE_USERNAME + ":" + BitQuest.BITCOIN_NODE_PASSWORD;
+    String encoding = Base64.getEncoder().encodeToString(userPassword.getBytes());
+    con.setRequestProperty("Authorization", "Basic " + encoding);
+    con.setConnectTimeout(5000);
+    con.setRequestMethod("POST");
+    con.setRequestProperty("User-Agent", "Mozilla/1.22 (compatible; MSIE 2.0; Windows 3.1)");
+    con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+    con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+    con.setDoOut<mark>put</mark>(true);
+    OutputStreamWriter out = new OutputStreamWriter(con.getOutputStream());
+    out.write(jsonObject.<mark>toString</mark>());
+    out.close();
+
+    int responseCode = con.getResponseCode();
+
+    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+    String inputLine;
+    StringBuffer response = new StringBuffer();
+
+    while ((inputLine = in.readLine()) != null) {
+      response.append(inputLine);
+    }
+    in.close();
+    JSONObject response_object = (JSONObject) parser.<mark>parse</mark>(response.<mark>toString</mark>());
+    if (BitQuest.BITQUEST_ENV == "development") System.out.println(response_object);
+    return response_object.<mark>get</mark>("result").<mark>toString</mark>();
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>deeplearning4j_____deeplearning4j_____PythonExecutioner_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/deeplearning4j_____deeplearning4j_____PythonExecutioner.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.toArray
+
+
+    private static void _readOutputs(PythonVariables pyOutputs){
+        String json = read(getTempFile());
+        File f = new File(getTempFile());
+        f.delete();
+        JSONParser p = new JSONParser();
+        try{
+            JSONObject jobj = (JSONObject) p.<mark>parse</mark>(json);
+            for (String varName: pyOutputs.getVariables()){
+                PythonVariables.Type type = pyOutputs.getType(varName);
+                if (type == PythonVariables.Type.NDARRAY){
+                    JSONObject varValue = (JSONObject)jobj.get(varName);
+                    long address = (Long)varValue.get("address");
+                    JSONArray shapeJson = (JSONArray)varValue.get("shape");
+                    JSONArray stridesJson = (JSONArray)varValue.get("strides");
+                    long[] shape = jsonArrayToLongArray(shapeJson);
+                    long[] strides = jsonArrayToLongArray(stridesJson);
+                    String dtypeName = (String)varValue.get("dtype");
+                    DataType dtype;
+                    if (dtypeName.equals("float64")){
+                        dtype = DataType.DOUBLE;
+                    }
+                    else if (dtypeName.equals("float32")){
+                        dtype = DataType.FLOAT;
+                    }
+                    else if (dtypeName.equals("int16")){
+                        dtype = DataType.SHORT;
+                    }
+                    else if (dtypeName.equals("int32")){
+                        dtype = DataType.INT;
+                    }
+                    else if (dtypeName.equals("int64")){
+                        dtype = DataType.LONG;
+                    }
+                    else{
+                        throw new Exception("Unsupported array type " + dtypeName + ".");
+                    }
+                    pyOutputs.setValue(varName, new NumpyArray(address, shape, strides, dtype, true));
+
+
+                }
+                else if (type == PythonVariables.Type.LIST){
+                    JSONArray varValue = (JSONArray)jobj.get(varName);
+                    pyOutputs.setValue(varName, varValue.<mark>toArray</mark>());
+                }
+                else{
+                    pyOutputs.setValue(varName, jobj.get(varName));
+                }
+            }
+        }
+        catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>bitquest_____bitquest_____LegacyWallet_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/bitquest_____bitquest_____LegacyWallet.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.JSONObject.&ltinit&gt
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+org.json.simple.JSONArray.&ltinit&gt
+org.json.simple.JSONArray.add
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.toString
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+
+  public String sendFrom(String address, Long sat) throws IOException, ParseException {
+    JSONParser parser = <mark>new JSONParser</mark>();
+
+    final JSONObject jsonObject = <mark>new JSONObject</mark>();
+    jsonObject.<mark>put</mark>("jsonrpc", "1.0");
+    jsonObject.<mark>put</mark>("id", "bitquest");
+    jsonObject.<mark>put</mark>("method", "sendfrom");
+    JSONArray params = <mark>new JSONArray</mark>();
+    params.<mark>add</mark>(account_id);
+    params.<mark>add</mark>(address);
+    System.out.println(sat);
+    Double double_sat = new Double(sat);
+    System.out.println(double_sat);
+
+    params.<mark>add</mark>(double_sat / 100000000L);
+    System.out.println(params);
+    jsonObject.<mark>put</mark>("params", params);
+    System.out.println("Checking blockchain info...");
+    URL url = new URL("http://" + BitQuest.BITCOIN_NODE_HOST + ":" + BitQuest.BITCOIN_NODE_PORT);
+    System.out.println(url.<mark>toString</mark>());
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    String userPassword = BitQuest.BITCOIN_NODE_USERNAME + ":" + BitQuest.BITCOIN_NODE_PASSWORD;
+    String encoding = Base64.getEncoder().encodeToString(userPassword.getBytes());
+    con.setRequestProperty("Authorization", "Basic " + encoding);
+
+    con.setRequestMethod("POST");
+    con.setRequestProperty("User-Agent", "Mozilla/1.22 (compatible; MSIE 2.0; Windows 3.1)");
+    con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+    con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+    con.setDoOut<mark>put</mark>(true);
+    OutputStreamWriter out = new OutputStreamWriter(con.getOutputStream());
+    out.write(jsonObject.<mark>toString</mark>());
+    out.close();
+
+    int responseCode = con.getResponseCode();
+
+    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+    String inputLine;
+    StringBuffer response = new StringBuffer();
+
+    while ((inputLine = in.readLine()) != null) {
+      response.append(inputLine);
+    }
+    in.close();
+    System.out.println(response.<mark>toString</mark>());
+    JSONObject response_object = (JSONObject) parser.<mark>parse</mark>(response.<mark>toString</mark>());
+    System.out.println(response_object);
+    return (String) response_object.<mark>get</mark>("result");
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultJiraClient_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultJiraClient.java
+
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Get list of Features (Issues in Jira terms) given a project.
+     *
+     * @param board
+     * @return List of Feature
+     */    @Override
+    public List<Team> getBoards() {
+        int count = 0;
+        int startAt = 0;
+        boolean isLast = false;
+        List<Team> result = new ArrayList<>();
+        while (!isLast) {
+            String url = featureSettings.getJiraBaseUrl() + (featureSettings.getJiraBaseUrl().endsWith("/") ? "" : "/")
+                    + BOARD_TEAMS_REST_SUFFIX + "?startAt=" + startAt;
+            try {
+                ResponseEntity<String> responseEntity = makeRestCall(url);
+                String responseBody = responseEntity.getBody();
+                JSONObject teamsJson = (JSONObject) parser.<mark>parse</mark>(responseBody);
+
+                if (teamsJson != null) {
+                    JSONArray valuesArray = (JSONArray) teamsJson.get("values");
+                    if (!CollectionUtils.isEmpty(valuesArray)) {
+                        for (Object obj : valuesArray) {
+                            JSONObject jo = (JSONObject) obj;
+                            String teamId = getString(jo, "id");
+                            String teamName = getString(jo, "name");
+                            String teamType = getString(jo, "type");
+                            Team team = new Team(teamId, teamName);
+                            team.setTeamType(teamType);
+                            team.setChangeDate("");
+                            team.setAssetState("Active");
+                            team.setIsDeleted("False");
+                            result.add(team);
+                            count = count + 1;
+                        }
+                        isLast = (boolean) teamsJson.get("isLast");
+                        LOGGER.info("JIRA Collector collected " + count + " boards");
+                        if (!isLast) {
+                            startAt += JIRA_BOARDS_PAGING;
+                        }
+                    } else {
+                        isLast = true;
+                    }
+                } else {
+                    isLast = true;
+                }
+            } catch (ParseException pe) {
+                isLast = true;
+                LOGGER.error("Parser exception when parsing teams", pe);
+            } catch (HygieiaException | HttpClientErrorException | HttpServerErrorException e) {
+                isLast = true;
+                LOGGER.error("Error in calling JIRA API: " + url , e.getMessage());
+            }
+        }
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultSonar6Client_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultSonar6Client.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+
+    @Override
+    public CodeQuality currentCodeQuality(SonarProject project, String metrics) {
+        String url = String.format(
+                project.getInstanceUrl() + URL_RESOURCE_DETAILS, project.getProjectId(), metrics);
+
+        try {
+            ResponseEntity<String> response = rest.exchange(url, HttpMethod.GET, this.httpHeaders, String.class);
+            JSONParser jsonParser = <mark>new JSONParser</mark>();
+            JSONObject jsonObject = (JSONObject) jsonParser.<mark>parse</mark>(response.getBody());
+            String key = "component";
+
+            if (jsonObject != null) {
+                JSONObject prjData = (JSONObject) jsonObject.get(key);
+
+                CodeQuality codeQuality = new CodeQuality();
+                codeQuality.setType(CodeQualityType.StaticAnalysis);
+                codeQuality.setName(str(prjData, NAME));
+                codeQuality.setUrl(new SonarDashboardUrl(project.getInstanceUrl(), str(prjData, KEY)).toString());
+
+                url = String.format(
+                        project.getInstanceUrl() + URL_PROJECT_ANALYSES, str(prjData, KEY));
+                key = "analyses";
+                JSONArray jsonArray = parseAsArray(url, key);
+                getProjectAnalysis(codeQuality, jsonArray);
+                for (Object metricObj : (JSONArray) prjData.get(MSR)) {
+                    JSONObject metricJson = (JSONObject) metricObj;
+
+                    CodeQualityMetric metric = new CodeQualityMetric(str(metricJson, METRIC));
+                    metric.setValue(str(metricJson, VALUE));
+                    if (metric.getName().equals("sqale_index")) {
+                        metric.setFormattedValue(format(str(metricJson, VALUE)));
+                    } else if (strSafe(metricJson, VALUE).indexOf(".") > 0) {
+                        metric.setFormattedValue(str(metricJson, VALUE) + "%" );
+                    } else if (strSafe(metricJson, VALUE).matches("\\d+")) {
+                        metric.setFormattedValue(String.format("%,d", integer(metricJson, VALUE)));
+                    } else {
+                        metric.setFormattedValue(str(metricJson, VALUE));
+                    }
+                    codeQuality.getMetrics().add(metric);
+                }
+
+                return codeQuality;
+            }
+
+        } catch (ParseException e) {
+            LOG.error("Could not parse response from: " + url, e);
+        } catch (RestClientException rce) {
+            LOG.error("Rest Client Exception: " + url + ":" + rce.getMessage());
+        }
+
+        return null;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultAppdynamicsClient_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultAppdynamicsClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.size
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.size
+
+/**
+     * Obtains a list of health violations for the current application from Appdynamics
+     * e.g. /controller/#/location=APP_INCIDENT_LIST&application=<APPID>
+     *
+     * @param application the current application. Used to provide access to appID/name
+     * @return Single element list, value is the raw JSON object of the health violations
+     */     */
+    private Map<String,Long> getOverallMetrics(AppdynamicsApplication application, String instanceUrl) {
+        Map<String,Long> overallMetrics = new HashMap<>();
+        try {
+            String url = joinURL(instanceUrl, String.format(OVERALL_METRIC_PATH, application.getAppID(), URLEncoder.encode(OVERALL_SUFFIX, "UTF-8"), String.valueOf(settings.getTimeWindow())));
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String returnJSON = responseEntity.getBody();
+            JSONParser parser = <mark>new JSONParser</mark>();
+
+            try {
+                JSONArray array = (JSONArray) parser.<mark>parse</mark>(returnJSON);
+
+                for (Object entry : array) {
+                    JSONObject jsonEntry = (JSONObject) entry;
+                    String metricPath = getString(jsonEntry, "metricPath");
+                    JSONArray metricValues =  getJsonArray(jsonEntry, "metricValues");
+                    if (metricValues.isEmpty()){
+                        continue;
+                    }
+                    JSONObject mObj = (JSONObject) metricValues.<mark>get</mark>(0);
+                    Long metricValue = getLong(mObj, "value");
+
+                    PerformanceMetric metric = new PerformanceMetric();
+                    String metricName = parseMetricName(metricPath);
+                    if(in(metricName,CALLS_PER_MINUTE,ERRORS_PER_MINUTE,AVERAGE_RESPONSE_TIME)){
+                        metric.setName(parseMetricName(metricPath));
+                        metric.setValue(metricValue);
+                        overallMetrics.put(parseMetricName(metricPath),metricValue);
+                    }
+                }
+            } catch (ParseException | RestClientException e) {
+                LOG.error("Parsing metrics for : " + instanceUrl + ". Application =" + application.getAppName(), e);
+            }
+        } catch (MalformedURLException | UnsupportedEncodingException mfe) {
+            LOG.error("malformed url for loading jobs", mfe);
+        }
+        return overallMetrics;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultHudsonClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultHudsonClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.size
+
+    @Override
+    public Map<HudsonJob, Map<jobData, Set<BaseModel>>> getInstanceJobs(String instanceUrl) {
+        LOG.debug("Enter getInstanceJobs");
+        //Map<HudsonJob, Set<Build>> result = new LinkedHashMap<>();
+        Map<HudsonJob, Map<jobData, Set<BaseModel>>> result = new LinkedHashMap<>();
+        
+        int jobsCount = getJobsCount(instanceUrl);
+        LOG.debug("Number of jobs " + jobsCount);
+        
+        int i = 0, pageSize = settings.getPageSize();
+        // Default pageSize to 1000 for backward compatibility of settings when pageSize defaults to 0
+        if (pageSize <= 0) {
+        	pageSize = 1000;
+        }
+        while (i < jobsCount) {
+        	LOG.info("Fetching jobs " + i + "/" + jobsCount + " pageSize " + settings.getPageSize() + "...");
+        	
+	        try {
+                String url = joinURL(instanceUrl, new String[]{API_SUFFIX + buildJobQueryString() + URLEncoder.encode("{" + i + "," + (i + pageSize) + "}", "UTF-8")});
+	            ResponseEntity<String> responseEntity = makeRestCall(url);
+	            if (responseEntity == null) {
+	            	break;
+	            }
+	            String returnJSON = responseEntity.getBody();
+	            if (StringUtils.isEmpty(returnJSON)) {
+	            	break;	            	
+	            }
+	            JSONParser parser = <mark>new JSONParser</mark>();
+	            
+	            try {
+	                JSONObject object = (JSONObject) parser.<mark>parse</mark>(returnJSON);
+	                JSONArray jobs = getJsonArray(object, "jobs");
+	                if (jobs.<mark>size</mark>() == 0) {
+	                	break;
+	                }
+	                
+	                for (Object job : jobs) {
+	                    JSONObject jsonJob = (JSONObject) job;
+	
+	                    final String jobName = getString(jsonJob, "name");
+	                    final String jobURL = getString(jsonJob, "url");
+                        final String jobClass = getString(jsonJob, "_class");
+
+                        LOG.debug("Process jobName " + jobName + " jobURL " + jobURL + " jobClass " + jobClass);
+
+	                    recursiveGetJobDetails(jsonJob, jobName, jobURL, instanceUrl, parser, result);
+	                }
+	            } catch (ParseException e) {
+	                LOG.error("Parsing jobs details on instance: " + instanceUrl, e);
+	            }
+	        } catch (RestClientException rce) {
+	            LOG.error("client exception loading jobs details", rce);
+	            throw rce;
+	        } catch (UnsupportedEncodingException uee) {
+	        	LOG.error("unsupported encoding for loading jobs details", uee);
+			} catch (URISyntaxException e1) {
+			    LOG.error("wrong syntax url for loading jobs details", e1);
+            }
+	        
+	        i += pageSize;
+        }
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____SonarBuilder_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____SonarBuilder.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONArray.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+
+    private CodeQualityCreateRequest buildQualityRequest_PRE6_3(String json, String sonarServer, String sonarProjectID, String jenkinsName, String buildId) throws ParseException {
+        JSONArray jsonArray = (JSONArray) <mark>new JSONParser</mark>().<mark>parse</mark>(json);
+
+        if (!jsonArray.isEmpty()) {
+            JSONObject prjData = (JSONObject) jsonArray.<mark>get</mark>(0);
+            CodeQualityCreateRequest codeQuality = new CodeQualityCreateRequest();
+            codeQuality.setProjectName(str(prjData, NAME));
+            codeQuality.setProjectUrl(sonarServer + "/dashboard/index/" + sonarProjectID);
+            codeQuality.setNiceName(jenkinsName);
+            codeQuality.setType(CodeQualityType.StaticAnalysis);
+            codeQuality.setTimestamp(timestamp(prjData,  DATE));
+            codeQuality.setProjectVersion(str(prjData, VERSION));
+            codeQuality.setHygieiaId(buildId);
+            codeQuality.setProjectId(sonarProjectID);
+            codeQuality.setServerUrl(sonarServer);
+            codeQuality.setProjectVersion(str(prjData, "version"));
+            for (Object metricObj : (JSONArray) prjData.<mark>get</mark>(MSR)) {
+                JSONObject metricJson = (JSONObject) metricObj;
+                CodeQualityMetric metric = new CodeQualityMetric(str(metricJson, KEY));
+
+
+                // if data element is set, set data into value property
+                // this usually happens for custom metrics
+                if (metricJson.<mark>get</mark>("data") != null) {
+                    metric.setFormattedValue(metricJson.<mark>get</mark>("data").toString());
+                    metric.setValue(str(metricJson, "data"));
+                } else if (metric.getName().startsWith("new_")) {
+                    // for new  metrics- use var2 and fvar2
+                    // this is because var2 and fvar2 represents values since
+                    // last analysis
+                    if (metricJson.<mark>get</mark>("var2") != null || metricJson.<mark>get</mark>("fvar2") != null) {
+                        metric.setValue(str(metricJson, "var2"));
+                        metric.setFormattedValue(str(metricJson, "fvar2"));
+                    }
+                } else {
+                    // for other regular metrics - use default fields
+                    metric.setValue(str(metricJson, VAL));
+                    metric.setFormattedValue(str(metricJson, FORMATTED_VALUE));
+                }
+                metric.setStatus(metricStatus(str(metricJson, ALERT)));
+                metric.setStatusMessage(str(metricJson, ALERT_TEXT));
+                codeQuality.getMetrics().add(metric);
+            }
+            return codeQuality;
+        }
+        return null;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____SonarBuilder_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____SonarBuilder.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.get
+
+
+    private CodeQualityCreateRequest getSonarMetricsPost6_3(String sonarServer, String sonarProjectID, String sonarBuildLink, boolean useProxy, String jenkinsName, String buildId) throws ParseException {
+        String url = String.format(
+                sonarServer + URL_METRICS_FRAGMENT_POST6_3, sonarProjectID, METRICS_POST6_3);
+        RestCall restCall = new RestCall(useProxy);
+        RestCall.RestCallResponse response = restCall.makeRestCallGet(url);
+
+        JSONParser jsonParser = <mark>new JSONParser</mark>();
+        JSONObject jsonObject = (JSONObject) jsonParser.<mark>parse</mark>(response.getResponseString());
+        String key = "component";
+
+        if (jsonObject != null) {
+            JSONObject prjData = (JSONObject) jsonObject.<mark>get</mark>(key);
+
+            CodeQualityCreateRequest codeQuality = new CodeQualityCreateRequest();
+            codeQuality.setType(CodeQualityType.StaticAnalysis);
+            codeQuality.setProjectName(str(prjData, NAME));
+            codeQuality.setProjectUrl(sonarBuildLink);
+            codeQuality.setServerUrl(sonarServer);
+            codeQuality.setProjectId(str(prjData, ID));
+            codeQuality.setNiceName(jenkinsName);
+            codeQuality.setHygieiaId(buildId);
+            url = String.format(
+                    sonarServer + URL_PROJECT_ANALYSES, str(prjData, KEY));
+            RestCall.RestCallResponse analysisResponse = restCall.makeRestCallGet(url);
+            key = "analyses";
+            JSONObject analysisJSONObject = (JSONObject) jsonParser.<mark>parse</mark>(analysisResponse.getResponseString());
+            JSONArray jsonArray = (JSONArray) analysisJSONObject.<mark>get</mark>(key);
+            JSONObject prjLatestData = (JSONObject) jsonArray.<mark>get</mark>(0);
+            codeQuality.setTimestamp(timestamp(prjLatestData, DATE));
+            for (Object eventObj : (JSONArray) prjLatestData.<mark>get</mark>(EVENTS)) {
+                JSONObject eventJson = (JSONObject) eventObj;
+
+                if (Objects.equals(str(eventJson, "category"), "VERSION")) {
+                    codeQuality.setProjectVersion(str(eventJson, NAME));
+                }
+            }
+
+            for (Object metricObj : (JSONArray) prjData.<mark>get</mark>(MEASURES)) {
+                JSONObject metricJson = (JSONObject) metricObj;
+
+                CodeQualityMetric metric = new CodeQualityMetric(str(metricJson, METRIC));
+                metric.setValue(str(metricJson, VALUE));
+                if (Objects.equals(metric.getName(), "sqale_index")) {
+                    metric.setFormattedValue(format(str(metricJson, VALUE)));
+                } else if (str(metricJson, VALUE).indexOf(".") > 0) {
+                    metric.setFormattedValue(str(metricJson, VALUE) + "%");
+                } else if (str(metricJson, VALUE).matches("\\d+")) {
+                    metric.setFormattedValue(String.format("%,d", integer(metricJson, VALUE)));
+                } else {
+                    metric.setFormattedValue(str(metricJson, VALUE));
+                }
+                codeQuality.getMetrics().add(metric);
+            }
+
+            return codeQuality;
+        }
+        return null;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>google_____gcm_____Sender_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/google_____gcm_____Sender.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+   */
+  public Result sendNoRetry(Message message, String to) throws IOException {
+    nonNull(to);
+    Map<Object, Object> jsonRequest = new HashMap<Object, Object>();
+    messageToMap(message, jsonRequest);
+    jsonRequest.put(JSON_TO, to);
+    String responseBody = makeGcmHttpRequest(jsonRequest);
+    if (responseBody == null) {
+      return null;
+    }
+    JSONParser parser = <mark>new JSONParser</mark>();
+    JSONObject jsonResponse;
+    try {
+      jsonResponse = (JSONObject) parser.<mark>parse</mark>(responseBody);
+      Result.Builder resultBuilder = new Result.Builder();
+      if (jsonResponse.containsKey("results")) {
+        // Handle response from message sent to specific device.
+        JSONArray jsonResults = (JSONArray) jsonResponse.<mark>get</mark>("results");
+        if (jsonResults.size() == 1) {
+          JSONObject jsonResult = (JSONObject) jsonResults.<mark>get</mark>(0);
+          String messageId = (String) jsonResult.<mark>get</mark>(JSON_MESSAGE_ID);
+          String canonicalRegId = (String) jsonResult.<mark>get</mark>(TOKEN_CANONICAL_REG_ID);
+          String error = (String) jsonResult.<mark>get</mark>(JSON_ERROR);
+          resultBuilder.messageId(messageId)
+                  .canonicalRegistrationId(canonicalRegId)
+                  .errorCode(error);
+        } else {
+          logger.log(Level.WARNING, "Found null or " + jsonResults.size() +
+              " results, expected one");
+          return null;
+        }
+      } else if (to.startsWith(TOPIC_PREFIX)) {
+        if (jsonResponse.containsKey(JSON_MESSAGE_ID)) {
+          // message_id is expected when this is the response from a topic message.
+          Long messageId = (Long) jsonResponse.<mark>get</mark>(JSON_MESSAGE_ID);
+          resultBuilder.messageId(messageId.toString());
+        } else if (jsonResponse.containsKey(JSON_ERROR)) {
+          String error = (String) jsonResponse.<mark>get</mark>(JSON_ERROR);
+          resultBuilder.errorCode(error);
+        } else {
+          logger.log(Level.WARNING, "Expected " + JSON_MESSAGE_ID + " or " + JSON_ERROR +
+              " found: " + responseBody);
+          return null;
+        }
+      } else if (jsonResponse.containsKey(JSON_SUCCESS) && jsonResponse.containsKey(JSON_FAILURE)) {
+        // success and failure are expected when response is from group message.
+        int success = getNumber(jsonResponse, JSON_SUCCESS).intValue();
+        int failure = getNumber(jsonResponse, JSON_FAILURE).intValue();
+        List<String> failedIds = null;
+        if (jsonResponse.containsKey("failed_registration_ids")) {
+          JSONArray jFailedIds = (JSONArray) jsonResponse.<mark>get</mark>("failed_registration_ids");
+          failedIds = new ArrayList<String>();
+          for (int i = 0; i < jFailedIds.size(); i++) {
+            failedIds.add((String) jFailedIds.<mark>get</mark>(i));
+          }
+        }
+        resultBuilder.success(success).failure(failure)
+            .failedRegistrationIds(failedIds);
+      } else {
+        logger.warning("Unrecognized response: " + responseBody);
+        throw newIoException(responseBody, new Exception("Unrecognized response."));
+      }
+      return resultBuilder.build();
+    } catch (ParseException e) {
+      throw newIoException(responseBody, e);
+    } catch (CustomParserException e) {
+      throw newIoException(responseBody, e);
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>sakaiproject_____sakai_____SimplePageBean_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/sakaiproject_____sakai_____SimplePageBean.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+	// to add or update a checklist (simplepageitem)
+	public String addChecklist() {
+
+		if (!itemOk(itemId)) {
+			setErrMessage(messageLocator.getMessage("simplepage.permissions-general"));
+			return "permission-failed";
+		}
+		if (!checkCsrf())
+		    return "permission-failed";
+		if(!canEditPage()) {
+			setErrMessage(messageLocator.getMessage("simplepage.permissions-general"));
+			return "failure";
+		}
+
+		final String checklistName = StringUtils.trimToEmpty(name);
+		if(checklistName.isEmpty()) {
+			setErrMessage(messageLocator.getMessage("simplepage.checklist-empty-name"));
+			return "failure";
+		}
+
+		SimplePageItem item;
+		if (itemId != null && itemId != -1) {
+			item = findItem(itemId);
+		} else {
+			// Adding a checklist to the page
+			item = appendItem("", messageLocator.getMessage("simplepage.checklistName"), SimplePageItem.CHECKLIST);
+		}
+
+		item.setName(checklistName);
+		item.setDescription(description);
+		setItemGroups(item, selectedGroups);
+
+		// Set the indent level for this item
+		item.setAttribute(SimplePageItem.INDENT, indentLevel);
+
+		// Set the custom css class
+		item.setAttribute(SimplePageItem.CUSTOMCSSCLASS, customCssClass);
+
+		// Is the name hidden from students
+		item.setAttribute(SimplePageItem.NAMEHIDDEN, String.valueOf(nameHidden));
+
+		Long max = simplePageToolDao.maxChecklistItem(item);
+
+		// Get existing item ids
+		List<Long> previousIds = new ArrayList<>();
+		for(SimpleChecklistItem checklistItem : simplePageToolDao.findChecklistItems(item)) {
+			previousIds.add(checklistItem.getId());
+		}
+
+		simplePageToolDao.clearChecklistItems(item);
+
+		final JSONParser jsonParser = <mark>new JSONParser</mark>();
+
+		for(long i = 0; checklistItems.<mark>get</mark>(i) != null; i++) {
+			// get data sent from post operation for this checklist item
+			final String data = checklistItems.<mark>get</mark>(i);
+			try {
+				final JSONObject checklistItem = (JSONObject) jsonParser.<mark>parse</mark>(data);
+
+				final String itemName = (String) checklistItem.<mark>get</mark>("text");
+
+				// Don't save checklist items with a blank name
+				if (StringUtils.isNotBlank(itemName)) {
+					Long checklistItemId;
+					if (StringUtils.isBlank((String) checklistItem.<mark>get</mark>("id"))) {
+						checklistItemId = -1L;
+					} else {
+						checklistItemId = Long.valueOf((String) checklistItem.<mark>get</mark>("id"));
+					}
+					if (checklistItemId <= 0L) {
+						checklistItemId = ++max;
+					}
+					Long linkedId;
+					if (StringUtils.isBlank((String) checklistItem.<mark>get</mark>("link"))) {
+						linkedId = -1L;
+					} else {
+						linkedId = Long.valueOf((String) checklistItem.<mark>get</mark>("link"));
+					}
+					// Remove checklistItemId from list of those to be cleaned up
+					previousIds.remove(checklistItemId);
+					simplePageToolDao.addChecklistItem(item, checklistItemId, itemName, linkedId);
+				}
+			} catch (ClassCastException e) {
+				log.error("Parser returned a non-JSONObject. ", e);
+			} catch (ParseException e) {
+				log.error("ParseException occurred while trying to save checklist item.", e);
+			}
+		}
+
+		// Delete all checklist item statuses for checklist items that no longer exist.
+		if(!previousIds.isEmpty()) {
+			for(Long checklistItemIdToDelete : previousIds) {
+				simplePageToolDao.deleteAllSavedStatusesForChecklistItem(item.getId(), checklistItemIdToDelete);
+			}
+		}
+
+		saveOrUpdate(item);
+
+		return "success";
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>usc-isi-i2_____Web-Karma_____EvaluateMRR_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/usc-isi-i2_____Web-Karma_____EvaluateMRR.java
+
+org.json.simple.JSONObject.&ltinit&gt
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONArray.&ltinit&gt
+org.json.simple.JSONObject.&ltinit&gt
+org.json.simple.JSONObject.&ltinit&gt
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.put
+org.json.simple.JSONArray.add
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.put
+org.json.simple.JSONArray.add
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+
+
+	public static MRRItem calculateMRRValue(String inputFile, Integer numberOfCandidates){
+
+		JSONParser parser = <mark>new JSONParser</mark>(); 
+
+		int noOfAttributes=0; // No of columns in data source
+		double sumRR=0; // Sum of Reciprocal ranks of all columns in data source
+		int correctHits=0;
+
+
+
+		try {
+			//String tokens[]=inputFile.split("/");
+			//String fileName= tokens[tokens.length -1];
+
+			//FileWriter file = new FileWriter(outputDir+"//"+fileName.split(".json",2)[0]+".MRR"+".json");
+
+			JSONObject jsonObject = (JSONObject) parser.<mark>parse</mark>(new FileReader(inputFile));
+			JSONObject graph = (JSONObject) jsonObject.<mark>get</mark>("graph"); 
+			JSONArray jsonArray = (JSONArray) graph.<mark>get</mark>("nodes"); 
+
+			for (Object o: jsonArray){
+
+				JSONObject obj= (JSONObject) o;
+				// Reading column attribute nodes from the JSON Object
+				if(obj.<mark>get</mark>("type").equals("ColumnNode")){
+
+					noOfAttributes++;
+
+					// Reading correct Semantic labels and storing in an array list 
+					JSONArray userArray = (JSONArray) obj.<mark>get</mark>("userSemanticTypes");
+					List<String> correctTypes= new ArrayList<>();
+
+					for(Object o1: userArray){
+						JSONObject userObj= (JSONObject) o1;
+						correctTypes.<mark>add</mark>(userObj.<mark>get</mark>("domain").toString() + userObj.<mark>get</mark>("type").toString());
+					}
+
+					// Reading learned Semantic labels and storing in an array list 
+					JSONArray learnedArray = (JSONArray) obj.<mark>get</mark>("learnedSemanticTypes");
+					List<String> learnedTypes= new ArrayList<>();
+
+					if (learnedArray != null)
+					for(Object o2: learnedArray){
+						JSONObject learnedObj= (JSONObject) o2;
+						learnedTypes.<mark>add</mark>(learnedObj.<mark>get</mark>("domain").toString() + learnedObj.<mark>get</mark>("type").toString()); 
+					}
+
+					int rank=1; // rank of correct semantic type in the learned semantic labels ordered list
+					boolean attributeFound=false;
+					int count = 0;
+					// Calculating reciprocal rank for each column attribute
+					for(String correctLabel :correctTypes ){
+						attributeFound=false;
+
+						for(String suggestedLabel: learnedTypes){
+
+							if (numberOfCandidates != null && count == numberOfCandidates.intValue())
+								break;
+							
+							count ++;
+							if(correctLabel.equals(suggestedLabel)){
+
+
+								attributeFound=true;
+								sumRR+=1/(double)rank;
+								if(rank==1){
+									correctHits++;
+								}
+								break;
+							}
+							rank++;
+
+						}
+						if(attributeFound==false){
+
+							sumRR+=0;
+						}
+					}
+				}
+
+
+			}	
+			// Calculating MRR 
+
+			double accuracy = (double)correctHits/noOfAttributes;
+			double mrr = (double)sumRR/noOfAttributes;
+			MRRItem mrrItem = new MRRItem(accuracy, mrr);
+			return mrrItem;
+
+
+		} catch (Exception e1) {
+			e1.printStackTrace();
+			return null;
+		}
+
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>bitquest_____bitquest_____Wallet_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/bitquest_____bitquest_____Wallet.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.JSONObject.&ltinit&gt
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.put
+org.json.simple.JSONArray.&ltinit&gt
+org.json.simple.JSONArray.add
+org.json.simple.JSONArray.add
+org.json.simple.JSONObject.put
+org.json.simple.JSONObject.toString
+org.json.simple.parser.JSONParser.parse
+
+
+  public boolean payment(String _address, Long sat) {
+    System.out.println("[payment] "+this.address+" -> "+sat);
+    if(sat>1) {
+      try {
+        // create skeleton tx to be signed
+        JSONObject tx = this.txSkeleton(_address, sat);
+        // obtain message (hash) to be signed with private key
+        JSONArray tosign = (JSONArray) tx.get("tosign");
+        JSONArray signatures = <mark>new JSONArray</mark>();
+        JSONArray pubkeys = <mark>new JSONArray</mark>();
+
+        // sign every output
+        for(int i=0;i<tosign.size();i++) {
+          String msg = tosign.get(i).<mark>toString</mark>();
+          // TODO: Create raw transaction with in full node
+          // creating a key object from WiF
+          DumpedPrivateKey dpk = DumpedPrivateKey.fromBase58(null, this.wif);
+          ECKey key = dpk.getKey();
+          // checking our key object
+          NetworkParameters params = TestNet3Params.get();
+          if (System.getenv("BITQUEST_ENV") != null) {
+            if (System.getenv("BITQUEST_ENV").equalsIgnoreCase("production")) {
+              System.out.println("[transaction] main net transaction start");
+              params = MainNetParams.get();
+            }
+          }
+          String check = ((org.bitcoinj.core.ECKey) key).getPrivateKeyAsWiF(params);
+          // System.out.println(wif.equals(check));  // true
+          // creating Sha object from string
+          Sha256Hash hash = Sha256Hash.wrap(msg);
+          // creating signature
+          ECDSASignature sig = key.sign(hash);
+          // encoding
+          byte[] res = sig.encodeToDER();
+          // converting to hex
+          String hex = DatatypeConverter.printHexBinary(res);
+          signatures.<mark>add</mark>(hex);
+          // add my public key
+          pubkeys.<mark>add</mark>(this.public_key);
+        }
+
+        tx.<mark>put</mark>("signatures", signatures);
+        tx.<mark>put</mark>("pubkeys", pubkeys);
+        // go back to blockcypher with signed transaction
+        URL url;
+        if (System.getenv("BLOCKCYPHER_TOKEN") != null) {
+          url =
+                  new URL(
+                          "https://api.blockcypher.com/v1/"
+                                  + BitQuest.BLOCKCYPHER_CHAIN
+                                  + "/txs/send?token="
+                                  + System.getenv("BLOCKCYPHER_TOKEN"));
+        } else {
+          url = new URL("https://api.blockcypher.com/v1/" + BitQuest.BLOCKCYPHER_CHAIN + "/txs/send");
+        }
+
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setConnectTimeout(5000);
+        con.setDoOut<mark>put</mark>(true);
+        OutputStreamWriter out = new OutputStreamWriter(con.getOutputStream());
+        out.write(tx.<mark>toString</mark>());
+        System.out.println(tx.<mark>toString</mark>());
+        out.close();
+        int responseCode = con.getResponseCode();
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+        while ((inputLine = in.readLine()) != null) {
+          response.append(inputLine);
+        }
+        in.close();
+        JSONParser parser = <mark>new JSONParser</mark>();
+        JSONObject response_object = (JSONObject) parser.<mark>parse</mark>(response.<mark>toString</mark>());
+        System.out.println("[payment] " + this.address + " -> " + sat + " -> " + _address);
+        return true;
+      } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+      }
+    } else {
+      return false;
+    }
+
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultAppdynamicsClient_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultAppdynamicsClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Calculates the response time and error rate severities.
+     * 0: good, 1: warning, 2: critical
+     * Iterates through list of violations. The final severity will be the highest of them all
+     * (e.g. response time violations are Warning, Critical, Warning, Warning, Warning -> Critical)
+     *
+     * @param application the current application. Used to provide access to appID/name
+     * @return List of two PerformanceMetrics that contain info about the severities
+     */     */
+    private Map<String,Object> getHealthMetrics(AppdynamicsApplication application, String instanceUrl ) {
+        // business health percent
+        long numNodeViolations = 0;
+        long numBusinessViolations = 0;
+        long numNodes = 0;
+        long numBusinessTransactions = 0;
+        double nodeHealthPercent = 0.0;
+        double businessHealthPercent = 0.0;
+
+        Map<String,Object> healthMetrics = new HashMap<>();
+
+        try {
+            // GET NUMBER OF VIOLATIONS OF EACH TYPE
+            String url = joinURL(instanceUrl, String.format(HEALTH_VIOLATIONS_PATH, application.getAppID()));
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String returnJSON = responseEntity.getBody();
+            JSONParser parser = <mark>new JSONParser</mark>();
+
+            JSONArray array = (JSONArray) parser.<mark>parse</mark>(returnJSON);
+
+            for (Object entry : array) {
+
+                JSONObject jsonEntry = (JSONObject) entry;
+
+                if (getString(jsonEntry, "incidentStatus").equals("RESOLVED"))
+                    continue;
+
+                JSONObject affEntityObj = (JSONObject) jsonEntry.get("affectedEntityDefinition");
+
+                String entityType = getString(affEntityObj, "entityType");
+
+                if (entityType.equals("APPLICATION_COMPONENT_NODE")) {
+                    numNodeViolations++;
+
+                } else if (entityType.equals(BUSINESS_TRANSACTION)) {
+                    numBusinessViolations++;
+
+                }
+            }
+
+
+            // GET NUMBER OF NODES
+            url = joinURL(instanceUrl, String.format(NODE_LIST_PATH, application.getAppID()));
+            responseEntity = makeRestCall(url);
+            returnJSON = responseEntity.getBody();
+            parser = <mark>new JSONParser</mark>();
+            array = (JSONArray) parser.<mark>parse</mark>(returnJSON);
+
+            numNodes = array.size();
+
+            // GET NUMBER OF BUSINESS TRANSACTIONS
+            url = joinURL(instanceUrl, String.format(BUSINESS_TRANSACTION_LIST_PATH, application.getAppID()));
+            responseEntity = makeRestCall(url);
+            returnJSON = responseEntity.getBody();
+            parser = <mark>new JSONParser</mark>();
+            array = (JSONArray) parser.<mark>parse</mark>(returnJSON);
+
+            numBusinessTransactions = array.size();
+
+        } catch (MalformedURLException e) {
+            LOG.error("client exception loading applications", e);
+        } catch (ParseException e) {
+            LOG.error("client exception loading applications", e);
+        }
+
+        // Node health percent is just 1 - (num node violations / num nodes)
+        if (numNodes != 0)
+            nodeHealthPercent = Math.floor(100.0 * (1.0 - ((double) (numNodeViolations) / (double) (numNodes)))) / 100.0;
+
+        // Right now the timeframe is hard-coded to 15 min. Change this if that changes.
+        healthMetrics.put(NODE_HEALTH_PECENT,nodeHealthPercent);
+
+        // Business health percent is just 1 - (num business transaction violations / num business transactions)
+        if (numBusinessTransactions != 0)
+            businessHealthPercent = Math.floor(100.0 * (1.0 - ((double) (numBusinessViolations) / (double) (numBusinessTransactions)))) / 100.0;
+        healthMetrics.put(BUSINESS_TRANSACTION_HEALTH,businessHealthPercent);
+
+        return healthMetrics;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultBambooClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultBambooClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+    @Override
+    public Map<BambooJob, Set<Build>> getInstanceJobs(String instanceUrl) {
+        Map<BambooJob, Set<Build>> result = new LinkedHashMap<>();
+        try {
+            String url = joinURL(instanceUrl, JOBS_URL_SUFFIX);
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String returnJSON = responseEntity.getBody();
+            // LOG.info(returnJSON);
+            JSONParser parser = <mark>new JSONParser</mark>();
+
+            try {
+                 JSONObject object = (JSONObject) parser.<mark>parse</mark>(returnJSON);
+
+                for (Object job : getJsonArray((JSONObject)object.<mark>get</mark>("plans"), "plan")) {
+                    JSONObject jsonJob = (JSONObject) job;
+
+                    final String planName = getString(jsonJob, "key");
+                    JSONObject link=(JSONObject)jsonJob.<mark>get</mark>("link");
+                    final String planURL = getString(link, "href");
+
+                    LOG.info("Plan:" + planName);
+                    LOG.info("PlanURL: " + planURL);
+
+                    // In terms of Bamboo this is the plan not job
+                    BambooJob bambooJob = new BambooJob();
+                    bambooJob.setInstanceUrl(instanceUrl);
+                    bambooJob.setJobName(planName);
+                    bambooJob.setJobUrl(planURL);
+
+                    // Finding out the results of the top-level plan 
+
+                    String resultUrl = joinURL(instanceUrl,JOBS_RESULT_SUFFIX);
+                    resultUrl = joinURL(resultUrl,planName);
+//                    LOG.info("Job:" + planName);
+//                    LOG.info("Result URL:"+ resultUrl);
+                    responseEntity = makeRestCall(resultUrl);
+                    returnJSON = responseEntity.getBody();
+//                    LOG.info("Result :"+ returnJSON);
+                    jsonJob = (JSONObject) parser.<mark>parse</mark>(returnJSON);
+
+                    Set<Build> builds = new LinkedHashSet<>();
+                    for (Object build : getJsonArray((JSONObject)jsonJob.<mark>get</mark>("results"), "result")) {
+                        JSONObject jsonBuild = (JSONObject) build;
+//                        LOG.info("Entered each build for job : "+ planName);
+                        // A basic Build object. This will be fleshed out later if this is a new Build.
+                        String dockerLocalHostIP = settings.getDockerLocalHostIP();
+                        String buildNumber = jsonBuild.<mark>get</mark>("buildNumber").toString();
+                        if (!"0".equals(buildNumber)) {
+//                            LOG.info("BuildNO " + buildNumber + " for planName: " + planName);
+                            Build bambooBuild = new Build();
+                            bambooBuild.setNumber(buildNumber);
+                            String buildURL = joinURL(resultUrl,buildNumber); //getString(jsonBuild, "url");
+//                            LOG.info(buildURL);
+                            //Modify localhost if Docker Natting is being done
+                            if (!dockerLocalHostIP.isEmpty()) {
+                                buildURL = buildURL.replace("localhost", dockerLocalHostIP);
+                                LOG.debug("Adding build & Updated URL to map LocalHost for Docker: " + buildURL);
+                            } else {
+                                LOG.debug(" Adding Build: " + buildURL);
+                            }
+
+                            bambooBuild.setBuildUrl(buildURL);
+                            builds.add(bambooBuild);
+                        }
+                    }
+                    // add the builds to the job
+                    result.put(bambooJob, builds);
+
+                    //But we might have many branches and subplans in them so we have to find them out as well
+                    String branchesUrl= joinURL(planURL,"/branch");
+                    responseEntity = makeRestCall(branchesUrl);
+                    returnJSON = responseEntity.getBody();
+                    JSONObject jsonBranches = (JSONObject) parser.<mark>parse</mark>(returnJSON);
+
+                    for (Object branch : getJsonArray((JSONObject)jsonBranches.<mark>get</mark>("branches"), "branch")) {
+                        JSONObject branchObject=(JSONObject) branch;
+                        String subPlan=branchObject.<mark>get</mark>("key").toString();
+                        // Figure out nested jobs under the branches
+
+                        resultUrl = joinURL(instanceUrl,JOBS_RESULT_SUFFIX);
+                        resultUrl = joinURL(resultUrl,subPlan);
+                        LOG.info("sub Plan:" + subPlan);
+                        LOG.info("sub plan-Result URL:"+ resultUrl);
+                        responseEntity = makeRestCall(resultUrl);
+                        returnJSON = responseEntity.getBody();
+    //                    LOG.info("Result :"+ returnJSON);
+                        jsonJob = (JSONObject) parser.<mark>parse</mark>(returnJSON);
+
+                        for (Object build : getJsonArray((JSONObject)jsonJob.<mark>get</mark>("results"), "result")) {
+                            JSONObject jsonBuild = (JSONObject) build;
+                           LOG.info("Entered each build for nested plan : "+ subPlan);
+                            // A basic Build object. This will be fleshed out later if this is a new Build.
+                            String dockerLocalHostIP = settings.getDockerLocalHostIP();
+                            String buildNumber = jsonBuild.<mark>get</mark>("buildNumber").toString();
+                            if (!"0".equals(buildNumber)) {
+    //                            LOG.info("BuildNO " + buildNumber + " for planName: " + planName);
+                                Build bambooBuild = new Build();
+                                bambooBuild.setNumber(buildNumber);
+                                String buildURL = joinURL(resultUrl,buildNumber); //getString(jsonBuild, "url");
+    //                            LOG.info(buildURL);
+                                //Modify localhost if Docker Natting is being done
+                                if (!dockerLocalHostIP.isEmpty()) {
+                                    buildURL = buildURL.replace("localhost", dockerLocalHostIP);
+                                    LOG.debug("Adding build & Updated URL to map LocalHost for Docker: " + buildURL);
+                                } else {
+                                    LOG.debug(" Adding Build: " + buildURL);
+                                }
+
+                                bambooBuild.setBuildUrl(buildURL);
+                                builds.add(bambooBuild);
+                            }
+                        }
+                        // add the builds to the job
+                        result.put(bambooJob, builds);
+
+                        // Ended with nested branches
+                    }
+
+                }
+            } catch (ParseException e) {
+                LOG.error("Parsing jobs on instance: " + instanceUrl, e);
+            }
+        } catch (RestClientException rce) {
+            LOG.error("client exception loading jobs", rce);
+            throw rce;
+        } catch (MalformedURLException mfe) {
+            LOG.error("malformed url for loading jobs", mfe);
+        }
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>alecgorge_____jsonapi_____ConfigObject_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/alecgorge_____jsonapi_____ConfigObject.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+	
+	protected boolean isJSON(Object obj) {
+		try {
+			if(obj instanceof String) {
+				String str = (String) obj;
+				if(str.startsWith("{")) {
+					return <mark>new JSONParser</mark>().<mark>parse</mark>(str) != null;
+				}
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	protected boolean isConfigObject(Object obj) {
+		try {
+			return (ConfigObject) obj != null;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	protected boolean isLocation(Object obj) {
+		try {
+			return (Location) obj != null;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	protected boolean isVector(Object obj) {
+		try {
+			return (Vector) obj != null;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	@SuppressWarnings("rawtypes")
+	protected boolean isMap(Object obj) {
+		try {
+			return (Map) obj != null;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	@SuppressWarnings("rawtypes")
+	protected boolean isList(Object obj) {
+		try {
+			return (List) obj != null;
+		} catch(Exception e) {
+			return false;
+		}
+	}
+	
+	@SuppressWarnings("rawtypes")
+	protected boolean isEnum(Class clazz, Object obj) {
+		if(!clazz.isEnum()) return false;
+		for(Object constant : clazz.getEnumConstants()) {
+			if(constant.equals(obj)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/*
+	 * loading conversion
+	 */
+	
+	@SuppressWarnings("rawtypes")
+	protected ConfigObject getConfigObject(Class clazz, ConfigurationSection cs) throws Exception {
+		ConfigObject obj = (ConfigObject) clazz.newInstance();
+		obj.onLoad(cs);
+		return obj;
+	}
+	
+	protected Location getLocation(String json) throws Exception {
+		JSONObject data = (JSONObject) <mark>new JSONParser</mark>().<mark>parse</mark>(json);
+		// world
+		World world = Bukkit.getWorld((String) data.<mark>get</mark>("world"));
+		// x, y, z
+		double x = Double.parseDouble((String) data.<mark>get</mark>("x"));
+		double y = Double.parseDouble((String) data.<mark>get</mark>("y"));
+		double z = Double.parseDouble((String) data.<mark>get</mark>("z"));
+		// pitch, yaw
+		float pitch = Float.parseFloat((String) data.<mark>get</mark>("pitch"));
+		float yaw = Float.parseFloat((String) data.<mark>get</mark>("yaw"));
+		// generate Location
+		Location loc = new Location(world, x, y, z);
+		loc.setPitch(pitch);
+		loc.setYaw(yaw);
+		return loc;
+	}
+	
+	protected Vector getVector(String json) throws Exception {
+		JSONObject data = (JSONObject) <mark>new JSONParser</mark>().<mark>parse</mark>(json);
+		// x, y, z
+		double x = Double.parseDouble((String) data.<mark>get</mark>("x"));
+		double y = Double.parseDouble((String) data.<mark>get</mark>("y"));
+		double z = Double.parseDouble((String) data.<mark>get</mark>("z"));
+		// generate Vector
+		return new Vector(x, y, z);
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	protected Map getMap(Field field, ConfigurationSection cs, String path, int depth) throws Exception {
+		depth++;
+		Set<String> keys = cs.getKeys(false);
+		Map map = new HashMap();
+		if(keys != null && keys.size() > 0) {
+			for(String key : keys) {
+				Object in = cs.<mark>get</mark>(key);
+				in = loadObject(field, cs, key, depth);
+				map.put(key, in);
+			}
+		}
+		return map;
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	protected List getList(Field field, ConfigurationSection cs, String path, int depth) throws Exception {
+		depth++;
+		int listSize = cs.getKeys(false).size();
+		String key = path;
+		if(key.lastIndexOf(".")>=0) {
+			key = key.substring(key.lastIndexOf("."));
+		}
+		List list = new ArrayList();
+		if(listSize > 0) {
+			int loaded = 0;
+			int i = 0;
+			while(loaded<listSize) {
+				if(cs.isSet(key+i)) {
+					Object in = cs.<mark>get</mark>(key+i);
+					in = loadObject(field, cs, key+i, depth);
+					list.add(in);
+					loaded++;
+				}
+				i++;
+				// ugly overflow guard... should only be needed if config was manually edited very badly
+				if(i>(listSize*3)) loaded = listSize;
+			}
+		}
+		return list;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	protected Enum getEnum(Class clazz, String string) throws Exception {
+		if(!clazz.isEnum()) throw new Exception("Class "+clazz.getName()+" is not an enum.");
+		for(Object constant : clazz.getEnumConstants()) {
+			if(((Enum) constant).toString().equals(string)) {
+				return (Enum) constant;
+			}
+		}
+		throw new Exception("String "+string+" not a valid enum constant for "+clazz.getName());
+	}
+	
+	/*
+	 * saving conversion
+	 */
+	
+	protected ConfigurationSection getConfigObject(ConfigObject obj, String path, ConfigurationSection cs) throws Exception {
+		ConfigurationSection subCS = cs.createSection(path);
+		obj.onSave(subCS);
+		return subCS;
+	}
+	
+	protected String getLocation(Location loc) {
+		String ret = "{";
+		ret += "\"world\":\""+loc.getWorld().getName()+"\"";
+		ret += ",\"x\":\""+loc.getX()+"\"";
+		ret += ",\"y\":\""+loc.getY()+"\"";
+		ret += ",\"z\":\""+loc.getZ()+"\"";
+		ret += ",\"pitch\":\""+loc.getPitch()+"\"";
+		ret += ",\"yaw\":\""+loc.getYaw()+"\"";
+		ret += "}";
+		if(!isJSON(ret)) return getLocationJSON(loc);
+		try {
+			getLocation(ret);
+		} catch(Exception ex) {
+			return getLocationJSON(loc);
+		}
+		return ret;
+	}
+	
+	@SuppressWarnings("unchecked")
+	protected String getLocationJSON(Location loc) {
+		JSONObject data = new JSONObject();
+		// world
+		data.put("world", loc.getWorld().getName());
+		// x, y, z
+		data.put("x", String.valueOf(loc.getX()));
+		data.put("y", String.valueOf(loc.getY()));
+		data.put("z", String.valueOf(loc.getZ()));
+		// pitch, yaw
+		data.put("pitch", String.valueOf(loc.getPitch()));
+		data.put("yaw", String.valueOf(loc.getYaw()));
+		return data.toJSONString();
+	}
+	
+	protected String getVector(Vector vec) {
+		String ret = "{";
+		ret += "\"x\":\""+vec.getX()+"\"";
+		ret += ",\"y\":\""+vec.getY()+"\"";
+		ret += ",\"z\":\""+vec.getZ()+"\"";
+		ret += "}";
+		if(!isJSON(ret)) return getVectorJSON(vec);
+		try {
+			getVector(ret);
+		} catch(Exception ex) {
+			return getVectorJSON(vec);
+		}
+		return ret;
+	}
+	
+	@SuppressWarnings("unchecked")
+	protected String getVectorJSON(Vector vec) {
+		JSONObject data = new JSONObject();
+		// x, y, z
+		data.put("x", String.valueOf(vec.getX()));
+		data.put("y", String.valueOf(vec.getY()));
+		data.put("z", String.valueOf(vec.getZ()));
+		return data.toJSONString();
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	protected ConfigurationSection getMap(Map map, Field field, ConfigurationSection cs, String path, int depth) throws Exception {
+		depth++;
+		ConfigurationSection subCS = cs.createSection(path);
+		Set<String> keys = map.keySet();
+		if(keys != null && keys.size() > 0) {
+			for(String key : keys) {
+				Object out = map.<mark>get</mark>(key);
+				out = saveObject(out, field, cs, path+"."+key, depth);
+				subCS.set(key, out);
+			}
+		}
+		return subCS;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	protected ConfigurationSection getList(List list, Field field, ConfigurationSection cs, String path, int depth) throws Exception {
+		depth++;
+		ConfigurationSection subCS = cs.createSection(path);
+		String key = path;
+		if(key.lastIndexOf(".")>=0) {
+			key = key.substring(key.lastIndexOf("."));
+		}
+		if(list != null && list.size() > 0) {
+			for(int i = 0; i < list.size(); i++) {
+				Object out = list.<mark>get</mark>(i);
+				out = saveObject(out, field, cs, path+"."+key+(i+1), depth);
+				subCS.set(key+(i+1), out);
+			}
+		}
+		return subCS;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	protected String getEnum(Enum enumObj) {
+		return enumObj.toString();
+	}
+	
+	/*
+	 * utility
+	 */
+	
+	protected boolean doSkip(Field field) {
+		return Modifier.isTransient(field.getModifiers()) || Modifier.isStatic(field.getModifiers()) || Modifier.isFinal(field.getModifiers()) || Modifier.isPrivate(field.getModifiers());
+	}
+}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>entertailion_____Fling_____RampClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/entertailion_____Fling_____RampClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.get
+org.json.simple.JSONArray.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONArray.get
+org.json.simple.JSONArray.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONArray.get
+org.json.simple.JSONArray.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.equals
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+
+	public void launchApp(String app, DialServer dialServer) {
+		this.app = app;
+		this.isChromeCast = app.<mark>equals</mark>(FlingFrame.CHROMECAST);
+		this.dialServer = dialServer;
+		this.activityId = UUID.randomUUID().toString();
+		try {
+			String device = "http://" + dialServer.getIpAddress().getHostAddress() + ":" + dialServer.getPort();
+			Log.d(LOG_TAG, "device=" + device);
+			Log.d(LOG_TAG, "apps url=" + dialServer.getAppsUrl());
+
+			// application instance url
+			String location = null;
+
+			DefaultHttpClient defaultHttpClient = HttpRequestHelper.createHttpClient();
+			CustomRedirectHandler handler = new CustomRedirectHandler();
+			defaultHttpClient.setRedirectHandler(handler);
+			BasicHttpContext localContext = new BasicHttpContext();
+
+			// check if any app is running
+			HttpGet httpGet = new HttpGet(dialServer.getAppsUrl());
+			httpGet.setHeader(HEADER_CONNECTION, HEADER_CONNECTION_VALUE);
+			httpGet.setHeader(HEADER_USER_AGENT, HEADER_USER_AGENT_VALUE);
+			httpGet.setHeader(HEADER_ACCEPT, HEADER_ACCEPT_VALUE);
+			httpGet.setHeader(HEADER_DNT, HEADER_DNT_VALUE);
+			httpGet.setHeader(HEADER_ACCEPT_ENCODING, HEADER_ACCEPT_ENCODING_VALUE);
+			httpGet.setHeader(HEADER_ACCEPT_LANGUAGE, HEADER_ACCEPT_LANGUAGE_VALUE);
+			HttpResponse httpResponse = defaultHttpClient.execute(httpGet);
+			if (httpResponse != null) {
+				int responseCode = httpResponse.getStatusLine().getStatusCode();
+				Log.d(LOG_TAG, "get response code=" + httpResponse.getStatusLine().getStatusCode());
+				if (responseCode == 204) {
+					// nothing is running
+				} else if (responseCode == 200) {
+					// app is running
+
+					// Need to get real URL after a redirect
+					// http://stackoverflow.com/a/10286025/594751
+					String lastUrl = dialServer.getAppsUrl();
+					if (handler.lastRedirectedUri != null) {
+						lastUrl = handler.lastRedirectedUri.toString();
+						Log.d(LOG_TAG, "lastUrl=" + lastUrl);
+					}
+
+					String response = EntityUtils.toString(httpResponse.getEntity());
+					Log.d(LOG_TAG, "get response=" + response);
+					parseXml(new StringReader(response));
+
+					Header[] headers = httpResponse.getAllHeaders();
+					for (int i = 0; i < headers.length; i++) {
+						Log.d(LOG_TAG, headers[i].getName() + "=" + headers[i].getValue());
+					}
+
+					// stop the app instance
+					HttpDelete httpDelete = new HttpDelete(lastUrl);
+					httpResponse = defaultHttpClient.execute(httpDelete);
+					if (httpResponse != null) {
+						Log.d(LOG_TAG, "delete response code=" + httpResponse.getStatusLine().getStatusCode());
+						response = EntityUtils.toString(httpResponse.getEntity());
+						Log.d(LOG_TAG, "delete response=" + response);
+					} else {
+						Log.d(LOG_TAG, "no delete response");
+					}
+				}
+
+			} else {
+				Log.i(LOG_TAG, "no get response");
+				return;
+			}
+
+			// Check if app is installed on device
+			int responseCode = getAppStatus(defaultHttpClient, dialServer.getAppsUrl() + app);
+			if (responseCode != 200) {
+				return;
+			}
+			parseXml(new StringReader(response));
+			Log.d(LOG_TAG, "state=" + state);
+
+			// start the app with POST
+			HttpPost httpPost = new HttpPost(dialServer.getAppsUrl() + app);
+			httpPost.setHeader(HEADER_CONNECTION, HEADER_CONNECTION_VALUE);
+			httpPost.setHeader(HEADER_ORIGN, HEADER_ORIGIN_VALUE);
+			httpPost.setHeader(HEADER_USER_AGENT, HEADER_USER_AGENT_VALUE);
+			httpPost.setHeader(HEADER_DNT, HEADER_DNT_VALUE);
+			httpPost.setHeader(HEADER_ACCEPT_ENCODING, HEADER_ACCEPT_ENCODING_VALUE);
+			httpPost.setHeader(HEADER_ACCEPT, HEADER_ACCEPT_VALUE);
+			httpPost.setHeader(HEADER_ACCEPT_LANGUAGE, HEADER_ACCEPT_LANGUAGE_VALUE);
+			httpPost.setHeader(HEADER_CONTENT_TYPE, HEADER_CONTENT_TYPE_TEXT_VALUE);
+			if (isChromeCast) {
+				//httpPost.setEntity(new StringEntity("v=release-d4fa0a24f89ec5ba83f7bf3324282c8d046bf612&id=local%3A1&idle=windowclose"));
+				httpPost.setEntity(new StringEntity("v=release-d4fa0a24f89ec5ba83f7bf3324282c8d046bf612&id=local%3A1"));
+			}
+
+			httpResponse = defaultHttpClient.execute(httpPost, localContext);
+			if (httpResponse != null) {
+				Log.d(LOG_TAG, "post response code=" + httpResponse.getStatusLine().getStatusCode());
+				response = EntityUtils.toString(httpResponse.getEntity());
+				Log.d(LOG_TAG, "post response=" + response);
+				Header[] headers = httpResponse.getHeaders("LOCATION");
+				if (headers.length > 0) {
+					location = headers[0].getValue();
+					Log.d(LOG_TAG, "post response location=" + location);
+				}
+
+				headers = httpResponse.getAllHeaders();
+				for (int i = 0; i < headers.length; i++) {
+					Log.d(LOG_TAG, headers[i].getName() + "=" + headers[i].getValue());
+				}
+			} else {
+				Log.i(LOG_TAG, "no post response");
+				return;
+			}
+
+			// Keep trying to get the app status until the
+			// connection service URL is available
+			state = STATE_STOPPED;
+			do {
+				responseCode = getAppStatus(defaultHttpClient, dialServer.getAppsUrl() + app);
+				if (responseCode != 200) {
+					break;
+				}
+				parseXml(new StringReader(response));
+				Log.d(LOG_TAG, "state=" + state);
+				Log.d(LOG_TAG, "connectionServiceUrl=" + connectionServiceUrl);
+				Log.d(LOG_TAG, "protocol=" + protocol);
+				try {
+					Thread.sleep(1000);
+				} catch (Exception e) {
+				}
+			} while (state.<mark>equals</mark>(STATE_RUNNING) && connectionServiceUrl == null);
+
+			if (connectionServiceUrl == null) {
+				Log.i(LOG_TAG, "connectionServiceUrl is null");
+				return; // oops, something went wrong
+			}
+
+			// get the websocket URL
+			String webSocketAddress = null;
+			httpPost = new HttpPost(connectionServiceUrl); // "http://192.168.0.17:8008/connection/YouTube"
+			httpPost.setHeader(HEADER_CONNECTION, HEADER_CONNECTION_VALUE);
+			httpPost.setHeader(HEADER_ORIGN, HEADER_ORIGIN_VALUE);
+			httpPost.setHeader(HEADER_USER_AGENT, HEADER_USER_AGENT_VALUE);
+			httpPost.setHeader(HEADER_DNT, HEADER_DNT_VALUE);
+			httpPost.setHeader(HEADER_ACCEPT_ENCODING, HEADER_ACCEPT_ENCODING_VALUE);
+			httpPost.setHeader(HEADER_ACCEPT, HEADER_ACCEPT_VALUE);
+			httpPost.setHeader(HEADER_ACCEPT_LANGUAGE, HEADER_ACCEPT_LANGUAGE_VALUE);
+			httpPost.setHeader(HEADER_CONTENT_TYPE, HEADER_CONTENT_TYPE_JSON_VALUE);
+			httpPost.setEntity(new StringEntity("{\"channel\":0,\"senderId\":{\"appName\":\"" + app + "\", \"senderId\":\"" + senderId + "\"}}"));
+
+			httpResponse = defaultHttpClient.execute(httpPost, localContext);
+			if (httpResponse != null) {
+				responseCode = httpResponse.getStatusLine().getStatusCode();
+				Log.d(LOG_TAG, "post response code=" + responseCode);
+				if (responseCode == 200) {
+					// should return JSON payload
+					response = EntityUtils.toString(httpResponse.getEntity());
+					Log.d(LOG_TAG, "post response=" + response);
+					Header[] headers = httpResponse.getAllHeaders();
+					for (int i = 0; i < headers.length; i++) {
+						Log.d(LOG_TAG, headers[i].getName() + "=" + headers[i].getValue());
+					}
+
+					// http://code.google.com/p/json-simple/
+					JSONParser parser = <mark>new JSONParser</mark>();
+					try {
+						Object obj = parser.<mark>parse</mark>(new StringReader(response)); // {"URL":"ws://192.168.0.17:8008/session?33","pingInterval":0}
+						JSONObject jsonObject = (JSONObject) obj;
+						webSocketAddress = (String) jsonObject.<mark>get</mark>("URL");
+						Log.d(LOG_TAG, "webSocketAddress: " + webSocketAddress);
+						long pingInterval = (Long) jsonObject.<mark>get</mark>("pingInterval"); // TODO
+					} catch (Exception e) {
+						Log.e(LOG_TAG, "parse JSON", e);
+					}
+				}
+			} else {
+				Log.i(LOG_TAG, "no post response");
+				return;
+			}
+
+			// Make a web socket connection for doing RAMP
+			// to control media playback
+			this.started = false;
+			this.closed = false;
+			this.gotStatus = false;
+			if (webSocketAddress != null) {
+				// https://github.com/TooTallNate/Java-WebSocket
+				URI uri = URI.create(webSocketAddress);
+
+				rampWebSocketClient = new RampWebSocketClient(uri, this);
+
+				new Thread(new Runnable() {
+					public void run() {
+						Thread t = new Thread(rampWebSocketClient);
+						t.start();
+						try {
+							t.join();
+						} catch (InterruptedException e1) {
+							e1.printStackTrace();
+						} finally {
+							rampWebSocketClient.close();
+						}
+					}
+				}).start();
+			} else {
+				Log.i(LOG_TAG, "webSocketAddress is null");
+			}
+
+		} catch (Exception e) {
+			Log.e(LOG_TAG, "launchApp", e);
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+        

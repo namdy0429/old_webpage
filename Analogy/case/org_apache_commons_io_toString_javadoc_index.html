@@ -1,0 +1,1597 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">org_apache_commons_io</h1>
+      <br>
+      <h4 class="col-lg-12 col-md-12 mb-12">toString</h4>
+    </div>
+    
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>kohsuke_____hudson_____IOUtils_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/kohsuke_____hudson_____IOUtils.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * @deprecated Use instead {@link org.apache.commons.io.IOUtils#<mark>toString</mark>(byte[], String)}
+     */    @Deprecated
+    public static String <mark>toString</mark>(Reader input) throws IOException {
+        return org.apache.commons.io.IOUtils.<mark>toString</mark>(input);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>kohsuke_____hudson_____IOUtils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/kohsuke_____hudson_____IOUtils.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * @deprecated Use instead {@link org.apache.commons.io.IOUtils#<mark>toString</mark>(java.io.Reader)}
+     */    @Deprecated
+    public static String <mark>toString</mark>(InputStream input) throws IOException {
+        return org.apache.commons.io.IOUtils.<mark>toString</mark>(input);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>kohsuke_____hudson_____IOUtils_5.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/kohsuke_____hudson_____IOUtils.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * @deprecated Use instead {@link org.apache.commons.io.IOUtils#readLines(java.io.InputStream)}
+     */    @Deprecated
+    public static String <mark>toString</mark>(byte[] input) throws IOException {
+        return org.apache.commons.io.IOUtils.<mark>toString</mark>(input);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>kohsuke_____hudson_____IOUtils_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/kohsuke_____hudson_____IOUtils.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * @deprecated Use instead {@link org.apache.commons.io.IOUtils#<mark>toString</mark>(byte[])}
+     */    @Deprecated
+    public static String <mark>toString</mark>(InputStream input, String encoding) throws IOException {
+        return org.apache.commons.io.IOUtils.<mark>toString</mark>(input, encoding);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>OpenNMS_____opennms_____ResourceDaoIntegrityIT_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/OpenNMS_____opennms_____ResourceDaoIntegrityIT.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * Creates a set of nodes and assigns a single IP address from
+     * the resource-tree-ips.txt file to each node.
+     */
+    private String[] loadExpectedResults() throws IOException {
+        String fileAsString = IOUtils.<mark>toString</mark>(new ClassPathResource("resource-tree-results.txt").getInputStream());
+        return fileAsString.split("\\r?\\n");
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____ofbiz_____JSON_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/apache_____ofbiz_____JSON.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * Creates a <code>JSON</code> instance from a <code>Reader</code>.
+     * 
+     * @param reader
+     * @return a <code>JSON</code> instance
+     * @throws IOException
+     */     */
+    public static JSON from(InputStream inStream) throws IOException {
+        Assert.notNull("inStream", inStream);
+        String jsonString = IOUtils.<mark>toString</mark>(inStream, "UTF-8");
+        return from(jsonString);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____ambari_____JSONRequest_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/apache_____ambari_____JSONRequest.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+   * @see #post(WebResource, MultivaluedMapImpl)
+   */   */
+  public RESPONSE get(WebResource resource) throws IOException {
+    LOG.info("GET {}", resource);
+
+    InputStream inputStream = readFrom(resource, "GET", null, new HashMap<String, String>());
+
+    recordLastCurlCommand(String.format("curl \"" + resource.<mark>toString</mark>() + "\""));
+    String responseJson = IOUtils.<mark>toString</mark>(inputStream);
+    LOG.debug("RESPONSE {}", responseJson);
+    return gson.fromJson(responseJson, responseClass);
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____systemml_____ScriptFactory_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/apache_____systemml_____ScriptFactory.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+	 * Obtain a script string from a URL.
+	 *
+	 * @param url
+	 *            The script URL
+	 * @return The script string
+	 * @throws MLContextException
+	 *             If a problem occurs reading the script string from the URL
+	 */	 */
+	private static String getScriptStringFromInputStream(InputStream inputStream) {
+		if (inputStream == null) {
+			throw new MLContextException("InputStream is null");
+		}
+		try {
+			return IOUtils.<mark>toString</mark>(inputStream);
+		} catch (IOException e) {
+			throw new MLContextException("Error trying to read script string from InputStream", e);
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>xwiki_____xwiki-platform_____DOMXMLWriter_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/xwiki_____xwiki-platform_____DOMXMLWriter.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * {@inheritDoc}
+     * <p>
+     * Add the element into the <code>{@link Document}</code> as a children of the element at the top of the stack of
+     * opened elements, putting the whole stream content as Base64 text in the content of the
+     * <code>{@link Element}</code>.
+     * </p>
+     *
+     * @see com.xpn.xwiki.internal.xml.XMLWriter#writeBase64(org.dom4j.Element, java.io.InputStream)
+     */    @Override
+    public void write(Element element, InputStream is) throws IOException
+    {
+        element.addText(IOUtils.<mark>toString</mark>(is, this.format.getEncoding()));
+        write(element);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____sling_____TopologyRequestValidator_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/apache_____sling_____TopologyRequestValidator.java
+
+org.apache.commons.io.IOUtils.toString
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * throw an exception if not active.
+     */     */
+    private String getRequestBody(HttpServletRequest request) throws IOException {
+        final String contentEncoding = request.getHeader("Content-Encoding");
+        if (contentEncoding!=null && contentEncoding.contains("gzip")) {
+            // then treat the request body as gzip:
+            final GZIPInputStream gzipIn = new GZIPInputStream(request.getInputStream());
+            final String gunzippedEncodedJson = IOUtils.<mark>toString</mark>(gzipIn);
+            gzipIn.close();
+            return gunzippedEncodedJson;
+        } else {
+            // otherwise assume plain-text:
+            return IOUtils.<mark>toString</mark>(request.getReader());
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____incubator-metron_____ElasticsearchClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/apache_____incubator-metron_____ElasticsearchClient.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+   * Gets FieldMapping detail for a list of indices.
+   *
+   * @param indices get field mapppings for the provided indices
+   * @return mapping of index name to FieldMapping
+   */   */
+  public void putMapping(String index, String mappingType, String mapping) throws IOException {
+    HttpEntity entity = new StringEntity(mapping);
+    Response response = lowLevelClient.performRequest("PUT"
+            , "/" + index + "/_mapping/" + mappingType
+            , Collections.emptyMap()
+            , entity
+    );
+
+    if(response.getStatusLine().getStatusCode() != 200) {
+      String responseStr = IOUtils.<mark>toString</mark>(response.getEntity().getContent());
+      throw new IllegalStateException("Got a " + response.getStatusLine().getStatusCode() + " due to " + responseStr);
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>kohsuke_____jenkins_____DownloadService_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/kohsuke_____jenkins_____DownloadService.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+         * Install this listener to the Downloadable extension list after all extensions have been loaded; we only
+         * care about those that are added after initialization
+         */    @Restricted(NoExternalUse.class)
+    public static String loadJSON(URL src) throws IOException {
+        InputStream is = ProxyConfiguration.open(src).getInputStream();
+        try {
+            String jsonp = IOUtils.<mark>toString</mark>(is, "UTF-8");
+            int start = jsonp.indexOf('{');
+            int end = jsonp.lastIndexOf('}');
+            if (start >= 0 && end > start) {
+                return jsonp.substring(start, end + 1);
+            } else {
+                throw new IOException("Could not find JSON in " + src);
+            }
+        } finally {
+            is.close();
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>OpenNMS_____opennms_____ResourceDaoIntegrityIT_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/OpenNMS_____opennms_____ResourceDaoIntegrityIT.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * Define a resource type so that test the GenericIndexResourceType
+     */
+    private void createResourceTree() throws IOException {
+        String fileAsString = IOUtils.<mark>toString</mark>(new ClassPathResource("resource-tree-files.txt").getInputStream());
+        String[] resourceTreeFiles = fileAsString.split("\\r?\\n");
+
+        // This should match the number of lines in the file
+        assertEquals(31829, resourceTreeFiles.length);
+
+        for (String resourceTreeFile : resourceTreeFiles) {
+            // Create the file and its parent directories in the temporary folder
+            File entry = new File(m_tempFolder.getRoot(), resourceTreeFile);
+            entry.getParentFile().mkdirs();
+            assertTrue("Failed to create " + entry, entry.createNewFile());
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____ambari_____JSONRequest_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/apache_____ambari_____JSONRequest.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+   * @see #delete(WebResource, MultivaluedMapImpl)
+   */   */
+  public RESPONSE put(WebResource resource, MultivaluedMapImpl data) throws IOException {
+    LOG.info("PUT {}", resource);
+
+    StringBuilder curlBuilder = new StringBuilder();
+
+    UriBuilder builder = getUriBuilder(data, curlBuilder);
+
+    Map<String, String> headers = new HashMap<String, String>();
+    headers.put("Content-Type", "application/x-www-form-urlencoded");
+
+    recordLastCurlCommand(String.format("curl -X PUT " + curlBuilder.<mark>toString</mark>() + " \"" + resource.<mark>toString</mark>() + "\""));
+
+    InputStream inputStream = readFrom(resource, "PUT", builder.build().getRawQuery(), headers);
+    String responseJson = IOUtils.<mark>toString</mark>(inputStream);
+
+    LOG.debug("RESPONSE => {}", responseJson);
+    return gson.fromJson(responseJson, responseClass);
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>yegor256_____rultor_____Agents_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/yegor256_____rultor_____Agents.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * Handle main commands.
+     * @param profile Profile to uuse
+     * @return Array of questions.
+     */     */
+    public SuperAgent starter() throws IOException {
+        return new SuperAgent.Iterative(
+            new Array<>(
+                new StartsTalks(this.github),
+                new Invitations(this.github),
+                new IndexesRequests(),
+                new DockerExec(
+                    new SSH(
+                        // @checkstyle MagicNumber (1 line)
+                        "b4.rultor.com", 22,
+                        "rultor",
+                        IOUtils.<mark>toString</mark>(
+                            this.getClass().getResourceAsStream("rultor.key"),
+                            CharEncoding.UTF_8
+                        )
+                    ),
+                    "rmi.sh"
+                )
+            )
+        );
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>kohsuke_____hudson_____DownloadService_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/kohsuke_____hudson_____DownloadService.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+         * Install this listener to the Downloadable extension list after all extensions have been loaded; we only
+         * care about those that are added after initialization
+         */    @Restricted(NoExternalUse.class)
+    public static String loadJSON(URL src) throws IOException {
+        URLConnection con = ProxyConfiguration.open(src);
+        if (con instanceof HttpURLConnection) {
+            // prevent problems from misbehaving plugins disabling redirects by default
+            ((HttpURLConnection) con).setInstanceFollowRedirects(true);
+        }
+        try (InputStream is = con.getInputStream()) {
+            String jsonp = IOUtils.<mark>toString</mark>(is, "UTF-8");
+            int start = jsonp.indexOf('{');
+            int end = jsonp.lastIndexOf('}');
+            if (start >= 0 && end > start) {
+                return jsonp.substring(start, end + 1);
+            } else {
+                throw new IOException("Could not find JSON in " + src);
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____ambari_____ConfigurationService_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/apache_____ambari_____ConfigurationService.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+   * Checks if the user is an operator.
+   *
+   * @return    if <code>true</code>, the user is an operator; otherwise <code>false</code>
+   */  @Path("/nodeLabels")
+  public Response getNodeLabels() {
+    LOG.debug("reading nodeLables");
+    Response response;
+
+    try {
+      String url = String.format(RM_GET_NODE_LABEL_URL, getRMUrl());
+
+      InputStream rmResponse = context.getURLStreamProvider().readFrom(
+          url, "GET", (String) null, new HashMap<String, String>());
+      String nodeLabels = IOUtils.<mark>toString</mark>(rmResponse);
+
+      response = Response.ok(nodeLabels).build();
+    } catch (ConnectException ex) {
+      LOG.error("Exception occurred : ", ex);
+      throw new ServiceFormattedException("Connection to Resource Manager refused", ex);
+    } catch (WebApplicationException ex) {
+      LOG.error("Exception occurred : ", ex);
+      throw ex;
+    } catch (Exception ex) {
+      LOG.error("Exception occurred : ", ex);
+      throw new ServiceFormattedException(ex.getMessage(), ex);
+    }
+
+    return response;
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>nuxeo_____nuxeo_____NuxeoLauncher_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/nuxeo_____nuxeo_____NuxeoLauncher.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * @param projects available projects the user must choose one amongst.
+     * @return a project. Never null.
+     * @throws ConfigurationException If {@code projects} is empty or if there is not such a project named as the
+     *             parameter read from stdin.
+     * @since 8.3
+     */     */
+    public String prompt(String message, Predicate<String> predicate, String error)
+            throws IOException, ConfigurationException {
+        boolean doRegexMatch = predicate != null;
+        String value;
+        Console console = System.console();
+        if (console != null) {
+            value = console.readLine(message);
+            while (value == null || doRegexMatch && !predicate.test(value)) {
+                console.printf(error + "\n", value);
+                value = console.readLine(message);
+            }
+        } else { // try reading from stdin
+            value = IOUtils.<mark>toString</mark>(System.in, UTF_8);
+            if (value == null || doRegexMatch && !predicate.test(value)) {
+                throw new ConfigurationException(error);
+            }
+        }
+        return value;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>paypal_____SeLion_____ServletHelper_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/paypal_____SeLion_____ServletHelper.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * Sends a HTTP response as a text/html document and with a HTTP status code.
+     *
+     * @param resp
+     *            A {@link HttpServletResponse} object that the servlet is responding on.
+     * @param resourcePageTemplate
+     *            The HTML template to use which is loaded as a classpath resource.
+     * @param statusCode
+     *            The HTTP status code to send with the response.
+     * @throws IOException
+     */     */
+    public static void respondAsHtmlUsingJsonAndTemplateWithHttpStatus(HttpServletResponse resp, Object response,
+            String resourcePageTemplate, int statusCode) throws IOException {
+        resp.setContentType("text/html");
+        resp.setCharacterEncoding("UTF-8");
+        resp.setStatus(statusCode);
+
+        String template = IOUtils.<mark>toString</mark>(ServletHelper.class.getResourceAsStream(resourcePageTemplate), "UTF-8");
+        final String json = new GsonBuilder().serializeNulls().create().toJson(response);
+        final String jsonUtf8 = new String(json.getBytes(), "UTF-8");
+        template = String.format(template, jsonUtf8);
+        resp.getOutputStream().print(template);
+        resp.flushBuffer();
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>wro4j_____wro4j_____NodeLessCssProcessor_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/wro4j_____wro4j_____NodeLessCssProcessor.java
+
+org.apache.commons.io.IOUtils.write
+org.apache.commons.io.input.AutoCloseInputStream.&ltinit&gt
+org.apache.commons.io.IOUtils.toString
+org.apache.commons.io.IOUtils.closeQuietly
+org.apache.commons.io.FileUtils.deleteQuietly
+
+/**
+   * Invoked when a processing exception occurs. Default implementation wraps the original exception into
+   * {@link WroRuntimeException}.
+   *
+   * @param e
+   *          the {@link Exception} thrown during processing
+   * @param content
+   *          the resource content being processed.
+   */  @Override
+  public void process(final Resource resource, final Reader reader, final Writer writer)
+      throws IOException {
+    final String content = IOUtils.<mark>toString</mark>(reader);
+    final String resourceUri = resource == null ? "unknown.less" : resource.getUri();
+    try {
+      writer.<mark>write</mark>(process(resourceUri, content));
+    } catch (final Exception e) {
+      LOG.warn("Exception while applying " + getClass().getSimpleName() + " processor on the " + resourceUri
+          + " resource, no processing applied...", e);
+      LOG.error(e.getMessage(), e);
+      onException(e, content);
+    } finally {
+      // return for later reuse
+      reader.close();
+      writer.close();
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>wro4j_____wro4j_____NodeCoffeeScriptProcessor_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/wro4j_____wro4j_____NodeCoffeeScriptProcessor.java
+
+org.apache.commons.io.IOUtils.write
+org.apache.commons.io.input.AutoCloseInputStream.&ltinit&gt
+org.apache.commons.io.IOUtils.toString
+org.apache.commons.io.IOUtils.closeQuietly
+org.apache.commons.io.FileUtils.deleteQuietly
+
+/**
+   * Invoked when a processing exception occurs. Default implementation wraps the original exception into
+   * {@link WroRuntimeException}.
+   *
+   * @param e
+   *          the {@link Exception} thrown during processing
+   * @param content
+   *          the resource content being processed.
+   */  @Override
+  public void process(final Resource resource, final Reader reader, final Writer writer)
+      throws IOException {
+    LOG.debug("processing {} resource", resource);
+    final String content = IOUtils.<mark>toString</mark>(reader);
+    final String resourceUri = resource == null ? "unknown.coffee" : resource.getUri();
+    try {
+      writer.<mark>write</mark>(process(resourceUri, content));
+    } catch (final Exception e) {
+      LOG.warn("Exception while applying " + getClass().getSimpleName() + " processor on the " + resourceUri
+          + " resource, no processing applied...", e);
+      LOG.error(e.getMessage(), e);
+      onException(e, content);
+    } finally {
+      // return for later reuse
+      reader.close();
+      writer.close();
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>nuxeo_____nuxeo_____NuxeoLauncher_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/nuxeo_____nuxeo_____NuxeoLauncher.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * Register the instance, generating the CLID or using the passed one; or renew a registration.
+     *
+     * <pre>
+     * {@code
+     * nuxeoctl register [<username> [<project> [<type> <description>] [pwd]]]
+     *
+     * nuxeoctl register --clid <file>
+     *
+     * nuxeoctl register --renew [--clid <file>]
+     * }
+     * </pre>
+     *
+     * Missing parameters are read from stdin.
+     *
+     * @return true if succeed
+     * @since 8.3
+     */     */
+    public NuxeoClientInstanceType promptInstanceType() throws IOException, ConfigurationException {
+        NuxeoClientInstanceType type;
+        Console console = System.console();
+        if (console == null) {
+            String typeStr = IOUtils.<mark>toString</mark>(System.in, UTF_8);
+            type = NuxeoClientInstanceType.fromString(typeStr);
+            if (type == null) {
+                throw new ConfigurationException("Unknown type: " + typeStr);
+            }
+            return type;
+        }
+        do {
+            String s = console.readLine("Instance type (dev|preprod|prod): [dev] ");
+            if (StringUtils.isBlank(s)) {
+                type = NuxeoClientInstanceType.DEV;
+            } else {
+                type = NuxeoClientInstanceType.fromString(s);
+            }
+        } while (type == null);
+        return type;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>wro4j_____wro4j_____NodeTypeScriptProcessor_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/wro4j_____wro4j_____NodeTypeScriptProcessor.java
+
+org.apache.commons.io.IOUtils.write
+org.apache.commons.io.input.AutoCloseInputStream.&ltinit&gt
+org.apache.commons.io.IOUtils.toString
+org.apache.commons.io.input.AutoCloseInputStream.&ltinit&gt
+org.apache.commons.io.IOUtils.toString
+org.apache.commons.io.IOUtils.closeQuietly
+org.apache.commons.io.IOUtils.closeQuietly
+org.apache.commons.io.FileUtils.deleteQuietly
+org.apache.commons.io.FileUtils.deleteQuietly
+
+/**
+   * Invoked when a processing exception occurs. Default implementation wraps the original exception into
+   * {@link WroRuntimeException}.
+   *
+   * @param e
+   *          the {@link Exception} thrown during processing
+   * @param content
+   *          the resource content being processed.
+   */  @Override
+  public void process(final Resource resource, final Reader reader, final Writer writer)
+      throws IOException {
+    final String content = IOUtils.<mark>toString</mark>(reader);
+    final String resourceUri = resource == null ? "unknown.js" : resource.getUri();
+    try {
+      writer.<mark>write</mark>(process(resourceUri, content));
+    } catch (final Exception e) {
+      LOG.warn("Exception while applying " + getClass().getSimpleName() + " processor on the " + resourceUri
+          + " resource, no processing applied...", e);
+      LOG.error(e.getMessage(), e);
+      onException(e, content);
+    } finally {
+      // return for later reuse
+      reader.close();
+      writer.close();
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>b3log_____symphony_____AudioMgmtService_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/b3log_____symphony_____AudioMgmtService.java
+
+org.apache.commons.io.IOUtils.write
+org.apache.commons.io.IOUtils.toString
+org.apache.commons.io.IOUtils.toByteArray
+
+/**
+     * Remove speech audio files in object storage.
+     *
+     * @param audioURL the specified speech audio URL
+     */
+    private static void refreshBaiduAccessToken() {
+        if (StringUtils.isBlank(BAIDU_API_KEY) || StringUtils.isBlank(BAIDU_SECRET_KEY)) {
+            return;
+        }
+
+        final long now = System.currentTimeMillis();
+        if (StringUtils.isNotBlank(BAIDU_ACCESS_TOKEN) && now - 1000 * 60 * 60 * 6 < BAIDU_ACCESS_TOKEN_TIME) {
+            return;
+        }
+
+        try {
+            final URL url = new URL("https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials"
+                    + "&client_id=" + BAIDU_API_KEY + "&client_secret=" + BAIDU_SECRET_KEY);
+
+            final HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+
+            try (final InputStream inputStream = conn.getInputStream()) {
+                final String content = IOUtils.<mark>toString</mark>(inputStream, "UTF-8");
+
+                conn.disconnect();
+
+                final JSONObject result = new JSONObject(content);
+                BAIDU_ACCESS_TOKEN = result.optString("access_token", null);
+                BAIDU_ACCESS_TOKEN_TIME = now;
+            }
+        } catch (final Exception e) {
+            LOGGER.log(Level.ERROR, "Requires Baidu Yuyin access token failed", e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____incubator-metron_____ElasticsearchClient_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/apache_____incubator-metron_____ElasticsearchClient.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+   * Traverses the outer map to retrieve a leaf map by iteratively calling get(key) using the provided keys in order. e.g.
+   * for an outer map provided as follows:
+   * <pre>
+   * {
+   *   "foo" : {
+   *     "bar" : {
+   *       "baz" : {
+   *         "hello" : "world"
+   *       }
+   *     }
+   *   }
+   * }
+   * </pre>
+   * calling getInnerMap(outerMap, new String[] { "foo", "bar", "baz" }) would return the following:
+   * <pre>
+   * {hello=world}
+   * </pre>
+   * @param outerMap Complex map of nested keys/values
+   * @param keys ordered list of keys to iterate over to grab a leaf mapping.
+   * @return leaf node, or innermost matching node from outerMap if no leaf exists
+   */   */
+  public String[] getIndices() throws IOException {
+    Response response = lowLevelClient.performRequest("GET", "/_cat/indices");
+    if(response.getStatusLine().getStatusCode() == 200) {
+      String responseStr = IOUtils.<mark>toString</mark>(response.getEntity().getContent());
+      List<String> indices = new ArrayList<>();
+      for(String line : Splitter.on("\n").split(responseStr)) {
+        Iterable<String> splits = Splitter.on(" ").split(line.replaceAll("\\s+", " ").trim());
+        if(Iterables.size(splits) > 3) {
+          String index = Iterables.get(splits, 2, "");
+          if(!StringUtils.isEmpty(index)) {
+            indices.add(index.trim());
+          }
+        }
+      }
+      String[] ret = new String[indices.size()];
+      ret=indices.toArray(ret);
+      return ret;
+    }
+    return null;
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>xwiki_____xwiki-platform_____PygmentsParser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/xwiki_____xwiki-platform_____PygmentsParser.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * Return a highlighted version of the provided content.
+     * 
+     * @param syntaxId the identifier of the source syntax.
+     * @param code the content to highlight.
+     * @return the highlighted version of the provided source.
+     * @throws ScriptException when failed to execute the script
+     * @throws ParseException when failed to parse the content as plain text
+     */    @Override
+    public void initialize() throws InitializationException
+    {
+        ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
+
+        // Get the script
+        InputStream is = getClass().getResourceAsStream("/pygments/code.py");
+        if (is != null) {
+            try {
+                this.script = IOUtils.<mark>toString</mark>(is, "UTF8");
+            } catch (Exception e) {
+                throw new InitializationException("Failed to read resource /pygments/code.py resource", e);
+            } finally {
+                IOUtils.closeQuietly(is);
+            }
+        } else {
+            throw new InitializationException("Failed to find resource /pygments/code.py resource");
+        }
+
+        // Get the Python engine
+        this.engine = scriptEngineManager.getEngineByName(ENGINE_ID);
+
+        if (this.engine == null) {
+            throw new InitializationException("Failed to find engine for Python script language");
+        }
+
+        String highlightSyntaxId = getSyntaxId() + "-highlight";
+        this.syntax = new Syntax(new SyntaxType(highlightSyntaxId, highlightSyntaxId), "1.0");
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>wro4j_____wro4j_____NodeCoffeeScriptProcessor_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/wro4j_____wro4j_____NodeCoffeeScriptProcessor.java
+
+org.apache.commons.io.IOUtils.toString
+org.apache.commons.io.FileUtils.deleteQuietly
+
+/**
+   * Creates the platform specific arguments to run the <code>lessc</code> shell utility. Default implementation handles
+   * windows and unix platforms.
+   *
+   * @return arguments for command line. The implementation will take care of OS differences.
+   */
+  private String process(final String resourceUri, final String content) {
+    final InputStream shellIn = null;
+    // the file holding the input file to process
+    File temp = null;
+    try {
+      temp = WroUtil.createTempFile();
+      final String encoding = "UTF-8";
+      IOUtils.write(content, new FileOutputStream(temp), encoding);
+      LOG.debug("absolute path: {}", temp.getAbsolutePath());
+
+      final Process process = createProcess(temp);
+      final String result = IOUtils.<mark>toString</mark>(new AutoCloseInputStream(process.getInputStream()), encoding);
+      final int exitStatus = process.waitFor();// this won't return till `out' stream being flushed!
+      if (exitStatus != 0) {
+        final String compileError = result;
+        LOG.error("exitStatus: {}", exitStatus);
+        // find a way to get rid of escape character found at the end (minor issue)
+        final String errorMessage = MessageFormat.format("Error in CoffeeScript: \n{0}",
+            compileError.replace(temp.getPath(), resourceUri));
+        throw new WroRuntimeException(errorMessage);
+      }
+      //the result is compiled in the same file
+      return result;
+    } catch (final Exception e) {
+      throw WroRuntimeException.wrap(e);
+    } finally {
+      IOUtils.closeQuietly(shellIn);
+      // always cleanUp
+      FileUtils.<mark>deleteQuietly</mark>(temp);
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>wro4j_____wro4j_____NodeLessCssProcessor_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/wro4j_____wro4j_____NodeLessCssProcessor.java
+
+org.apache.commons.io.IOUtils.toString
+org.apache.commons.io.FileUtils.deleteQuietly
+
+/**
+   * Creates the platform specific arguments to run the <code>lessc</code> shell utility. Default implementation handles
+   * windows and unix platforms.
+   *
+   * @return arguments for command line. The implementation will take care of OS differences.
+   */
+  private String process(final String resourceUri, final String content) {
+    final InputStream shellIn = null;
+    // the file holding the input file to process
+    File temp = null;
+    try {
+      temp = WroUtil.createTempFile();
+      final String encoding = "UTF-8";
+      IOUtils.write(content, new FileOutputStream(temp), encoding);
+      LOG.debug("absolute path: {}", temp.getAbsolutePath());
+
+      final Process process = createProcess(temp);
+      /**
+       * It is important to read before waitFor is invoked because read stream is blocking stdout while Java application
+       * doesn't read the whole buffer. It hangs when processing large files. The lessc isn't closing till all STDOUT
+       * flushed. This blocks io and Node does not exit because of that.
+       */
+      final String result = IOUtils.<mark>toString</mark>(new AutoCloseInputStream(process.getInputStream()), encoding);
+      final int exitStatus = process.waitFor();// this won't return till `out' stream being flushed!
+
+      if (exitStatus != 0) {
+        LOG.error("exitStatus: {}", exitStatus);
+        // find a way to get rid of escape character found at the end (minor issue)
+        final String errorMessage = MessageFormat.format("Error in LESS: \n{0}",
+            result.replace(temp.getPath(), resourceUri));
+        throw new WroRuntimeException(errorMessage);
+      }
+      return result;
+    } catch (final Exception e) {
+      throw WroRuntimeException.wrap(e);
+    } finally {
+      IOUtils.closeQuietly(shellIn);
+      // always cleanUp
+      FileUtils.<mark>deleteQuietly</mark>(temp);
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>Netflix_____Raigad_____SystemUtils_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/Netflix_____Raigad_____SystemUtils.java
+
+org.apache.commons.io.IOUtils.toString
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * delete all the files/dirs in the given Directory but dont delete the dir
+     * itself.
+     */
+    public static String runHttpPutCommand(String url, String jsonBody) throws IOException {
+        String return_;
+        DefaultHttpClient client = new DefaultHttpClient();
+        InputStream isStream = null;
+
+        try {
+            HttpParams httpParameters = new BasicHttpParams();
+            int timeoutConnection = 1000;
+            int timeoutSocket = 1000;
+            HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
+            HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);
+            client.setParams(httpParameters);
+
+            HttpPut putRequest = new HttpPut(url);
+            putRequest.setEntity(new StringEntity(jsonBody, StandardCharsets.UTF_8));
+            putRequest.setHeader("Content-type", "application/json");
+
+            HttpResponse resp = client.execute(putRequest);
+
+            if (resp == null || resp.getEntity() == null) {
+                throw new ElasticsearchHttpException("Unable to execute PUT URL (" + url + "), exception message: < Null Response or Null HttpEntity >");
+            }
+
+            isStream = resp.getEntity().getContent();
+
+            if (resp.getStatusLine().getStatusCode() != 200) {
+                throw new ElasticsearchHttpException("Unable to execute PUT URL (" + url + "), exception message: (" + IOUtils.<mark>toString</mark>(isStream, StandardCharsets.UTF_8.<mark>toString</mark>()) + ")");
+            }
+
+            String requestResult = IOUtils.<mark>toString</mark>(isStream, StandardCharsets.UTF_8.<mark>toString</mark>());
+            logger.debug("PUT URL API: {} with JSONBody {} returns: {}", url, jsonBody, requestResult);
+
+            return requestResult;
+        }
+        catch (Exception e) {
+            throw new ElasticsearchHttpException("Caught an exception during execution of URL (" + url + "), exception message: (" + e + ")");
+        }
+        finally {
+            if (isStream != null) {
+                isStream.close();
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>wicketstuff_____core_____NashornResource_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/wicketstuff_____core_____NashornResource.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+	 * Executes a given script callable and the corresponding script
+	 * 
+	 * @param executeScript
+	 *            the script callable to execute
+	 * @param watch
+	 *            if the script execution should be watched
+	 * @return the script result
+	 * @throws Exception
+	 */	@Override
+	protected ResourceResponse newResourceResponse(Attributes attributes)
+	{
+		RequestCycle cycle = RequestCycle.get();
+		Long startbyte = cycle.getMetaData(CONTENT_RANGE_STARTBYTE);
+		Long endbyte = cycle.getMetaData(CONTENT_RANGE_ENDBYTE);
+		HttpServletRequest httpServletRequest = (HttpServletRequest)attributes.getRequest()
+			.getContainerRequest();
+		try (InputStream inputStream = httpServletRequest.getInputStream())
+		{
+			String script = IOUtils.<mark>toString</mark>(inputStream);
+			if (script.contains("nashornResourceReferenceScriptExecutionThread"))
+			{
+				throw new IllegalAccessException(
+					"It is not allowed to gain access to the nashorn thread itself! (nashornResourceReferenceScriptExecutionThread)");
+			}
+			String safeScript = ensureSafetyScript(script, attributes);
+			NashornScriptCallable nashornScriptCallable = new NashornScriptCallable(safeScript,
+				attributes, getClassFilter(), getWriter(), getErrorWriter())
+			{
+				@Override
+				protected void setup(Attributes attributes, Bindings bindings)
+				{
+					NashornResource.this.setup(attributes, bindings);
+				}
+			};
+			Object scriptResult = executeScript(nashornScriptCallable, true);
+			ResourceResponse resourceResponse = new ResourceResponse();
+			resourceResponse.setContentType("text/plain");
+			resourceResponse.setWriteCallback(new PartWriterCallback(
+				IOUtils.toInputStream(scriptResult != null ? scriptResult.<mark>toString</mark>() : ""),
+				Long.valueOf(scriptResult != null ? scriptResult.<mark>toString</mark>().length() : 0),
+				startbyte, endbyte));
+			return resourceResponse;
+		}
+		catch (Exception e)
+		{
+			ResourceResponse errorResourceResponse = processError(e);
+			if (errorResourceResponse == null)
+			{
+				throw new WicketRuntimeException(
+					"Error while reading / executing the script the script", e);
+			}
+			else
+			{
+				return errorResourceResponse;
+			}
+
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>geosolutions-it_____geoserver-manager_____HTTPUtils_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/geosolutions-it_____geoserver-manager_____HTTPUtils.java
+
+org.apache.commons.io.IOUtils.toString
+org.apache.commons.io.IOUtils.closeQuietly
+
+/**
+     * @return true if the server response was an HTTP_OK
+     */     */
+    private static String send(final EntityEnclosingMethod httpMethod, String url,
+                               RequestEntity requestEntity, String username, String pw) {
+        HttpClient client = new HttpClient();
+        HttpConnectionManager connectionManager = client.getHttpConnectionManager();
+        try {
+            setAuth(client, url, username, pw);
+            connectionManager.getParams().setConnectionTimeout(5000);
+            if (requestEntity != null)
+                httpMethod.setRequestEntity(requestEntity);
+            int status = client.executeMethod(httpMethod);
+
+            InputStream responseBody;
+            switch (status) {
+            case HttpURLConnection.HTTP_OK:
+            case HttpURLConnection.HTTP_CREATED:
+            case HttpURLConnection.HTTP_ACCEPTED:
+                String response = IOUtils.<mark>toString</mark>(httpMethod.getResponseBodyAsStream());
+                // LOGGER.info("================= POST " + url);
+                if (LOGGER.isInfoEnabled())
+                    LOGGER.info("HTTP " + httpMethod.getStatusText() + ": " + response);
+                return response;
+            default:
+                responseBody = httpMethod.getResponseBodyAsStream();
+                LOGGER.warn("Bad response: code[" + status + "]" + " msg[" + httpMethod.getStatusText() + "]"
+                            + " url[" + url + "]" + " method[" + httpMethod.getClass().getSimpleName()
+                            + "]: " + (responseBody != null ? IOUtils.<mark>toString</mark>(responseBody) : ""));
+                return null;
+            }
+        } catch (ConnectException e) {
+            LOGGER.info("Couldn't connect to [" + url + "]");
+            return null;
+        } catch (IOException e) {
+            LOGGER.error("Error talking to " + url + " : " + e.getLocalizedMessage());
+            return null;
+        } finally {
+            if (httpMethod != null)
+                httpMethod.releaseConnection();
+            connectionManager.closeIdleConnections(0);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>openhab_____openhab_____FrontierSiliconRadioConnection_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/openhab_____openhab_____FrontierSiliconRadioConnection.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * Performs a request to the radio with addition parameters.
+     * 
+     * Typically used for changing parameters.
+     * 
+     * @param REST
+     *            API requestString, e.g. "SET/netRemote.sys.power"
+     * @param params
+     *            , e.g. "value=1"
+     * @return request result
+     */     */
+    public boolean doLogin() {
+        isLoggedIn = false; // reset login flag
+
+        if (httpClient == null) {
+            httpClient = new HttpClient();
+        }
+
+        final String url = "http://" + hostname + ":" + port + "/fsapi/CREATE_SESSION?pin=" + pin;
+
+        logger.trace("opening URL:" + url);
+
+        final HttpMethod method = new GetMethod(url);
+        method.getParams().setSoTimeout(SOCKET_TIMEOUT);
+        method.getParams().setParameter(HttpMethodParams.RETRY_HANDLER, new DefaultHttpMethodRetryHandler(3, false));
+
+        try {
+            final int statusCode = httpClient.executeMethod(method);
+            if (statusCode != HttpStatus.SC_OK) {
+                logger.warn("Method failed: " + method.getStatusLine());
+            }
+
+            final String responseBody = IOUtils.<mark>toString</mark>(method.getResponseBodyAsStream());
+            if (!responseBody.isEmpty()) {
+                logger.trace("login response: " + responseBody);
+            }
+
+            try {
+                final FrontierSiliconRadioApiResult result = new FrontierSiliconRadioApiResult(responseBody);
+                if (result.isStatusOk()) {
+                    logger.trace("login successful");
+                    sessionId = result.getSessionId();
+                    isLoggedIn = true;
+                    return true; // login successful :-)
+                }
+            } catch (Exception e) {
+                logger.error("Parsing response failed");
+            }
+
+        } catch (HttpException he) {
+            logger.error("Fatal protocol violation: {}", he.<mark>toString</mark>());
+        } catch (IOException ioe) {
+            logger.error("Fatal transport error: {}", ioe.<mark>toString</mark>());
+        } finally {
+            method.releaseConnection();
+        }
+        return false; // login not successful
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>wro4j_____wro4j_____NodeTypeScriptProcessor_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/wro4j_____wro4j_____NodeTypeScriptProcessor.java
+
+org.apache.commons.io.input.AutoCloseInputStream.&ltinit&gt
+org.apache.commons.io.IOUtils.toString
+org.apache.commons.io.FileUtils.deleteQuietly
+org.apache.commons.io.FileUtils.deleteQuietly
+
+/**
+   * Creates the platform specific arguments to run the <code>tsc</code> shell utility. Default implementation handles
+   * windows and unix platforms.
+   *
+   * @return arguments for command line. The implementation will take care of OS differences.
+   */
+  private String process(final String resourceUri, final String content) {
+    final InputStream shellIn = null;
+    OutputStream tempSourceStream = null;
+    // the file holding the input file to process
+    File tempSource = null;
+    File tempDest = null;
+    try {
+      tempSource = WroUtil.createTempFile(TYPESCRIPT_EXTENSION);
+      tempDest = WroUtil.createTempFile(TYPESCRIPT_EXTENSION);
+      final String encoding = "UTF-8";
+      IOUtils.write(content, tempSourceStream = new FileOutputStream(tempSource), encoding);
+      LOG.debug("absolute path: {}", tempSource.getAbsolutePath());
+
+      final Process process = createProcess(tempSource, tempDest);
+
+      final int exitStatus = process.waitFor();// this won't return till `out' stream being flushed!
+      final String result = IOUtils.<mark>toString</mark>(<mark>new AutoCloseInputStream</mark>(new FileInputStream(tempDest)), encoding);
+      if (exitStatus != 0) {
+        LOG.error("exitStatus: {}", exitStatus);
+        String errorMessage = IOUtils.<mark>toString</mark>(<mark>new AutoCloseInputStream</mark>(process.getInputStream()), encoding);
+        // find a way to get rid of escape character found at the end (minor issue)
+        errorMessage = MessageFormat.format("Error in Typescript: \n{0}",
+            errorMessage.replace(tempSource.getPath(), resourceUri));
+        throw new WroRuntimeException(errorMessage).logError();
+      }
+      return result;
+    } catch (final Exception e) {
+      throw WroRuntimeException.wrap(e);
+    } finally {
+      // close input stream to allow file to be deleted (otherwise deletion fails).
+      IOUtils.closeQuietly(shellIn);
+      IOUtils.closeQuietly(tempSourceStream);
+      // always cleanUp
+      FileUtils.<mark>deleteQuietly</mark>(tempSource);
+      FileUtils.<mark>deleteQuietly</mark>(tempDest);
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>nuxeo_____nuxeo_____NuxeoLauncher_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/nuxeo_____nuxeo_____NuxeoLauncher.java
+
+org.apache.commons.io.IOUtils.toByteArray
+org.apache.commons.io.IOUtils.toByteArray
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * Since 5.5
+     */     */
+    public ConnectProject promptProject(@NotNull List<ConnectProject> projects)
+            throws ConfigurationException, IOException, PackageException {
+        if (projects.isEmpty()) {
+            throw new ConfigurationException("You don't have access to any project.");
+        }
+        if (projects.size() == 1) {
+            return projects.get(0);
+        }
+
+        String projectName;
+        Console console = System.console();
+        if (console == null) {
+            projectName = IOUtils.<mark>toString</mark>(System.in, UTF_8);
+            ConnectProject project = getConnectRegistrationBroker().getProjectByName(projectName, projects);
+            if (project == null) {
+                throw new ConfigurationException("Unknown project: " + projectName);
+            }
+            return project;
+        }
+
+        System.out.println("Available projects:");
+        int i = 0;
+        boolean hasNextPage = true;
+        while (true) {
+            if (i > 0 && !SystemUtils.IS_OS_WINDOWS) {
+                // Remove last line to only have projects
+                System.out.print("\33[1A\33[2K");
+            }
+
+            int fromIndex = i * PAGE_SIZE;
+            int toIndex = (i + 1) * PAGE_SIZE;
+            if (toIndex >= projects.size()) {
+                toIndex = projects.size();
+                hasNextPage = false;
+            }
+
+            projects.subList(fromIndex, toIndex)
+                    .forEach(project -> System.out.println("\t- " + project.getSymbolicName()));
+            if (toIndex < projects.size()) {
+                int pageLeft = (projects.size() - i * PAGE_SIZE + PAGE_SIZE - 1) / PAGE_SIZE;
+                System.out.print(String.format("Project name (press Enter for next page; %d pages left): ", pageLeft));
+            } else {
+                System.out.print("Project name: ");
+            }
+            if (hasNextPage) {
+                i++;
+            }
+            projectName = console.readLine();
+            if (StringUtils.isNotEmpty(projectName)) {
+                ConnectProject project = getConnectRegistrationBroker().getProjectByName(projectName, projects);
+                if (project != null) {
+                    return project;
+                }
+                System.err.println("Unknown project: " + projectName);
+                i = 0;
+                hasNextPage = true;
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>jenkinsci_____email-ext-plugin_____ScriptContent_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_apache_commons_io/jenkinsci_____email-ext-plugin_____ScriptContent.java
+
+org.apache.commons.io.IOUtils.toString
+
+/**
+     * Creates an engine (GroovyShell) to be used to execute Groovy code
+     *
+     * @param variables user variables to be added to the Groovy context
+     * @return a GroovyShell instance
+     * @throws FileNotFoundException
+     * @throws IOException
+     */     */
+    private String renderTemplate(Run<?, ?> build, TaskListener listener, InputStream templateStream)
+            throws IOException {
+        
+        String result;
+        
+        final Map<String, Object> binding = new HashMap<>();
+        ExtendedEmailPublisherDescriptor descriptor = Jenkins.getActiveInstance().getDescriptorByType(ExtendedEmailPublisherDescriptor.class);
+        binding.put("build", build);
+        binding.put("listener", listener);
+        binding.put("it", new ScriptContentBuildWrapper(build));
+        binding.put("rooturl", descriptor.getHudsonUrl());
+        binding.put("project", build.getParent());
+
+        try {
+            String text = IOUtils.<mark>toString</mark>(templateStream);
+            boolean approvedScript = false;
+            if (templateStream instanceof UserProvidedContentInputStream && !AbstractEvalContent.isApprovedScript(text, GroovyLanguage.get())) {
+                approvedScript = false;
+                ScriptApproval.get().configuring(text, GroovyLanguage.get(), ApprovalContext.create().withItem(build.getParent()));
+            } else {
+                approvedScript = true;
+            }
+            // we add the binding to the SimpleTemplateEngine instead of the shell
+            GroovyShell shell = createEngine(descriptor, Collections.<String, Object>emptyMap(), !approvedScript);
+            SimpleTemplateEngine engine = new SimpleTemplateEngine(shell);
+            Template tmpl;
+            synchronized (templateCache) {
+                Reference<Template> templateR = templateCache.get(text);
+                tmpl = templateR == null ? null : templateR.get();
+                if (tmpl == null) {
+                    tmpl = engine.createTemplate(text);
+                    templateCache.put(text, new SoftReference<>(tmpl));
+                }
+            }
+            final Template tmplR = tmpl;
+            if (approvedScript) {
+                //The script has been approved by an admin, so run it as is
+                result = tmplR.make(binding).<mark>toString</mark>();
+            } else {
+                //unapproved script, so run in sandbox
+                StaticProxyInstanceWhitelist whitelist = new StaticProxyInstanceWhitelist(build, "templates-instances.whitelist");
+                result = GroovySandbox.runInSandbox(new Callable<String>() {
+                    @Override
+                    public String call() throws Exception {
+                        return tmplR.make(binding).<mark>toString</mark>(); //TODO there is a PrintWriter instance created in make and bound to out
+                    }
+                }, new ProxyWhitelist(
+                        Whitelist.all(),
+                        new TaskListenerInstanceWhitelist(listener),
+                        new PrintStreamInstanceWhitelist(listener.getLogger()),
+                        new EmailExtScriptTokenMacroWhitelist(),
+                        whitelist));
+            }
+
+        } catch(Exception e) {
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            e.printStackTrace(pw);
+            result = "Exception raised during template rendering: " + e.getMessage() + "\n\n" + sw.<mark>toString</mark>();
+        }
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+        

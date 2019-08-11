@@ -1,0 +1,1342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">org_json_simple</h1>
+      <br>
+      <h4 class="col-lg-12 col-md-12 mb-12">parse</h4>
+    </div>
+    
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>wso2_____product-is_____SCIM2CommonClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/wso2_____product-is_____SCIM2CommonClient.java
+
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Get file path.
+     *
+     * @param fileName File name.
+     * @return File path.
+     * @throws Exception Exception.
+     */     */
+    public JSONObject getUserJSON(String fileName) throws Exception {
+
+        return (JSONObject) parser.<mark>parse</mark>(new FileReader(getFilePath(fileName, SCIM2_USERS_LOCATION)));
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>t-oster_____VisiCut_____ThingiverseManager_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/t-oster_____VisiCut_____ThingiverseManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+/**
+   * Gets the list of "my things" from the thingiverse api.
+   * @return List of things
+   */   */
+  public String getUserName()
+  {
+    try
+    {
+      String json = client.user("me");
+      
+      JSONParser parser = <mark>new JSONParser</mark>();
+      JSONObject obj = (JSONObject)parser.<mark>parse</mark>(json);
+      return obj.<mark>get</mark>("name").toString();
+    }
+    catch(ParseException ex)
+    {
+      ex.printStackTrace();
+      return "USER NAME";
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____WebsocketManager_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____WebsocketManager.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+/**
+     * Parses the "follow_sets" message from the server and updates the emotes
+     * accordingly, but only if the emotesets have changed.
+     * 
+     * @param json 
+     */    
+    private void parseDoAuthorize(String json) {
+        try {
+            String code = (String) parser.<mark>parse</mark>(json);
+            listener.authorizeUser(code);
+        } catch (Exception ex) {
+            LOGGER.warning(String.format("[FFZ-WS] Error parsing 'do_authorize' response: %s [%s]", ex, json));
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>geotools_____geotools_____MBStyleParser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/geotools_____geotools_____MBStyleParser.java
+
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Parse the provided json into MBStyle.
+     *
+     * <p>Please be aware that {@link MBStyle}.is a thin wrapper around the provided json and will
+     * lazily parse map box style contents as required.
+     *
+     * @param json InputStream
+     * @return MBStyle
+     * @throws ParseException If JSON is not well formed
+     * @throws IOException If json input stream cannot be read
+     * @throws MBFormatException If MapBox Style is obviously not well formed
+     */     */
+    public MBStyle <mark>parse</mark>(String json) throws ParseException, MBFormatException {
+        return MBStyle.create(jsonParser.<mark>parse</mark>(json));
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____WebsocketManager_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____WebsocketManager.java
+
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Parses the response to the "/ffz following" command.
+     * 
+     * @param json 
+     */    
+    private void parseHelloResponse(String json) {
+        try {
+            JSONArray data = (JSONArray) parser.<mark>parse</mark>(json);
+            String clientId = (String)data.get(0);
+            long serverTime = ((Number)data.get(1)).longValue();
+            serverTimeOffset = System.currentTimeMillis() - serverTime;
+            LOGGER.info("[FFZ-WS] Server Time Offset: "+serverTimeOffset);
+        } catch (Exception ex) {
+            LOGGER.warning(String.format("[FFZ-WS] Error parsing 'hello' response: %s [%s]", ex, json));
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>geotools_____geotools_____MBStyleParser_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/geotools_____geotools_____MBStyleParser.java
+
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Parse the provided json into MBStyle.
+     *
+     * <p>Please be aware that {@link MBStyle}.is a thin wrapper around the provided json and will
+     * lazily parse map box style contents as required.
+     *
+     * @param json InputStream
+     * @return MBStyle
+     * @throws ParseException If JSON is not well formed
+     * @throws IOException If json input stream cannot be read
+     * @throws MBFormatException If MapBox Style is obviously not well formed
+     */     */
+    public MBStyle <mark>parse</mark>(Reader json) throws ParseException, IOException, MBFormatException {
+        try {
+            return MBStyle.create(jsonParser.<mark>parse</mark>(json));
+        } finally {
+            json.close();
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____WebsocketManager_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____WebsocketManager.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.keySet
+org.json.simple.JSONObject.get
+
+/**
+     * Fetches all emotes of the given emotesets, useable in the given room and
+     * sends them to the listener (removing previous EVENT emotes in that room).
+     * 
+     * @param room The room the emotes will be useable in
+     * @param emotesets The set of FFZ emotesets
+     */     */
+    private void parseFollowingResponse(String json) {
+        try {
+            JSONObject root = (JSONObject) parser.<mark>parse</mark>(json);
+            int updatedClients = ((Number)root.<mark>get</mark>("updated_clients")).intValue();
+            listener.wsUserInfo("Updated following buttons for "+updatedClients+" users.");
+        } catch (Exception ex) {
+            LOGGER.warning(String.format("[FFZ-WS] Error parsing 'update_follow_buttons' response: %s [%s]", ex, json));
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultJiraClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultJiraClient.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Get all the teams using Jira Rest API
+     *
+     * @return List of Teams
+     */    @Override
+    public Set<Scope> getProjects() {
+
+        try {
+            String url = featureSettings.getJiraBaseUrl() + (featureSettings.getJiraBaseUrl().endsWith("/") ? "" : "/")
+                    + PROJECT_REST_SUFFIX;
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String responseBody = responseEntity.getBody();
+
+            JSONArray projects = (JSONArray) parser.<mark>parse</mark>(responseBody);
+
+            return parseAsScopes(projects);
+
+        } catch (ParseException pe) {
+            LOGGER.error("Parser exception when parsing teams", pe);
+        } catch (HygieiaException e) {
+            LOGGER.error("Error in calling JIRA API", e);
+        }
+        return Collections.EMPTY_SET;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>t-oster_____VisiCut_____ThingiverseManager_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/t-oster_____VisiCut_____ThingiverseManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+   * Gets a filtered list of "my things" from the thingiverse api.
+   * @param filterExtensions Set to true if you want to filter for supported
+   * file extensions. Note that this will be relatively slow. The list of file
+   * extensions can be set as application preferences.
+   * @param filterTags Set to true if you want to filter for certain tags.
+   * Note that this will be relatively slow. The list of tags can be set as
+   * application preferences.
+   * @return List of things
+   */   */
+  public String getUserImage()
+  {
+    try
+    {
+      String json = client.user("me");
+      
+      JSONParser parser = <mark>new JSONParser</mark>();
+      JSONObject obj = (JSONObject)parser.<mark>parse</mark>(json);
+      String url = obj.<mark>get</mark>("thumbnail").toString();
+      
+      return url;
+    }
+    catch(Exception ex)
+    {
+      ex.printStackTrace();
+      return "";
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____BTTVEmotes_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____BTTVEmotes.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Parse a single emote from the given JSONObject.
+     * 
+     * @param o The object containing the emote info
+     * @param urlTemplate The URL Template to use for this emote
+     * @param channelRestriction The channel restriction to use
+     * @return 
+     */     */
+    private static Set<String> parseBots(String json) {
+        Set<String> result = new HashSet<>();
+        if (json == null) {
+            return result;
+        }
+        JSONParser parser = <mark>new JSONParser</mark>();
+        try {
+            JSONObject root = (JSONObject)parser.<mark>parse</mark>(json);
+            JSONArray botsArray = (JSONArray)root.<mark>get</mark>("bots");
+            if (botsArray == null) {
+                // No bots for this channel
+                return result;
+            }
+            for (Object o : botsArray) {
+                result.add((String)o);
+            }
+        } catch (ParseException | ClassCastException ex) {
+            LOGGER.warning("|[BTTV] Error parsing bots: "+ex);
+        }
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____FrankerFaceZParsing_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____FrankerFaceZParsing.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Parses the emotes of the set request.
+     * 
+     * Request: /set/:id
+     * 
+     * @param json The JSON to parse
+     * @param subType
+     * @return 
+     */     */
+    public static Set<Emoticon> parseGlobalEmotes(String json) {
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject o = (JSONObject)parser.<mark>parse</mark>(json);
+            JSONArray defaultSets = (JSONArray)o.<mark>get</mark>("default_sets");
+            JSONObject sets = (JSONObject)o.<mark>get</mark>("sets");
+            for (Object setObject : defaultSets) {
+                int set = ((Number)setObject).intValue();
+                JSONObject setData = (JSONObject)sets.<mark>get</mark>(String.valueOf(set));
+                return parseEmoteSet(setData, null, null);
+            }
+        } catch (ParseException | ClassCastException | NullPointerException ex) {
+            LOGGER.warning("Error parsing global FFZ emotes: "+ex);
+        }
+        return new HashSet<>();
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____FrankerFaceZParsing_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____FrankerFaceZParsing.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Parse the result of a request for a single room.
+     * 
+     * Request: /room/:room
+     * 
+     * @param json The JSON to parse
+     * @param stream
+     * @return Set of emotes, can be empty if there are no emotes or an error
+     * occured
+     */     */
+    public static Usericon parseModIcon(String json, String stream) {
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject o = (JSONObject)parser.<mark>parse</mark>(json);
+            JSONObject room = (JSONObject)o.<mark>get</mark>("room");
+            // Room ID (name) may not be correct if name changed
+            String roomId = (String)room.<mark>get</mark>("id");
+            String modBadgeUrl = (String)room.<mark>get</mark>("moderator_badge");
+            if (modBadgeUrl == null) {
+                return null;
+            }
+            return UsericonFactory.createTwitchLikeIcon(Usericon.Type.MOD,
+                            stream, modBadgeUrl, Usericon.SOURCE_FFZ, "Moderator (FFZ)");
+        } catch (ParseException | ClassCastException | NullPointerException ex) {
+            
+        }
+        return null;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>CogComp_____cogcomp-nlp_____QueryMQL_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/CogComp_____cogcomp-nlp_____QueryMQL.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.toString
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+	 * returns the mid for a wiki title
+	 * 
+	 * @param mql
+	 * @return
+	 * @throws Exception
+	 */
+	public String lookupMidFromTitle(MQLQueryWrapper mql)
+			throws Exception {
+		JSONObject response;
+		String mqlQuery = mql.MQLquery;
+		logger.debug("QUERY IS " + mqlQuery);
+		String title = mql.value;
+		String checksum = getMD5Checksum(title);
+		// first check mid in cache
+		if (IOUtils.exists(typeCacheLocation + "/" + checksum + ".cached")) {
+			found++;
+			logger.info("Found! "+found);
+			JSONParser jsonParser = <mark>new JSONParser</mark>();
+			response = (JSONObject) jsonParser.<mark>parse</mark>(FileUtils
+					.readFileToString(new File(typeCacheLocation + "/"
+							+ checksum + ".cached"), "UTF-8"));
+		} else {
+			response = getResponse(mqlQuery);
+			if (response == null)
+				return null;
+			cacheMiss++;
+			logger.info("Caching "+cacheMiss);
+			FileUtils.writeStringToFile(new File(typeCacheLocation + "/"
+					+ checksum + ".cached"), response.<mark>toString</mark>(), "UTF-8");
+		}
+
+		JSONObject result = (JSONObject) response.<mark>get</mark>("result");
+
+		if (result != null) {
+			return (String) result.<mark>get</mark>("mid");
+		}
+		return null;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____FrankerFaceZParsing_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____FrankerFaceZParsing.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+/**
+     * Parses a single emote set. Emote set in this context is a set of emotes
+     * that users have access to either globally or in a single room.
+     * 
+     * @param setData The set JSONObject, containing the list of emotes and meta
+     * information
+     * @param streamRestriction The stream this emote set should be restricted
+     * to or null for no restriction
+     * @param subType The subType to be set for the Emoticons
+     * @return The set of parsed emotes, can be empty if no emotes were found or
+     * an error occured
+     */     */
+    public static Set<Emoticon> parseRoomEmotes(String json, String stream) {
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject o = (JSONObject)parser.<mark>parse</mark>(json);
+            JSONObject room = (JSONObject)o.<mark>get</mark>("room");
+            // Room ID (name) may not be correct if name changed
+            String roomId = (String)room.<mark>get</mark>("id");
+            int set = ((Number)room.<mark>get</mark>("set")).intValue();
+            JSONObject sets = (JSONObject)o.<mark>get</mark>("sets");
+            JSONObject setData = (JSONObject)sets.<mark>get</mark>(String.valueOf(set));
+            return parseEmoteSet(setData, stream, null);
+        } catch (ParseException | ClassCastException | NullPointerException ex) {
+            LOGGER.warning("Error parsing FFZ emotes: "+ex);
+        }
+        return new HashSet<>();
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____Parsing_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____Parsing.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+/**
+     * Parses the JSON returned from the TwitchAPI that contains the token
+     * info into a TokenInfo object.
+     * 
+     * @param json
+     * @return The TokenInfo or null if an error occured.
+     */     */
+    public static Set<String> parseGameSearch(String json) {
+        Set<String> result = new HashSet<>();
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject root = (JSONObject)parser.<mark>parse</mark>(json);
+            
+            Object games = root.<mark>get</mark>("games");
+            
+            if (!(games instanceof JSONArray)) {
+                LOGGER.warning("Error parsing game search: Should be array");
+                return null;
+            }
+            Iterator it = ((JSONArray)games).iterator();
+            while (it.hasNext()) {
+                Object obj = it.next();
+                if (obj instanceof JSONObject) {
+                    String name = (String)((JSONObject)obj).<mark>get</mark>("name");
+                    result.add(name);
+                }
+            }
+            return result;
+            
+        } catch (ParseException ex) {
+            LOGGER.warning("Error parsing game search.");
+            return null;
+        } catch (NullPointerException ex) {
+            LOGGER.warning("Error parsing game search: Unexpected null");
+            return null;
+        } catch (ClassCastException ex) {
+            LOGGER.warning("Error parsing game search: Unexpected type");
+            return null;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____StreamInfoManager_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____StreamInfoManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONArray.size
+org.json.simple.parser.ParseException.getLocalizedMessage
+
+/**
+     * Parse a stream object into a StreamInfo object. This gets the name of the
+     * stream and gets the appropriate StreamInfo object, in which it then loads
+     * the other extracted data like status, game, viewercount.
+     * 
+     * This is used for both the response from /streams/:channel/ as well as
+     * /streams?channel=[..]
+     *
+     * @param stream The JSONObject containing the stream object.
+     * @return The StreamInfo object or null if an error occured.
+     */     */
+    private void parseStream(StreamInfo streamInfo, String json) {
+        
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            JSONObject root = (JSONObject) parser.<mark>parse</mark>(json);
+
+            JSONObject stream = (JSONObject) root.<mark>get</mark>("stream");
+
+            if (stream == null) {
+                streamInfo.setOffline();
+            } else {
+                StreamInfo result = parseStream(stream, false);
+                if (result == null || result != streamInfo) {
+                    LOGGER.warning("Error parsing stream ("
+                            +streamInfo.getStream()+"): "+json);
+                    streamInfo.setUpdateFailed();
+                }
+            }
+        }
+        catch (ParseException ex) {
+            streamInfo.setUpdateFailed();
+            LOGGER.warning("Error parsing stream info: "+ex.<mark>getLocalizedMessage</mark>());
+        }
+        
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>t-oster_____VisiCut_____ThingiverseManager_6.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/t-oster_____VisiCut_____ThingiverseManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+   * Gets the list of things belonging to a certain collection.
+   * @param collection
+   * @param filterExtensions Set to true if you want to filter for supported
+   * file extensions. Note that this will be relatively slow. The list of file
+   * extensions can be set as application preferences.
+   * @param filterTags Set to true if you want to filter for certain tags.
+   * Note that this will be relatively slow. The list of tags can be set as
+   * application preferences.
+   * @return List of things
+   */   */
+  public List<ThingCollection> getMyCollections()
+  {
+    List<ThingCollection> collections = new LinkedList<ThingCollection>();
+    
+    try
+    {
+      String json = client.collectionsByUser("me");
+      
+      JSONParser parser = <mark>new JSONParser</mark>();
+      JSONArray array = (JSONArray)parser.<mark>parse</mark>(json);
+      for (Object obj : array)
+      {
+        JSONObject jsonCollection = (JSONObject)obj;
+        String collectionId = jsonCollection.<mark>get</mark>("id").toString();
+        String collectionName = jsonCollection.<mark>get</mark>("name").toString();
+        String imageUrl = jsonCollection.<mark>get</mark>("thumbnail").toString();
+        collections.add(new ThingCollection(collectionId, collectionName, imageUrl));
+      }
+    }
+    catch(ClassCastException ex)
+    {
+      // Result empty or something wrong with the json response.
+    }
+    catch(Exception ex)
+    {
+      ex.printStackTrace();
+    }
+    
+    return collections;
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____EmoticonManager_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____EmoticonManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.keySet
+org.json.simple.JSONObject.get
+
+/**
+     * Parses an Emoticon from the given JSONObject.
+     * 
+     * @param emote The JSONObject containing the emoticon data
+     * @return The Emoticon object or null if an error occured
+     */     */
+    private static Set<Emoticon> parseEmoticons(String json) {
+        Set<Emoticon> result = new HashSet<>();
+        if (json == null) {
+            return null;
+        }
+        JSONParser parser = <mark>new JSONParser</mark>();
+        int errors = 0;
+        try {
+            JSONObject root = (JSONObject)parser.<mark>parse</mark>(json);
+            JSONArray emoticons = (JSONArray)root.<mark>get</mark>("emoticons");
+            for (Object obj : emoticons) {
+                if (obj instanceof JSONObject) {
+                    JSONObject emote_json = (JSONObject)obj;
+                    Emoticon emote = parseEmoticon(emote_json, Emoticon.SET_UNDEFINED);
+                    if (emote == null) {
+                        if (errors < 10) {
+                            LOGGER.warning("Error loading emote: "+emote_json);
+                        }
+                        errors++;
+                    } else {
+                        result.add(emote);
+                    }
+                }
+            }
+            if (errors > 0) {
+                LOGGER.warning(errors+" emotes couldn't be loaded");
+            }
+            if (errors > 100) {
+                return null;
+            }
+            return result;
+        } catch (ParseException | NullPointerException | ClassCastException ex) {
+            LOGGER.warning("Error parsing emoticons: "+ex);
+            return null;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>chatty_____chatty_____FollowerManager_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/chatty_____chatty_____FollowerManager.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+
+/**
+     * Creates a new Follower item with the given values, also adding
+     * information about whether it is a refollow/new follower in this request.
+     * 
+     * @param stream
+     * @param name
+     * @param time
+     * @return 
+     */
+    private FollowerInfo parseFollowers(String stream, String json) {
+        List<Follower> result = new ArrayList<>();
+        int total = -1;
+        if (json == null) {
+            LOGGER.warning(type+" data null.");
+            return null;
+        }
+        try {
+            JSONParser parser = <mark>new JSONParser</mark>();
+            Object root = parser.<mark>parse</mark>(json);
+            if (!(root instanceof JSONObject)) {
+                LOGGER.warning("Error parsing "+type+": root should be object");
+                return null;
+            }
+            JSONObject data = (JSONObject)root;
+            
+            Object follows = data.<mark>get</mark>("follows");
+            if (type == Follower.Type.SUBSCRIBER) {
+                follows = data.<mark>get</mark>("subscriptions");
+            }
+            if (!(follows instanceof JSONArray)) {
+                LOGGER.warning("Error parsing "+type+": follows/subs should be object");
+                return null;
+            }
+            for (Object o : (JSONArray)follows) {
+                Follower follower = parseFollower(stream, o);
+                if (follower != null) {
+                    result.add(follower);
+                }
+            }
+            Object totalObject = data.<mark>get</mark>("_total");
+            if (totalObject instanceof Number) {
+                total = ((Number)totalObject).intValue();
+            }
+        } catch (ParseException ex) {
+            LOGGER.warning("Error parsing "+type+": "+ex);
+            return null;
+        }
+        return new FollowerInfo(type, stream, result, total);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>vmware_____tungsten-replicator_____NetworkClientFilter_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/vmware_____tungsten-replicator_____NetworkClientFilter.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Protocol safety checks for the server returned message.
+     */     */
+    private void doHandshake(String contextService) throws ReplicatorException
+    {
+        try
+        {
+            // Send prepare message.
+            toServer.print(messageGenerator.prepare());
+            toServer.flush();
+
+            // Receive & check acknowledged message.
+            String header = fromServer.readLine();
+            if (logger.isDebugEnabled())
+                logger.debug("Received header: " + header);
+
+            JSONObject obj = (JSONObject) parser.<mark>parse</mark>(header);
+            long payloadLen = (Long) obj.<mark>get</mark>("payload");
+            if (logger.isDebugEnabled())
+                logger.debug("Payload length: " + payloadLen);
+
+            String payload = NetworkClientFilter.Protocol.readPayload(
+                    fromServer, (int) payloadLen);
+            if (logger.isDebugEnabled())
+                logger.debug("Received payload: " + payload);
+
+            String type = (String) obj.<mark>get</mark>("type");
+            String service = (String) obj.<mark>get</mark>("service");
+            long returnCode = (Long) obj.<mark>get</mark>("return");
+
+            validateMessage(Protocol.TYPE_ACKNOWLEDGED, type, returnCode,
+                    service, payload);
+
+            logger.info("Server: " + payload);
+        }
+        catch (ParseException e)
+        {
+            throw new ReplicatorException(
+                    "Server returned an invalid message during prepare-acknowledged message handshake: "
+                            + e, e);
+        }
+        catch (IOException e)
+        {
+            throw new ReplicatorException(
+                    "prepare-acknowledged message handshake failed: " + e, e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultAppdynamicsClient_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultAppdynamicsClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.isEmpty
+org.json.simple.JSONArray.get
+
+/**
+     * Some metrics are not immediately available (e.g. Total Calls, Total Errors). We need to calculate them.
+     *
+     * @param metrics the already-populated list of metrics. We use this data to calculate new values.
+     * @return List of PerformanceMetrics used to populate the performance database
+     */    @Override
+    public Set<AppdynamicsApplication> getApplications(String instanceUrl) {
+        Set<AppdynamicsApplication> returnSet = new HashSet<>();
+        try {
+            String url = joinURL(instanceUrl, APPLICATION_LIST_PATH);
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String returnJSON = responseEntity.getBody();
+            JSONParser parser = <mark>new JSONParser</mark>();
+
+            try {
+                JSONArray array = (JSONArray) parser.<mark>parse</mark>(returnJSON);
+
+                for (Object entry : array) {
+                    JSONObject jsonEntry = (JSONObject) entry;
+
+                    String appName = getString(jsonEntry, "name");
+                    String appId = String.valueOf(getLong(jsonEntry, "id"));
+                    String desc = getString(jsonEntry, "description");
+                    if (StringUtils.<mark>isEmpty</mark>(desc)) {
+                        desc = appName;
+                    }
+                    AppdynamicsApplication app = new AppdynamicsApplication();
+                    app.setAppID(appId);
+                    app.setAppName(appName);
+                    app.setAppDesc(desc);
+                    app.setDescription(desc);
+                    returnSet.add(app);
+                }
+            } catch (ParseException e) {
+                LOG.error("Parsing applications on instance: " + instanceUrl, e);
+            }
+        } catch (RestClientException rce) {
+            LOG.error("client exception loading applications", rce);
+            throw rce;
+        } catch (MalformedURLException mfe) {
+            LOG.error("malformed url for loading applications", mfe);
+        }
+        return returnSet;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>vmware_____tungsten-replicator_____NetworkClientFilter_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/vmware_____tungsten-replicator_____NetworkClientFilter.java
+
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+org.json.simple.JSONObject.get
+
+/**
+     * Converts underlying data type value to string. Exception is thrown if
+     * type is unsupported.
+     */     */
+    private void initDefinitionsFile() throws ReplicatorException
+    {
+        try
+        {
+            logger.info("Using: " + definitionsFile);
+
+            String jsonText = readDefinitionsFile(definitionsFile);
+            Object obj = parser.<mark>parse</mark>(jsonText);
+            @SuppressWarnings("unchecked")
+            Map<String, JSONArray> map = (Map<String, JSONArray>) obj;
+            definitions = map;
+
+            Iterator<String> it = definitions.keySet().iterator();
+            while (it.hasNext())
+            {
+                String transformation = it.next();
+                logger.info("Transformation: " + transformation);
+
+                JSONArray array = definitions.<mark>get</mark>(transformation);
+                for (Object o : array)
+                {
+                    JSONObject jo = (JSONObject) o;
+                    String schema = (String) jo.<mark>get</mark>("schema");
+                    String table = (String) jo.<mark>get</mark>("table");
+                    JSONArray columns = (JSONArray) jo.<mark>get</mark>("columns");
+                    logger.info("  In " + schema + "." + table + ": ");
+                    for (Object c : columns)
+                    {
+                        String column = (String) c;
+                        definedColumnEntries++;
+                        logger.info("    " + column);
+                    }
+                }
+            }
+        }
+        catch (ClassCastException e)
+        {
+            throw new ReplicatorException(
+                    "Unable to read definitions file (is JSON structure correct?): "
+                            + e, e);
+        }
+        catch (ParseException e)
+        {
+            throw new ReplicatorException(
+                    "Unable to read definitions file (error parsing JSON): "
+                            + e, e);
+        }
+        catch (IOException e)
+        {
+            throw new ReplicatorException(e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultJiraClient_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultJiraClient.java
+
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Get list of Features (Issues in Jira terms) given a project.
+     *
+     * @param board
+     * @return List of Feature
+     */    @Override
+    public List<Team> getBoards() {
+        int count = 0;
+        int startAt = 0;
+        boolean isLast = false;
+        List<Team> result = new ArrayList<>();
+        while (!isLast) {
+            String url = featureSettings.getJiraBaseUrl() + (featureSettings.getJiraBaseUrl().endsWith("/") ? "" : "/")
+                    + BOARD_TEAMS_REST_SUFFIX + "?startAt=" + startAt;
+            try {
+                ResponseEntity<String> responseEntity = makeRestCall(url);
+                String responseBody = responseEntity.getBody();
+                JSONObject teamsJson = (JSONObject) parser.<mark>parse</mark>(responseBody);
+
+                if (teamsJson != null) {
+                    JSONArray valuesArray = (JSONArray) teamsJson.get("values");
+                    if (!CollectionUtils.isEmpty(valuesArray)) {
+                        for (Object obj : valuesArray) {
+                            JSONObject jo = (JSONObject) obj;
+                            String teamId = getString(jo, "id");
+                            String teamName = getString(jo, "name");
+                            String teamType = getString(jo, "type");
+                            Team team = new Team(teamId, teamName);
+                            team.setTeamType(teamType);
+                            team.setChangeDate("");
+                            team.setAssetState("Active");
+                            team.setIsDeleted("False");
+                            result.add(team);
+                            count = count + 1;
+                        }
+                        isLast = (boolean) teamsJson.get("isLast");
+                        LOGGER.info("JIRA Collector collected " + count + " boards");
+                        if (!isLast) {
+                            startAt += JIRA_BOARDS_PAGING;
+                        }
+                    } else {
+                        isLast = true;
+                    }
+                } else {
+                    isLast = true;
+                }
+            } catch (ParseException pe) {
+                isLast = true;
+                LOGGER.error("Parser exception when parsing teams", pe);
+            } catch (HygieiaException | HttpClientErrorException | HttpServerErrorException e) {
+                isLast = true;
+                LOGGER.error("Error in calling JIRA API: " + url , e.getMessage());
+            }
+        }
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultAppdynamicsClient_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultAppdynamicsClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONObject.get
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.size
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+org.json.simple.JSONArray.size
+
+/**
+     * Obtains a list of health violations for the current application from Appdynamics
+     * e.g. /controller/#/location=APP_INCIDENT_LIST&application=<APPID>
+     *
+     * @param application the current application. Used to provide access to appID/name
+     * @return Single element list, value is the raw JSON object of the health violations
+     */     */
+    private Map<String,Long> getOverallMetrics(AppdynamicsApplication application, String instanceUrl) {
+        Map<String,Long> overallMetrics = new HashMap<>();
+        try {
+            String url = joinURL(instanceUrl, String.format(OVERALL_METRIC_PATH, application.getAppID(), URLEncoder.encode(OVERALL_SUFFIX, "UTF-8"), String.valueOf(settings.getTimeWindow())));
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String returnJSON = responseEntity.getBody();
+            JSONParser parser = <mark>new JSONParser</mark>();
+
+            try {
+                JSONArray array = (JSONArray) parser.<mark>parse</mark>(returnJSON);
+
+                for (Object entry : array) {
+                    JSONObject jsonEntry = (JSONObject) entry;
+                    String metricPath = getString(jsonEntry, "metricPath");
+                    JSONArray metricValues =  getJsonArray(jsonEntry, "metricValues");
+                    if (metricValues.isEmpty()){
+                        continue;
+                    }
+                    JSONObject mObj = (JSONObject) metricValues.<mark>get</mark>(0);
+                    Long metricValue = getLong(mObj, "value");
+
+                    PerformanceMetric metric = new PerformanceMetric();
+                    String metricName = parseMetricName(metricPath);
+                    if(in(metricName,CALLS_PER_MINUTE,ERRORS_PER_MINUTE,AVERAGE_RESPONSE_TIME)){
+                        metric.setName(parseMetricName(metricPath));
+                        metric.setValue(metricValue);
+                        overallMetrics.put(parseMetricName(metricPath),metricValue);
+                    }
+                }
+            } catch (ParseException | RestClientException e) {
+                LOG.error("Parsing metrics for : " + instanceUrl + ". Application =" + application.getAppName(), e);
+            }
+        } catch (MalformedURLException | UnsupportedEncodingException mfe) {
+            LOG.error("malformed url for loading jobs", mfe);
+        }
+        return overallMetrics;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>capitalone_____Hygieia_____DefaultAppdynamicsClient_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/org_json_simple/capitalone_____Hygieia_____DefaultAppdynamicsClient.java
+
+org.json.simple.parser.JSONParser.&ltinit&gt
+org.json.simple.parser.JSONParser.parse
+
+/**
+     * Calculates the response time and error rate severities.
+     * 0: good, 1: warning, 2: critical
+     * Iterates through list of violations. The final severity will be the highest of them all
+     * (e.g. response time violations are Warning, Critical, Warning, Warning, Warning -> Critical)
+     *
+     * @param application the current application. Used to provide access to appID/name
+     * @return List of two PerformanceMetrics that contain info about the severities
+     */     */
+    private Map<String,Object> getHealthMetrics(AppdynamicsApplication application, String instanceUrl ) {
+        // business health percent
+        long numNodeViolations = 0;
+        long numBusinessViolations = 0;
+        long numNodes = 0;
+        long numBusinessTransactions = 0;
+        double nodeHealthPercent = 0.0;
+        double businessHealthPercent = 0.0;
+
+        Map<String,Object> healthMetrics = new HashMap<>();
+
+        try {
+            // GET NUMBER OF VIOLATIONS OF EACH TYPE
+            String url = joinURL(instanceUrl, String.format(HEALTH_VIOLATIONS_PATH, application.getAppID()));
+            ResponseEntity<String> responseEntity = makeRestCall(url);
+            String returnJSON = responseEntity.getBody();
+            JSONParser parser = <mark>new JSONParser</mark>();
+
+            JSONArray array = (JSONArray) parser.<mark>parse</mark>(returnJSON);
+
+            for (Object entry : array) {
+
+                JSONObject jsonEntry = (JSONObject) entry;
+
+                if (getString(jsonEntry, "incidentStatus").equals("RESOLVED"))
+                    continue;
+
+                JSONObject affEntityObj = (JSONObject) jsonEntry.get("affectedEntityDefinition");
+
+                String entityType = getString(affEntityObj, "entityType");
+
+                if (entityType.equals("APPLICATION_COMPONENT_NODE")) {
+                    numNodeViolations++;
+
+                } else if (entityType.equals(BUSINESS_TRANSACTION)) {
+                    numBusinessViolations++;
+
+                }
+            }
+
+
+            // GET NUMBER OF NODES
+            url = joinURL(instanceUrl, String.format(NODE_LIST_PATH, application.getAppID()));
+            responseEntity = makeRestCall(url);
+            returnJSON = responseEntity.getBody();
+            parser = <mark>new JSONParser</mark>();
+            array = (JSONArray) parser.<mark>parse</mark>(returnJSON);
+
+            numNodes = array.size();
+
+            // GET NUMBER OF BUSINESS TRANSACTIONS
+            url = joinURL(instanceUrl, String.format(BUSINESS_TRANSACTION_LIST_PATH, application.getAppID()));
+            responseEntity = makeRestCall(url);
+            returnJSON = responseEntity.getBody();
+            parser = <mark>new JSONParser</mark>();
+            array = (JSONArray) parser.<mark>parse</mark>(returnJSON);
+
+            numBusinessTransactions = array.size();
+
+        } catch (MalformedURLException e) {
+            LOG.error("client exception loading applications", e);
+        } catch (ParseException e) {
+            LOG.error("client exception loading applications", e);
+        }
+
+        // Node health percent is just 1 - (num node violations / num nodes)
+        if (numNodes != 0)
+            nodeHealthPercent = Math.floor(100.0 * (1.0 - ((double) (numNodeViolations) / (double) (numNodes)))) / 100.0;
+
+        // Right now the timeframe is hard-coded to 15 min. Change this if that changes.
+        healthMetrics.put(NODE_HEALTH_PECENT,nodeHealthPercent);
+
+        // Business health percent is just 1 - (num business transaction violations / num business transactions)
+        if (numBusinessTransactions != 0)
+            businessHealthPercent = Math.floor(100.0 * (1.0 - ((double) (numBusinessViolations) / (double) (numBusinessTransactions)))) / 100.0;
+        healthMetrics.put(BUSINESS_TRANSACTION_HEALTH,businessHealthPercent);
+
+        return healthMetrics;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+        

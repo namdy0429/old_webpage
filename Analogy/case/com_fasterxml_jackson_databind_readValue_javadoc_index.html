@@ -1,0 +1,2646 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">com_fasterxml_jackson_databind</h1>
+      <br>
+      <h4 class="col-lg-12 col-md-12 mb-12">readValue</h4>
+    </div>
+    
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>SalesforceEng_____Argus_____ArgusService_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/SalesforceEng_____Argus_____ArgusService.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+         * Returns the HTTP client for use by the endpoint service.
+         *
+         * @return  The HTTP client.
+         */         */
+        protected <T> T fromJson(String json, Class<T> type) throws IOException {
+            return MAPPER.<mark>readValue</mark>(json, type);
+        }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>Azure_____azure-sdk-for-java_____JWSHeader_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/Azure_____azure-sdk-for-java_____JWSHeader.java
+
+com.fasterxml.jackson.databind.ObjectMapper.&ltinit&gt
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+     * signing algorithm (RS256).
+     */     */
+    public static JWSHeader deserialize(String json) throws IOException {
+        ObjectMapper mapper = <mark>new ObjectMapper</mark>();
+        return mapper.<mark>readValue</mark>(json, JWSHeader.class);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>spring-projects_____spring-hateoas_____UberLinkDiscoverer_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/spring-projects_____spring-hateoas_____UberLinkDiscoverer.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+	 * Deserialize the entire document to find links.
+	 *
+	 * @param stream
+	 * @return
+	 */	 */
+	private Links getLinks(String json) {
+
+		try {
+			return this.mapper.<mark>readValue</mark>(json, UberDocument.class).getUber().getLinks();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>gchq_____Gaffer_____JSONSerialiser_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/gchq_____Gaffer_____JSONSerialiser.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+     * @param bytes the bytes of the object to deserialise
+     * @param type  the type reference of the object to deserialise
+     * @param <T>   the type of the object
+     * @return the deserialised object
+     * @throws SerialisationException if the bytes fail to deserialise
+     */     */
+    public static <T> T deserialise(final byte[] bytes, final Class<T> clazz) throws SerialisationException {
+        try {
+            return getInstance().mapper.<mark>readValue</mark>(bytes, clazz);
+        } catch (final IOException e) {
+            throw new SerialisationException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____incubator-gossip_____UserDataPersister_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/apache_____incubator-gossip_____UserDataPersister.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+   * Writes all pernode and shared data to disk 
+   */  @SuppressWarnings("unchecked")
+  ConcurrentHashMap<String, ConcurrentHashMap<String, PerNodeDataMessage>> readPerNodeFromDisk(){
+    if (!perNodePath.exists()) {
+      return new ConcurrentHashMap<String, ConcurrentHashMap<String, PerNodeDataMessage>>();
+    }
+    try (FileInputStream fos = new FileInputStream(perNodePath)){
+      return objectMapper.<mark>readValue</mark>(fos, ConcurrentHashMap.class);
+    } catch (IOException e) {
+      LOGGER.debug(e);
+    }
+    return new ConcurrentHashMap<String, ConcurrentHashMap<String, PerNodeDataMessage>>();
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>spring-projects_____spring-xd_____XdEc2Validation_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/spring-projects_____spring-xd_____XdEc2Validation.java
+
+com.fasterxml.jackson.databind.ObjectMapper.&ltinit&gt
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+	 * Asserts that the expected minimum number of messages were processed by the modules in the stream and that no errors
+	 * occurred.
+	 *
+	 * @param modules The list of modules in the stream
+	 * @param msgCountExpected The expected count
+	 */	 */
+	private List<Module> getModuleList(String json) throws JsonMappingException, JsonParseException, IOException {
+		ObjectMapper mapper = <mark>new ObjectMapper</mark>();
+		JMXResult jmxResult = mapper.<mark>readValue</mark>(json,
+				new TypeReference<JMXResult>() {
+				});
+		List<Module> result = jmxResult.getValue().getModules();
+		return result;
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>gchq_____Gaffer_____JSONSerialiser_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/gchq_____Gaffer_____JSONSerialiser.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+     * @param stream the {@link java.io.InputStream} containing the bytes of the object to deserialise
+     * @param clazz  the class of the object to deserialise
+     * @param <T>    the type of the object
+     * @return the deserialised object
+     * @throws SerialisationException if the bytes fail to deserialise
+     */     */
+    public static <T> T deserialise(final String json, final Class<T> clazz) throws SerialisationException {
+        try {
+            return getInstance().mapper.<mark>readValue</mark>(json, clazz);
+        } catch (final IOException e) {
+            throw new SerialisationException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Variable_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Variable.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The sid.
+     * 
+     * @return The sid
+     */     */
+    public static Variable fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Variable.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Balance_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Balance.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The Account Sid..
+     * 
+     * @return Account Sid.
+     */     */
+    public static Balance fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Balance.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____StepContext_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____StepContext.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The Account Sid..
+     * 
+     * @return Account Sid.
+     */     */
+    public static StepContext fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, StepContext.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____RoomRecording_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____RoomRecording.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The account_sid.
+     * 
+     * @return The account_sid
+     */     */
+    public static RoomRecording fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, RoomRecording.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____EngagementContext_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____EngagementContext.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The Account Sid..
+     * 
+     * @return Account Sid.
+     */     */
+    public static EngagementContext fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, EngagementContext.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____ExportConfiguration_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____ExportConfiguration.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The enabled.
+     * 
+     * @return The enabled
+     */     */
+    public static ExportConfiguration fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, ExportConfiguration.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____WorkflowStatistics_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____WorkflowStatistics.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The account_sid.
+     * 
+     * @return The account_sid
+     */     */
+    public static WorkflowStatistics fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, WorkflowStatistics.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____ExecutionStepContext_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____ExecutionStepContext.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The Account Sid..
+     * 
+     * @return Account Sid.
+     */     */
+    public static ExecutionStepContext fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, ExecutionStepContext.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Voip_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Voip.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The A formatted version of the phone number.
+     * 
+     * @return A formatted version of the phone number
+     */     */
+    public static Voip fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Voip.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____TaskQueuesStatistics_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____TaskQueuesStatistics.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The account_sid.
+     * 
+     * @return The account_sid
+     */     */
+    public static TaskQueuesStatistics fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, TaskQueuesStatistics.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____HostedNumberOrder_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____HostedNumberOrder.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The HostedNumberOrder sid..
+     * 
+     * @return HostedNumberOrder sid.
+     */     */
+    public static HostedNumberOrder fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, HostedNumberOrder.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Mobile_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Mobile.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The A formatted version of the phone number.
+     * 
+     * @return A formatted version of the phone number
+     */     */
+    public static Mobile fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Mobile.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Flow_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Flow.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The A string that uniquely identifies this Flow..
+     * 
+     * @return A string that uniquely identifies this Flow.
+     */     */
+    public static Flow fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Flow.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Worker_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Worker.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The ID of the account that owns this worker.
+     * 
+     * @return The ID of the account that owns this worker
+     */     */
+    public static Worker fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Worker.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Fleet_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Fleet.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The A string that uniquely identifies this Fleet..
+     * 
+     * @return A string that uniquely identifies this Fleet.
+     */     */
+    public static Fleet fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Fleet.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____PhoneNumber_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____PhoneNumber.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The name of the phone number's owner.
+     * 
+     * @return The name of the phone number's owner
+     */     */
+    public static PhoneNumber fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, PhoneNumber.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____WorkflowRealTimeStatistics_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____WorkflowRealTimeStatistics.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The account_sid.
+     * 
+     * @return The account_sid
+     */     */
+    public static WorkflowRealTimeStatistics fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, WorkflowRealTimeStatistics.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____SharedCost_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____SharedCost.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The A formatted version of the phone number.
+     * 
+     * @return A formatted version of the phone number
+     */     */
+    public static SharedCost fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, SharedCost.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>datastax_____java-driver_____JacksonJsonCodec_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/datastax_____java-driver_____JacksonJsonCodec.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+     * This method acts as a bridge between Guava's {@link com.google.common.reflect.TypeToken TypeToken} API, which is used
+     * by the driver, and Jackson's {@link JavaType} API.
+     *
+     * @return A {@link JavaType} instance corresponding to the codec's {@link #getJavaType() Java type}.
+     */    @SuppressWarnings("unchecked")
+    public T deserialize(ByteBuffer bytes, ProtocolVersion protocolVersion) throws InvalidTypeException {
+        if (bytes == null)
+            return null;
+        try {
+            return (T) objectMapper.<mark>readValue</mark>(Bytes.getArray(bytes), toJacksonJavaType());
+        } catch (IOException e) {
+            throw new InvalidTypeException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Entity_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Entity.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The A string that uniquely identifies this Entity..
+     * 
+     * @return A string that uniquely identifies this Entity.
+     */     */
+    public static Entity fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Entity.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Invite_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Invite.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The unique string that identifies the resource.
+     * 
+     * @return The unique string that identifies the resource
+     */     */
+    public static Invite fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Invite.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Member_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Member.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The unique string that identifies the resource.
+     * 
+     * @return The unique string that identifies the resource
+     */     */
+    public static Member fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Member.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Trunk_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Trunk.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The SID of the Account that created the resource.
+     * 
+     * @return The SID of the Account that created the resource
+     */     */
+    public static Trunk fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Trunk.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____TaskQueueRealTimeStatistics_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____TaskQueueRealTimeStatistics.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The account_sid.
+     * 
+     * @return The account_sid
+     */     */
+    public static TaskQueueRealTimeStatistics fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, TaskQueueRealTimeStatistics.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Webhook_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Webhook.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The unique string that identifies the resource.
+     * 
+     * @return The unique string that identifies the resource
+     */     */
+    public static Webhook fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Webhook.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Queue_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Queue.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The SID of the Account that created this resource.
+     * 
+     * @return The SID of the Account that created this resource
+     */     */
+    public static Queue fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Queue.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>spring-projects_____spring-framework_____MappingJackson2MessageConverter_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/spring-projects_____spring-framework_____MappingJackson2MessageConverter.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+	 * Template method that allows for custom message mapping.
+	 * Invoked when {@link #setTargetType} is not {@link MessageType#TEXT} or
+	 * {@link MessageType#BYTES}.
+	 * <p>The default implementation throws an {@link IllegalArgumentException}.
+	 * @param message the input message
+	 * @param targetJavaType the target type
+	 * @return the message converted to an object
+	 * @throws JMSException if thrown by JMS
+	 * @throws IOException in case of I/O errors
+	 */	 */
+	protected Object convertFromTextMessage(TextMessage message, JavaType targetJavaType)
+			throws JMSException, IOException {
+
+		String body = message.getText();
+		return this.objectMapper.<mark>readValue</mark>(body, targetJavaType);
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Channel_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Channel.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The unique string that identifies the resource.
+     * 
+     * @return The unique string that identifies the resource
+     */     */
+    public static Channel fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Channel.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____WorkflowCumulativeStatistics_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____WorkflowCumulativeStatistics.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The account_sid.
+     * 
+     * @return The account_sid
+     */     */
+    public static WorkflowCumulativeStatistics fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, WorkflowCumulativeStatistics.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____ShortCode_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____ShortCode.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The unique string that identifies the resource.
+     * 
+     * @return The unique string that identifies the resource
+     */     */
+    public static ShortCode fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, ShortCode.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Trigger_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Trigger.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The SID of the Account that this trigger monitors.
+     * 
+     * @return The SID of the Account that this trigger monitors
+     */     */
+    public static Trigger fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Trigger.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Defaults_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Defaults.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The SID of the Account that created the resource.
+     * 
+     * @return The SID of the Account that created the resource
+     */     */
+    public static Defaults fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Defaults.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____SyncMap_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____SyncMap.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The unique 34-character SID identifier of the Map..
+     * 
+     * @return The unique 34-character SID identifier of the Map.
+     */     */
+    public static SyncMap fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, SyncMap.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Credential_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Credential.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The unique string that identifies the resource.
+     * 
+     * @return The unique string that identifies the resource
+     */     */
+    public static Credential fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Credential.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Challenge_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Challenge.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The A string that uniquely identifies this Challenge..
+     * 
+     * @return A string that uniquely identifies this Challenge.
+     */     */
+    public static Challenge fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Challenge.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____AddOnResult_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____AddOnResult.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The unique string that identifies the resource.
+     * 
+     * @return The unique string that identifies the resource
+     */     */
+    public static AddOnResult fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, AddOnResult.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Execution_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Execution.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The A string that uniquely identifies this Execution..
+     * 
+     * @return A string that uniquely identifies this Execution.
+     */     */
+    public static Execution fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Execution.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____SyncListItem_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____SyncListItem.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The Contains the numeric index of this List Item..
+     * 
+     * @return Contains the numeric index of this List Item.
+     */     */
+    public static SyncListItem fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, SyncListItem.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Alert_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Alert.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The unique id of the Account responsible for this alert..
+     * 
+     * @return The unique id of the Account responsible for this alert.
+     */     */
+    public static Alert fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Alert.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Verification_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Verification.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The unique string that identifies the resource.
+     * 
+     * @return The unique string that identifies the resource
+     */     */
+    public static Verification fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Verification.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____TaskActions_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____TaskActions.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The SID of the Account that created the resource.
+     * 
+     * @return The SID of the Account that created the resource
+     */     */
+    public static TaskActions fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, TaskActions.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____AvailableAddOn_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____AvailableAddOn.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The A string that uniquely identifies this Add-on.
+     * 
+     * @return A string that uniquely identifies this Add-on
+     */     */
+    public static AvailableAddOn fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, AvailableAddOn.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Document_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Document.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The unique 34-character SID identifier of the Document..
+     * 
+     * @return The unique 34-character SID identifier of the Document.
+     */     */
+    public static Document fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Document.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____AlphaSender_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____AlphaSender.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The 34 character unique sid of the Alpha Sender ID..
+     * 
+     * @return The 34 character unique sid of the Alpha Sender ID.
+     */     */
+    public static AlphaSender fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, AlphaSender.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____Address_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____Address.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The SID of the Account that is responsible for the resource.
+     * 
+     * @return The SID of the Account that is responsible for the resource
+     */     */
+    public static Address fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, Address.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____RecordingSettings_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____RecordingSettings.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The Twilio Account SID associated with this item.
+     * 
+     * @return The Twilio Account SID associated with this item
+     */     */
+    public static RecordingSettings fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, RecordingSettings.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____ValidationRequest_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____ValidationRequest.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The SID of the Account that created the resource.
+     * 
+     * @return The SID of the Account that created the resource
+     */     */
+    public static ValidationRequest fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, ValidationRequest.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____IncomingPhoneNumber_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____IncomingPhoneNumber.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The SID of the Account that created the resource.
+     * 
+     * @return The SID of the Account that created the resource
+     */     */
+    public static IncomingPhoneNumber fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, IncomingPhoneNumber.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____InstalledAddOn_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____InstalledAddOn.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The A string that uniquely identifies this Add-on installation.
+     * 
+     * @return A string that uniquely identifies this Add-on installation
+     */     */
+    public static InstalledAddOn fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, InstalledAddOn.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____AvailableAddOnExtension_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____AvailableAddOnExtension.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The A string that uniquely identifies this Extension.
+     * 
+     * @return A string that uniquely identifies this Extension
+     */     */
+    public static AvailableAddOnExtension fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, AvailableAddOnExtension.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____AuthCallsCredentialListMapping_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____AuthCallsCredentialListMapping.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The SID of the Account that created the resource.
+     * 
+     * @return The SID of the Account that created the resource
+     */     */
+    public static AuthCallsCredentialListMapping fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, AuthCallsCredentialListMapping.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>twilio_____twilio-java_____AuthRegistrationsCredentialListMapping_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/twilio_____twilio-java_____AuthRegistrationsCredentialListMapping.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.JsonMappingException
+|
+com.fasterxml.jackson.core.JsonParseException.getMessage
+
+/**
+     * Returns The The SID of the Account that created the resource.
+     * 
+     * @return The SID of the Account that created the resource
+     */     */
+    public static AuthRegistrationsCredentialListMapping fromJson(final String json, final ObjectMapper objectMapper) {
+        // Convert all checked exceptions to Runtime
+        try {
+            return objectMapper.<mark>readValue</mark>(json, AuthRegistrationsCredentialListMapping.class);
+        } catch (final JsonMappingException | JsonParseException e) {
+            throw new ApiException(e.getMessage(), e);
+        } catch (final IOException e) {
+            throw new ApiConnectionException(e.getMessage(), e);
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>IQSS_____dataverse_____FileRecordJobIT_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/IQSS_____dataverse_____FileRecordJobIT.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+     * Kick off a job with a specified mode: MERGE, UPDATE, REPLACE
+     * @param mode
+     * @return a job entity
+     */     */
+    private JobExecutionEntity getJob() {
+        System.out.println("JOB API: " + props.getProperty("filesystem.api") + "/" + dsDoi);
+        try {
+            // run batch job and wait for result
+            String jobId = given()
+                    .header(API_TOKEN_HTTP_HEADER, token)
+                    .post(props.getProperty("filesystem.api") + "/" + dsDoi)
+                    .then().assertThat().statusCode(200)
+                    .extract().jsonPath().getString("data.executionId");
+            String jobResult = pollJobStatus(jobId, token, Integer.valueOf(props.getProperty("polling.retries")),
+                    Integer.valueOf(props.getProperty("polling.wait")));
+            System.out.println("JOB JSON: " + jobResult);
+            return mapper.<mark>readValue</mark>(jobResult, JobExecutionEntity.class);
+        } catch (IOException ioe) {
+            System.out.println("Error getting job execution entity: " + ioe.getMessage());
+            return null;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>IQSS_____dataverse_____FileRecordJobIT_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/IQSS_____dataverse_____FileRecordJobIT.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+     * Update the dataset json
+     */     */
+    private JobExecutionEntity getJobWithToken(String userToken) {
+        System.out.println("JOB API: " + props.getProperty("filesystem.api") + "/" + dsDoi);
+        System.out.println("TOKEN USED: " + userToken);
+        try {
+            // run batch job and wait for result
+            String jobId = given()
+                    .header(API_TOKEN_HTTP_HEADER, userToken)
+                    .post(props.getProperty("filesystem.api") + "/" + dsDoi)
+                    .then().assertThat().statusCode(200)
+                    .extract().jsonPath().getString("data.executionId");
+            String jobResult = pollJobStatus(jobId, token, Integer.valueOf(props.getProperty("polling.retries")),
+                    Integer.valueOf(props.getProperty("polling.wait")));
+            System.out.println("JOB JSON: " + jobResult);
+            return mapper.<mark>readValue</mark>(jobResult, JobExecutionEntity.class);
+        } catch (IOException ioe) {
+            System.out.println("Error getting job execution entity: " + ioe.getMessage());
+            return null;
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____beam_____PipelineOptionsTranslation_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/apache_____beam_____PipelineOptionsTranslation.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/** Converts the provided {@link PipelineOptions} into Json{@link String}. */  /** Converts the provided {@link Struct} into {@link PipelineOptions}. */
+  public static PipelineOptions fromProto(Struct protoOptions) {
+    try {
+      Map<String, TreeNode> mapWithoutUrns = new HashMap<>();
+      TreeNode rootOptions = MAPPER.readTree(JsonFormat.printer().print(protoOptions));
+      Iterator<String> optionsKeys = rootOptions.fieldNames();
+      while (optionsKeys.hasNext()) {
+        String optionKey = optionsKeys.next();
+        TreeNode optionValue = rootOptions.get(optionKey);
+        mapWithoutUrns.put(
+            CaseFormat.LOWER_UNDERSCORE.to(
+                CaseFormat.LOWER_CAMEL,
+                optionKey.substring("beam:option:".length(), optionKey.length() - ":v1".length())),
+            optionValue);
+      }
+      return MAPPER.<mark>readValue</mark>(
+          MAPPER.writeValueAsString(ImmutableMap.of("options", mapWithoutUrns)),
+          PipelineOptions.class);
+    } catch (IOException e) {
+      throw new RuntimeException("Failed to read PipelineOptions from Protocol", e);
+    }
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>salesforce_____Argus_____Consumer_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/salesforce_____Argus_____Consumer.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/** Enqueue un-flushed messages back on to Kafka. */     */
+    public <T extends Serializable> List<T> dequeueFromBuffer(String topic, Class<T> type, int timeout, int limit) {
+        List<T> result = new ArrayList<T>();
+        long cutoff = System.currentTimeMillis() + timeout;
+        BlockingQueue<String> queue = _topics.get(topic).getMessages();
+
+        while (System.currentTimeMillis() < cutoff && (limit < 0 || result.size() < limit)) {
+            if (Thread.currentThread().isInterrupted()) {
+                break;
+            }
+            try {
+                String message = queue.poll(timeout, TimeUnit.MILLISECONDS);
+
+                if (message != null && !message.isEmpty()) {
+                    if (String.class.isAssignableFrom(type)) {
+                        result.add(type.cast(message));
+                    } else {
+                        result.add(_mapper.<mark>readValue</mark>(message, type));
+                    }
+                    if (result.size() % 1000 == 0) {
+                        _logger.debug("Dequeued {} messages from local buffer.", result.size());
+                    }
+                }
+            } catch (InterruptedException e) {
+                _logger.warn("Interrupted while waiting for poll() to return a message.");
+                Thread.currentThread().interrupt();
+            } catch (IOException e) {
+                _logger.warn("Exception while deserializing message to type: " + type + ". Skipping this message.", e);
+            }
+        }
+        return result;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>shopizer-ecommerce_____shopizer_____ImportIntegrationModule_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/shopizer-ecommerce_____shopizer_____ImportIntegrationModule.java
+
+com.fasterxml.jackson.databind.ObjectMapper.&ltinit&gt
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+	 * Import all non existing modules
+	 * @throws Exception
+	 */	//@Test
+	public void importSpecificIntegrationModule() throws Exception {
+		
+
+			ObjectMapper mapper = <mark>new ObjectMapper</mark>();
+			File file = new File(" /Users/carlsamson/Documents/dev/workspaces/shopizer-master/shopizer/sm-core/src/main/resources/reference/integrationmodules.json");
+			
+			InputStream in = null;
+			
+			
+			try {
+
+	            in = new FileInputStream(file);
+
+	            @SuppressWarnings("rawtypes")
+	    		Map[] objects = mapper.<mark>readValue</mark>(in, Map[].class);
+	            
+	            IntegrationModule module = null;
+	            //get the module to be loaded
+	            for(int i = 0; i < objects.length; i++) {
+	            	@SuppressWarnings("rawtypes")
+					Map o = objects[i];
+	            	//load that specific module
+	            	if(o.get("code").equals("beanstream")) {
+	            		//get module object
+	            		module = integrationModulesLoader.loadModule(o);
+	            		break;
+	            	}
+	            }
+	            
+	            if(module!=null) {
+	            	IntegrationModule m = moduleCongigurationService.getByCode(module.getCode());
+	            	if(m!=null) {
+	            		moduleCongigurationService.delete(m);
+	            	}
+	            	
+	            	moduleCongigurationService.create(module);
+	            }
+
+	  		} catch (Exception e) {
+	  			throw new ServiceException(e);
+	  		} finally {
+	  			if(in !=null) {
+	  				try {
+	  					in.close();
+	  				} catch(Exception ignore) {}
+	  			}
+	  		}
+	
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>vmware_____photon-controller_____TaskUtils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/vmware_____photon-controller_____TaskUtils.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+   * Converts a list of tasks from middle-end representation to front-end representation.
+   *
+   * Legacy code. This function is usually called by front-end clients to get a list of tasks related to
+   * other object.
+   */   */
+  public static Task convertBackEndToFrontEnd(TaskService.State taskState) {
+    Task task = new Task();
+
+    Task.Entity entity = new Task.Entity();
+    entity.setId(taskState.entityId);
+    entity.setKind(taskState.entityKind);
+    task.setEntity(entity);
+
+    task.setId(ServiceUtils.getIDFromDocumentSelfLink(taskState.documentSelfLink));
+    task.setState(taskState.state.toString());
+    task.setOperation(taskState.operation);
+    task.setQueuedTime(taskState.queuedTime);
+    task.setStartedTime(taskState.startedTime);
+    task.setEndTime(taskState.endTime);
+
+    if (StringUtils.isNotBlank(taskState.resourceProperties)) {
+      try {
+        Object resourceProperties = objectMapper.<mark>readValue</mark>(
+            taskState.resourceProperties,
+            Object.class);
+        task.setResourceProperties(resourceProperties);
+      } catch (IOException e) {
+        throw new IllegalArgumentException(
+            String.format("Error deserializing resourceProperties %s, error %s",
+                taskState.resourceProperties, e.getMessage()));
+      }
+    }
+
+    if (taskState.steps != null && !taskState.steps.isEmpty()) {
+      List<Step> steps = new ArrayList<>();
+      taskState.steps
+          .stream()
+          .sorted((taskStepState1, taskStepState2) -> Integer.compare(taskStepState1.sequence, taskStepState2.sequence))
+          .forEach(taskStepState -> steps.add(StepUtils.convertBackEndToFrontEnd(taskStepState)));
+      task.setSteps(steps);
+    }
+
+    return task;
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>f-droid_____fdroidclient_____IndexV1Updater_4.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/f-droid_____fdroidclient_____IndexV1Updater.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+     * Verify that the signing certificate used to sign {@link #SIGNED_FILE_NAME}
+     * matches the signing stored in the database for this repo.  {@link #repo} and
+     * {@code repo.signingCertificate} must be pre-loaded from the database before
+     * running this, if this is an existing repo.  If the repo does not exist,
+     * this will run the TOFU process.
+     * <p>
+     * Index V1 works with two copies of the signing certificate:
+     * <li>in the downloaded jar</li>
+     * <li>stored in the local database</li>
+     * <p>
+     * A new repo can be added with or without the fingerprint of the signing
+     * certificate.  If no fingerprint is supplied, then do a pure TOFU and just
+     * store the certificate as valid.  If there is a fingerprint, then first
+     * check that the signing certificate in the jar matches that fingerprint.
+     * <p>
+     * This is also responsible for adding the {@link Repo} instance to the
+     * database for the first time.
+     * <p>
+     * This is the same as {@link IndexUpdater#verifyCerts(String, X509Certificate)},
+     * {@link IndexUpdater#verifyAndStoreTOFUCerts(String, X509Certificate)}, and
+     * {@link IndexUpdater#assertSigningCertFromXmlCorrect()} except there is no
+     * embedded copy of the signing certificate in the index data.
+     *
+     * @param rawCertFromJar the {@link X509Certificate} embedded in the downloaded jar
+     * @see IndexUpdater#verifyAndStoreTOFUCerts(String, X509Certificate)
+     * @see IndexUpdater#verifyCerts(String, X509Certificate)
+     * @see IndexUpdater#assertSigningCertFromXmlCorrect()
+     */
+    private App[] parseApps(ObjectMapper mapper, JsonParser parser) throws IOException {
+        TypeReference<App[]> typeRef = new TypeReference<App[]>() {
+        };
+        parser.nextToken(); // START_ARRAY
+        return mapper.<mark>readValue</mark>(parser, typeRef);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>kbastani_____spring-boot-graph-processing-example_____Receiver_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/kbastani_____spring-boot-graph-processing-example_____Receiver.java
+
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+     * Prepares a user to be ranked for the first time after having follower
+     * data imported, resetting the previous PageRanks and preparing for a new
+     * calculation and ranking.
+     *
+     * @param user is the user that should be prepared for being ranked
+     */    @RabbitListener(queues = {"twitter.followers"})
+    public void followers(String message) throws InterruptedException, IOException {
+
+        User user = objectMapper.<mark>readValue</mark>(message, User.class);
+
+        if (user != null) {
+            try {
+                // Iterate through cursors and import to graph database
+                CursoredList<Long> followers = twitter.friendOperations()
+                        .getFollowerIds(user.getProfileId());
+
+                saveFollowers(user, followers);
+
+                while (followers.hasNext()) {
+                    Long cursor = followers.getNextCursor();
+                    followers = twitter.friendOperations()
+                            .getFollowerIdsInCursor(user.getProfileId(), cursor);
+                    saveFollowers(user, followers);
+                }
+
+                log.info(String.format("%s followers imported for user: %s", user.getFollowerCount(), user.getScreenName()));
+
+                amqpTemplate.convertAndSend("twitter.follows", objectMapper.writeValueAsString(user));
+            } catch (RateLimitExceededException rateLimitException) {
+                AnalyticsScheduler.resetTimer = true;
+                Thread.sleep(40000L);
+                log.info(String.format("Rate limit exceeded while importing followers for user: %s", user.getScreenName()));
+
+                // Throw AMQP exception and redeliver the message
+                throw new AmqpIllegalStateException(rateLimitException.getMessage());
+            } catch (Exception ex) {
+                log.info(ex);
+            }
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>fabric8io_____kubernetes-client_____KubeConfigUtils_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/fabric8io_____kubernetes-client_____KubeConfigUtils.java
+
+com.fasterxml.jackson.databind.ObjectMapper.&ltinit&gt
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+   * Returns the current context in the given config
+   *
+   * @param config Config object
+   * @return returns context in config if found, otherwise null
+   */public class KubeConfigUtils {
+  public static Config parseConfig(File file) throws IOException {
+    ObjectMapper mapper = <mark>new ObjectMapper</mark>(new YAMLFactory());
+    return mapper.<mark>readValue</mark>(file, Config.class);
+  }
+
+  public static Config parseConfigFromString(String contents) throws IOException {
+    ObjectMapper mapper = <mark>new ObjectMapper</mark>(new YAMLFactory());
+    return mapper.<mark>readValue</mark>(contents, Config.class);
+  }
+
+  /**
+   * Returns the current context in the given config
+   *
+   * @param config Config object
+   * @return returns context in config if found, otherwise null
+   */
+  public static Context getCurrentContext(Config config) {
+    String contextName = config.getCurrentContext();
+    if (contextName != null) {
+      List<NamedContext> contexts = config.getContexts();
+      if (contexts != null) {
+        for (NamedContext context : contexts) {
+          if (contextName.equals(context.getName())) {
+            return context.getContext();
+          }
+        }
+      }
+    }
+    return null;
+  }
+
+  /**
+   */
+  /**
+   * Returns the current user token for the config and current context
+   *
+   * @param config Config object
+   * @param context Context object
+   * @return returns current user based upon provided parameters.
+   */
+  public static String getUserToken(Config config, Context context) {
+    AuthInfo authInfo = getUserAuthInfo(config, context);
+    if (authInfo != null) {
+      return authInfo.getToken();
+    }
+    return null;
+  }
+
+  /**
+   * Returns the current {@link AuthInfo} for the current context and user
+   *
+   * @param config Config object
+   * @param context Context object
+   * @return {@link AuthInfo} for current context
+   */
+  public static AuthInfo getUserAuthInfo(Config config, Context context) {
+    AuthInfo authInfo = null;
+    if (config != null && context != null) {
+      String user = context.getUser();
+      if (user != null) {
+        List<NamedAuthInfo> users = config.getUsers();
+        if (users != null) {
+          for (NamedAuthInfo namedAuthInfo : users) {
+            if (user.equals(namedAuthInfo.getName())) {
+              authInfo = namedAuthInfo.getUser();
+            }
+          }
+        }
+      }
+    }
+    return authInfo;
+  }
+
+  /**
+   * Returns the current {@link Cluster} for the current context
+   *
+   * @param config     {@link Config} config object
+   * @param context    {@link Context} context object
+   * @return current {@link Cluster} for current context
+   */
+  public static Cluster getCluster(Config config, Context context) {
+    Cluster cluster = null;
+    if (config != null && context != null) {
+      String clusterName = context.getCluster();
+      if (clusterName != null) {
+        List<NamedCluster> clusters = config.getClusters();
+        if (clusters != null) {
+          for (NamedCluster namedCluster : clusters) {
+            if (clusterName.equals(namedCluster.getName())) {
+              cluster = namedCluster.getCluster();
+            }
+          }
+        }
+      }
+    }
+    return cluster;
+  }
+}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>apache_____camel_____ConnectorMojo_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/apache_____camel_____ConnectorMojo.java
+
+com.fasterxml.jackson.databind.ObjectMapper.&ltinit&gt
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.ObjectMapper.writerWithDefaultPrettyPrinter
+com.fasterxml.jackson.databind.ObjectMapper.writerWithDefaultPrettyPrinter
+
+/**
+     * Builds a JSon line of the given row
+     */     */
+    private File embedCamelComponentSchema(File file) throws MojoExecutionException {
+        try {
+            ObjectMapper mapper = <mark>new ObjectMapper</mark>();
+            Map dto = mapper.<mark>readValue</mark>(file, Map.class);
+
+            String scheme = extractScheme(dto);
+            String groupId = extractGroupId(dto);
+            String artifactId = extractArtifactId(dto);
+
+            // find the artifact on the classpath that has the Camel component this connector is using
+            // then we want to grab its json schema file to embed in this JAR so we have all files together
+
+            if (scheme != null && groupId != null && artifactId != null) {
+                for (Object obj : getProject().getDependencyArtifacts()) {
+                    Artifact artifact = (Artifact) obj;
+                    if ("jar".equals(artifact.getType())) {
+                        // use baseVersion so we can support SNAPSHOT versions that are based on a base version
+                        if (groupId.equals(artifact.getGroupId()) && artifactId.equals(artifact.getArtifactId())) {
+                            // load the component file inside the file
+                            URL url = new URL("file:" + artifact.getFile());
+                            URLClassLoader child = new URLClassLoader(new URL[]{url}, this.getClass().getClassLoader());
+
+                            InputStream is = child.getResourceAsStream("META-INF/services/org/apache/camel/component/" + scheme);
+                            if (is != null) {
+                                List<String> lines = FileHelper.loadFile(is);
+                                String fqn = extractClass(lines);
+                                is.close();
+
+                                // only keep package
+                                String pck = fqn.substring(0, fqn.lastIndexOf("."));
+                                String name = pck.replace(".", "/") + "/" + scheme + ".json";
+
+                                is = child.getResourceAsStream(name);
+                                if (is != null) {
+                                    List<String> schema = FileHelper.loadFile(is);
+                                    is.close();
+
+                                    // write schema to file
+                                    File out = new File(classesDirectory, "camel-component-schema.json");
+                                    FileOutputStream fos = new FileOutputStream(out, false);
+                                    for (String line : schema) {
+                                        fos.write(line.getBytes());
+                                        fos.write("\n".getBytes());
+                                    }
+                                    fos.close();
+
+                                    getLog().info("Embedded camel-component-schema.json file for Camel component " + scheme);
+
+                                    // updating to use correct base version in camel-connector.json
+                                    String baseVersion = artifact.getVersion();
+                                    updateVersionInCamelConnectorJSon("baseVersion", baseVersion);
+
+                                    return out;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        } catch (Exception e) {
+            throw new MojoExecutionException("Cannot read file camel-connector.json", e);
+        }
+
+        return null;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>nuxeo_____nuxeo_____OAuth2ChallengeFixture_3.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/com_fasterxml_jackson_databind/nuxeo_____nuxeo_____OAuth2ChallengeFixture.java
+
+com.fasterxml.jackson.databind.ObjectMapper.&ltinit&gt
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+com.fasterxml.jackson.databind.ObjectMapper.readValue
+
+/**
+     * If the "code_challenge" and "code_challenge_method" parameters are sent along with the authorization request, the
+     * client must send a "code_verifier" parameter along with the token request.
+     * <p>
+     * The server performs the proof of possession of the code verifier by the client by calculating the code challenge
+     * from the received "code_verifier" parameter transformed according to the "code_challenge_method" and comparing it
+     * with the previously associated "code_challenge".
+     */    @Test
+    public void tokenShouldValidateParameters() throws IOException {
+        ObjectMapper obj = <mark>new ObjectMapper</mark>();
+        // unsupported grant_type parameter
+        Map<String, String> params = new HashMap<>();
+        params.put(GRANT_TYPE_PARAM, "unknown");
+        try (CloseableClientResponse cr = responseFromTokenWith(params)) {
+            assertEquals(400, cr.getStatus());
+            String json = cr.getEntity(String.class);
+            Map<?, ?> error = obj.<mark>readValue</mark>(json, Map.class);
+            assertEquals(UNSUPPORTED_GRANT_TYPE, error.get(ERROR_PARAM));
+            assertEquals(
+                    String.format("Unknown %s: got \"unknown\", expecting \"%s\" or \"%s\".", GRANT_TYPE_PARAM,
+                            AUTHORIZATION_CODE_GRANT_TYPE, REFRESH_TOKEN_GRANT_TYPE),
+                    error.get(ERROR_DESCRIPTION_PARAM));
+            assertStoreIsEmpty();
+        }
+
+        // invalid authorization code
+        params.put(GRANT_TYPE_PARAM, AUTHORIZATION_CODE_GRANT_TYPE);
+        params.put(AUTHORIZATION_CODE_PARAM, "invalidCode");
+        try (CloseableClientResponse cr = responseFromTokenWith(params)) {
+            assertEquals(400, cr.getStatus());
+            String json = cr.getEntity(String.class);
+            Map<?, ?> error = obj.<mark>readValue</mark>(json, Map.class);
+            assertEquals(INVALID_GRANT, error.get(ERROR_PARAM));
+            assertEquals("Invalid authorization code", error.get(ERROR_DESCRIPTION_PARAM));
+            assertStoreIsEmpty();
+        }
+
+        // invalid client_id parameter
+        initValidAuthorizeRequestCall();
+        String code = getAuthorizationCode();
+        params.put(AUTHORIZATION_CODE_PARAM, code);
+        params.put(CLIENT_ID_PARAM, "unknown");
+        try (CloseableClientResponse cr = responseFromTokenWith(params)) {
+            assertEquals(400, cr.getStatus());
+            String json = cr.getEntity(String.class);
+            Map<?, ?> error = obj.<mark>readValue</mark>(json, Map.class);
+            assertEquals(INVALID_CLIENT, error.get(ERROR_PARAM));
+            assertEquals("Invalid client id: unknown", error.get(ERROR_DESCRIPTION_PARAM));
+            assertStoreIsEmpty();
+        }
+
+        // invalid client_secret parameter
+        initValidAuthorizeRequestCall();
+        code = getAuthorizationCode();
+        params.put(AUTHORIZATION_CODE_PARAM, code);
+        params.put(CLIENT_ID_PARAM, CLIENT_ID);
+        params.put(CLIENT_SECRET_PARAM, "invalidSecret");
+        try (CloseableClientResponse cr = responseFromTokenWith(params)) {
+            assertEquals(400, cr.getStatus());
+            String json = cr.getEntity(String.class);
+            Map<?, ?> error = obj.<mark>readValue</mark>(json, Map.class);
+            assertEquals(INVALID_CLIENT, error.get(ERROR_PARAM));
+            assertEquals("Disabled client or invalid client secret", error.get(ERROR_DESCRIPTION_PARAM));
+            assertStoreIsEmpty();
+        }
+
+        // check that the redirect_uri parameter is required when included in the authorization request
+        initValidAuthorizeRequestCall();
+        code = getAuthorizationCode();
+        params.put(AUTHORIZATION_CODE_PARAM, code);
+        params.put(CLIENT_SECRET_PARAM, CLIENT_SECRET);
+        try (CloseableClientResponse cr = responseFromTokenWith(params)) {
+            assertEquals(400, cr.getStatus());
+            String json = cr.getEntity(String.class);
+            Map<?, ?> error = obj.<mark>readValue</mark>(json, Map.class);
+            assertEquals(INVALID_GRANT, error.get(ERROR_PARAM));
+            assertEquals("Invalid redirect URI: null", error.get(ERROR_DESCRIPTION_PARAM));
+            assertStoreIsEmpty();
+        }
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+        

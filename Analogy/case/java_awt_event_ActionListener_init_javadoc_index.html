@@ -1,0 +1,1035 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" style="max-width: 1620px">
+    <div class="row">
+      <h1 class="col-lg-12 col-md-12 mb-12" style="margin-top: 30px;">java_awt_event</h1>
+      <br>
+      <h4 class="col-lg-12 col-md-12 mb-12">ActionListener_init</h4>
+    </div>
+    
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>openmicroscopy_____openmicroscopy_____MainIJPlugin_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_awt_event/openmicroscopy_____openmicroscopy_____MainIJPlugin.java
+
+java.awt.event.WindowAdapter.&ltinit&gt
+java.awt.event.ActionListener.&ltinit&gt
+
+    /** Builds the component indicating where to download the jar.*/
+    private void showMessage(PluginInfo info)
+    {
+        JEditorPane htmlPane = new JEditorPane("text/html",
+                formatMessage(info));
+        htmlPane.setEditable(false);
+        htmlPane.setOpaque(false);
+        htmlPane.addHyperlinkListener(new HyperlinkListener() {
+            public void hyperlinkUpdate(HyperlinkEvent e) {
+                if (HyperlinkEvent.EventType.ACTIVATED.equals(
+                        e.getEventType()))
+                    try {
+                        BrowserLauncher.openURL(e.getURL().toString());
+                    } catch (IOException exception) {
+                        IJ.log(exception.toString());
+                    }
+            }
+        });
+
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add(UIUtilities.buildComponentPanelCenter(htmlPane),
+                BorderLayout.CENTER);
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        JButton okay = new JButton("OK");
+        panel.add(UIUtilities.buildComponentPanelCenter(okay),
+                BorderLayout.SOUTH);
+
+        final JDialog frame = new JDialog(IJ.getInstance(), "Warning");
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.getContentPane().add(panel, BorderLayout.CENTER);
+        frame.pack();
+        frame.setResizable(false);
+        okay.addActionListener(<mark>new ActionListener</mark>() {
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+            }
+        });
+        frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        UIUtilities.centerAndShow(frame);
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>bardsoftware_____ganttproject_____GanttTaskPropertiesBean_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_awt_event/bardsoftware_____ganttproject_____GanttTaskPropertiesBean.java
+
+java.awt.event.ActionListener.&ltinit&gt
+
+  /** Construct the general panel */
+  private void constructGeneralPanel() {
+    final JPanel propertiesPanel = new JPanel(new SpringLayout());
+
+    propertiesPanel.add(new JLabel(language.getText("name")));
+    nameField1 = new JTextField(20);
+    nameField1.setName("name_of_task");
+    propertiesPanel.add(nameField1);
+    Pair<String, JCheckBox> checkBox = constructCheckBox();
+    if (checkBox != null) {
+      propertiesPanel.add(new JLabel(checkBox.first()));
+      propertiesPanel.add(checkBox.second());
+    }
+    addEmptyRow(propertiesPanel);
+
+    myTaskScheduleDates.insertInto(propertiesPanel);
+
+    constructEarliestBegin(propertiesPanel);
+    addEmptyRow(propertiesPanel);
+
+    propertiesPanel.add(new JLabel(language.getText("priority")));
+    priorityComboBox = new JComboBox();
+    for (Task.Priority p : Task.Priority.values()) {
+      priorityComboBox.addItem(language.getText(p.getI18nKey()));
+    }
+    priorityComboBox.setEditable(false);
+    propertiesPanel.add(priorityComboBox);
+
+    propertiesPanel.add(new JLabel(language.getText("advancement")));
+    SpinnerNumberModel spinnerModel = new SpinnerNumberModel(0, 0, 100, 1);
+    percentCompleteSlider = new JSpinner(spinnerModel);
+    propertiesPanel.add(percentCompleteSlider);
+
+    addEmptyRow(propertiesPanel);
+
+    propertiesPanel.add(new JLabel(language.getText("option.taskProperties.main.showInTimeline.label")));
+    myShowInTimeline = new JCheckBox();
+    propertiesPanel.add(myShowInTimeline);
+
+    propertiesPanel.add(new JLabel(language.getText("shape")));
+    shapeComboBox = new JPaintCombo(ShapeConstants.PATTERN_LIST);
+    propertiesPanel.add(shapeComboBox);
+
+    OptionsPageBuilder builder = new OptionsPageBuilder(GanttTaskPropertiesBean.this, OptionsPageBuilder.TWO_COLUMN_LAYOUT);
+    builder.setUiFacade(myUIfacade);
+    JPanel colorBox = new JPanel(new BorderLayout(5, 0));
+    colorBox.add(builder.createColorComponent(myTaskColorOption).getJComponent(), BorderLayout.WEST);
+    //colorBox.add(Box.createHorizontalStrut(5));
+    colorBox.add(new JXHyperlink(mySetDefaultColorAction), BorderLayout.CENTER);
+    //colorBox.add(Box.createHorizontalGlue());
+    //colorBox.add(Box.createHorizontalGlue());
+    //colorBox.add(Box.createHorizontalGlue());
+
+    propertiesPanel.add(new JLabel(language.getText("colors")));
+    propertiesPanel.add(colorBox);
+
+    Box weblinkBox = Box.createHorizontalBox();
+    tfWebLink = new JTextField(20);
+    weblinkBox.add(tfWebLink);
+    weblinkBox.add(Box.createHorizontalStrut(2));
+    bWebLink = new TestGanttRolloverButton(new ImageIcon(getClass().getResource("/icons/web_16.gif")));
+    bWebLink.setToolTipText(GanttProject.getToolTip(language.getText("openWebLink")));
+    weblinkBox.add(bWebLink);
+
+    bWebLink.addActionListener(<mark>new ActionListener</mark>() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        // link to open the web link
+        if (!BrowserControl.displayURL(tfWebLink.getText())) {
+          GanttDialogInfo gdi = new GanttDialogInfo(null, GanttDialogInfo.ERROR, GanttDialogInfo.YES_OPTION,
+              language.getText("msg4"), language.getText("error"));
+          gdi.setVisible(true);
+        }
+      }
+    });
+    propertiesPanel.add(new JLabel(language.getText("webLink")));
+    propertiesPanel.add(weblinkBox);
+
+    SpringUtilities.makeCompactGrid(propertiesPanel, propertiesPanel.getComponentCount() / 2, 2, 1, 1, 5, 5);
+
+    JPanel propertiesWrapper = new JPanel(new BorderLayout());
+    propertiesWrapper.add(propertiesPanel, BorderLayout.NORTH);
+    generalPanel = new JPanel(new SpringLayout());
+    //generalPanel.add(new JLayer<JPanel>(propertiesPanel, layerUi));
+    generalPanel.add(propertiesWrapper);
+    generalPanel.add(notesPanel);
+    SpringUtilities.makeCompactGrid(generalPanel, 1, 2, 1, 1, 10, 5);
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>jitsi_____jitsi_____IceConfigPanel_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_awt_event/jitsi_____jitsi_____IceConfigPanel.java
+
+java.awt.event.ActionListener.&ltinit&gt
+java.awt.event.ActionListener.&ltinit&gt
+
+/**
+     * Sets the <tt>useUPNP</tt> property.
+     * @param isUseUPNP <tt>true</tt> to indicate that UPNP should be used for
+     * this account, <tt>false</tt> - otherwise.
+     */     */
+    private Component createAdditionalServersComponent()
+    {
+        table.setPreferredScrollableViewportSize(new Dimension(450, 60));
+
+        tableModel.addColumn(
+            Resources.getString("plugin.jabberaccregwizz.IP_ADDRESS")
+            + "/" + Resources.getString("service.gui.PORT"));
+        tableModel.addColumn(
+            Resources.getString("plugin.jabberaccregwizz.SUPPORT_TURN"));
+
+        table.setDefaultRenderer(   StunServerDescriptor.class,
+                                    new ServerCellRenderer());
+
+        //Create the scroll pane and add the table to it.
+        JScrollPane scrollPane = new JScrollPane(table);
+
+        final JButton addButton
+            = new JButton(Resources.getString("service.gui.ADD"));
+        addButton.addActionListener(<mark>new ActionListener</mark>()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                StunConfigDialog stunDialog = new StunConfigDialog(false);
+                stunDialog.setModal(true);
+                stunDialog.setVisible(true);
+            }
+        });
+
+        final JButton editButton
+            = new JButton(Resources.getString("service.gui.EDIT"));
+        editButton.addActionListener(<mark>new ActionListener</mark>()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                if(table.getSelectedRow() < 0)
+                    return;
+
+                StunServerDescriptor stunServer
+                    = (StunServerDescriptor) tableModel.getValueAt(
+                        table.getSelectedRow(), 0);
+
+                if (stunServer != null)
+                {
+                    StunConfigDialog dialog = new StunConfigDialog(
+                                    stunServer.getAddress(),
+                                    stunServer.getPort(),
+                                    stunServer.isTurnSupported(),
+                                    StringUtils.getUTF8String(
+                                                    stunServer.getUsername()),
+                                    StringUtils.getUTF8String(
+                                                    stunServer.getPassword()));
+                    dialog.setModal(true);
+                    dialog.setVisible(true);
+                }
+            }
+        });
+
+        final JButton deleteButton
+            = new JButton(Resources.getString("service.gui.DELETE"));
+        deleteButton.addActionListener(<mark>new ActionListener</mark>()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                tableModel.removeRow(table.getSelectedRow());
+            }
+        });
+
+        TransparentPanel buttonsPanel
+            = new TransparentPanel(new FlowLayout(FlowLayout.RIGHT));
+
+        buttonsPanel.add(addButton);
+        buttonsPanel.add(editButton);
+        buttonsPanel.add(deleteButton);
+
+        TransparentPanel mainPanel = new TransparentPanel(new BorderLayout());
+        mainPanel.setBorder(BorderFactory.createTitledBorder(
+            Resources.getString(
+                "plugin.jabberaccregwizz.ADDITIONAL_STUN_SERVERS")));
+        mainPanel.add(scrollPane);
+        mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
+
+        table.addMouseListener(new MouseAdapter()
+        {
+            /**
+             * {@inheritDoc}
+             */
+            @Override
+            public void mouseClicked(MouseEvent evt)
+            {
+                if (evt.getComponent().isEnabled() &&
+                        evt.getButton() == MouseEvent.BUTTON1 &&
+                        evt.getClickCount() == 2)
+                {
+                    editButton.doClick();
+                }
+            }
+        });
+
+        return mainPanel;
+    }
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>rapidminer_____rapidminer-studio_____CellTypeImplHelper_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_awt_event/rapidminer_____rapidminer-studio_____CellTypeImplHelper.java
+
+java.awt.event.ActionListener.&ltinit&gt
+
+	 */
+	static void addContentAssist(final TablePanelModel model, final int rowIndex, final int columnIndex,
+			final JFormattedTextField field, final JButton button, final Class<? extends CellType> cellClass) {
+
+		List<String> valuesList = model.getPossibleValuesForCellOrNull(rowIndex, columnIndex);
+		if (valuesList == null) {
+			valuesList = Collections.<String> emptyList();
+		}
+		final boolean multipleValuesAllowed = model.canCellHaveMultipleValues(rowIndex, columnIndex);
+		final List<String> possibleValues = valuesList;
+
+		// add ctrl+space shortcut for content assist
+		field.getInputMap().put(
+				KeyStroke.getKeyStroke(KeyEvent.VK_SPACE, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()),
+				"contentAssistAction");
+		field.getActionMap().put("contentAssistAction", new AbstractAction() {
+
+			private static final long serialVersionUID = 7930480602861798587L;
+
+			@Override
+			public void actionPerformed(final ActionEvent e) {
+				button.doClick();
+			}
+		});
+
+		// sort content assist values if they are for a string textfield
+		if (CellTypeTextFieldDefault.class.isAssignableFrom(cellClass)) {
+			Collections.sort(possibleValues);
+		}
+
+		// add mouse listener to show content assist popup
+		button.addActionListener(<mark>new ActionListener</mark>() {
+
+			@Override
+			public void actionPerformed(final ActionEvent e) {
+				showContentAssistPopup();
+			}
+
+			/**
+			 * Shows the content assist popup.
+			 *
+			 */
+			private void showContentAssistPopup() {
+				final ScrollableJPopupMenu popupMenu = createContentAssistPopup(field, possibleValues, multipleValuesAllowed,
+						cellClass);
+
+				popupMenu.show(field, field.getX(), field.getY() + field.getHeight());
+				popupMenu.requestFocusInWindow();
+			}
+
+			/**
+			 * Creates the content assist popup.
+			 *
+			 * @param field
+			 * @param possibleValues
+			 * @param multipleValuesAllowed
+			 * @param cellClass
+			 */
+			private ScrollableJPopupMenu createContentAssistPopup(final JFormattedTextField field,
+					final List<String> possibleValues, final boolean multipleValuesAllowed,
+					final Class<? extends CellType> cellClass) {
+				final ScrollableJPopupMenu popupMenu = new ScrollableJPopupMenu(ScrollableJPopupMenu.SIZE_SMALL);
+
+				// customize content assist look
+				popupMenu.setBackground(Color.WHITE);
+				popupMenu.setCustomWidth(field.getWidth());
+
+				// no values available, so show user there is nothing
+				if (possibleValues == null || possibleValues.size() <= 0) {
+					JMenuItem emptyItem = new JMenuItem(
+							I18N.getMessage(I18N.getGUIBundle(), "gui.label.table_panel.no_content_assist_items.title"));
+					emptyItem.setToolTipText(
+							I18N.getMessage(I18N.getGUIBundle(), "gui.label.table_panel.no_content_assist_items.tip"));
+					emptyItem.setOpaque(false);
+					popupMenu.add(emptyItem);
+					return popupMenu;
+				}
+
+				// either add checkboxes or radiobuttons depending on whether multiple values are
+				// allowed
+				if (multipleValuesAllowed) {
+					fillMultipleValuesSelectionPopup(field, possibleValues, popupMenu, cellClass);
+				} else {
+					fillSingleValueSelectionPopup(field, possibleValues, popupMenu, cellClass);
+				}
+
+				return popupMenu;
+			}
+
+			/**
+			 * Fills the given popup menu for single value selection.
+			 *
+			 * @param field
+			 * @param possibleValues
+			 * @param popupMenu
+			 * @param cellClass
+			 */
+			private void fillSingleValueSelectionPopup(final JFormattedTextField field, final List<String> possibleValues,
+					final ScrollableJPopupMenu popupMenu, final Class<? extends CellType> cellClass) {
+				ButtonGroup group = new ButtonGroup();
+				String existingValue = field.getText();
+				for (String item : possibleValues) {
+					final JRadioButton radioButton = new JRadioButton(item);
+					radioButton.setOpaque(false);
+
+					// pre-select the corresponding radiobutton for the text in the field
+					if (item.split(" ")[0].equals(existingValue)) {
+						radioButton.setSelected(true);
+					}
+
+					// on click set selected item to textfield
+					radioButton.addActionListener(<mark>new ActionListener</mark>() {
+
+						@Override
+						public void actionPerformed(final ActionEvent e1) {
+							// radio button, only one selection allowed anyway
+							String text = radioButton.getText();
+							// numerical values may have an annotation behind the value, split after
+							// " " and just add
+							// the first (aka number) value if applicable
+							if (CellTypeTextFieldNumerical.class.isAssignableFrom(cellClass)) {
+								text = text.split(" ")[0];
+							}
+							field.setText(text);
+						}
+					});
+
+					group.add(radioButton);
+					popupMenu.add(radioButton);
+				}
+			}
+
+			/**
+			 * Fills the given popup menu for multiple value selection.
+			 *
+			 * @param field
+			 * @param possibleValues
+			 * @param popupMenu
+			 * @param cellClass
+			 */
+			private void fillMultipleValuesSelectionPopup(final JFormattedTextField field, final List<String> possibleValues,
+					final ScrollableJPopupMenu popupMenu, final Class<? extends CellType> cellClass) {
+				String encodedValue = field.getText();
+				List<String> currentValuesList = model.convertEncodedStringValueToList(encodedValue);
+
+				// iterate over all possible items, create checkbox for each
+				for (String item : possibleValues) {
+					final JCheckBox checkbox = new JCheckBox(item);
+					checkbox.setOpaque(false);
+
+					// pre-select the corresponding checkboxes
+					if (currentValuesList.contains(item)) {
+						checkbox.setSelected(true);
+					}
+
+					// on click set currently selected checkbox items to textfield
+					checkbox.addActionListener(<mark>new ActionListener</mark>() {
+
+						@Override
+						public void actionPerformed(final ActionEvent e1) {
+							List<String> selectedItems = new LinkedList<>();
+							for (Component comp : popupMenu.getComponentsInsideScrollpane()) {
+								if (comp instanceof JCheckBox) {
+									JCheckBox checkbox = (JCheckBox) comp;
+									// add all selected checkboxes to the selected items list
+									if (checkbox.isSelected()) {
+										selectedItems.add(checkbox.getText());
+									}
+								}
+							}
+
+							// set the new text according to selected items
+							field.setText(model.encodeListOfStringsToValue(selectedItems));
+						}
+					});
+
+					popupMenu.add(checkbox);
+				}
+			}
+
+		});
+	}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>psal_____anonymouth_____StartWindow_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_awt_event/psal_____anonymouth_____StartWindow.java
+
+java.awt.event.FocusListener.&ltinit&gt
+java.awt.event.ActionListener.&ltinit&gt
+
+	 */
+	private void initListeners() {
+		startListener = <mark>new ActionListener</mark>() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				startingWindows.setVisible(false);
+				
+				/**
+				 * makes sure to internally rename files by different authors that have the same name.
+				 * It Used to be handed upon adding, but better for the user if they never have to worry about it
+				 */
+				main.preProcessWindow.assertUniqueTitles();
+				main.documentProcessor.process();
+			}
+		};
+		startButton.addActionListener(startListener);
+		
+		loadDocSetListener = <mark>new ActionListener</mark>() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Logger.logln(NAME+"'Load' button clicked on the documents tab");
+
+					/**
+					 * In case something starts to go wrong with the FileDialogs (they are older and
+					 * may be deprecated as some point). If this be the case, just swap in this code instead
+					 */
+					/*
+					FileHelper.load.setName("Load Saved Document Set Set");
+					FileHelper.load.setCurrentDirectory(new File(JSANConstants.JSAN_PROBLEMSETS_PREFIX));
+					FileHelper.load.setFileFilter(ANONConstants.XML);
+					FileHelper.load.setFileSelectionMode(JFileChooser.FILES_ONLY);
+					FileHelper.load.setMultiSelectionEnabled(false);
+					FileHelper.load.setVisible(true);
+					int answer = FileHelper.load.showOpenDialog(startingWindows);
+					
+					if (answer == JFileChooser.APPROVE_OPTION) {
+						File file = FileHelper.load.getSelectedFile();
+						*/
+					
+					FileHelper.goodLoad.setTitle("Load Your Document To Anonymize");
+					if (PropertiesUtil.getProbSet() != "") {
+						FileHelper.goodLoad.setDirectory(PropertiesUtil.getProbSet());
+					} else {
+						FileHelper.goodLoad.setDirectory(ANONConstants.PROBLEMSETS_PREFIX);
+					}
+					FileHelper.goodLoad.setMultipleMode(false);
+					FileHelper.goodLoad.setFilenameFilter(ANONConstants.XML);
+					FileHelper.goodLoad.setLocationRelativeTo(null);
+					FileHelper.goodLoad.setVisible(true);
+
+					String fileName = FileHelper.goodLoad.getFile();
+					if (fileName != null) {
+						File file = new File(FileHelper.goodLoad.getDirectory()+fileName);
+						loadProblemSet(file.getAbsolutePath());
+					} else {
+						Logger.logln(NAME+"Load document set canceled");
+					}
+				} catch (NullPointerException arg) {
+					arg.printStackTrace();
+				}
+			}
+		};
+		loadDocSetButton.addActionListener(loadDocSetListener);
+		
+		modifyDocSetListener = <mark>new ActionListener</mark>() {
+			@Override
+			public void actionPerformed(ActionEvent e) {				
+				main.preProcessWindow.showWindow();
+			}
+		};
+		modifyDocSetButton.addActionListener(modifyDocSetListener);
+		
+		newDocSetListener = <mark>new ActionListener</mark>() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				main.preProcessDriver.resetAllComponents();
+				setReadyToStart(false, false);
+				main.preProcessWindow.switchingToTest();
+				main.preProcessWindow.showWindow();
+			}
+		};
+		newDocSetButton.addActionListener(newDocSetListener);
+		
+		advancedConfigListener = <mark>new ActionListener</mark>() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				main.ppAdvancedWindow.showWindow();
+			}
+		};
+		advancedConfigButton.addActionListener(advancedConfigListener);
+	}
+	
+	/**
+	 * If there was a recently used/saved document set in the properties file, Anonymouth will load up and initialize
+	 * itself around that problem set so Anonymouth's ready to immediately start if the user wants.
+	 */
+	protected void setLastDocumentSet() {		
+		try {
+			if (!PropertiesUtil.getProbSet().equals("")) {
+				String problemSetPath = PropertiesUtil.getProbSet();
+
+				try {
+					loadProblemSet(problemSetPath);
+				} catch (Exception exc) {
+					setReadyToStart(false, true);
+					throw new Exception("Failed loading problemSet path \""+problemSetPath+"\"");
+				}
+			} else {
+				setReadyToStart(false, false);
+				throw new Exception("No default problem set saved from last run, will continue without.");
+			}
+		} catch (Exception e) {
+			Logger.logln(NAME+"Problem loading last used document set: " + PropertiesUtil.getProbSet(), LogOut.STDERR);
+			PropertiesUtil.setProbSet("");
+			
+			String feature = PropertiesUtil.getFeature();
+			main.ppAdvancedWindow.setFeature(feature);
+
+			String classifier = PropertiesUtil.getClassifier();
+			main.ppAdvancedWindow.setClassifier(classifier);
+		}
+	}
+	
+	/**
+	 * Determines whether or not the user has an acceptable document set built and updates components accordingly
+	 * @param ready
+	 */
+	public void setReadyToStart(boolean ready, boolean loaded) {
+		if (ready) {
+			if (loaded)
+				textLabel.setText("Start with loaded document set");
+			else
+				textLabel.setText("Start with finished document set");
+			modifyDocSetButton.setEnabled(true);
+			textLabel.setForeground(Color.BLACK);
+			startButton.setEnabled(true);
+			this.getRootPane().setDefaultButton(startButton);
+			main.preProcessWindow.saved = true;
+		} else {
+			if (loaded) {
+				textLabel.setText("Please finish incomplete document set");
+				modifyDocSetButton.setEnabled(true);
+				this.getRootPane().setDefaultButton(modifyDocSetButton);
+			} else {
+				textLabel.setText("No previous document set found");
+				this.getRootPane().setDefaultButton(newDocSetButton);
+				modifyDocSetButton.setEnabled(false);
+			}
+			textLabel.setForeground(Color.LIGHT_GRAY);
+			startButton.setEnabled(false);
+			main.preProcessWindow.saved = false;
+		}
+	}
+	
+	/**
+	 * Makes the prepared window visible
+	 */
+	@SuppressWarnings("unused") //Eclipse lies, it's being used, it just doesn't like my ANONConstants flag
+	public void showStartWindow() {
+		if (ANONConstants.IS_USER_STUDY && ThePresident.sessionName.equals("")) {
+			userStudySessionName.showSessionWindow();
+		} else {
+			ThePresident.sessionName = "Anonymouth";
+			Logger.setFilePrefix(ThePresident.sessionName);
+			Logger.logFile = true;
+			Logger.initLogFile();
+			Logger.logln(NAME+"Logger initialized, session name = " + ThePresident.sessionName);
+			Logger.logln(NAME+"Displaying Anonymouth Start Window");
+
+			if (ThePresident.canDoQuickStart) {
+				this.getRootPane().setDefaultButton(startButton);
+			} else {
+				this.getRootPane().setDefaultButton(newDocSetButton);
+			}
+			
+			this.setVisible(true);
+			
+			if (ThePresident.canDoQuickStart) {
+				startButton.requestFocusInWindow();
+			} else {
+				newDocSetButton.requestFocusInWindow();
+			}
+		}
+	}
+	
+	/**
+	 * Loads the problem set from the given path, attempts to load everything, then checks to make sure everything's ready. Updates
+	 * Components accordingly
+	 * @param path - The absolute path to the problem set we want to load
+	 */
+	public void loadProblemSet(String path) {
+		Logger.logln(NAME+"Trying to load problem set at: " + path);
+		try {
+			main.preProcessWindow.ps = new ProblemSet(path);
+			main.ppAdvancedWindow.setClassifier(PropertiesUtil.getClassifier());
+			main.ppAdvancedWindow.setFeature(PropertiesUtil.getFeature());
+			main.preProcessDriver.titles.clear();
+			
+			boolean probSetReady = main.preProcessWindow.documentsAreReady();
+			if (main.preProcessDriver.updateAllComponents() && probSetReady) {
+				setReadyToStart(true, true);
+				ThePresident.canDoQuickStart = true;
+				
+				//main.updateDocLabel(main.preProcessWindow.ps.getTestDoc().getTitle(), 0);
+				main.preProcessDriver.updateOpeningDir(main.preProcessWindow.ps.getTestDoc().getFilePath(), false);
+				main.preProcessDriver.updateOpeningDir(main.preProcessWindow.ps.getAllTrainDocs().get(0).getFilePath(), true);
+			} else {
+				Logger.logln(NAME+"Some issue was detected constructing the saved Document set, will verify " +
+						"if there's still enough documents to move forward");
+				if (probSetReady) {
+					JOptionPane.showMessageDialog(startingWindows,
+							"Anonymouth encountered a few problems loading your document set,\n" +
+							"some documents may have not been added in the process. Some\n" +
+							"possible causes of this may be:\n\n" +
+							"   -The document no longer exists in it's original path\n" +
+							"   -The document no longer has read permissions\n" +
+							"   -The document is not empty, where it wasn't in the past",
+							"Problems with Loading Document Set",
+							JOptionPane.WARNING_MESSAGE, ThePresident.dialogLogo);
+					setReadyToStart(true, true);
+					ThePresident.canDoQuickStart = true;
+				} else {
+					JOptionPane.showMessageDialog(startingWindows,
+							"Anonymouth encountered a few problems loading your document set\n" +
+							"and now there isn't enough loaded documents to proceed. Some\n" +
+							"possible causes of this may be:\n\n" +
+							"   -The document no longer exists in it's original path\n" +
+							"   -The document no longer has read permissions\n" +
+							"   -The document is not empty, where it wasn't in the past",
+							"Problems with Loading Document Set",
+							JOptionPane.WARNING_MESSAGE, ThePresident.dialogLogo);
+					Logger.logln(NAME+"One or more parts of the loaded doc set are insufficient now to begin due to" +
+							"loading problems, cannot quick start");
+					setReadyToStart(false, true);
+					ThePresident.canDoQuickStart = false;
+				}
+			}
+			
+			PropertiesUtil.setProbSet(path);
+			main.preProcessDriver.updateTitles();
+		} catch (Exception exc) {
+			Logger.logln(NAME+"Failed loading problem set at path: "+path, LogOut.STDERR);
+			setReadyToStart(false, false);
+			ThePresident.canDoQuickStart = false;
+			
+			String feature = PropertiesUtil.getFeature();
+			main.ppAdvancedWindow.setFeature(feature);
+
+			String classifier = PropertiesUtil.getClassifier();
+			main.ppAdvancedWindow.setClassifier(classifier);
+			
+			PropertiesUtil.setProbSet("");
+			main.preProcessDriver.updateTitles();
+			revalidate();
+			repaint();
+		}
+	}
+}
+
+            </pre>
+          </div>
+        </div>
+
+        
+        <hr class="col-lg-12 col-md-12 mb-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12">
+            <h6>alibaba_____mdrill_____LoaderCustomizer_2.java</h6>
+            <pre class="prettyprint">
+/ssd1/dayen/analogy/data/qual_study/java_awt_event/alibaba_____mdrill_____LoaderCustomizer.java
+
+java.awt.event.ActionListener.&ltinit&gt
+java.awt.event.ActionListener.&ltinit&gt
+java.awt.event.ActionListener.&ltinit&gt
+
+  /** Sets up a customizer window for a Database Connection*/
+  private void setUpDatabase() {
+
+    removeAll();
+
+    JPanel db = new JPanel();
+    GridBagLayout gbLayout = new GridBagLayout();
+    //db.setLayout(new GridLayout(6, 1));
+    db.setLayout(gbLayout);
+
+    JLabel urlLab = new JLabel("Database URL", SwingConstants.RIGHT);
+    urlLab.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
+    GridBagConstraints gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 0; gbConstraints.gridx = 0;
+    gbLayout.setConstraints(urlLab, gbConstraints);
+    db.add(urlLab);
+
+    m_dbaseURLText = new EnvironmentField();
+    m_dbaseURLText.setEnvironment(m_env);
+/*    int width = m_dbaseURLText.getPreferredSize().width;
+    int height = m_dbaseURLText.getPreferredSize().height;
+    m_dbaseURLText.setMinimumSize(new Dimension(width * 2, height));
+    m_dbaseURLText.setPreferredSize(new Dimension(width * 2, height)); */
+    m_dbaseURLText.setText(((DatabaseConverter)m_dsLoader.getLoader()).getUrl());
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 0; gbConstraints.gridx = 1;
+    gbConstraints.weightx = 5;
+    gbLayout.setConstraints(m_dbaseURLText, gbConstraints);
+    db.add(m_dbaseURLText);
+    
+    JLabel userLab = new JLabel("Username", SwingConstants.RIGHT);
+    userLab.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 1; gbConstraints.gridx = 0;
+    gbLayout.setConstraints(userLab, gbConstraints);
+    db.add(userLab);
+    
+    m_userNameText = new EnvironmentField();
+    m_userNameText.setEnvironment(m_env);
+/*    m_userNameText.setMinimumSize(new Dimension(width * 2, height));
+    m_userNameText.setPreferredSize(new Dimension(width * 2, height)); */
+    m_userNameText.setText(((DatabaseConverter)m_dsLoader.getLoader()).getUser()); 
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 1; gbConstraints.gridx = 1;
+    gbLayout.setConstraints(m_userNameText, gbConstraints);
+    db.add(m_userNameText);
+
+    JLabel passwordLab = new JLabel("Password ", SwingConstants.RIGHT);
+    passwordLab.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 2; gbConstraints.gridx = 0;
+    gbLayout.setConstraints(passwordLab, gbConstraints);
+    db.add(passwordLab);
+    
+    m_passwordText = new JPasswordField();     
+    JPanel passwordHolder = new JPanel();
+    passwordHolder.setLayout(new BorderLayout());
+    passwordHolder.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+//    passwordHolder.add(passwordLab, BorderLayout.WEST);
+    passwordHolder.add(m_passwordText, BorderLayout.CENTER);
+/*    passwordHolder.setMinimumSize(new Dimension(width * 2, height));
+    passwordHolder.setPreferredSize(new Dimension(width * 2, height)); */
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 2; gbConstraints.gridx = 1;
+    gbLayout.setConstraints(passwordHolder, gbConstraints);
+    db.add(passwordHolder);
+
+    JLabel queryLab = new JLabel("Query", SwingConstants.RIGHT);
+    queryLab.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 3; gbConstraints.gridx = 0;
+    gbLayout.setConstraints(queryLab, gbConstraints);
+    db.add(queryLab);
+    
+    m_queryText = new EnvironmentField();
+    m_queryText.setEnvironment(m_env);
+/*    m_queryText.setMinimumSize(new Dimension(width * 2, height));
+    m_queryText.setPreferredSize(new Dimension(width * 2, height)); */
+    m_queryText.setText(((DatabaseLoader)m_dsLoader.getLoader()).getQuery());
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 3; gbConstraints.gridx = 1;
+    gbLayout.setConstraints(m_queryText, gbConstraints);
+    db.add(m_queryText);
+    
+    JLabel keyLab = new JLabel("Key columns", SwingConstants.RIGHT);
+    keyLab.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 4; gbConstraints.gridx = 0;
+    gbLayout.setConstraints(keyLab, gbConstraints);
+    db.add(keyLab);
+    
+    m_keyText = new EnvironmentField();
+    m_keyText.setEnvironment(m_env);
+    /*m_keyText.setMinimumSize(new Dimension(width * 2, height));
+    m_keyText.setPreferredSize(new Dimension(width * 2, height)); */
+    m_keyText.setText(((DatabaseLoader)m_dsLoader.getLoader()).getKeys());
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 4; gbConstraints.gridx = 1;
+    gbLayout.setConstraints(m_keyText, gbConstraints);
+    db.add(m_keyText);
+    
+    JLabel propsLab = new JLabel("DB config props", SwingConstants.RIGHT);
+    propsLab.setToolTipText("The custom properties that the user can use to override the default ones.");
+    propsLab.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 5; gbConstraints.gridx = 0;
+    gbLayout.setConstraints(propsLab, gbConstraints);
+    db.add(propsLab);
+    
+    m_dbProps = new FileEnvironmentField();
+    m_dbProps.setEnvironment(m_env);
+    m_dbProps.resetFileFilters();
+    m_dbProps.addFileFilter(new ExtensionFileFilter(".props" , 
+        "DatabaseUtils property file (*.props)"));
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 5; gbConstraints.gridx = 1;
+    gbLayout.setConstraints(m_dbProps, gbConstraints);
+    db.add(m_dbProps);
+    File toSet = ((DatabaseLoader)m_dsLoader.getLoader()).getCustomPropsFile();
+    if (toSet != null) {
+      m_dbProps.setText(toSet.getPath());
+    }
+    
+    JButton loadPropsBut = new JButton("Load");
+    loadPropsBut.setToolTipText("Load config");
+    gbConstraints = new GridBagConstraints();
+    gbConstraints.anchor = GridBagConstraints.EAST;
+    gbConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gbConstraints.gridy = 5; gbConstraints.gridx = 2;
+    gbLayout.setConstraints(loadPropsBut, gbConstraints);
+    db.add(loadPropsBut);
+    loadPropsBut.addActionListener(<mark>new ActionListener</mark>() {
+      public void actionPerformed(ActionEvent e) {
+        if (m_dbProps.getText() != null &&
+            m_dbProps.getText().length() > 0) {
+          String propsS = m_dbProps.getText();
+          try {
+            propsS = m_env.substitute(propsS);
+          } catch (Exception ex) { }
+          File propsFile = new File(propsS);
+          if (propsFile.exists()) {
+            ((DatabaseLoader)m_dsLoader.getLoader()).setCustomPropsFile(propsFile);
+            ((DatabaseLoader)m_dsLoader.getLoader()).resetOptions();
+            m_dbaseURLText.setText(((DatabaseLoader)m_dsLoader.getLoader()).getUrl());
+          }
+        }
+      }
+    });
+
+    JPanel buttonsP = new JPanel();
+    buttonsP.setLayout(new FlowLayout());
+    JButton ok,cancel;
+    buttonsP.add(ok = new JButton("OK"));
+    buttonsP.add(cancel=new JButton("Cancel"));
+    ok.addActionListener(<mark>new ActionListener</mark>(){
+      public void actionPerformed(ActionEvent evt){
+        /*((DatabaseLoader)m_dsLoader.getLoader()).resetStructure();  
+        ((DatabaseConverter)m_dsLoader.getLoader()).setUrl(m_dbaseURLText.getText());
+        ((DatabaseConverter)m_dsLoader.getLoader()).setUser(m_userNameText.getText());
+        ((DatabaseConverter)m_dsLoader.getLoader()).setPassword(new String(m_passwordText.getPassword()));
+        ((DatabaseLoader)m_dsLoader.getLoader()).setQuery(m_queryText.getText());
+        ((DatabaseLoader)m_dsLoader.getLoader()).setKeys(m_keyText.getText()); */
+        
+        if (resetAndUpdateDatabaseLoaderIfChanged()) {
+          try{
+            //m_dsLoader.notifyStructureAvailable(((DatabaseLoader)m_dsLoader.getLoader()).getStructure());
+            //database connection has been configured
+            m_dsLoader.setDB(true);
+          }catch (Exception ex){
+          }
+        }
+        if (m_parentWindow != null) {
+          m_parentWindow.dispose();
+        }
+      }
+    });
+    cancel.addActionListener(<mark>new ActionListener</mark>(){
+      public void actionPerformed(ActionEvent evt){
+        if (m_backup != null) {
+          m_dsLoader.setLoader(m_backup);
+        }
+        
+        if (m_parentWindow != null) {
+          m_parentWindow.dispose();
+        }
+      }
+    });
+    
+    JPanel holderP = new JPanel();
+    holderP.setLayout(new BorderLayout());
+    holderP.add(db, BorderLayout.NORTH);
+    holderP.add(buttonsP, BorderLayout.SOUTH);
+    
+    //db.add(buttonsP);
+    JPanel about = m_LoaderEditor.getAboutPanel();
+    if (about != null) {
+      add(about, BorderLayout.NORTH);
+    }
+    add(holderP, BorderLayout.SOUTH);
+  }
+
+            </pre>
+          </div>
+        </div>
+
+        
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
+
+        
