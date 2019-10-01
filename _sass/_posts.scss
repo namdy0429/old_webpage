@@ -38,6 +38,7 @@ main h2 {
 
 .content-section {
   margin-bottom: 2em;
+  text-align: justify;
 }
 
 .project-post {
@@ -100,4 +101,17 @@ main h2 {
       }
     }
   }
+}
+
+.btn-link {
+  background-color: white;
+  border-color: $gray-1;
+  color: $gray-1;
+  border-width: 0.5px;
+  padding: 0.5em 1em;
+  margin: 1rem 0 1rem 0;
+}
+
+.btn-link:hover {
+  background-color: $gray-4;  
 }

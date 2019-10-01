@@ -57,19 +57,11 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>woxingxiao_____GracefulMovies_____LocationService</h6>
             <pre class="prettyprint">
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-
-        mLocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        if (mLocationManager == null)
-            return;
-
-        List<String> providers = mLocationManager.getProviders(true);
-
-        String locationProvider;
-        /**
-         * 如果首选GPS定位，会存在这种情况，上次GPS启动采集数据在A地，本次在B地需要定位，但用户恰好在室内无
             </pre>
           </div>
 
@@ -123,13 +115,13 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>shelwee_____UpdateHelper_____UpdateHelper</h6>
             <pre class="prettyprint">
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ActivityCompat.checkSelfPermission(mContext, permission) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions((Activity) mContext, new String[]{permission}, REQUEST_PERMISSION_CODE);
             }else {
                 startCheck();
             }
         }else {
-            startCheck();
             </pre>
           </div>
 

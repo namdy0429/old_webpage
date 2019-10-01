@@ -62,20 +62,14 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>CraftsmenTech_____AndBase_____ArticleListAdapter</h6>
             <pre class="prettyprint">
-	          convertView = LayoutInflater.from(mContext).inflate(R.layout.item_list, parent, false);
-	          //使用减少findView的次数
-			  holder = new ViewHolder();
-			  holder.itemsIcon = ((ImageView) convertView.findViewById(R.id.itemsIcon)) ;
-			  holder.itemsTitle = ((TextView) convertView.findViewById(R.id.itemsTitle));
-			  holder.itemsText = ((TextView) convertView.findViewById(R.id.itemsText));
-			  //设置标记
-			  convertView.setTag(holder);
+          if(convertView == null){
+                  convertView = LayoutInflater.from(mContext).inflate(R.layout.item_list, parent, false);
+                          holder = new ViewHolder();
+                          holder.itemsIcon = ((ImageView) convertView.findViewById(R.id.itemsIcon)) ;
+                          holder.itemsTitle = ((TextView) convertView.findViewById(R.id.itemsTitle));
+                          holder.itemsText = ((TextView) convertView.findViewById(R.id.itemsText));
+                          convertView.setTag(holder);
           }else{
-        	  holder = (ViewHolder) convertView.getTag();
-          }
-          
-          //获取该行数据
-          Article mArticle = (Article)mList.get(position);
             </pre>
           </div>
 
@@ -106,13 +100,12 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>HuanTanSheng_____EasyPhotos_____PuzzleSelectorPreviewAdapter</h6>
             <pre class="prettyprint">
+        public PhotoViewHolder(View itemView) {
             super(itemView);
             this.ivPhoto = (ImageView) itemView.findViewById(R.id.iv_photo);
             this.ivDelete = (ImageView) itemView.findViewById(R.id.iv_delete);
             this.tvType = (TextView) itemView.findViewById(R.id.tv_type);
         }
-    }
-}
 
             </pre>
           </div>
@@ -170,14 +163,14 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>boredream_____DesignResCollection_____RegisterStep1Activity</h6>
             <pre class="prettyprint">
+    @Override
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_next:
                 next();
                 break;
         }
     }
-
-    @Override
             </pre>
           </div>
 
@@ -371,17 +364,13 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>wqandroid_____wqgallery_____PhotoAdapter</h6>
             <pre class="prettyprint">
-            alpha_view = itemView.findViewById(R.id.alpha_view);
-            checkBox = (ImageButton) itemView.findViewById(R.id.checkimages);
-        }
-    }
-
-    public static class CameraViewHolder extends RecyclerView.ViewHolder {
-        public LinearLayout camera_lin;
-
-        public CameraViewHolder(View itemView) {
-            super(itemView);
-            itemView.setLayoutParams(params);
+      public ImageViewHolder(View itemView) {
+          super(itemView);
+          itemView.setLayoutParams(params);
+          iv_image = (ImageView) itemView.findViewById(R.id.iv_image);
+          alpha_view = itemView.findViewById(R.id.alpha_view);
+          checkBox = (ImageButton) itemView.findViewById(R.id.checkimages);
+      }
             </pre>
           </div>
 
@@ -494,6 +483,7 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>siwangqishiq_____ImageEditor-Android_____StickerAdapter</h6>
             <pre class="prettyprint">
+    @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewtype) {
         View v = null;
         v = LayoutInflater.from(parent.getContext()).inflate(
@@ -502,8 +492,6 @@
         return holer;
     }
 
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
             </pre>
           </div>
 

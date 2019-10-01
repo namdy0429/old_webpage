@@ -172,35 +172,31 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>easemob_____sdkdemoapp3.0_android_____ChatRoomDetailsActivity</h6>
             <pre class="prettyprint">
-				progressDialog = new ProgressDialog(ChatRoomDetailsActivity.this);
-				progressDialog.setMessage(st1);
-				progressDialog.setCanceledOnTouchOutside(false);
-			}
-			switch (requestCode) {
-			case REQUEST_CODE_EXIT: // 退出群
-				progressDialog.setMessage(st2);
-				progressDialog.show();
-				exitGrop();
-				break;
+                if (resultCode == RESULT_OK) {
+                        if (progressDialog == null) {
+                                progressDialog = new ProgressDialog(ChatRoomDetailsActivity.this);
+                                progressDialog.setMessage(st1);
+                                progressDialog.setCanceledOnTouchOutside(false);
+                        }
+                        switch (requestCode) {
+                        case REQUEST_CODE_EXIT: // �~@~@�~G�群
+                                progressDialog.setMessage(st2);
+                                progressDialog.show();
+                                exitGrop();
+                                break;
 
-			default:
-				break;
-			}
-		}
-	}
-
-	/**
-	 * 点击退出群组按钮
-	 * 
-	 * @param view
-	 */
-	public void exitGroup(View view) {
+                        default:
+                                break;
+                        }
+                }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>wangchenyan_____PonyMusic_____BaseActivity</h6>
             <pre class="prettyprint">
+    public void showProgress(String message) {
+        if (progressDialog == null) {
             progressDialog = new ProgressDialog(this);
             progressDialog.setCancelable(false);
         }
@@ -209,9 +205,6 @@
             progressDialog.show();
         }
     }
-
-    public void cancelProgress() {
-        if (progressDialog != null && progressDialog.isShowing()) {
             </pre>
           </div>
 
@@ -240,17 +233,18 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>huangfangyi_____FanXin2.0_IM_____RecorderVideoActivity</h6>
             <pre class="prettyprint">
-		    progressDialog = new ProgressDialog(this);
-		    progressDialog.setMessage("processing...");
-		    progressDialog.setCancelable(false);
-		}
-		progressDialog.show();
+                if(progressDialog == null){
+                    progressDialog = new ProgressDialog(this);
+                    progressDialog.setMessage("processing...");
+                    progressDialog.setCancelable(false);
+                }
             </pre>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>EspressifApp_____IOT-Espressif-Android_____DeviceTimerEditActivityAbs</h6>
             <pre class="prettyprint">
+        protected void onPreExecute()
         {
             mDialog = new ProgressDialog(DeviceTimerEditActivityAbs.this);
             mDialog.setMessage(getString(R.string.esp_device_task_dialog_message));
@@ -263,19 +257,14 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>wqandroid_____ihepai_____BaseActivity</h6>
             <pre class="prettyprint">
-	/**
-	 * 发起get请求 并显示状态对话框
-	 * 
-	 * @param url
-	 *            请求地址
-	 * @param params
-	 *            参数
-	 */
-	public void sendGet(String url, AjaxParams params) {
-		if (checkNet(mContext)) {
-			HttpUtil.sendGet(url, params, this);
-		}else{
-			onError(url, "无法连接网络");
+        public void createDialog(String msg) {
+                Basedialog = new ProgressDialog(mContext, R.style.custom_alert_dialog);
+                Basedialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                Basedialog.setMessage(msg);
+                Basedialog.setIndeterminate(false);
+                Basedialog.setCancelable(false);
+                Basedialog.show();
+        }
             </pre>
           </div>
 
@@ -638,12 +627,9 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>wangchenyan_____PonyMusic_____BaseActivity</h6>
             <pre class="prettyprint">
+        if (!progressDialog.isShowing()) {
             progressDialog.show();
         }
-    }
-
-    public void cancelProgress() {
-        if (progressDialog != null && progressDialog.isShowing()) {
             </pre>
           </div>
 

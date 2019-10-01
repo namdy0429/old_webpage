@@ -197,11 +197,11 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <h6>AriaLyy_____Aria_____DbUtil</h6>
             <pre class="prettyprint">
-    Cursor cursor = mDb.rawQuery("SELECT rowid, * FROM " + CommonUtil.getClassName(clazz), null);
-    int[] ids = new int[cursor.getCount()];
-    int i = 0;
-    while (cursor.moveToNext()) {
-      ids[i] = cursor.getInt(cursor.getColumnIndex("rowid"));
+  private synchronized void close() {
+    if (mDb != null) {
+      mDb.close();
+    }
+  }
             </pre>
           </div>
 
